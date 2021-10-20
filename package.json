@@ -6,6 +6,9 @@
         "packages/*"
     ],
     "description": "",
+    "engines": {
+        "npm": ">=7.0.0"
+    },
     "scripts": {
         "build": "lerna run build",
         "lint": "eslint .",
