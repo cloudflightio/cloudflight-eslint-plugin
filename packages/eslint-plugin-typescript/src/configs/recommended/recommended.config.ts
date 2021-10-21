@@ -5,6 +5,12 @@ export const RecommendedConfig: Linter.BaseConfig = {
     parser: '@typescript-eslint/parser',
     extends: ['plugin:import/typescript'],
     rules: {
+        '@typescript-eslint/explicit-function-return-type': [
+            'error',
+            {
+                allowExpressions: true,
+            },
+        ],
         '@typescript-eslint/adjacent-overload-signatures': 'error',
         '@typescript-eslint/ban-types': [
             'error',
