@@ -1,6 +1,6 @@
 {
     "name": "@cloudflight/eslint-plugin-typescript",
-    "version": "1.0.0",
+    "version": "0.1.0",
     "description": "Cloudflight cleancode eslint plugin for typescript",
     "keywords": [
         "eslint",
@@ -8,7 +8,7 @@
     ],
     "homepage": "",
     "author": "Cloudflight GmbH",
-    "license": "ISC",
+    "license": "MIT",
     "main": "./dist/index.js",
     "files": [
         "dist/**"

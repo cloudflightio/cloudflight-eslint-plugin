@@ -1,6 +1,6 @@
 {
     "name": "@cloudflight/cleancode-eslint-plugin",
-    "version": "1.0.0",
+    "version": "0.1.0",
     "private": true,
     "workspaces": [
         "packages/*"
@@ -12,14 +12,15 @@
     "scripts": {
         "build": "lerna run build",
         "lint": "eslint .",
-        "postinstall": "npm run build"
+        "postinstall": "npm run build",
+        "prepare": "node ./scripts/prepare.js"
     },
     "keywords": [
         "eslint",
         "eslintplugin"
     ],
     "author": "Cloudflight GmbH",
-    "license": "ISC",
+    "license": "MIT",
     "devDependencies": {
         "@types/eslint": "7.28.1",
         "@types/estree": "0.0.50",
@@ -27,7 +28,6 @@
         "@typescript-eslint/eslint-plugin": "5.1.0",
         "@typescript-eslint/parser": "5.1.0",
         "eslint": "8.0.0",
-        "eslint-plugin-eslint-plugin": "4.0.1",
         "husky": "7.0.2",
         "lerna": "^4.0.0",
         "prettier": "2.4.1",

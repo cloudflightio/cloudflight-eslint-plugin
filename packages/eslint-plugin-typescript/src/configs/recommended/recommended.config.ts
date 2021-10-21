@@ -1,0 +1,185 @@
+import { Linter } from 'eslint';
+
+export const RecommendedConfig: Linter.BaseConfig = {
+    plugins: ['@cloudflight/typescript', '@typescript-eslint'],
+    parser: '@typescript-eslint/parser',
+    rules: {
+        '@typescript-eslint/adjacent-overload-signatures': 'error',
+        '@typescript-eslint/ban-types': [
+            'error',
+            {
+                types: {
+                    Object: {
+                        message: 'Avoid using the `Object` type. Did you mean `object`?',
+                    },
+                    Function: {
+                        message: 'Avoid using the `Function` type. Prefer a specific function type, like `() => void`.',
+                    },
+                    Boolean: {
+                        message: 'Avoid using the `Boolean` type. Did you mean `boolean`?',
+                    },
+                    Number: {
+                        message: 'Avoid using the `Number` type. Did you mean `number`?',
+                    },
+                    String: {
+                        message: 'Avoid using the `String` type. Did you mean `string`?',
+                    },
+                    Symbol: {
+                        message: 'Avoid using the `Symbol` type. Did you mean `symbol`?',
+                    },
+                },
+            },
+        ],
+        '@typescript-eslint/member-ordering': [
+            'error',
+            {
+                default: [
+                    'signature',
+                    'public-abstract-field',
+                    'protected-abstract-field',
+                    'private-abstract-field',
+                    'public-static-field',
+                    'protected-static-field',
+                    'private-static-field',
+                    'public-decorated-field',
+                    'protected-decorated-field',
+                    'private-decorated-field',
+                    'public-instance-field',
+                    'protected-instance-field',
+                    'private-instance-field',
+                    'public-constructor',
+                    'protected-constructor',
+                    'private-constructor',
+                    'public-abstract-method',
+                    'protected-abstract-method',
+                    'private-abstract-method',
+                    'public-static-method',
+                    'protected-static-method',
+                    'private-static-method',
+                    'public-decorated-method',
+                    'protected-decorated-method',
+                    'private-decorated-method',
+                    'public-instance-method',
+                    'protected-instance-method',
+                    'private-instance-method',
+                ],
+            },
+        ],
+        '@typescript-eslint/no-empty-interface': 'error',
+        '@typescript-eslint/no-inferrable-types': [
+            'error',
+            {
+                ignoreParameters: true,
+            },
+        ],
+        '@typescript-eslint/no-misused-new': 'error',
+        '@typescript-eslint/no-namespace': 'error',
+        '@typescript-eslint/no-non-null-assertion': 'error',
+        '@typescript-eslint/no-unused-expressions': 'error',
+        '@typescript-eslint/no-use-before-define': 'off',
+        '@typescript-eslint/prefer-for-of': 'error',
+        '@typescript-eslint/unified-signatures': 'error',
+        'constructor-super': 'error',
+        'no-bitwise': 'error',
+        'no-console': 'error',
+        'no-debugger': 'error',
+        'no-eval': 'error',
+        'no-fallthrough': 'error',
+        'no-restricted-imports': [
+            'error',
+            {
+                name: 'rxjs/Rx',
+                message: "Please import directly from 'rxjs' instead",
+            },
+        ],
+        'no-shadow': 'off',
+        '@typescript-eslint/no-shadow': 'error',
+        'no-throw-literal': 'error',
+        'no-unsafe-finally': 'error',
+        'no-unused-labels': 'error',
+        'no-var': 'error',
+        'object-shorthand': 'error',
+        'prefer-const': 'error',
+        radix: 'error',
+        'use-isnan': 'error',
+        curly: 'error',
+        'eol-last': 'error',
+        'new-parens': 'error',
+        'no-multiple-empty-lines': 'off',
+        'no-trailing-spaces': 'error',
+        'space-before-function-paren': [
+            'error',
+            {
+                anonymous: 'never',
+                asyncArrow: 'always',
+                named: 'never',
+            },
+        ],
+        '@typescript-eslint/member-delimiter-style': [
+            'error',
+            {
+                multiline: {
+                    delimiter: 'semi',
+                    requireLast: true,
+                },
+                singleline: {
+                    delimiter: 'semi',
+                    requireLast: false,
+                },
+            },
+        ],
+        quotes: 'off',
+        '@typescript-eslint/quotes': [
+            'error',
+            'single',
+            {
+                avoidEscape: true,
+                allowTemplateLiterals: true,
+            },
+        ],
+        '@typescript-eslint/semi': ['error', 'always'],
+        '@typescript-eslint/type-annotation-spacing': 'error',
+        '@typescript-eslint/array-type': [
+            'error',
+            {
+                default: 'array',
+            },
+        ],
+        '@typescript-eslint/await-thenable': 'error',
+        '@typescript-eslint/ban-ts-comment': 'error',
+        '@typescript-eslint/explicit-member-accessibility': [
+            'error',
+            {
+                accessibility: 'explicit',
+            },
+        ],
+        '@typescript-eslint/no-empty-function': 'error',
+        '@typescript-eslint/no-explicit-any': 'error',
+        '@typescript-eslint/no-for-in-array': 'error',
+        'no-param-reassign': ['error'],
+        '@typescript-eslint/no-unnecessary-type-assertion': 'error',
+        '@typescript-eslint/no-var-requires': 'error',
+        '@typescript-eslint/promise-function-async': 'error',
+        complexity: [
+            'error',
+            {
+                max: 20,
+            },
+        ],
+        'import/no-unassigned-import': 'off',
+        'max-classes-per-file': ['error', 1],
+        'max-len': [
+            'error',
+            {
+                ignorePattern: '^import [^,]+ from',
+                code: 140,
+            },
+        ],
+        'no-empty': 'error',
+        'no-invalid-this': 'error',
+        'no-new-func': 'error',
+        'no-restricted-syntax': ['error', 'ForInStatement'],
+        'no-sequences': 'error',
+        'quote-props': ['error', 'as-needed'],
+    },
+};

@@ -1,13 +1,21 @@
 module.exports = {
     root: true,
-    plugins: ['@cloudflight/typescript', 'eslint-plugin'],
+    plugins: ['@cloudflight/typescript'],
     env: {
         es6: true,
         node: true,
     },
-    extends: ['plugin:@cloudflight/typescript/recommended'],
     parserOptions: {
-        project: ['./packages/*/tsconfig.json'],
+        sourceType: 'module',
         tsconfigRootDir: __dirname,
     },
+    overrides: [
+        {
+            files: ['*.ts'],
+            extends: ['plugin:@cloudflight/typescript/recommended'],
+            parserOptions: {
+                project: ['./packages/*/tsconfig.json'],
+            },
+        },
+    ],
 };
