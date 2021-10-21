@@ -1,8 +1,9 @@
 import { Linter } from 'eslint';
 
 export const RecommendedConfig: Linter.BaseConfig = {
-    plugins: ['@cloudflight/typescript', '@typescript-eslint'],
+    plugins: ['@cloudflight/typescript', '@typescript-eslint', 'import'],
     parser: '@typescript-eslint/parser',
+    extends: ['plugin:import/typescript'],
     rules: {
         '@typescript-eslint/adjacent-overload-signatures': 'error',
         '@typescript-eslint/ban-types': [
@@ -166,7 +167,6 @@ export const RecommendedConfig: Linter.BaseConfig = {
                 max: 20,
             },
         ],
-        'import/no-unassigned-import': 'off',
         'max-classes-per-file': ['error', 1],
         'max-len': [
             'error',
@@ -181,5 +181,19 @@ export const RecommendedConfig: Linter.BaseConfig = {
         'no-restricted-syntax': ['error', 'ForInStatement'],
         'no-sequences': 'error',
         'quote-props': ['error', 'as-needed'],
+
+        'import/no-unresolved': 'error',
+        'import/default': 'error',
+        'import/namespace': 'error',
+        'import/no-absolute-path': 'error',
+        'import/no-self-import': 'error',
+        'import/no-cycle': ['error', { ignoreExternal: true }],
+        'import/no-useless-path-segments': 'error',
+        'import/no-relative-packages': 'error',
+        'import/export': 'error',
+        'import/no-named-as-default': 'error',
+        'import/no-named-as-default-member': 'error',
+        'import/no-mutable-exports': 'error',
+        'import/first': 'error',
     },
 };
