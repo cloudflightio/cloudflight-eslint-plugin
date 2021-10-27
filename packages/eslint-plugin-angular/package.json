@@ -23,7 +23,9 @@
     "peerDependencies": {
         "eslint": ">=8.0.0",
         "@typescript-eslint/parser": ">=5.1.0",
-        "eslint-plugin-import": ">=2.25.2"
+        "@angular-eslint/template-parser": ">=12.6.1",
+        "@angular-eslint/eslint-plugin": ">=12.6.1",
+        "@cloudflight/eslint-plugin-typescript": ">=0.1.0"
     },
     "devDependencies": {
         "@types/eslint": "7.28.1",
