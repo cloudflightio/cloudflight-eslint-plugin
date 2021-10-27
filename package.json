@@ -12,7 +12,7 @@
     "scripts": {
         "build": "lerna run build",
         "lint": "eslint .",
-        "postinstall": "npm run build",
+        "postinstall": "npx husky install && npm run build",
         "prepare": "node ./scripts/prepare.js"
     },
     "keywords": [
@@ -34,10 +34,5 @@
         "prettier": "2.4.1",
         "pretty-quick": "3.1.1",
         "typescript": "4.4.3"
-    },
-    "husky": {
-        "hooks": {
-            "pre-commit": "pretty-quick --staged"
-        }
     }
 }
