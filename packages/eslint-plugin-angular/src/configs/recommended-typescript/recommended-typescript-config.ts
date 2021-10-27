@@ -19,19 +19,14 @@ export const RecommendedTypescriptConfig: Linter.BaseConfig = {
         '@angular-eslint/component-class-suffix': [
             'error',
             {
-                suffixes: [
-                    'Component',
-                    'Page'
-                ]
-            }
+                suffixes: ['Component', 'Page'],
+            },
         ],
         '@angular-eslint/directive-class-suffix': [
             'error',
             {
-                suffixes: [
-                    'Directive'
-                ]
-            }
+                suffixes: ['Directive'],
+            },
         ],
-    }
+    },
 };
