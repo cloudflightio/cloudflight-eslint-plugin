@@ -1,7 +1,7 @@
 {
     "name": "@cloudflight/cleancode-eslint-plugin",
     "version": "0.1.0",
-    "private": false,
+    "private": true,
     "workspaces": [
         "packages/*"
     ],
@@ -12,9 +12,10 @@
     "scripts": {
         "build": "lerna run build",
         "lint": "eslint .",
-        "test": "echo think about writing tests",
+        "test": "echo write tests",
         "postinstall": "npx husky install && npm run build",
-        "prepare": "node ./scripts/prepare.js"
+        "prepare": "node ./scripts/prepare.js",
+        "publish": "npm publish --workspaces"
     },
     "keywords": [
         "eslint",
