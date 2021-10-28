@@ -12,6 +12,7 @@
     "scripts": {
         "build": "lerna run build",
         "lint": "eslint .",
+        "test": "echo think about writing tests",
         "postinstall": "npx husky install && npm run build",
         "prepare": "node ./scripts/prepare.js"
     },
