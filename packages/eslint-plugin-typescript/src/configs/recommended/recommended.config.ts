@@ -1,55 +1,13 @@
 import { Linter } from 'eslint';
 import { typescriptEslintRules } from './rules/typescript-eslint';
+import { eslintRules } from './rules/eslint';
 
 export const RecommendedConfig: Linter.BaseConfig = {
     plugins: ['@cloudflight/typescript', '@typescript-eslint', 'import'],
     parser: '@typescript-eslint/parser',
     extends: ['plugin:import/typescript'],
     rules: {
-        'constructor-super': 'error',
-        'no-bitwise': 'error',
-        'no-console': 'error',
-        'no-debugger': 'error',
-        'no-eval': 'error',
-        'no-fallthrough': 'error',
-        'no-unsafe-finally': 'error',
-        'no-unused-labels': 'error',
-        'no-var': 'error',
-        'object-shorthand': 'error',
-        'prefer-const': 'error',
-        radix: 'error',
-        'use-isnan': 'error',
-        curly: 'error',
-        'eol-last': 'error',
-        'new-parens': 'error',
-        'no-multiple-empty-lines': 'off',
-        'no-trailing-spaces': 'error',
-        'no-param-reassign': ['error'],
-        complexity: [
-            'error',
-            {
-                max: 20,
-            },
-        ],
-        'max-classes-per-file': ['error', 1],
-        'max-len': [
-            'error',
-            {
-                ignorePattern: '^import [^,]+ from',
-                ignoreStrings: true,
-                ignoreTemplateLiterals: true,
-                ignoreRegExpLiterals: true,
-                code: 140,
-            },
-        ],
-        'no-empty': 'error',
-        'no-new-func': 'error',
-        'no-restricted-syntax': ['error', 'ForInStatement'],
-        'no-sequences': 'error',
-        'quote-props': ['error', 'as-needed'],
-
         'import/no-unresolved': 'error',
-        'import/default': 'error',
         'import/namespace': 'error',
         'import/no-absolute-path': 'error',
         'import/no-self-import': 'error',
@@ -62,6 +20,7 @@ export const RecommendedConfig: Linter.BaseConfig = {
         'import/no-mutable-exports': 'error',
         'import/first': 'error',
 
+        ...eslintRules,
         ...typescriptEslintRules,
     },
 };
