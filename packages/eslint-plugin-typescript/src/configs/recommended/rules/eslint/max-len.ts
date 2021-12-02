@@ -5,8 +5,9 @@ export const maxLen: RuleDefinition = {
     options: [
         'error',
         {
-            ignorePattern: '^import [^,]+ from',
+            ignorePattern: '^(import|export) [^,]+ from',
             ignoreRegExpLiterals: true,
+            ignoreTemplateLiterals: true,
             code: 140,
         },
     ],
