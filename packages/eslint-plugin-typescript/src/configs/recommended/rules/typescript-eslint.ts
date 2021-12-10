@@ -46,6 +46,7 @@ import { spaceBeforeFunctionParen } from './@typescript-eslint/space-before-func
 import { tripleSlashReference } from './@typescript-eslint/triple-slash-reference';
 import { typeAnnotationSpacing } from './@typescript-eslint/type-annotation-spacing';
 import { unifiedSignatures } from './@typescript-eslint/unified-signatures';
+import { noExplicitAny } from './@typescript-eslint/no-explicit-any';
 
 const pluginPrefix = '@typescript-eslint';
 
@@ -65,6 +66,7 @@ export const typescriptEslintRules: Linter.RulesRecord = {
     [`${noEmptyFunction.name}`]: 'off',
     [`${pluginPrefix}/${noEmptyFunction.name}`]: noEmptyFunction.options,
     [`${pluginPrefix}/${noEmptyInterface.name}`]: noEmptyInterface.options,
+    [`${pluginPrefix}/${noExplicitAny.name}`]: noExplicitAny.options,
     [`${pluginPrefix}/${noExtraNonNullAssertion.name}`]: noExtraNonNullAssertion.options,
     [`${pluginPrefix}/${noFloatingPromises.name}`]: noFloatingPromises.options,
     [`${pluginPrefix}/${noForInArray.name}`]: noForInArray.options,
