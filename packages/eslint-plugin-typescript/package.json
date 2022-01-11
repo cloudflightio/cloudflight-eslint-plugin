@@ -1,6 +1,6 @@
 {
     "name": "@cloudflight/eslint-plugin-typescript",
-    "version": "0.3.0",
+    "version": "0.3.0-publishtest",
     "description": "Cloudflight cleancode eslint plugin for typescript",
     "volta": {
         "extends": "../../package.json"

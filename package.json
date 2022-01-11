@@ -1,6 +1,6 @@
 {
     "name": "@cloudflight/cleancode-eslint-plugin",
-    "version": "0.3.0",
+    "version": "0.3.0-publishtest",
     "private": true,
     "volta": {
         "node": "16.13.0"
