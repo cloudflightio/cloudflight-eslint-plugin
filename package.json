@@ -15,7 +15,7 @@
         "test": "echo write tests",
         "postinstall": "npx husky install && npm run build",
         "prepare": "node ./scripts/prepare.js",
-        "publish": "npm publish --workspaces"
+        "publish-workspaces": "npm publish --workspaces"
     },
     "keywords": [
         "eslint",
