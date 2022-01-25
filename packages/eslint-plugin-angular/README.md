@@ -1,4 +1,4 @@
-# `@cloudflight/eslint-plugin-angular`
+# `@clf-internal/eslint-plugin-angular`
 
 > The Cloudflight ESLint Plugin for Angular provides a multiple configurations of ESLint rules recommended by the Cloudflight Frontend Service.
 
@@ -9,12 +9,12 @@
 The following dependencies are required:
 
 ```
-"@angular-eslint/eslint-plugin": ">=12.1.0",
-"@angular-eslint/eslint-plugin-template": ">=12.1.0",
-"@angular-eslint/template-parser": ">=12.1.0",
-"@cloudflight/eslint-plugin-typescript": ">=0.1.0",
-"@typescript-eslint/parser": ">=4.0.0 <5.0.0",
-"eslint": ">=7.0.0 <8.0.0"
+"@angular-eslint/eslint-plugin": ">=13.0.0",
+"@angular-eslint/eslint-plugin-template": ">=13.0.0",
+"@angular-eslint/template-parser": ">=13.0.0",
+"@clf-internal/eslint-plugin-typescript": ">=1.0.0 <2.0.0",
+"@typescript-eslint/parser": ">=5.0.0 <6.0.0",
+"eslint": ">=8.0.0 <9.0.0"
 ```
 
 ## Usage
@@ -24,7 +24,7 @@ In your `package.json` add the following:
 ```
 "devDependencies": {
     ...
-    "@cloudflight/eslint-plugin-angular": "<version>",
+    "@clf-internal/eslint-plugin-angular": "<version>",
     ...
   }
 ```
@@ -32,16 +32,16 @@ In your `package.json` add the following:
 In your projects `.npmrc` add the following (no authentication necessary):
 
 ```
-@cloudflight:registry=https://artifacts.cloudflight.io/repository/cloudflight-npm-public/
+@clf-internal:registry=https://artifacts.cloudflight.io/repository/cloudflight-npm-public/
 ```
 
 The plugin provides 3 different configurations:
 
--   @cloudflight/angular/recommended
+-   @clf-internal/angular/recommended
     -   Both of the below 2 configurations
--   @cloudflight/angular/recommended-html
+-   @clf-internal/angular/recommended-html
     -   Only contains rules for HTML files
--   @cloudflight/angular/recommended-typescript
+-   @clf-internal/angular/recommended-typescript
     -   Only contains rules for TS files
 
 Now open your `.eslintrc.json` (or JS equivalent) and add one of the configurations:
@@ -49,7 +49,7 @@ Now open your `.eslintrc.json` (or JS equivalent) and add one of the configurati
 ```
 {
     ...
-    "extends": ["plugin:@cloudflight/angular/recommended"]
+    "extends": ["plugin:@clf-internal/angular/recommended"]
     ...
 }
 ```

@@ -1,6 +1,6 @@
 module.exports = {
     root: true,
-    plugins: ['@cloudflight/typescript'],
+    plugins: ['@clf-internal/typescript'],
     env: {
         es6: true,
         node: true,
@@ -12,7 +12,7 @@ module.exports = {
     overrides: [
         {
             files: ['*.ts'],
-            extends: ['plugin:@cloudflight/typescript/recommended'],
+            extends: ['plugin:@clf-internal/typescript/recommended'],
             parserOptions: {
                 project: ['./packages/*/tsconfig.json'],
             },
