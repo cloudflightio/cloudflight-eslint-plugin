@@ -1,15 +1,15 @@
 import { Linter } from 'eslint';
-import { typescriptEslintRules } from './rules/typescript-eslint';
-import { eslintRules } from './rules/eslint';
-import { importEslintRules } from './rules/import';
 
 export const RecommendedConfig: Linter.BaseConfig = {
-    plugins: ['@clf-internal/typescript', '@typescript-eslint', 'import'],
-    parser: '@typescript-eslint/parser',
-    extends: ['plugin:import/typescript'],
-    rules: {
-        ...eslintRules,
-        ...typescriptEslintRules,
-        ...importEslintRules,
-    },
+    plugins: ['@clf-internal/typescript'],
+    overrides: [
+        {
+            files: ['tsconfig*(.*).json'],
+            extends: ['plugin:@clf-internal/typescript/recommended-json'],
+        },
+        {
+            files: ['*.ts'],
+            extends: ['plugin:@clf-internal/typescript/recommended-typescript'],
+        },
+    ],
 };

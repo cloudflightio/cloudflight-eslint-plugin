@@ -1,6 +1,7 @@
 module.exports = {
     root: true,
     plugins: ['@clf-internal/typescript'],
+    extends: ['plugin:@clf-internal/typescript/recommended'],
     env: {
         es6: true,
         node: true,
@@ -8,14 +9,6 @@ module.exports = {
     parserOptions: {
         sourceType: 'module',
         tsconfigRootDir: __dirname,
+        project: ['./packages/*/tsconfig.json'],
     },
-    overrides: [
-        {
-            files: ['*.ts'],
-            extends: ['plugin:@clf-internal/typescript/recommended'],
-            parserOptions: {
-                project: ['./packages/*/tsconfig.json'],
-            },
-        },
-    ],
 };
