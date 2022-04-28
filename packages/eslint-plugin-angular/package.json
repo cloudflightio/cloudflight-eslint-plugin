@@ -1,6 +1,6 @@
 {
     "name": "@clf-internal/eslint-plugin-angular",
-    "version": "1.0.0",
+    "version": "2.0.0",
     "description": "Cloudflight cleancode eslint plugin for angular",
     "volta": {
         "extends": "../../package.json"
