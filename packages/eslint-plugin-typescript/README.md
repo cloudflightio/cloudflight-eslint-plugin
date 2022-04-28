@@ -2,7 +2,7 @@
 
 > The Cloudflight ESLint Plugin Typescript provides a configuration of ESLint rules recommended by the Cloudflight Frontend Service.
 
-> You can find the directory of all rules including their reasoning [here](src/configs/recommended/rules).
+> You can find the directory of all rules including their reasoning [here](src/configs/recommended-typescript/rules).
 
 ## Dependencies
 
@@ -12,7 +12,8 @@ The following dependencies are required:
 "@typescript-eslint/eslint-plugin": ">=5.0.0 <6.0.0",
 "@typescript-eslint/parser": ">=5.0.0 <6.0.0",
 "eslint": ">=8.0.0 <9.0.0",
-"eslint-plugin-import": ">=2.0.0"
+"eslint-plugin-import": ">=2.0.0",
+"eslint-plugin-json-es": ">=1.5.0"
 ```
 
 ## Usage
