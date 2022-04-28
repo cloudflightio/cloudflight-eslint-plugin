@@ -27,7 +27,7 @@
         "@angular-eslint/eslint-plugin": ">=13.0.0",
         "@angular-eslint/eslint-plugin-template": ">=13.0.0",
         "@angular-eslint/template-parser": ">=13.0.0",
-        "@clf-internal/eslint-plugin-typescript": ">=1.0.0 <2.0.0",
+        "@clf-internal/eslint-plugin-typescript": ">=2.0.0 <3.0.0",
         "@typescript-eslint/parser": ">=5.0.0 <6.0.0",
         "eslint": ">=8.0.0 <9.0.0"
     },
