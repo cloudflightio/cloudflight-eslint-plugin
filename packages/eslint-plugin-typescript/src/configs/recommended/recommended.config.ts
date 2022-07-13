@@ -1,15 +1,15 @@
 import { Linter } from 'eslint';
 
 export const RecommendedConfig: Linter.BaseConfig = {
-    plugins: ['@clf-internal/typescript'],
+    plugins: ['@cloudflight/typescript'],
     overrides: [
         {
             files: ['tsconfig*(.*).json'],
-            extends: ['plugin:@clf-internal/typescript/recommended-json'],
+            extends: ['plugin:@cloudflight/typescript/recommended-json'],
         },
         {
             files: ['*.ts'],
-            extends: ['plugin:@clf-internal/typescript/recommended-typescript'],
+            extends: ['plugin:@cloudflight/typescript/recommended-typescript'],
         },
     ],
 };

@@ -4,7 +4,7 @@ import { eslintRules } from './rules/eslint';
 import { importEslintRules } from './rules/import';
 
 export const RecommendedTypescriptConfig: Linter.BaseConfig = {
-    plugins: ['@clf-internal/typescript', '@typescript-eslint', 'import'],
+    plugins: ['@cloudflight/typescript', '@typescript-eslint', 'import'],
     parser: '@typescript-eslint/parser',
     extends: ['plugin:import/typescript'],
     rules: {

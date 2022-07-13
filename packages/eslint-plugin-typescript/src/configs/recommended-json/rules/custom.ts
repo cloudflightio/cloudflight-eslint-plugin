@@ -17,7 +17,7 @@ import { tscNoUncheckedIndexedAccess } from './custom/tsc-no-unchecked-indexed-a
 import { tscUseDefineForClassFields } from './custom/tsc-use-define-for-class-fields';
 import { tscNoUnusedLocals } from './custom/tsc-no-unused-locals';
 
-const pluginPrefix = '@clf-internal/typescript';
+const pluginPrefix = '@cloudflight/typescript';
 
 export const customRules: Linter.RulesRecord = {
     [`${pluginPrefix}/${tscAllowUnreachableCode.name}`]: tscAllowUnreachableCode.options,

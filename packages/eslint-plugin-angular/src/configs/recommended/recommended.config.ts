@@ -1,15 +1,15 @@
 import { Linter } from 'eslint';
 
 export const RecommendedConfig: Linter.BaseConfig = {
-    plugins: ['@clf-internal/angular'],
+    plugins: ['@cloudflight/angular'],
     overrides: [
         {
             files: ['*.html'],
-            extends: ['plugin:@clf-internal/angular/recommended-html'],
+            extends: ['plugin:@cloudflight/angular/recommended-html'],
         },
         {
             files: ['*.ts'],
-            extends: ['plugin:@clf-internal/angular/recommended-typescript'],
+            extends: ['plugin:@cloudflight/angular/recommended-typescript'],
         },
     ],
 };

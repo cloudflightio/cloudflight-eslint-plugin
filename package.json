@@ -1,6 +1,6 @@
 {
-    "name": "@clf-internal/cleancode-eslint-plugin",
-    "version": "2.0.0",
+    "name": "@cloudflight/eslint-plugin",
+    "version": "0.1.0",
     "private": true,
     "volta": {
         "node": "16.13.0"
@@ -22,7 +22,7 @@
         "eslintplugin"
     ],
     "author": "Cloudflight GmbH",
-    "license": "MIT",
+    "license": "Apache-2.0",
     "devDependencies": {
         "@types/eslint": "8.4.1",
         "@types/estree": "0.0.50",

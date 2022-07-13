@@ -1,7 +1,7 @@
 {
-    "name": "@clf-internal/eslint-plugin-angular",
-    "version": "2.0.0",
-    "description": "Cloudflight cleancode eslint plugin for angular",
+    "name": "@cloudflight/eslint-plugin-angular",
+    "version": "0.1.0",
+    "description": "Cloudflight eslint-plugin & eslint-config for angular",
     "volta": {
         "extends": "../../package.json"
     },
@@ -11,7 +11,7 @@
     ],
     "homepage": "",
     "author": "Cloudflight GmbH",
-    "license": "MIT",
+    "license": "Apache-2.0",
     "main": "./dist/index.js",
     "files": [
         "dist/**"
@@ -27,7 +27,7 @@
         "@angular-eslint/eslint-plugin": ">=13.0.0",
         "@angular-eslint/eslint-plugin-template": ">=13.0.0",
         "@angular-eslint/template-parser": ">=13.0.0",
-        "@clf-internal/eslint-plugin-typescript": ">=2.0.0 <3.0.0",
+        "@cloudflight/eslint-plugin-typescript": ">=0.1.0",
         "@typescript-eslint/parser": ">=5.0.0 <6.0.0",
         "eslint": ">=8.0.0 <9.0.0"
     },

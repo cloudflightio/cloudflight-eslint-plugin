@@ -1,7 +1,7 @@
 module.exports = {
     root: true,
-    plugins: ['@clf-internal/typescript'],
-    extends: ['plugin:@clf-internal/typescript/recommended'],
+    plugins: ['@cloudflight/typescript'],
+    extends: ['plugin:@cloudflight/typescript/recommended'],
     env: {
         es6: true,
         node: true,

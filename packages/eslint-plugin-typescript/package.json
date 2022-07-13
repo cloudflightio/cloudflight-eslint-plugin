@@ -1,7 +1,7 @@
 {
-    "name": "@clf-internal/eslint-plugin-typescript",
-    "version": "2.0.0",
-    "description": "Cloudflight cleancode eslint plugin for typescript",
+    "name": "@cloudflight/eslint-plugin-typescript",
+    "version": "0.1.0",
+    "description": "Cloudflight eslint-plugin & eslint-config for typescript",
     "volta": {
         "extends": "../../package.json"
     },
@@ -11,7 +11,7 @@
     ],
     "homepage": "",
     "author": "Cloudflight GmbH",
-    "license": "MIT",
+    "license": "Apache-2.0",
     "main": "./dist/index.js",
     "files": [
         "dist/**"

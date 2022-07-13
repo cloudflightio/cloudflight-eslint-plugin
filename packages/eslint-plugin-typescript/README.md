@@ -1,8 +1,8 @@
-# `@clf-internal/eslint-plugin-typescript`
+# `@cloudflight/eslint-plugin-typescript`
 
-> The Cloudflight ESLint Plugin Typescript provides a configuration of ESLint rules recommended by the Cloudflight Frontend Service.
+The Cloudflight ESLint Plugin Typescript provides a configuration of ESLint rules recommended by Cloudflight.
 
-> You can find the directory of all rules including their reasoning [here](src/configs/recommended-typescript/rules).
+You can find the directory of all rules including their reasoning [here](src/configs/recommended-typescript/rules).
 
 ## Dependencies
 
@@ -23,15 +23,9 @@ In your `package.json` add the following:
 ```
 "devDependencies": {
     ...
-    "@clf-internal/eslint-plugin-typescript": "<version>",
+    "@cloudflight/eslint-plugin-typescript": "<version>",
     ...
   }
-```
-
-In your projects `.npmrc` add the following (no authentication necessary):
-
-```
-@clf-internal:registry=https://artifacts.cloudflight.io/repository/cloudflight-npm-public/
 ```
 
 Now open your `.eslintrc.json` (or JS equivalent) and add the following:
@@ -39,7 +33,7 @@ Now open your `.eslintrc.json` (or JS equivalent) and add the following:
 ```
 {
     ...
-    "extends": ["plugin:@clf-internal/typescript/recommended"]
+    "extends": ["plugin:@cloudflight/typescript/recommended"]
     ...
 }
 ```
