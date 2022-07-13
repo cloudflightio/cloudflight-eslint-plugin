@@ -8,6 +8,10 @@
     "workspaces": [
         "packages/*"
     ],
+    "homepage": "https://github.com/cloudflightio/cloudflight-eslint-plugin",
+    "bugs": {
+        "url": "https://github.com/cloudflightio/cloudflight-eslint-plugin/issues"
+    },
     "description": "",
     "scripts": {
         "build": "lerna run build",
