@@ -1,5 +1,10 @@
 # Cleancode ESLint Plugin
 
+[![License](https://img.shields.io/badge/License-Apache_2.0-green.svg)](https://opensource.org/licenses/Apache-2.0)
+![main](https://github.com/cloudflightio/cloudflight-eslint-plugin/actions/workflows/build.yml/badge.svg?branch=main)
+[![@cloudflight/eslint-plugin-typescript](https://img.shields.io/npm/v/@cloudflight/eslint-plugin-typescript?label=@cloudflight/eslint-plugin-typescript)](https://www.npmjs.com/package/@cloudflight/eslint-plugin-typescript)
+[![@cloudflight/eslint-plugin-angular](https://img.shields.io/npm/v/@cloudflight/eslint-plugin-angular?label=@cloudflight/eslint-plugin-angular)](https://www.npmjs.com/package/@cloudflight/eslint-plugin-angular)
+
 This repository contains multiple ESLint plugins & configs to enforce rules for clean code across Cloudflight projects.
 
 ## Installation
