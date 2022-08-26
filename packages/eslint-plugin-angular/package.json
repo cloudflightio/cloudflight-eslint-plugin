@@ -26,12 +26,13 @@
         "build": "tsc",
         "test": "echo \"Error: run tests from root\" && exit 1"
     },
+    "dependencies": {
+        "@angular-eslint/eslint-plugin": "13.5.0",
+        "@angular-eslint/eslint-plugin-template": "13.5.0",
+        "@angular-eslint/template-parser": "13.5.0"
+    },
     "peerDependencies": {
-        "@angular-eslint/eslint-plugin": ">=13.0.0",
-        "@angular-eslint/eslint-plugin-template": ">=13.0.0",
-        "@angular-eslint/template-parser": ">=13.0.0",
         "@cloudflight/eslint-plugin-typescript": ">=0.1.0",
-        "@typescript-eslint/parser": ">=5.0.0 <6.0.0",
         "eslint": ">=8.0.0 <9.0.0"
     },
     "devDependencies": {
