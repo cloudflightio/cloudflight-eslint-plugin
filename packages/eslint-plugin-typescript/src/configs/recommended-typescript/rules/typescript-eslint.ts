@@ -42,7 +42,6 @@ import { promiseFunctionAsync } from './@typescript-eslint/promise-function-asyn
 import { quotes } from './@typescript-eslint/quotes';
 import { requireArraySortCompare } from './@typescript-eslint/require-array-sort-compare';
 import { semi } from './@typescript-eslint/semi';
-import { spaceBeforeFunctionParen } from './@typescript-eslint/space-before-function-paren';
 import { tripleSlashReference } from './@typescript-eslint/triple-slash-reference';
 import { typeAnnotationSpacing } from './@typescript-eslint/type-annotation-spacing';
 import { unifiedSignatures } from './@typescript-eslint/unified-signatures';
@@ -104,8 +103,6 @@ export const typescriptEslintRules: Linter.RulesRecord = {
     [`${pluginPrefix}/${requireArraySortCompare.name}`]: requireArraySortCompare.options,
     [`${semi.name}`]: 'off',
     [`${pluginPrefix}/${semi.name}`]: semi.options,
-    [`${spaceBeforeFunctionParen.name}`]: 'off',
-    [`${pluginPrefix}/${spaceBeforeFunctionParen.name}`]: spaceBeforeFunctionParen.options,
     [`${pluginPrefix}/${tripleSlashReference.name}`]: tripleSlashReference.options,
     [`${pluginPrefix}/${typeAnnotationSpacing.name}`]: typeAnnotationSpacing.options,
     [`${pluginPrefix}/${unifiedSignatures.name}`]: unifiedSignatures.options,
