@@ -1,6 +1,6 @@
 {
     "name": "@cloudflight/eslint-plugin-typescript",
-    "version": "0.2.0",
+    "version": "0.3.0",
     "description": "Cloudflight eslint-plugin & eslint-config for typescript",
     "volta": {
         "extends": "../../package.json"
@@ -39,6 +39,6 @@
         "@types/eslint": "8.4.1",
         "@types/estree": "0.0.50",
         "@types/node": "16.11.6",
-        "typescript": "4.5.5"
+        "typescript": "4.8.2"
     }
 }
