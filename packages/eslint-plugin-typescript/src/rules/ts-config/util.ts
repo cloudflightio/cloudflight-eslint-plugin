@@ -20,8 +20,8 @@ export function validateProperty(
     context: Rule.RuleContext
 ): void {
     if ((<Literal>propertyNode.key).value === 'compilerOptions') {
-        const compilerOptions = (<ObjectExpression>propertyNode.value).properties;
-        const property = findProperty(compilerOptions, propertyAssertion.key);
+        const compilerOptions = <ObjectExpression>propertyNode.value;
+        const property = findProperty(compilerOptions.properties, propertyAssertion.key);
 
         if (property === undefined) {
             if (isRootTsConfig(propertyNode)) {
@@ -60,21 +60,22 @@ export function reportMissingProperty(
     context: Rule.RuleContext,
     propertyNode: Property & Rule.NodeParentExtension,
     property: JsonPropertyAssertion,
-    compilerOptions: (Property | SpreadElement)[]
+    compilerOptions: ObjectExpression
 ): void {
     context.report({
         node: propertyNode,
         message: `TS compiler option '${property.key}' is missing!`,
         fix(fixer) {
-            const range = compilerOptions[compilerOptions.length - 1]?.range;
+            const properties = compilerOptions.properties;
+            const range = properties[properties.length - 1]?.range;
+            const propertyValue =
+                typeof property.expectedValue === 'string'
+                    ? `"${property.expectedValue}"`
+                    : property.expectedValue.toString();
             if (range) {
-                if (typeof property.expectedValue === 'string') {
-                    return fixer.insertTextAfterRange(
-                        range,
-                        `,\n        "${property.key}": "${property.expectedValue}"`
-                    );
-                }
-                return fixer.insertTextAfterRange(range, `,\n        "${property.key}": ${property.expectedValue}`);
+                return fixer.insertTextAfterRange(range, `,\n        "${property.key}": ${propertyValue}`);
+            } else if (properties.length === 0 && compilerOptions.range) {
+                return fixer.replaceTextRange(compilerOptions.range, `{"${property.key}": ${propertyValue}}`);
             }
             return null;
         },
