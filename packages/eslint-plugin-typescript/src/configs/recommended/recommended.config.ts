@@ -11,5 +11,9 @@ export const RecommendedConfig: Linter.BaseConfig = {
             files: ['*.ts'],
             extends: ['plugin:@cloudflight/typescript/recommended-typescript'],
         },
+        {
+            files: ['package.json'],
+            extends: ['plugin:@cloudflight/typescript/recommended-package'],
+        },
     ],
 };

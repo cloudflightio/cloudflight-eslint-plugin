@@ -17,9 +17,14 @@ ruleTester.run('tsc-allow-unreachable-code', TscAllowUnreachableCodeRule, {
             errors: [{ message: `TS compiler option 'allowUnreachableCode' must be set to 'false'!` }],
         },
         {
-            code: `{"compilerOptions": { }}`,
+            code: `{"compilerOptions": {}}`,
             output: `{"compilerOptions": {"allowUnreachableCode": false}}`,
             errors: [{ message: "TS compiler option 'allowUnreachableCode' is missing!" }],
+        },
+        {
+            code: `{}`,
+            output: `{"compilerOptions": {}}`,
+            errors: [{ message: "TS Config option 'compilerOptions' is missing!" }],
         },
     ],
 });
