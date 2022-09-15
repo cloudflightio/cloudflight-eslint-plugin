@@ -24,7 +24,7 @@
     },
     "scripts": {
         "build": "tsc",
-        "test": "echo \"Error: run tests from root\" && exit 1"
+        "test": "jest"
     },
     "dependencies": {
         "@typescript-eslint/eslint-plugin": "5.35.1",
