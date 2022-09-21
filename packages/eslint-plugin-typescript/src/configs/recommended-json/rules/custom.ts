@@ -16,12 +16,10 @@ import { tscNoPropertyAccessFromIndexSignature } from './custom/tsc-no-property-
 import { tscNoUncheckedIndexedAccess } from './custom/tsc-no-unchecked-indexed-access';
 import { tscUseDefineForClassFields } from './custom/tsc-use-define-for-class-fields';
 import { tscNoUnusedLocals } from './custom/tsc-no-unused-locals';
-import { packageForcePrivate } from '../../recommended-package/rules/custom/package-force-private';
 
 const pluginPrefix = '@cloudflight/typescript';
 
 export const customRules: Linter.RulesRecord = {
-    [`${pluginPrefix}/${packageForcePrivate.name}`]: packageForcePrivate.options,
     [`${pluginPrefix}/${tscAllowUnreachableCode.name}`]: tscAllowUnreachableCode.options,
     [`${pluginPrefix}/${tscAllowUnusedLabels.name}`]: tscAllowUnusedLabels.options,
     [`${pluginPrefix}/${tscEsModuleInterop.name}`]: tscEsModuleInterop.options,
