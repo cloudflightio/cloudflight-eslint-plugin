@@ -9,6 +9,12 @@ ruleTester.run('package-force-private', PackagForcePrivateRule, {
         {
             code: '{"private": true, "name": "package-private-test"}',
         },
+        {
+            code: '{"private": true, "publishConfig": {}, "name": "package-private-with-publish-test"}',
+        },
+        {
+            code: '{"private": false, "publishConfig": {}, "name": "package-public-with-publish-test"}',
+        },
     ],
     invalid: [
         {

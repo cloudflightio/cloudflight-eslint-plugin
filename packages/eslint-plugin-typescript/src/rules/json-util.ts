@@ -6,19 +6,20 @@ import { JsonPropertyAssertion } from './json-property-assertion';
  * Create a new rule validating a property value of a given json file.
  * @param context ESLint {@link Rule.RuleContext} for reporting issues.
  * @param propertyAssertion Descriptor of the property and expected value which should be validated.
- * @param filename The filename of the file being validated.
+ * @param ruleContextName A human readable string to identify the context of the evaluated rule used for error messages.
+ * Could be a filename, eg `package.json`, or some logical structure inside a file, eg `compiler options`.
  */
 export function jsonRule(
     context: Rule.RuleContext,
     propertyAssertion: JsonPropertyAssertion,
-    filename: string
+    ruleContextName: string
 ): Rule.RuleListener {
     return {
         Property(propertyNode) {
-            validateProperty(propertyNode, propertyAssertion, context, filename);
+            validateProperty(propertyNode, propertyAssertion, context, ruleContextName);
         },
         Program(jsonRoot) {
-            validateRootJsonProperty(jsonRoot, propertyAssertion, context, filename);
+            validateRootJsonProperty(jsonRoot, propertyAssertion, context, ruleContextName);
         },
     };
 }
@@ -60,11 +61,11 @@ export function reportMissingProperty(
     propertyNode: Node,
     property: JsonPropertyAssertion,
     parent: ObjectExpression | undefined,
-    filename: string
+    ruleContextName: string
 ): void {
     context.report({
         node: propertyNode,
-        message: `${filename} option '${property.key}' is missing!`,
+        message: `${ruleContextName} option '${property.key}' is missing!`,
         fix: (fixer) => {
             const parentOrSelf = parent ?? propertyNode;
             if (parentOrSelf.type === 'ObjectExpression') {
@@ -87,11 +88,11 @@ export function reportWrongPropertyValue(
     context: Rule.RuleContext,
     target: Property,
     property: JsonPropertyAssertion,
-    filename: string
+    ruleContextName: string
 ): void {
     context.report({
         node: target,
-        message: `${filename} option '${property.key}' must be set to '${property.expectedValue}'!`,
+        message: `${ruleContextName} option '${property.key}' must be set to '${property.expectedValue}'!`,
         fix: (fixer) => fixer.replaceText(target.value, JSON.stringify(property.expectedValue)),
     });
 }
@@ -100,7 +101,7 @@ export function validateRootJsonProperty(
     jsonRoot: Program,
     propertyAssertion: JsonPropertyAssertion,
     context: Rule.RuleContext,
-    filename: string
+    ruleContextName: string
 ): void {
     // For whatever reason the TSCompiler cannot deduce that elements inside body can be of type ObjectExpression, so we cast via unknown
     const jsonRootObject = jsonRoot.body[0] as unknown as ObjectExpression | undefined;
@@ -116,7 +117,7 @@ export function validateRootJsonProperty(
                           expectedValue: {},
                       };
 
-            reportMissingProperty(context, jsonRoot, assertion, jsonRootObject, filename);
+            reportMissingProperty(context, jsonRoot, assertion, jsonRootObject, ruleContextName);
         }
     }
 }
@@ -125,12 +126,12 @@ function validateProperty(
     propertyNode: Property & Rule.NodeParentExtension,
     propertyAssertion: JsonPropertyAssertion,
     context: Rule.RuleContext,
-    filename: string
+    ruleContextName: string
 ): void {
     const propertyPath = findPropertyPath(propertyNode);
     if (propertyPath === propertyAssertion.key) {
         if ((<Literal>propertyNode.value).value !== propertyAssertion.expectedValue) {
-            reportWrongPropertyValue(context, propertyNode, propertyAssertion, filename);
+            reportWrongPropertyValue(context, propertyNode, propertyAssertion, ruleContextName);
         }
     } else if (propertyAssertion.key.startsWith(propertyPath)) {
         if (propertyNode.value.type === 'ObjectExpression') {
@@ -145,7 +146,7 @@ function validateProperty(
                         expectedValue: {},
                     },
                     propertyNode.value,
-                    filename
+                    ruleContextName
                 );
             }
         }
