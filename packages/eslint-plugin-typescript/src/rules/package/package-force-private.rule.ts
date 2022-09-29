@@ -8,9 +8,9 @@ const privatePropertyAssertion: JsonPropertyAssertion = {
     expectedValue: true,
 };
 
-export const PackagForcePrivateRule: Rule.RuleModule = {
+export const PackageForcePrivateRule: Rule.RuleModule = {
     create: (context) => {
-        const ignorePublished = typeof context.options[0] === 'boolean' ? context.options[0] : true;
+        const ignorePublished = context.options[0]?.ignorePublished ?? true;
         if (!ignorePublished) {
             return jsonRule(context, privatePropertyAssertion, 'package.json');
         } else {
@@ -49,5 +49,18 @@ export const PackagForcePrivateRule: Rule.RuleModule = {
     meta: {
         type: 'problem',
         fixable: 'code',
+        schema: [
+            {
+                type: 'object',
+                properties: {
+                    ignorePublished: {
+                        type: 'boolean',
+                        description:
+                            'If set to true, this rule will only check if a package is private, if no publish config is present.',
+                        default: true,
+                    },
+                },
+            },
+        ],
     },
 };

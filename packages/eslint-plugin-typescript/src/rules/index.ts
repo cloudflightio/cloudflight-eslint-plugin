@@ -1,5 +1,5 @@
 import { Rule } from 'eslint';
-import { PackagForcePrivateRule } from './package/package-force-private.rule';
+import { PackageForcePrivateRule } from './package/package-force-private.rule';
 import { TscStrictRule } from './ts-config/tsc-strict.rule';
 import { TscAllowUnusedLabelsRule } from './ts-config/tsc-allow-unused-labels.rule';
 import { TscAllowUnreachableCodeRule } from './ts-config/tsc-allow-unreachable-code.rule';
@@ -19,7 +19,7 @@ import { TscNoUnusedParametersRule } from './ts-config/tsc-no-unused-parameters.
 import { TscUseDefineForClassFieldsRule } from './ts-config/tsc-use-define-for-class-fields.rule';
 
 export const rules: Record<string, Rule.RuleModule> = {
-    'package-force-private': PackagForcePrivateRule,
+    'package-force-private': PackageForcePrivateRule,
     'tsc-allow-unreachable-code': TscAllowUnreachableCodeRule,
     'tsc-allow-unused-labels': TscAllowUnusedLabelsRule,
     'tsc-es-module-interop': TscEsModuleInteropRule,
