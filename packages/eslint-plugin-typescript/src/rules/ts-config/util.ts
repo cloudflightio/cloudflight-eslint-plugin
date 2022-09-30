@@ -1,20 +1,22 @@
 import { Rule } from 'eslint';
-import type { Literal, ObjectExpression, Property, SpreadElement } from 'estree';
+import type { Literal, ObjectExpression, Property } from 'estree';
+import { findProperty, reportMissingProperty, reportWrongPropertyValue, validateRootJsonProperty } from '../json-util';
+import { JsonPropertyAssertion } from '../json-property-assertion';
 
-export interface JsonPropertyAssertion {
-    key: string;
-    expectedValue: string | boolean;
-}
+const filename = 'TS compiler';
 
 export function tscRule(context: Rule.RuleContext, propertyAssertion: JsonPropertyAssertion): Rule.RuleListener {
     return {
         Property(propertyNode) {
             validateProperty(propertyNode, propertyAssertion, context);
         },
+        Program(jsonRoot) {
+            validateRootJsonProperty(jsonRoot, { key: 'compilerOptions', expectedValue: {} }, context, 'TS Config');
+        },
     };
 }
 
-export function validateProperty(
+function validateProperty(
     propertyNode: Property & Rule.NodeParentExtension,
     propertyAssertion: JsonPropertyAssertion,
     context: Rule.RuleContext
@@ -25,17 +27,17 @@ export function validateProperty(
 
         if (property === undefined) {
             if (isRootTsConfig(propertyNode)) {
-                reportMissingProperty(context, propertyNode, propertyAssertion, compilerOptions);
+                reportMissingProperty(context, propertyNode, propertyAssertion, compilerOptions, filename);
             }
         } else {
             if ((<Literal>property.value).value !== propertyAssertion.expectedValue) {
-                reportWrongPropertyValue(context, property, propertyAssertion);
+                reportWrongPropertyValue(context, property, propertyAssertion, filename);
             }
         }
     }
 }
 
-export function isRootTsConfig(propertyNode: Property & Rule.NodeParentExtension): boolean {
+function isRootTsConfig(propertyNode: Property & Rule.NodeParentExtension): boolean {
     const tsConfigRootNode: ObjectExpression = <ObjectExpression>propertyNode.parent;
     return (
         tsConfigRootNode.properties.findIndex((p) => {
@@ -45,56 +47,4 @@ export function isRootTsConfig(propertyNode: Property & Rule.NodeParentExtension
             return false;
         }) === -1
     );
-}
-
-export function findProperty(compilerOptions: (Property | SpreadElement)[], propertyKey: string): Property | undefined {
-    return <Property>compilerOptions.find((o) => {
-        if (o.type === 'Property') {
-            return (<Literal>o.key).value === propertyKey;
-        }
-        return false;
-    });
-}
-
-export function reportMissingProperty(
-    context: Rule.RuleContext,
-    propertyNode: Property & Rule.NodeParentExtension,
-    property: JsonPropertyAssertion,
-    compilerOptions: ObjectExpression
-): void {
-    context.report({
-        node: propertyNode,
-        message: `TS compiler option '${property.key}' is missing!`,
-        fix(fixer) {
-            const properties = compilerOptions.properties;
-            const range = properties[properties.length - 1]?.range;
-            const propertyValue =
-                typeof property.expectedValue === 'string'
-                    ? `"${property.expectedValue}"`
-                    : property.expectedValue.toString();
-            if (range) {
-                return fixer.insertTextAfterRange(range, `,\n        "${property.key}": ${propertyValue}`);
-            } else if (properties.length === 0 && compilerOptions.range) {
-                return fixer.replaceTextRange(compilerOptions.range, `{"${property.key}": ${propertyValue}}`);
-            }
-            return null;
-        },
-    });
-}
-
-export function reportWrongPropertyValue(
-    context: Rule.RuleContext,
-    compilerOption: Property,
-    property: JsonPropertyAssertion
-): void {
-    context.report({
-        node: compilerOption,
-        message: `TS compiler option '${property.key}' must be set to '${property.expectedValue}'!`,
-        fix(fixer) {
-            if (typeof property.expectedValue === 'string') {
-                return fixer.replaceText(compilerOption.value, '"' + property.expectedValue.toString() + '"');
-            }
-            return fixer.replaceText(compilerOption.value, property.expectedValue.toString());
-        },
-    });
 }
