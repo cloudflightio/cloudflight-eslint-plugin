@@ -1,7 +1,7 @@
 import { Rule } from 'eslint';
 import type { Literal, ObjectExpression, Property } from 'estree';
-import { findProperty, reportMissingProperty, reportWrongPropertyValue, validateRootJsonProperty } from '../json-util';
-import { JsonPropertyAssertion } from '../json-property-assertion';
+import { findProperty, reportMissingProperty, reportWrongPropertyValue, validateRootJsonProperty } from './json-util';
+import { JsonPropertyAssertion } from './json-property-assertion';
 
 const filename = 'TS compiler';
 
