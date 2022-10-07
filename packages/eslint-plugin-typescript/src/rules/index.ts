@@ -17,6 +17,7 @@ import { TscNoUncheckedIndexedAccessRule } from './ts-config/tsc-no-unchecked-in
 import { TscNoUnusedLocalsRule } from './ts-config/tsc-no-unused-locals.rule';
 import { TscNoUnusedParametersRule } from './ts-config/tsc-no-unused-parameters.rule';
 import { TscUseDefineForClassFieldsRule } from './ts-config/tsc-use-define-for-class-fields.rule';
+import { NoMomentJsRule } from './no-moment-js';
 
 export const rules: Record<string, Rule.RuleModule> = {
     'package-force-private': PackageForcePrivateRule,
@@ -37,4 +38,5 @@ export const rules: Record<string, Rule.RuleModule> = {
     'tsc-no-unused-parameters': TscNoUnusedParametersRule,
     'tsc-strict': TscStrictRule,
     'tsc-use-define-for-class-fields': TscUseDefineForClassFieldsRule,
+    'no-moment-js': NoMomentJsRule,
 };

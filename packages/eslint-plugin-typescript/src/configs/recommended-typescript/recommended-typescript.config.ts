@@ -2,6 +2,7 @@ import { Linter } from 'eslint';
 import { typescriptEslintRules } from './rules/typescript-eslint';
 import { eslintRules } from './rules/eslint';
 import { importEslintRules } from './rules/import';
+import { customRules } from './rules/custom';
 
 export const RecommendedTypescriptConfig: Linter.BaseConfig = {
     plugins: ['@cloudflight/typescript', '@typescript-eslint', 'import'],
@@ -11,5 +12,6 @@ export const RecommendedTypescriptConfig: Linter.BaseConfig = {
         ...eslintRules,
         ...typescriptEslintRules,
         ...importEslintRules,
+        ...customRules,
     },
 };
