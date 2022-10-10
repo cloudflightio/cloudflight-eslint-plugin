@@ -1,7 +1,7 @@
 import { Rule } from 'eslint';
-import { findProperty, jsonRule, reportMissingProperty, reportWrongPropertyValue } from '../json-util';
+import { findProperty, jsonRule, reportMissingProperty, reportWrongPropertyValue } from '../../util/json-util';
 import type { Literal, ObjectExpression } from 'estree';
-import { JsonPropertyAssertion } from '../json-property-assertion';
+import { JsonPropertyAssertion } from '../../util/json-property-assertion';
 
 const privatePropertyAssertion: JsonPropertyAssertion = {
     key: 'private',

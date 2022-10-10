@@ -1,5 +1,5 @@
 import { Rule } from 'eslint';
-import { tscRule } from './util';
+import { tscRule } from '../../util/tsc-util';
 
 export const TscNoFallThroughCasesInSwitchRule: Rule.RuleModule = {
     create: (context) => tscRule(context, { key: 'noFallthroughCasesInSwitch', expectedValue: true }),
