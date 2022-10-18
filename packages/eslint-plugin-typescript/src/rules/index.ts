@@ -18,9 +18,11 @@ import { TscNoUnusedLocalsRule } from './ts-config/tsc-no-unused-locals.rule';
 import { TscNoUnusedParametersRule } from './ts-config/tsc-no-unused-parameters.rule';
 import { TscUseDefineForClassFieldsRule } from './ts-config/tsc-use-define-for-class-fields.rule';
 import { NoMomentJsRule } from './no-moment-js';
+import { PackageForceAbsoluteVersionDependenciesRule } from './package/package-force-absolute-version-dependencies.rule';
 
 export const rules: Record<string, Rule.RuleModule> = {
     'package-force-private': PackageForcePrivateRule,
+    'package-force-absolute-version-dependencies': PackageForceAbsoluteVersionDependenciesRule,
     'tsc-allow-unreachable-code': TscAllowUnreachableCodeRule,
     'tsc-allow-unused-labels': TscAllowUnusedLabelsRule,
     'tsc-es-module-interop': TscEsModuleInteropRule,
