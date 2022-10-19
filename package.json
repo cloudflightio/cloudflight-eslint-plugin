@@ -38,7 +38,7 @@
         "@types/node": "16.11.6",
         "@typescript-eslint/eslint-plugin": "5.35.1",
         "@typescript-eslint/parser": "5.35.1",
-        "eslint": "8.23.0",
+        "eslint": "8.25.0",
         "eslint-plugin-import": "2.26.0",
         "eslint-plugin-json-es": "1.5.7",
         "husky": "7.0.4",
