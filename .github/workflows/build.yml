@@ -10,7 +10,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v3
-            - uses: volta-cli/action@v2.0.2
+            - uses: volta-cli/action@v4.0.0
             - name: Install
               run: npm ci
             - name: Build
