@@ -27,8 +27,8 @@
         "test": "jest"
     },
     "dependencies": {
-        "@typescript-eslint/eslint-plugin": "5.35.1",
-        "@typescript-eslint/parser": "5.35.1",
+        "@typescript-eslint/eslint-plugin": "5.42.0",
+        "@typescript-eslint/parser": "5.42.0",
         "eslint-plugin-import": "2.26.0",
         "eslint-plugin-json-es": "1.5.7"
     },
@@ -36,9 +36,9 @@
         "eslint": ">=8.0.0 <9.0.0"
     },
     "devDependencies": {
-        "@types/eslint": "8.4.1",
-        "@types/estree": "0.0.50",
-        "@types/node": "16.11.6",
-        "typescript": "4.8.2"
+        "@types/eslint": "8.4.10",
+        "@types/estree": "1.0.0",
+        "@types/node": "16.18.3",
+        "typescript": "4.8.4"
     }
 }
