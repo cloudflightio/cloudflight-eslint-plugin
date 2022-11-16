@@ -23,7 +23,7 @@
         "access": "public"
     },
     "scripts": {
-        "build": "tsc"
+        "build-package": "tsc"
     },
     "dependencies": {
         "@vue/eslint-config-prettier": "7.0.0",
