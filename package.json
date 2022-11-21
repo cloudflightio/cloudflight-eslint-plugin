@@ -4,7 +4,7 @@
     "private": true,
     "volta": {
         "node": "18.12.1",
-        "yarn": "3.2.4"
+        "yarn": "3.3.0"
     },
     "workspaces": [
         "packages/*"
