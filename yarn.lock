@@ -22,6 +22,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@angular-eslint/bundled-angular-compiler@npm:15.0.0":
+  version: 15.0.0
+  resolution: "@angular-eslint/bundled-angular-compiler@npm:15.0.0"
+  checksum: a68d528e8d596e994355f33749a1b20818dd3d0d5724c2e78af0c4349dbd06bc8aa5263d4ae7a5783ea983ba12938644c484624e0ee53d6aa809d8ea990409a3
+  languageName: node
+  linkType: hard
+
 "@angular-eslint/eslint-plugin-template@npm:14.1.2":
   version: 14.1.2
   resolution: "@angular-eslint/eslint-plugin-template@npm:14.1.2"
@@ -51,16 +58,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@angular-eslint/template-parser@npm:14.1.2":
-  version: 14.1.2
-  resolution: "@angular-eslint/template-parser@npm:14.1.2"
+"@angular-eslint/template-parser@npm:15.0.0":
+  version: 15.0.0
+  resolution: "@angular-eslint/template-parser@npm:15.0.0"
   dependencies:
-    "@angular-eslint/bundled-angular-compiler": 14.1.2
-    eslint-scope: ^5.1.0
+    "@angular-eslint/bundled-angular-compiler": 15.0.0
+    eslint-scope: ^7.0.0
   peerDependencies:
-    eslint: ^7.0.0 || ^8.0.0
+    eslint: ^7.20.0 || ^8.0.0
     typescript: "*"
-  checksum: 07a27fcb612212e023f8d65cc344088d4b803839d4a56aeba0e0099d994f0ecfcbde2f163fa6ec117fd099cc35533f6afae42b2daa8463ffeff06cf54431c662
+  checksum: 79c6fcad7d1599604037d096258a899d7333a4abdbe910eac8742230a7aa1d1f965cd6df4187225bb8a91d40b6fc7843dcaf51288d589e9003689744c385a3f5
   languageName: node
   linkType: hard
 
@@ -476,7 +483,7 @@ __metadata:
   dependencies:
     "@angular-eslint/eslint-plugin": 14.1.2
     "@angular-eslint/eslint-plugin-template": 14.1.2
-    "@angular-eslint/template-parser": 14.1.2
+    "@angular-eslint/template-parser": 15.0.0
     typescript: 4.8.4
   peerDependencies:
     "@cloudflight/eslint-plugin-typescript": "workspace:*"
@@ -518,7 +525,7 @@ __metadata:
   dependencies:
     "@angular-eslint/eslint-plugin": 14.1.2
     "@angular-eslint/eslint-plugin-template": 14.1.2
-    "@angular-eslint/template-parser": 14.1.2
+    "@angular-eslint/template-parser": 15.0.0
     "@rushstack/eslint-patch": 1.2.0
     "@types/eslint": 8.4.10
     "@types/estree": 1.0.0
@@ -2457,7 +2464,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-scope@npm:^5.1.0, eslint-scope@npm:^5.1.1":
+"eslint-scope@npm:^5.1.1":
   version: 5.1.1
   resolution: "eslint-scope@npm:5.1.1"
   dependencies:
@@ -2467,7 +2474,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-scope@npm:^7.1.1":
+"eslint-scope@npm:^7.0.0, eslint-scope@npm:^7.1.1":
   version: 7.1.1
   resolution: "eslint-scope@npm:7.1.1"
   dependencies:
@@ -5424,11 +5431,11 @@ __metadata:
 
 "typescript@patch:typescript@4.8.4#~builtin<compat/typescript>":
   version: 4.8.4
-  resolution: "typescript@patch:typescript@npm%3A4.8.4#~builtin<compat/typescript>::version=4.8.4&hash=701156"
+  resolution: "typescript@patch:typescript@npm%3A4.8.4#~builtin<compat/typescript>::version=4.8.4&hash=a1c5e5"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 301459fc3eb3b1a38fe91bf96d98eb55da88a9cb17b4ef80b4d105d620f4d547ba776cc27b44cc2ef58b66eda23fe0a74142feb5e79a6fb99f54fc018a696afa
+  checksum: 563a0ef47abae6df27a9a3ab38f75fc681f633ccf1a3502b1108e252e187787893de689220f4544aaf95a371a4eb3141e4a337deb9895de5ac3c1ca76430e5f0
   languageName: node
   linkType: hard
 

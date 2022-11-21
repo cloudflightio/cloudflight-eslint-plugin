@@ -28,7 +28,7 @@
     "dependencies": {
         "@angular-eslint/eslint-plugin": "14.1.2",
         "@angular-eslint/eslint-plugin-template": "14.1.2",
-        "@angular-eslint/template-parser": "14.1.2"
+        "@angular-eslint/template-parser": "15.0.0"
     },
     "peerDependencies": {
         "@cloudflight/eslint-plugin-typescript": "workspace:*",
