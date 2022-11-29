@@ -14,4 +14,7 @@ module.exports = {
         tsconfigRootDir: __dirname,
         project: ['./packages/*/tsconfig.json', './packages/*/tsconfig.spec.json'],
     },
+    rules: {
+        '@cloudflight/typescript/package-force-absolute-version-dependencies': 'off',
+    },
 };
