@@ -28,12 +28,12 @@
     "dependencies": {
         "@vue/eslint-config-prettier": "^7.0.0",
         "@vue/eslint-config-typescript": "^11.0.2",
-        "eslint-plugin-vue": "^9.7.0"
+        "eslint-plugin-vue": "^9.8.0"
     },
     "peerDependencies": {
         "@cloudflight/eslint-plugin-typescript": "workspace:*",
         "eslint": ">=8.0.0 <9.0.0",
-        "prettier": "^2.7.1"
+        "prettier": "^2.8.0"
     },
     "devDependencies": {
         "typescript": "4.9.3"
