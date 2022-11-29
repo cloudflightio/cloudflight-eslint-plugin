@@ -1,6 +1,6 @@
 {
     "name": "@cloudflight/eslint-plugin-angular",
-    "version": "0.6.1",
+    "version": "0.7.0",
     "description": "Cloudflight eslint-plugin & eslint-config for angular",
     "volta": {
         "extends": "../../package.json"
@@ -26,15 +26,15 @@
         "build-package": "tsc"
     },
     "dependencies": {
-        "@angular-eslint/eslint-plugin": "14.1.2",
-        "@angular-eslint/eslint-plugin-template": "14.1.2",
-        "@angular-eslint/template-parser": "14.1.2"
+        "@angular-eslint/eslint-plugin": "^15.1.0",
+        "@angular-eslint/eslint-plugin-template": "^15.1.0",
+        "@angular-eslint/template-parser": "^15.1.0"
     },
     "peerDependencies": {
         "@cloudflight/eslint-plugin-typescript": "workspace:*",
         "eslint": ">=8.0.0 <9.0.0"
     },
     "devDependencies": {
-        "typescript": "4.8.4"
+        "typescript": "4.9.3"
     }
 }
