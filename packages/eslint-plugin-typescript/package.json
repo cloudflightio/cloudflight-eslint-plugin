@@ -27,7 +27,7 @@
         "test-package": "jest"
     },
     "dependencies": {
-        "@typescript-eslint/eslint-plugin": "^5.45.0",
+        "@typescript-eslint/eslint-plugin": "^5.46.1",
         "@typescript-eslint/parser": "^5.45.0",
         "eslint-plugin-import": "2.26.0",
         "eslint-plugin-json-es": "1.5.7"
