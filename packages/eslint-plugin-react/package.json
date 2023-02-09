@@ -1,0 +1,40 @@
+{
+    "name": "@cloudflight/eslint-plugin-react",
+    "version": "0.1.0",
+    "description": "Cloudflight eslint-plugin & eslint-config for React",
+    "volta": {
+        "extends": "../../package.json"
+    },
+    "keywords": [
+        "eslint",
+        "eslintplugin"
+    ],
+    "homepage": "https://github.com/cloudflightio/cloudflight-eslint-plugin",
+    "bugs": {
+        "url": "https://github.com/cloudflightio/cloudflight-eslint-plugin/issues"
+    },
+    "author": "Cloudflight GmbH",
+    "license": "Apache-2.0",
+    "main": "./dist/index.js",
+    "files": [
+        "dist/**"
+    ],
+    "publishConfig": {
+        "access": "public"
+    },
+    "scripts": {
+        "build-package": "tsc"
+    },
+    "dependencies": {
+        "eslint-plugin-jsx-a11y": "^6.6.1",
+        "eslint-plugin-react": "^7.31.11",
+        "eslint-plugin-react-hooks": "^4.6.0"
+    },
+    "peerDependencies": {
+        "@cloudflight/eslint-plugin-typescript": "workspace:*",
+        "eslint": ">=8.0.0 <9.0.0"
+    },
+    "devDependencies": {
+        "typescript": "4.9.3"
+    }
+}
