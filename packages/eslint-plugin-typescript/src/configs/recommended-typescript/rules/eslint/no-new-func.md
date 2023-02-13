@@ -1,1 +1,0 @@
-### eslint/no-new-func
