@@ -1,1 +1,0 @@
-### eslint/no-extra-semi
