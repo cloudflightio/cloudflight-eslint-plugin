@@ -49,4 +49,34 @@ export const eslintRules: Linter.RulesRecord = {
     radix: ['error'],
     'require-yield': ['error'],
     'use-isnan': ['error'],
+    'func-style': ['error', 'declaration'],
+    'no-restricted-syntax': [
+        'error',
+        {
+            selector: 'LabeledStatement',
+            message: 'Labels are a form of GOTO; using them makes code confusing and hard to maintain and understand.',
+        },
+        {
+            selector: 'WithStatement',
+            message: '`with` is disallowed in strict mode because it makes code impossible to predict and optimize.',
+        },
+    ],
+    'no-constructor-return': ['error'],
+    'no-magic-numbers': [
+        'error',
+        {
+            ignore: [
+                -1, // allow findIndex negative result
+                0, // allow initial number value
+                1, // allow typical increment
+                2, // allow typical divide by half
+                10, // allow typical parseInt radix
+                1000, // allow typical timestamp divider
+            ],
+            ignoreDefaultValues: true,
+            ignoreArrayIndexes: true,
+            enforceConst: true,
+            detectObjects: false,
+        },
+    ],
 };

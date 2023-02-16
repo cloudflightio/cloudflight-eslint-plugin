@@ -1,6 +1,6 @@
-# `@cloudflight/eslint-plugin-vue`
+# `@cloudflight/eslint-plugin-node`
 
-The Cloudflight ESLint Plugin for Vue provides multiple configurations of ESLint rules recommended by Cloudflight.
+The Cloudflight ESLint Plugin for Node provides multiple configurations of ESLint rules recommended by Cloudflight.
 
 You can find the directory of all rules including their reasoning [here](src/configs).
 
@@ -21,15 +21,15 @@ In your `package.json` add the following:
 ```
 "devDependencies": {
     ...
-    "@cloudflight/eslint-plugin-vue": "<version>",
+    "@cloudflight/eslint-plugin-node": "<version>",
     ...
   }
 ```
 
 The plugin provides 1 configuration:
 
--   @cloudflight/vue/recommended
-    -   Contains rules for Vuejs files
+-   @cloudflight/node/recommended
+    -   Contains rules for Node files
 
 Now open your `.eslintrc.js` and add one of the configurations:
 
@@ -38,7 +38,7 @@ require('@rushstack/eslint-patch/modern-module-resolution');
 
 module.exports = {
     ...
-    extends: ['plugin:@cloudflight/vue/recommended'],
+    extends: ['plugin:@cloudflight/node/recommended'],
     ...
 };
 ```
