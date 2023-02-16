@@ -62,12 +62,6 @@ export const eslintRules: Linter.RulesRecord = {
         },
     ],
     'no-constructor-return': ['error'],
-    'no-else-return': [
-        'error',
-        {
-            allowElseIf: true,
-        },
-    ],
     'no-magic-numbers': [
         'error',
         {
