@@ -10,7 +10,7 @@ const privatePropertyAssertion: JsonPropertyAssertion = {
 
 export const PackageForcePrivateRule: Rule.RuleModule = {
     create: (context) => {
-        const ignorePublished = context.options[0]?.ignorePublished ?? true;
+        const ignorePublished: boolean = context.options[0]?.ignorePublished ?? true;
         if (!ignorePublished) {
             return jsonRule(context, privatePropertyAssertion, 'package.json');
         } else {
@@ -19,7 +19,7 @@ export const PackageForcePrivateRule: Rule.RuleModule = {
                     const jsonRootObject = program.body[0] as unknown as ObjectExpression | undefined;
                     if (program.body.length === 1 && jsonRootObject?.type === 'ObjectExpression') {
                         const privateProperty = findProperty(jsonRootObject.properties, 'private');
-                        const privateValue = !!(<Literal>privateProperty?.value)?.value;
+                        const privateValue = (<Literal>privateProperty?.value)?.value === true;
                         const publishConfigProperty = findProperty(jsonRootObject.properties, 'publishConfig');
 
                         const isPublic = !privateProperty || !privateValue;
