@@ -18,7 +18,7 @@ export const PackageForceAbsoluteVersionDependenciesRule: Rule.RuleModule = {
                 const foundVersion = (propertyValue.match(semVerRegex) ?? [])[0];
                 const isAnyVersion = propertyValue === JSON.stringify('*') || propertyValue === JSON.stringify('');
 
-                if (!(foundVersion || isAnyVersion)) {
+                if (!(foundVersion != null || foundVersion !== '' || isAnyVersion)) {
                     return;
                 }
 
@@ -34,7 +34,13 @@ export const PackageForceAbsoluteVersionDependenciesRule: Rule.RuleModule = {
                     const isAbsoluteVersion =
                         propertyValue.length === JSON.stringify(foundVersion).length && !propertyValue.includes('x');
 
-                    if (!isAbsoluteVersion && dependencyContext && propertyName) {
+                    if (
+                        !isAbsoluteVersion &&
+                        dependencyContext != null &&
+                        dependencyContext !== '' &&
+                        propertyName != null &&
+                        propertyName !== ''
+                    ) {
                         reportWrongPropertyValue(
                             context,
                             propertyNode,

@@ -36,7 +36,7 @@ export function findProperty(properties: (Property | SpreadElement)[], propertyK
 export function findPropertyPath(propertyNode: Property & Rule.NodeParentExtension): string {
     let key = getPropertyName(propertyNode) ?? '';
 
-    if (propertyNode.parent) {
+    if (propertyNode.parent != null) {
         let parent: (Property & Rule.NodeParentExtension) | undefined;
         if (propertyNode.parent.type === 'Property') {
             parent = propertyNode.parent;
