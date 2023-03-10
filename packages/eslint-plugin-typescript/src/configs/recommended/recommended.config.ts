@@ -8,7 +8,7 @@ export const RecommendedConfig: Linter.BaseConfig = {
             extends: ['plugin:@cloudflight/typescript/recommended-json'],
         },
         {
-            files: ['*.ts'],
+            files: ['*.ts', '*.tsx'],
             extends: ['plugin:@cloudflight/typescript/recommended-typescript'],
         },
         {
