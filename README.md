@@ -6,6 +6,7 @@
 [![@cloudflight/eslint-plugin-angular](https://img.shields.io/npm/v/@cloudflight/eslint-plugin-angular?label=@cloudflight/eslint-plugin-angular)](https://www.npmjs.com/package/@cloudflight/eslint-plugin-angular)
 [![@cloudflight/eslint-plugin-vue](https://img.shields.io/npm/v/@cloudflight/eslint-plugin-vue?label=@cloudflight/eslint-plugin-vue)](https://www.npmjs.com/package/@cloudflight/eslint-plugin-vue)
 [![@cloudflight/eslint-plugin-react](https://img.shields.io/npm/v/@cloudflight/eslint-plugin-react?label=@cloudflight/eslint-plugin-react)](https://www.npmjs.com/package/@cloudflight/eslint-plugin-react)
+[![@cloudflight/eslint-plugin-node](https://img.shields.io/npm/v/@cloudflight/eslint-plugin-node?label=@cloudflight/eslint-plugin-node)](https://www.npmjs.com/package/@cloudflight/eslint-plugin-node)
 
 This repository contains multiple ESLint plugins & configs to enforce rules for clean code across Cloudflight projects.
 
@@ -17,6 +18,7 @@ Please refer to the README's of each plugin to get started:
 -   [@cloudflight/eslint-plugin-typescript](packages/eslint-plugin-typescript/README.md)
 -   [@cloudflight/eslint-plugin-vue](packages/eslint-plugin-vue/README.md)
 -   [@cloudflight/eslint-plugin-react](packages/eslint-plugin-react/README.md)
+-   [@cloudflight/eslint-plugin-node](packages/eslint-plugin-node/README.md)
 
 ## Contributing
 
