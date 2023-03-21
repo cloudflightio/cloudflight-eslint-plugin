@@ -36,7 +36,6 @@ export const eslintRules: Linter.RulesRecord = {
     'no-self-assign': ['error'],
     'no-self-compare': ['error'],
     'no-sequences': ['error'],
-    'no-trailing-spaces': ['error'],
     'no-unsafe-finally': ['error'],
     'no-unsafe-negation': ['error'],
     'no-unused-labels': ['error'],
