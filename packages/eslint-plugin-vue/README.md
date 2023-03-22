@@ -9,7 +9,7 @@ You can find the directory of all rules including their reasoning [here](src/con
 The following dependencies are required:
 
 ```
-"@cloudflight/eslint-plugin-typescript": ">=0.11.0",
+"@cloudflight/eslint-plugin-typescript": ">=0.12.0",
 "@rushstack/eslint-patch": "1.2.0",
 "eslint": ">=8.0.0 <9.0.0"
 ```
@@ -39,6 +39,9 @@ require('@rushstack/eslint-patch/modern-module-resolution');
 module.exports = {
     ...
     extends: ['plugin:@cloudflight/vue/recommended'],
+    parserOptions: {
+        parser: '@typescript-eslint/parser',
+    },
     ...
 };
 ```

@@ -1,4 +1,5 @@
 import { Linter } from 'eslint';
+import { configs } from '@cloudflight/eslint-plugin-typescript';
 
 export const RecommendedConfig: Linter.BaseConfig = {
     extends: [
@@ -7,7 +8,7 @@ export const RecommendedConfig: Linter.BaseConfig = {
         '@vue/eslint-config-typescript',
         '@vue/eslint-config-prettier',
     ],
-    rules: {
+    rules: Object.assign({}, configs['recommended-typescript']?.rules ?? {}, {
         'vue/block-lang': [
             'error',
             {
@@ -31,5 +32,5 @@ export const RecommendedConfig: Linter.BaseConfig = {
         'vue/html-button-has-type': 'error',
         'vue/no-ref-object-destructure': 'error',
         'vue/no-undef-properties': 'error',
-    },
+    }),
 };
