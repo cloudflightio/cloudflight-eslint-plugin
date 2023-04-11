@@ -14,8 +14,6 @@ import { TscNoImplicitOverrideRule } from './ts-config/tsc-no-implicit-override.
 import { TscNoImplicitReturnsRule } from './ts-config/tsc-no-implicit-returns.rule';
 import { TscNoPropertyAccessFromIndexSignatureRule } from './ts-config/tsc-no-property-access-from-index-signature.rule';
 import { TscNoUncheckedIndexedAccessRule } from './ts-config/tsc-no-unchecked-indexed-access.rule';
-import { TscNoUnusedLocalsRule } from './ts-config/tsc-no-unused-locals.rule';
-import { TscNoUnusedParametersRule } from './ts-config/tsc-no-unused-parameters.rule';
 import { TscUseDefineForClassFieldsRule } from './ts-config/tsc-use-define-for-class-fields.rule';
 import { NoMomentJsRule } from './no-moment-js';
 import { PackageForceAbsoluteVersionDependenciesRule } from './package/package-force-absolute-version-dependencies.rule';
@@ -36,8 +34,6 @@ export const rules: Record<string, Rule.RuleModule> = {
     'tsc-no-implicit-returns': TscNoImplicitReturnsRule,
     'tsc-no-property-access-from-index-signature': TscNoPropertyAccessFromIndexSignatureRule,
     'tsc-no-unchecked-indexed-access': TscNoUncheckedIndexedAccessRule,
-    'tsc-no-unused-locals': TscNoUnusedLocalsRule,
-    'tsc-no-unused-parameters': TscNoUnusedParametersRule,
     'tsc-strict': TscStrictRule,
     'tsc-use-define-for-class-fields': TscUseDefineForClassFieldsRule,
     'no-moment-js': NoMomentJsRule,

@@ -16,8 +16,6 @@ export const customRules: Linter.RulesRecord = {
     [`${pluginPrefix}/tsc-no-implicit-returns`]: ['error'],
     [`${pluginPrefix}/tsc-no-property-access-from-index-signature`]: ['error'],
     [`${pluginPrefix}/tsc-no-unchecked-indexed-access`]: ['error'],
-    [`${pluginPrefix}/tsc-no-unused-locals`]: ['error'],
-    [`${pluginPrefix}/tsc-no-unused-parameters`]: ['error'],
     [`${pluginPrefix}/tsc-strict`]: ['error'],
     [`${pluginPrefix}/tsc-use-define-for-class-fields`]: ['error'],
 };
