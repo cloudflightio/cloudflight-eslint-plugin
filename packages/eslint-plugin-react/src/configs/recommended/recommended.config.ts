@@ -25,5 +25,6 @@ export const RecommendedConfig: Linter.BaseConfig = {
                 ],
             },
         ],
+        'react/no-array-index-key': ['error'],
     },
 };
