@@ -659,6 +659,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@cloudflight/prettier-config@workspace:packages/prettier-config":
+  version: 0.0.0-use.local
+  resolution: "@cloudflight/prettier-config@workspace:packages/prettier-config"
+  peerDependencies:
+    prettier: ">=2.0.0 <3.0.0"
+  languageName: unknown
+  linkType: soft
+
 "@cspotcode/source-map-support@npm:^0.8.0":
   version: 0.8.1
   resolution: "@cspotcode/source-map-support@npm:0.8.1"
