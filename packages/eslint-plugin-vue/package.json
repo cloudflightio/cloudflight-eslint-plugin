@@ -26,7 +26,7 @@
         "build-package": "tsc"
     },
     "dependencies": {
-        "@vue/eslint-config-prettier": "^7.0.0",
+        "@vue/eslint-config-prettier": "^7.1.0",
         "@vue/eslint-config-typescript": "^11.0.2",
         "eslint-plugin-vue": "^9.8.0"
     },
