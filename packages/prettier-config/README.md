@@ -28,6 +28,6 @@ Now open your `.prettierrc.cjs` and add the following:
 
 ```
 module.exports = {
-    ...require('@cloudflight/prettier-config/src'),
+    ...require('@cloudflight/prettier-config'),
 };
 ```
