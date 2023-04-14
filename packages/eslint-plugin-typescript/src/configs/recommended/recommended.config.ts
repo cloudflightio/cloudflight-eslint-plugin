@@ -1,6 +1,7 @@
-import { Linter } from 'eslint';
+import {Linter} from 'eslint';
 
 export const RecommendedConfig: Linter.BaseConfig = {
+    extends: ['prettier'],
     plugins: ['@cloudflight/typescript'],
     overrides: [
         {
