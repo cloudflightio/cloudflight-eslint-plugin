@@ -561,6 +561,7 @@ __metadata:
   peerDependencies:
     "@cloudflight/eslint-plugin-typescript": "workspace:*"
     eslint: ">=8.0.0 <9.0.0"
+    prettier: ^2.8.7
   languageName: unknown
   linkType: soft
 
@@ -575,6 +576,7 @@ __metadata:
   peerDependencies:
     "@cloudflight/eslint-plugin-typescript": "workspace:*"
     eslint: ">=8.0.0 <9.0.0"
+    prettier: ^2.8.7
   languageName: unknown
   linkType: soft
 
@@ -589,6 +591,7 @@ __metadata:
   peerDependencies:
     "@cloudflight/eslint-plugin-typescript": "workspace:*"
     eslint: ">=8.0.0 <9.0.0"
+    prettier: ^2.8.7
   languageName: unknown
   linkType: soft
 
@@ -598,12 +601,14 @@ __metadata:
   dependencies:
     "@typescript-eslint/eslint-plugin": ^5.45.0
     "@typescript-eslint/parser": ^5.45.0
+    eslint-config-prettier: ^8.8.0
     eslint-plugin-import: ^2.26.0
     eslint-plugin-json-es: ^1.5.7
     eslint-plugin-rxjs: ^5.0.3
     typescript: 5.0.3
   peerDependencies:
     eslint: ">=8.0.0 <9.0.0"
+    prettier: ^2.8.7
   languageName: unknown
   linkType: soft
 
@@ -618,7 +623,7 @@ __metadata:
   peerDependencies:
     "@cloudflight/eslint-plugin-typescript": "workspace:*"
     eslint: ">=8.0.0 <9.0.0"
-    prettier: ^2.8.0
+    prettier: ^2.8.7
   languageName: unknown
   linkType: soft
 
@@ -639,6 +644,7 @@ __metadata:
     "@vue/eslint-config-prettier": 7.1.0
     "@vue/eslint-config-typescript": 11.0.2
     eslint: 8.37.0
+    eslint-config-prettier: 8.8.0
     eslint-plugin-import: 2.27.5
     eslint-plugin-json-es: 1.5.7
     eslint-plugin-jsx-a11y: 6.7.1
@@ -2883,6 +2889,17 @@ __metadata:
   version: 4.0.0
   resolution: "escape-string-regexp@npm:4.0.0"
   checksum: 98b48897d93060f2322108bf29db0feba7dd774be96cd069458d1453347b25ce8682ecc39859d4bca2203cc0ab19c237bcc71755eff49a0f8d90beadeeba5cc5
+  languageName: node
+  linkType: hard
+
+"eslint-config-prettier@npm:8.8.0, eslint-config-prettier@npm:^8.8.0":
+  version: 8.8.0
+  resolution: "eslint-config-prettier@npm:8.8.0"
+  peerDependencies:
+    eslint: ">=7.0.0"
+  bin:
+    eslint-config-prettier: bin/cli.js
+  checksum: 1e94c3882c4d5e41e1dcfa2c368dbccbfe3134f6ac7d40101644d3bfbe3eb2f2ffac757f3145910b5eacf20c0e85e02b91293d3126d770cbf3dc390b3564681c
   languageName: node
   linkType: hard
 
