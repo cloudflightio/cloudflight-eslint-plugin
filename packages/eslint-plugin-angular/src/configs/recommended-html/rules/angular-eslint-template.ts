@@ -1,4 +1,4 @@
-import { Linter } from 'eslint';
+import {Linter} from 'eslint';
 
 const pluginPrefix = '@angular-eslint/template';
 
@@ -18,7 +18,13 @@ export const angularTemplateEslintRules: Linter.RulesRecord = {
         },
     ],
     [`${pluginPrefix}/no-any`]: ['error'],
-    [`${pluginPrefix}/no-call-expression`]: ['error'],
+    [`${pluginPrefix}/no-call-expression`]: [
+        'error',
+        {
+            // support for transloco
+            allowList: ['t'],
+        },
+    ],
     [`${pluginPrefix}/no-duplicate-attributes`]: ['error'],
     [`${pluginPrefix}/no-inline-styles`]: ['error'],
     [`${pluginPrefix}/no-interpolation-in-attributes`]: ['error'],
