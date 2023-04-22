@@ -1,4 +1,4 @@
-import { Linter } from 'eslint';
+import {Linter} from 'eslint';
 
 export const RecommendedConfig: Linter.BaseConfig = {
     extends: [
@@ -19,5 +19,21 @@ export const RecommendedConfig: Linter.BaseConfig = {
 
         // disallow use of synchronous methods (off by default)
         'node/no-sync': 'error',
+
+        // we use typescript, which transpiles es-syntax to cjs-syntax
+        'node/no-unsupported-features/es-syntax': 'off',
+
+        // we use typescript, so node-builtins are typed and checked via TS
+        'node/no-unsupported-features/node-builtins': 'off',
+
+        // allow ".ts" extension, as we use typescript by default
+        'node/no-missing-import': [
+            'error',
+            {
+                allowModules: [],
+                resolvePaths: [],
+                tryExtensions: ['.js', '.json', '.node', '.ts'],
+            },
+        ],
     },
 };
