@@ -18,6 +18,7 @@ import {TscUseDefineForClassFieldsRule} from './ts-config/tsc-use-define-for-cla
 import {NoMomentJsRule} from './no-moment-js';
 import {PackageForceAbsoluteVersionDependenciesRule} from './package/package-force-absolute-version-dependencies.rule';
 import {NoPromiseAllRule} from './no-promise-all';
+import {NoOnEventAssign} from './no-on-event-assign';
 
 export const rules: Record<string, Rule.RuleModule> = {
     'package-force-private': PackageForcePrivateRule,
@@ -39,4 +40,5 @@ export const rules: Record<string, Rule.RuleModule> = {
     'tsc-use-define-for-class-fields': TscUseDefineForClassFieldsRule,
     'no-moment-js': NoMomentJsRule,
     'no-promise-all': NoPromiseAllRule,
+    'no-on-event-assign': NoOnEventAssign,
 };
