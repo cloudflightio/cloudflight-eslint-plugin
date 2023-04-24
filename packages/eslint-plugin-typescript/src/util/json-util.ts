@@ -1,6 +1,6 @@
-import { Rule } from 'eslint';
-import type { Literal, Node, ObjectExpression, Program, Property, SpreadElement } from 'estree';
-import { JsonPropertyAssertion } from './json-property-assertion';
+import {Rule} from 'eslint';
+import type {Literal, Node, ObjectExpression, Program, Property, SpreadElement} from 'estree';
+import {JsonPropertyAssertion} from './json-property-assertion';
 
 /**
  * Create a new rule validating a property value of a given json file.
@@ -9,11 +9,7 @@ import { JsonPropertyAssertion } from './json-property-assertion';
  * @param ruleContextName A human readable string to identify the context of the evaluated rule used for error messages.
  * Could be a filename, eg `package.json`, or some logical structure inside a file, eg `compiler options`.
  */
-export function jsonRule(
-    context: Rule.RuleContext,
-    propertyAssertion: JsonPropertyAssertion,
-    ruleContextName: string
-): Rule.RuleListener {
+export function jsonRule(context: Rule.RuleContext, propertyAssertion: JsonPropertyAssertion, ruleContextName: string): Rule.RuleListener {
     return {
         Property(propertyNode) {
             validateProperty(propertyNode, propertyAssertion, context, ruleContextName);
@@ -61,7 +57,7 @@ export function reportMissingProperty(
     propertyNode: Node,
     property: JsonPropertyAssertion,
     parent: ObjectExpression | undefined,
-    ruleContextName: string
+    ruleContextName: string,
 ): void {
     context.report({
         node: propertyNode,
@@ -88,7 +84,7 @@ export function reportWrongPropertyValue(
     context: Rule.RuleContext,
     target: Property,
     property: JsonPropertyAssertion,
-    ruleContextName: string
+    ruleContextName: string,
 ): void {
     context.report({
         node: target,
@@ -101,32 +97,38 @@ export function validateRootJsonProperty(
     jsonRoot: Program,
     propertyAssertion: JsonPropertyAssertion,
     context: Rule.RuleContext,
-    ruleContextName: string
+    ruleContextName: string,
 ): void {
     // For whatever reason the TSCompiler cannot deduce that elements inside body can be of type ObjectExpression, so we cast via unknown
     const jsonRootObject = jsonRoot.body[0] as unknown as ObjectExpression | undefined;
-    if (jsonRoot.body.length === 1 && jsonRootObject?.type === 'ObjectExpression') {
-        const firstPath = propertyAssertion.key.split('.')[0] ?? '';
-        const firstProperty = findProperty(jsonRootObject.properties, firstPath);
-        if (!firstProperty) {
-            const assertion =
-                firstPath === propertyAssertion.key
-                    ? propertyAssertion
-                    : {
-                          key: firstPath,
-                          expectedValue: {},
-                      };
 
-            reportMissingProperty(context, jsonRoot, assertion, jsonRootObject, ruleContextName);
-        }
+    if (jsonRoot.body.length !== 1 || jsonRootObject?.type !== 'ObjectExpression') {
+        return;
     }
+
+    const firstPath = propertyAssertion.key.split('.')[0] ?? '';
+    const firstProperty = findProperty(jsonRootObject.properties, firstPath);
+
+    if (firstProperty != null) {
+        return;
+    }
+
+    const assertion =
+        firstPath === propertyAssertion.key
+            ? propertyAssertion
+            : {
+                  key: firstPath,
+                  expectedValue: {},
+              };
+
+    reportMissingProperty(context, jsonRoot, assertion, jsonRootObject, ruleContextName);
 }
 
 function validateProperty(
     propertyNode: Property & Rule.NodeParentExtension,
     propertyAssertion: JsonPropertyAssertion,
     context: Rule.RuleContext,
-    ruleContextName: string
+    ruleContextName: string,
 ): void {
     const propertyPath = findPropertyPath(propertyNode);
     if (propertyPath === propertyAssertion.key) {
@@ -146,7 +148,7 @@ function validateProperty(
                         expectedValue: {},
                     },
                     propertyNode.value,
-                    ruleContextName
+                    ruleContextName,
                 );
             }
         }
