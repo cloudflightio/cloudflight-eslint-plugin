@@ -26,8 +26,8 @@
         "build-package": "tsc"
     },
     "dependencies": {
-        "eslint-plugin-jsx-a11y": "^6.6.1",
-        "eslint-plugin-react": "^7.31.11",
+        "eslint-plugin-jsx-a11y": "^6.7.1",
+        "eslint-plugin-react": "^7.32.2",
         "eslint-plugin-react-hooks": "^4.6.0"
     },
     "peerDependencies": {
@@ -36,6 +36,6 @@
         "prettier": "^2.8.7"
     },
     "devDependencies": {
-        "typescript": "4.9.5"
+        "typescript": "5.0.4"
     }
 }

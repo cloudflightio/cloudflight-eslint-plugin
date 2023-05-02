@@ -26,9 +26,9 @@
         "build-package": "tsc"
     },
     "dependencies": {
-        "@vue/eslint-config-prettier": "^7.0.0",
-        "@vue/eslint-config-typescript": "^11.0.2",
-        "eslint-plugin-vue": "^9.8.0"
+        "@vue/eslint-config-prettier": "^7.1.0",
+        "@vue/eslint-config-typescript": "^11.0.3",
+        "eslint-plugin-vue": "^9.11.0"
     },
     "peerDependencies": {
         "@cloudflight/eslint-plugin-typescript": "workspace:*",
@@ -36,6 +36,6 @@
         "prettier": "^2.8.7"
     },
     "devDependencies": {
-        "typescript": "4.9.5"
+        "typescript": "5.0.4"
     }
 }
