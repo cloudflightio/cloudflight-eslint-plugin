@@ -27,7 +27,7 @@
     },
     "dependencies": {
         "@vue/eslint-config-prettier": "^7.0.0",
-        "@vue/eslint-config-typescript": "^11.0.2",
+        "@vue/eslint-config-typescript": "^11.0.3",
         "eslint-plugin-vue": "^9.8.0"
     },
     "peerDependencies": {
