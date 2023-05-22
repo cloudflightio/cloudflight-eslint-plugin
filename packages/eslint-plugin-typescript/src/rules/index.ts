@@ -17,7 +17,6 @@ import {TscNoUncheckedIndexedAccessRule} from './ts-config/tsc-no-unchecked-inde
 import {TscUseDefineForClassFieldsRule} from './ts-config/tsc-use-define-for-class-fields.rule';
 import {NoMomentJsRule} from './no-moment-js';
 import {PackageForceAbsoluteVersionDependenciesRule} from './package/package-force-absolute-version-dependencies.rule';
-import {NoPromiseAllRule} from './no-promise-all';
 import {NoOnEventAssign} from './no-on-event-assign';
 
 export const rules: Record<string, Rule.RuleModule> = {
@@ -39,6 +38,5 @@ export const rules: Record<string, Rule.RuleModule> = {
     'tsc-strict': TscStrictRule,
     'tsc-use-define-for-class-fields': TscUseDefineForClassFieldsRule,
     'no-moment-js': NoMomentJsRule,
-    'no-promise-all': NoPromiseAllRule,
     'no-on-event-assign': NoOnEventAssign,
 };
