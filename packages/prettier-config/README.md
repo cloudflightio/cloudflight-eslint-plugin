@@ -24,10 +24,8 @@ In your `package.json` add the following:
   }
 ```
 
-Now open your `.prettierrc.cjs` and add the following:
+Now open your `.prettierrc` and add the following:
 
 ```
-module.exports = {
-    ...require('@cloudflight/prettier-config'),
-};
+"@cloudflight/prettier-config"
 ```
