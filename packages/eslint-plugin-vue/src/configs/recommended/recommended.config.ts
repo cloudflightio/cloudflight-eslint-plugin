@@ -1,5 +1,5 @@
-import { Linter } from 'eslint';
-import { configs } from '@cloudflight/eslint-plugin-typescript';
+import {Linter} from 'eslint';
+import {configs} from '@cloudflight/eslint-plugin-typescript';
 
 export const RecommendedConfig: Linter.BaseConfig = {
     extends: [

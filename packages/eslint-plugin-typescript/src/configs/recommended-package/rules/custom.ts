@@ -1,4 +1,4 @@
-import { Linter } from 'eslint';
+import {Linter} from 'eslint';
 
 const pluginPrefix = '@cloudflight/typescript';
 

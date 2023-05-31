@@ -1,7 +1,7 @@
-import { Rule } from 'eslint';
-import type { Literal, ObjectExpression, Property } from 'estree';
-import { findProperty, reportMissingProperty, reportWrongPropertyValue, validateRootJsonProperty } from './json-util';
-import { JsonPropertyAssertion } from './json-property-assertion';
+import {Rule} from 'eslint';
+import type {Literal, ObjectExpression, Property} from 'estree';
+import {findProperty, reportMissingProperty, reportWrongPropertyValue, validateRootJsonProperty} from './json-util';
+import {JsonPropertyAssertion} from './json-property-assertion';
 
 const filename = 'TS compiler';
 
@@ -11,7 +11,7 @@ export function tscRule(context: Rule.RuleContext, propertyAssertion: JsonProper
             validateProperty(propertyNode, propertyAssertion, context);
         },
         Program(jsonRoot) {
-            validateRootJsonProperty(jsonRoot, { key: 'compilerOptions', expectedValue: {} }, context, 'TS Config');
+            validateRootJsonProperty(jsonRoot, {key: 'compilerOptions', expectedValue: {}}, context, 'TS Config');
         },
     };
 }
@@ -19,7 +19,7 @@ export function tscRule(context: Rule.RuleContext, propertyAssertion: JsonProper
 function validateProperty(
     propertyNode: Property & Rule.NodeParentExtension,
     propertyAssertion: JsonPropertyAssertion,
-    context: Rule.RuleContext
+    context: Rule.RuleContext,
 ): void {
     if ((<Literal>propertyNode.key).value === 'compilerOptions') {
         const compilerOptions = <ObjectExpression>propertyNode.value;
