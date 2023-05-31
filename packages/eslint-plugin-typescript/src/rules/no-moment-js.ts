@@ -1,4 +1,4 @@
-import { Rule } from 'eslint';
+import {Rule} from 'eslint';
 
 const message = 'Momentjs is deprecated. It is recommended to use luxon or date-fns instead.';
 
@@ -7,12 +7,12 @@ export const NoMomentJsRule: Rule.RuleModule = {
         return {
             ImportExpression(node) {
                 if (node.source.type === 'Literal' && node.source.value === 'moment') {
-                    context.report({ node, message });
+                    context.report({node, message});
                 }
             },
             ImportDeclaration(node) {
                 if (node.source.type === 'Literal' && node.source.value === 'moment') {
-                    context.report({ node, message });
+                    context.report({node, message});
                 }
             },
             CallExpression(node) {
@@ -23,7 +23,7 @@ export const NoMomentJsRule: Rule.RuleModule = {
                 const sourceToRequire = node.arguments[0];
 
                 if (sourceToRequire?.type === 'Literal' && sourceToRequire.value === 'moment') {
-                    context.report({ node, message });
+                    context.report({node, message});
                 }
             },
         };

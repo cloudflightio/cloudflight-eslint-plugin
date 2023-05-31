@@ -1,5 +1,5 @@
-import { Rule } from 'eslint';
-import { findPropertyPath, getPropertyName, reportWrongPropertyValue } from '../../util/json-util';
+import {Rule} from 'eslint';
+import {findPropertyPath, getPropertyName, reportWrongPropertyValue} from '../../util/json-util';
 
 const semVerRegex = /\d+\.(\d+|x)\.(\d+|x)/;
 
@@ -31,8 +31,7 @@ export const PackageForceAbsoluteVersionDependenciesRule: Rule.RuleModule = {
                         message: `${dependencyContext} option '${propertyName}' must be set to an absolute version!`,
                     });
                 } else if (foundVersion != null && foundVersion !== '') {
-                    const isAbsoluteVersion =
-                        propertyValue.length === JSON.stringify(foundVersion).length && !propertyValue.includes('x');
+                    const isAbsoluteVersion = propertyValue.length === JSON.stringify(foundVersion).length && !propertyValue.includes('x');
 
                     if (
                         !isAbsoluteVersion &&
@@ -48,7 +47,7 @@ export const PackageForceAbsoluteVersionDependenciesRule: Rule.RuleModule = {
                                 key: propertyName,
                                 expectedValue: foundVersion.replace(/x/g, '0'),
                             },
-                            dependencyContext
+                            dependencyContext,
                         );
                     }
                 }

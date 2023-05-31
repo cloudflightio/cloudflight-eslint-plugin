@@ -1,8 +1,8 @@
-import { Rule } from 'eslint';
-import { tscRule } from '../../util/tsc-util';
+import {Rule} from 'eslint';
+import {tscRule} from '../../util/tsc-util';
 
 export const TscNoImplicitReturnsRule: Rule.RuleModule = {
-    create: (context) => tscRule(context, { key: 'noImplicitReturns', expectedValue: true }),
+    create: (context) => tscRule(context, {key: 'noImplicitReturns', expectedValue: true}),
     meta: {
         type: 'problem',
         fixable: 'code',

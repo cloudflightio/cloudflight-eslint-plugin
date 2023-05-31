@@ -1,5 +1,5 @@
-import { Linter } from 'eslint';
-import { customRules } from './rules/custom';
+import {Linter} from 'eslint';
+import {customRules} from './rules/custom';
 
 export const RecommendedJsonConfig: Linter.BaseConfig = {
     plugins: ['@cloudflight/typescript'],

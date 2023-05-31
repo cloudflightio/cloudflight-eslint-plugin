@@ -1,5 +1,5 @@
-import { RuleTester } from 'eslint';
-import { PackageForceAbsoluteVersionDependenciesRule } from './package-force-absolute-version-dependencies.rule';
+import {RuleTester} from 'eslint';
+import {PackageForceAbsoluteVersionDependenciesRule} from './package-force-absolute-version-dependencies.rule';
 
 const ruleTester = new RuleTester({
     parser: require.resolve('eslint-plugin-json-es'),
@@ -35,72 +35,72 @@ ruleTester.run('package-force-absolute-version-dependencies', PackageForceAbsolu
         {
             code: '{"dependencies": { "dependency": ">1.0.0"}}',
             output: '{"dependencies": { "dependency": "1.0.0"}}',
-            errors: [{ message: `dependencies option 'dependency' must be set to '1.0.0'!` }],
+            errors: [{message: `dependencies option 'dependency' must be set to '1.0.0'!`}],
         },
         {
             code: '{"devDependencies": { "dependency": ">1.0.0"}}',
             output: '{"devDependencies": { "dependency": "1.0.0"}}',
-            errors: [{ message: `devDependencies option 'dependency' must be set to '1.0.0'!` }],
+            errors: [{message: `devDependencies option 'dependency' must be set to '1.0.0'!`}],
         },
         {
             code: '{"dependencies": { "dependency": ">=1.0.0"}}',
             output: '{"dependencies": { "dependency": "1.0.0"}}',
-            errors: [{ message: `dependencies option 'dependency' must be set to '1.0.0'!` }],
+            errors: [{message: `dependencies option 'dependency' must be set to '1.0.0'!`}],
         },
         {
             code: '{"dependencies": { "dependency": "<1.0.0"}}',
             output: '{"dependencies": { "dependency": "1.0.0"}}',
-            errors: [{ message: `dependencies option 'dependency' must be set to '1.0.0'!` }],
+            errors: [{message: `dependencies option 'dependency' must be set to '1.0.0'!`}],
         },
         {
             code: '{"dependencies": { "dependency": "<=1.0.0"}}',
             output: '{"dependencies": { "dependency": "1.0.0"}}',
-            errors: [{ message: `dependencies option 'dependency' must be set to '1.0.0'!` }],
+            errors: [{message: `dependencies option 'dependency' must be set to '1.0.0'!`}],
         },
         {
             code: '{"dependencies": { "dependency": "~1.0.0"}}',
             output: '{"dependencies": { "dependency": "1.0.0"}}',
-            errors: [{ message: `dependencies option 'dependency' must be set to '1.0.0'!` }],
+            errors: [{message: `dependencies option 'dependency' must be set to '1.0.0'!`}],
         },
         {
             code: '{"dependencies": { "dependency": "^1.0.0"}}',
             output: '{"dependencies": { "dependency": "1.0.0"}}',
-            errors: [{ message: `dependencies option 'dependency' must be set to '1.0.0'!` }],
+            errors: [{message: `dependencies option 'dependency' must be set to '1.0.0'!`}],
         },
         {
             code: '{"dependencies": { "dependency": "1.0.x"}}',
             output: '{"dependencies": { "dependency": "1.0.0"}}',
-            errors: [{ message: `dependencies option 'dependency' must be set to '1.0.0'!` }],
+            errors: [{message: `dependencies option 'dependency' must be set to '1.0.0'!`}],
         },
         {
             code: '{"dependencies": { "dependency": "1.x.0"}}',
             output: '{"dependencies": { "dependency": "1.0.0"}}',
-            errors: [{ message: `dependencies option 'dependency' must be set to '1.0.0'!` }],
+            errors: [{message: `dependencies option 'dependency' must be set to '1.0.0'!`}],
         },
         {
             code: '{"dependencies": { "dependency": "1.x.x"}}',
             output: '{"dependencies": { "dependency": "1.0.0"}}',
-            errors: [{ message: `dependencies option 'dependency' must be set to '1.0.0'!` }],
+            errors: [{message: `dependencies option 'dependency' must be set to '1.0.0'!`}],
         },
         {
             code: '{"dependencies": { "dependency": "*"}}',
             output: '{"dependencies": { "dependency": "*"}}',
-            errors: [{ message: `dependencies option 'dependency' must be set to an absolute version!` }],
+            errors: [{message: `dependencies option 'dependency' must be set to an absolute version!`}],
         },
         {
             code: '{"dependencies": { "dependency": ""}}',
             output: '{"dependencies": { "dependency": ""}}',
-            errors: [{ message: `dependencies option 'dependency' must be set to an absolute version!` }],
+            errors: [{message: `dependencies option 'dependency' must be set to an absolute version!`}],
         },
         {
             code: '{"dependencies": { "dependency": "1.0.0 - 2.0.0"}}',
             output: '{"dependencies": { "dependency": "1.0.0"}}',
-            errors: [{ message: `dependencies option 'dependency' must be set to '1.0.0'!` }],
+            errors: [{message: `dependencies option 'dependency' must be set to '1.0.0'!`}],
         },
         {
             code: '{"dependencies": { "dependency": "4.0.0 || 1.0.0 - 2.0.0"}}',
             output: '{"dependencies": { "dependency": "4.0.0"}}',
-            errors: [{ message: `dependencies option 'dependency' must be set to '4.0.0'!` }],
+            errors: [{message: `dependencies option 'dependency' must be set to '4.0.0'!`}],
         },
     ],
 });

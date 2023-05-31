@@ -1,10 +1,10 @@
-import { Linter } from 'eslint';
+import {Linter} from 'eslint';
 
 export const eslintRules: Linter.RulesRecord = {
-    complexity: ['error', { max: 20 }],
+    complexity: ['error', {max: 20}],
     curly: ['error'],
     'eol-last': ['error'],
-    eqeqeq: ['error', 'always', { null: 'ignore' }],
+    eqeqeq: ['error', 'always', {null: 'ignore'}],
     'max-classes-per-file': ['error', 1],
     'max-len': [
         'error',
