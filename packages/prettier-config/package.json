@@ -1,6 +1,6 @@
 {
     "name": "@cloudflight/prettier-config",
-    "version": "0.15.0",
+    "version": "0.15.1",
     "description": "Cloudflight prettier config",
     "volta": {
         "extends": "../../package.json"
