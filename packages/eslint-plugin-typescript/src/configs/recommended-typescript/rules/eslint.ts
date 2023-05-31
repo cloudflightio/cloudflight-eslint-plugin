@@ -12,6 +12,7 @@ export const eslintRules: Linter.RulesRecord = {
             ignorePattern: '^(import|export) [^,]+ from',
             ignoreRegExpLiterals: true,
             ignoreTemplateLiterals: true,
+            ignoreComments: true,
             code: 140,
         },
     ],
