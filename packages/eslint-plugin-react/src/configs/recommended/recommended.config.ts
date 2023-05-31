@@ -16,9 +16,9 @@ export const RecommendedConfig: Linter.BaseConfig = {
                 order: [
                     'type-annotations',
                     'static-variables',
-                    'static-methods',
                     'instance-variables',
                     'lifecycle',
+                    'static-methods',
                     'instance-methods',
                     'everything-else',
                     'render',
