@@ -14,7 +14,6 @@ export const angularTemplateEslintRules: Linter.RulesRecord = {
         },
     ],
     [`${pluginPrefix}/interactive-supports-focus`]: ['error'],
-    [`${pluginPrefix}/label-has-associated-control`]: ['error'],
     [`${pluginPrefix}/no-any`]: ['error'],
     [`${pluginPrefix}/no-call-expression`]: [
         'error',
