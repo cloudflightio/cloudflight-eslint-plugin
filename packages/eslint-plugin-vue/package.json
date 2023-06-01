@@ -1,6 +1,6 @@
 {
     "name": "@cloudflight/eslint-plugin-vue",
-    "version": "0.15.2",
+    "version": "0.16.0",
     "description": "Cloudflight eslint-plugin & eslint-config for vue",
     "volta": {
         "extends": "../../package.json"
@@ -28,7 +28,7 @@
     "dependencies": {
         "@vue/eslint-config-prettier": "^7.1.0",
         "@vue/eslint-config-typescript": "^11.0.3",
-        "eslint-plugin-vue": "^9.11.0"
+        "eslint-plugin-vue": "^9.14.1"
     },
     "peerDependencies": {
         "@cloudflight/eslint-plugin-typescript": "workspace:*",
