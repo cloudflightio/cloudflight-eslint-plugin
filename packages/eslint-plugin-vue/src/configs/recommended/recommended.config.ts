@@ -6,7 +6,7 @@ export const RecommendedConfig: Linter.BaseConfig = {
         'plugin:@cloudflight/typescript/recommended',
         'plugin:vue/vue3-recommended',
         '@vue/eslint-config-typescript',
-        '@vue/eslint-config-prettier',
+        '@vue/eslint-config-prettier/skip-formatting',
     ],
     rules: Object.assign({}, configs['recommended-typescript']?.rules ?? {}, {
         'vue/block-lang': [
