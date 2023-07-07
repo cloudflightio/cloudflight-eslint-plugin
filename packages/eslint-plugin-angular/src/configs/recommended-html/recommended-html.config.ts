@@ -1,5 +1,6 @@
 import {Linter} from 'eslint';
 import {angularTemplateEslintRules} from './rules/angular-eslint-template';
+import {customRules} from './rules/custom';
 
 export const RecommendedHtmlConfig: Linter.BaseConfig = {
     plugins: ['@cloudflight/angular', '@angular-eslint/template'],
@@ -7,5 +8,6 @@ export const RecommendedHtmlConfig: Linter.BaseConfig = {
     extends: [],
     rules: {
         ...angularTemplateEslintRules,
+        ...customRules,
     },
 };
