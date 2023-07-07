@@ -22,7 +22,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@angular-eslint/bundled-angular-compiler@npm:16.0.3":
+"@angular-eslint/bundled-angular-compiler@npm:16.0.3, @angular-eslint/bundled-angular-compiler@npm:^16.0.3":
   version: 16.0.3
   resolution: "@angular-eslint/bundled-angular-compiler@npm:16.0.3"
   checksum: 70186f46d5c42370b5f433fbe7a3d855f98575b7712824d37afce32be16d75cce7db21f884a664d1cdc065942fa748231299b9d25dd0ec8fd3a62efa025e01fa
@@ -82,6 +82,20 @@ __metadata:
     eslint: ^7.20.0 || ^8.0.0
     typescript: "*"
   checksum: 2e0812f60859aa97469809dd016dfe7c228de14f3e0a6ff0bf1d3cb8a97e6325f7d97097ae3b9fa59993af9976566015987b5eb70a109173994bb37f665f89a2
+  languageName: node
+  linkType: hard
+
+"@angular/compiler@npm:16.1.3":
+  version: 16.1.3
+  resolution: "@angular/compiler@npm:16.1.3"
+  dependencies:
+    tslib: "npm:^2.3.0"
+  peerDependencies:
+    "@angular/core": 16.1.3
+  peerDependenciesMeta:
+    "@angular/core":
+      optional: true
+  checksum: bd7539594a4904a66d74e30445063bbd405e04072f074ff449327a417998e60900e05cc9ae9099336ae04f4634a70227fda135e944ec5ab112e66950576d075b
   languageName: node
   linkType: hard
 
@@ -493,9 +507,11 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@cloudflight/eslint-plugin-angular@workspace:packages/eslint-plugin-angular"
   dependencies:
+    "@angular-eslint/bundled-angular-compiler": "npm:^16.0.3"
     "@angular-eslint/eslint-plugin": "npm:^16.0.3"
     "@angular-eslint/eslint-plugin-template": "npm:^16.0.3"
     "@angular-eslint/template-parser": "npm:^16.0.3"
+    "@angular/compiler": "npm:16.1.3"
     typescript: "npm:5.0.4"
   peerDependencies:
     "@cloudflight/eslint-plugin-typescript": "workspace:*"
@@ -570,9 +586,11 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@cloudflight/eslint-plugin@workspace:."
   dependencies:
+    "@angular-eslint/bundled-angular-compiler": "npm:16.0.3"
     "@angular-eslint/eslint-plugin": "npm:16.0.3"
     "@angular-eslint/eslint-plugin-template": "npm:16.0.3"
     "@angular-eslint/template-parser": "npm:16.0.3"
+    "@angular/compiler": "npm:16.1.3"
     "@rushstack/eslint-patch": "npm:1.3.2"
     "@types/eslint": "npm:8.40.2"
     "@types/estree": "npm:1.0.1"
@@ -6220,6 +6238,13 @@ __metadata:
   version: 2.5.0
   resolution: "tslib@npm:2.5.0"
   checksum: 5a6ee935f56cd653af29de928483acbab7323f964b053e98b6b318abc69431fb0e4f660c4f4a396e2e93852510bef25eeb9f1d951d060b2d7bcc313811e5da6f
+  languageName: node
+  linkType: hard
+
+"tslib@npm:^2.3.0":
+  version: 2.6.0
+  resolution: "tslib@npm:2.6.0"
+  checksum: 702dfe42c86eb380ff985fd76ddf7f10375a2f9d0c2a3aae2a5553a74e0720f49899c9ba145152ccc02efbb6c5272a62b2913ee29a994d59749117c2193b9cfb
   languageName: node
   linkType: hard
 
