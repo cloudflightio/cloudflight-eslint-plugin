@@ -1,6 +1,6 @@
 {
     "name": "@cloudflight/eslint-plugin",
-    "version": "0.17.0",
+    "version": "0.17.1",
     "private": true,
     "volta": {
         "node": "18.16.0",
