@@ -1,10 +1,11 @@
 import {Linter} from 'eslint';
-import {typescriptEslintRules} from './rules/typescript-eslint';
+
+import {customRules} from './rules/custom';
 import {eslintRules} from './rules/eslint';
 import {formatEslintRules} from './rules/format';
 import {importEslintRules} from './rules/import';
-import {customRules} from './rules/custom';
 import {rxjsRules} from './rules/rxjs';
+import {typescriptEslintRules} from './rules/typescript-eslint';
 
 export const RecommendedTypescriptConfig: Linter.BaseConfig = {
     plugins: ['@cloudflight/typescript', '@typescript-eslint', 'import', 'rxjs', 'simple-import-sort'],
@@ -25,6 +26,6 @@ export const FormattingTypescriptConfig: Linter.BaseConfig = {
     parser: '@typescript-eslint/parser',
     extends: [],
     rules: {
-        ...formatEslintRules
+        ...formatEslintRules,
     },
 };

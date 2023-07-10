@@ -81,8 +81,8 @@ export const eslintRules: Linter.RulesRecord = {
     'default-case': [
         'error',
         {
-            'commentPattern': '^no default$'
-        }
+            commentPattern: '^no default$',
+        },
     ],
     'unicode-bom': ['error', 'never'],
     'for-direction': ['error'],
@@ -100,15 +100,15 @@ export const eslintRules: Linter.RulesRecord = {
     'prefer-arrow-callback': [
         'error',
         {
-            'allowNamedFunctions': false,
-            'allowUnboundThis': true
-        }
+            allowNamedFunctions: false,
+            allowUnboundThis: true,
+        },
     ],
     'prefer-template': ['error'],
     'consistent-return': ['error'],
     'symbol-description': ['error'],
-    'strict': ['error', 'never'],
-    'yoda': ['error'],
+    strict: ['error', 'never'],
+    yoda: ['error'],
     'quote-props': ['error', 'as-needed'],
     radix: ['error'],
     'require-yield': ['error'],
@@ -121,50 +121,50 @@ export const eslintRules: Linter.RulesRecord = {
         'error',
         'beside',
         {
-            'overrides': {}
-        }
+            overrides: {},
+        },
     ],
-    'camelcase': [
+    camelcase: [
         'error',
         {
-            'properties': 'never',
-            'ignoreDestructuring': false,
-            'ignoreImports': false,
-            'ignoreGlobals': false
-        }
+            properties: 'never',
+            ignoreDestructuring: false,
+            ignoreImports: false,
+            ignoreGlobals: false,
+        },
     ],
     'new-cap': [
         'error',
         {
-            'newIsCap': true,
-            'newIsCapExceptions': [],
-            'capIsNew': false,
-            'capIsNewExceptions': [
+            newIsCap: true,
+            newIsCapExceptions: [],
+            capIsNew: false,
+            capIsNewExceptions: [
                 'Immutable.Map',
                 'Immutable.Set',
-                'Immutable.List'
+                'Immutable.List',
             ],
-            'properties': true
-        }
+            properties: true,
+        },
     ],
     'no-underscore-dangle': [
         'error',
         {
-            'allowAfterThis': true,
-            'allowAfterSuper': false,
-            'allowAfterThisConstructor': false,
-            'enforceInMethodNames': false,
-            'allowFunctionParams': true,
-            'enforceInClassFields': false,
-            'allowInArrayDestructuring': true,
-            'allowInObjectDestructuring': true
-        }
+            allowAfterThis: true,
+            allowAfterSuper: false,
+            allowAfterThisConstructor: false,
+            enforceInMethodNames: false,
+            allowFunctionParams: true,
+            enforceInClassFields: false,
+            allowInArrayDestructuring: true,
+            allowInObjectDestructuring: true,
+        },
     ],
     'no-else-return': [
         'error',
         {
-            'allowElseIf': true
-        }
+            allowElseIf: true,
+        },
     ],
     'no-restricted-syntax': [
         'error',
@@ -198,160 +198,160 @@ export const eslintRules: Linter.RulesRecord = {
     'no-unused-expressions': [
         'error',
         {
-            'allowShortCircuit': false,
-            'allowTernary': false,
-            'allowTaggedTemplates': false,
-            'enforceForJSX': true
-        }
+            allowShortCircuit: false,
+            allowTernary: false,
+            allowTaggedTemplates: false,
+            enforceForJSX: true,
+        },
     ],
     'no-restricted-properties': [
         'error',
         {
-            'object': 'arguments',
-            'property': 'callee',
-            'message': 'arguments.callee is deprecated'
+            object: 'arguments',
+            property: 'callee',
+            message: 'arguments.callee is deprecated',
         },
         {
-            'object': 'global',
-            'property': 'isFinite',
-            'message': 'Please use Number.isFinite instead'
+            object: 'global',
+            property: 'isFinite',
+            message: 'Please use Number.isFinite instead',
         },
         {
-            'object': 'self',
-            'property': 'isFinite',
-            'message': 'Please use Number.isFinite instead'
+            object: 'self',
+            property: 'isFinite',
+            message: 'Please use Number.isFinite instead',
         },
         {
-            'object': 'window',
-            'property': 'isFinite',
-            'message': 'Please use Number.isFinite instead'
+            object: 'window',
+            property: 'isFinite',
+            message: 'Please use Number.isFinite instead',
         },
         {
-            'object': 'global',
-            'property': 'isNaN',
-            'message': 'Please use Number.isNaN instead'
+            object: 'global',
+            property: 'isNaN',
+            message: 'Please use Number.isNaN instead',
         },
         {
-            'object': 'self',
-            'property': 'isNaN',
-            'message': 'Please use Number.isNaN instead'
+            object: 'self',
+            property: 'isNaN',
+            message: 'Please use Number.isNaN instead',
         },
         {
-            'object': 'window',
-            'property': 'isNaN',
-            'message': 'Please use Number.isNaN instead'
+            object: 'window',
+            property: 'isNaN',
+            message: 'Please use Number.isNaN instead',
         },
         {
-            'property': '__defineGetter__',
-            'message': 'Please use Object.defineProperty instead.'
+            property: '__defineGetter__',
+            message: 'Please use Object.defineProperty instead.',
         },
         {
-            'property': '__defineSetter__',
-            'message': 'Please use Object.defineProperty instead.'
+            property: '__defineSetter__',
+            message: 'Please use Object.defineProperty instead.',
         },
         {
-            'object': 'Math',
-            'property': 'pow',
-            'message': 'Use the exponentiation operator (**) instead.'
-        }
+            object: 'Math',
+            property: 'pow',
+            message: 'Use the exponentiation operator (**) instead.',
+        },
     ],
     'no-labels': [
         'error',
         {
-            'allowLoop': false,
-            'allowSwitch': false
-        }
+            allowLoop: false,
+            allowSwitch: false,
+        },
     ],
     'no-label-var': ['error'],
     'no-global-assign': [
         'error',
         {
-            'exceptions': []
-        }
+            exceptions: [],
+        },
     ],
     'array-callback-return': [
         'error',
         {
-            'allowImplicit': true,
-            'checkForEach': false
-        }
+            allowImplicit: true,
+            checkForEach: false,
+        },
     ],
     'no-unreachable-loop': [
         'error',
         {
-            'ignore': []
-        }
+            ignore: [],
+        },
     ],
     'no-unsafe-optional-chaining': [
         'error',
         {
-            'disallowArithmeticOperators': true
-        }
+            disallowArithmeticOperators: true,
+        },
     ],
     'no-unneeded-ternary': [
         'error',
         {
-            'defaultAssignment': false
-        }
+            defaultAssignment: false,
+        },
     ],
     'no-mixed-operators': [
         'error',
         {
-            'groups': [
+            groups: [
                 [
                     '%',
-                    '**'
+                    '**',
                 ],
                 [
                     '%',
-                    '+'
+                    '+',
                 ],
                 [
                     '%',
-                    '-'
+                    '-',
                 ],
                 [
                     '%',
-                    '*'
+                    '*',
                 ],
                 [
                     '%',
-                    '/'
+                    '/',
                 ],
                 [
                     '/',
-                    '*'
+                    '*',
                 ],
                 [
                     '&',
                     '|',
                     '<<',
                     '>>',
-                    '>>>'
+                    '>>>',
                 ],
                 [
                     '==',
                     '!=',
                     '===',
-                    '!=='
+                    '!==',
                 ],
                 [
                     '&&',
-                    '||'
-                ]
+                    '||',
+                ],
             ],
-            'allowSamePrecedence': false
-        }
+            allowSamePrecedence: false,
+        },
     ],
     'no-restricted-globals': [
         'error',
         {
-            'name': 'isFinite',
-            'message': 'Use Number.isFinite instead https://github.com/airbnb/javascript#standard-library--isfinite'
+            name: 'isFinite',
+            message: 'Use Number.isFinite instead https://github.com/airbnb/javascript#standard-library--isfinite',
         },
         {
-            'name': 'isNaN',
-            'message': 'Use Number.isNaN instead https://github.com/airbnb/javascript#standard-library--isnan'
+            name: 'isNaN',
+            message: 'Use Number.isNaN instead https://github.com/airbnb/javascript#standard-library--isnan',
         },
         'addEventListener',
         'blur',
@@ -410,33 +410,33 @@ export const eslintRules: Linter.RulesRecord = {
         'statusbar',
         'stop',
         'toolbar',
-        'top'
+        'top',
     ],
     'getter-return': [
         'error',
         {
-            'allowImplicit': true
-        }
+            allowImplicit: true,
+        },
     ],
     'no-confusing-arrow': [
         'error',
         {
-            'allowParens': true,
-            'onlyOneSimpleParam': false
-        }
+            allowParens: true,
+            onlyOneSimpleParam: false,
+        },
     ],
     'no-useless-rename': [
         'error',
         {
-            'ignoreDestructuring': false,
-            'ignoreImport': false,
-            'ignoreExport': false
-        }
+            ignoreDestructuring: false,
+            ignoreImport: false,
+            ignoreExport: false,
+        },
     ],
     'prefer-regex-literals': [
         'error',
         {
-            'disallowRedundantWrapping': true
-        }
+            disallowRedundantWrapping: true,
+        },
     ],
 };

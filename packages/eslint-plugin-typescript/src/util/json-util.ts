@@ -1,5 +1,6 @@
 import {Rule} from 'eslint';
 import type {Literal, Node, ObjectExpression, Program, Property, SpreadElement} from 'estree';
+
 import {JsonPropertyAssertion} from './json-property-assertion';
 
 /**
@@ -41,7 +42,7 @@ export function findPropertyPath(propertyNode: Property & Rule.NodeParentExtensi
         }
 
         if (parent) {
-            key = findPropertyPath(parent) + `.${key}`;
+            key = `${findPropertyPath(parent)}.${key}`;
         }
     }
 
@@ -114,12 +115,12 @@ export function validateRootJsonProperty(
     }
 
     const assertion =
-        firstPath === propertyAssertion.key
-            ? propertyAssertion
-            : {
-                  key: firstPath,
-                  expectedValue: {},
-              };
+        firstPath === propertyAssertion.key ?
+            propertyAssertion :
+            {
+                key: firstPath,
+                expectedValue: {},
+            };
 
     reportMissingProperty(context, jsonRoot, assertion, jsonRootObject, ruleContextName);
 }

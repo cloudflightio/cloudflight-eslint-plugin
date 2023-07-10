@@ -15,15 +15,15 @@ export const formatEslintRules: Linter.RulesRecord = {
     'no-multi-spaces': [
         'error',
         {
-            'ignoreEOLComments': false
-        }
+            ignoreEOLComments: false,
+        },
     ],
     'dot-notation': [
         'error',
         {
-            'allowKeywords': true,
-            'allowPattern': ''
-        }
+            allowKeywords: true,
+            allowPattern: '',
+        },
     ],
     'dot-location': ['error', 'property'],
     'template-tag-spacing': ['error', 'never'],
@@ -31,169 +31,170 @@ export const formatEslintRules: Linter.RulesRecord = {
     'switch-colon-spacing': [
         'error',
         {
-            'after': true,
-            'before': false
-        }
+            after: true,
+            before: false,
+        },
     ],
     'spaced-comment': [
         'error',
         'always',
         {
-            'line': {
-                'exceptions': [
+            line: {
+                exceptions: [
                     '-',
-                    '+'
+                    '+',
                 ],
-                'markers': [
+                markers: [
                     '=',
                     '!',
-                    '/'
-                ]
-            },
-            'block': {
-                'exceptions': [
-                    '-',
-                    '+'
+                    '/',
                 ],
-                'markers': [
+            },
+            block: {
+                exceptions: [
+                    '-',
+                    '+',
+                ],
+                markers: [
                     '=',
                     '!',
                     ':',
-                    '::'
+                    '::',
                 ],
-                'balanced': true
-            }
-        }
+                balanced: true,
+            },
+        },
     ],
     'space-infix-ops': ['error'],
     'space-unary-ops': [
         'error',
         {
-            'words': true,
-            'nonwords': false,
-            'overrides': {}
-        }
+            words: true,
+            nonwords: false,
+            overrides: {},
+        },
     ],
     'space-in-parens': ['error', 'never'],
     'space-before-blocks': ['error'],
     'space-before-function-paren': [
         'error',
         {
-            'anonymous': 'always',
-            'named': 'never',
-            'asyncArrow': 'always'
-        }
+            anonymous: 'always',
+            named: 'never',
+            asyncArrow: 'always',
+        },
     ],
     'semi-spacing': [
         'error',
         {
-            'before': false,
-            'after': true
-        }
+            before: false,
+            after: true,
+        },
     ],
-    'quotes': [
+    quotes: [
         'error',
         'single',
         {
-            'avoidEscape': true
-        }
+            avoidEscape: true,
+        },
     ],
     'padded-blocks': [
         'error',
         {
-            'blocks': 'never',
-            'classes': 'never',
-            'switches': 'never'
+            blocks: 'never',
+            classes: 'never',
+            switches: 'never',
         },
         {
-            'allowSingleLineBlocks': true
-        }
+            allowSingleLineBlocks: true,
+        },
     ],
+    // TODO: Discuss this rule.
     'brace-style': [
-        'error',
+        'off',
         'stroustrup',
         {
-            'allowSingleLine': false
-        }
+            allowSingleLine: false,
+        },
     ],
     'no-spaced-func': ['error'],
     'no-trailing-spaces': [
         'error',
         {
-            'skipBlankLines': false,
-            'ignoreComments': false
-        }
+            skipBlankLines: false,
+            ignoreComments: false,
+        },
     ],
     'no-whitespace-before-property': ['error'],
     'object-property-newline': [
         'error',
         {
-            'allowAllPropertiesOnSameLine': true,
-            'allowMultiplePropertiesPerLine': false
-        }
+            allowAllPropertiesOnSameLine: true,
+            allowMultiplePropertiesPerLine: false,
+        },
     ],
     'no-mixed-spaces-and-tabs': ['error'],
     'no-multiple-empty-lines': [
         'error',
         {
-            'max': 1,
-            'maxBOF': 0,
-            'maxEOF': 0
-        }
+            max: 1,
+            maxBOF: 0,
+            maxEOF: 0,
+        },
     ],
     'key-spacing': [
         'error',
         {
-            'beforeColon': false,
-            'afterColon': true
-        }
+            beforeColon: false,
+            afterColon: true,
+        },
     ],
     'keyword-spacing': [
         'error',
         {
-            'before': true,
-            'after': true,
-            'overrides': {
-                'return': {
-                    'after': true
+            before: true,
+            after: true,
+            overrides: {
+                return: {
+                    after: true,
                 },
-                'throw': {
-                    'after': true
+                throw: {
+                    after: true,
                 },
-                'case': {
-                    'after': true
-                }
-            }
-        }
+                case: {
+                    after: true,
+                },
+            },
+        },
     ],
     // this rule is disabled, but configured in case anyone enables this rule.
     'line-comment-position': [
         'off',
         {
-            'position': 'above',
-            'ignorePattern': '',
-            'applyDefaultPatterns': true
-        }
+            position: 'above',
+            ignorePattern: '',
+            applyDefaultPatterns: true,
+        },
     ],
     'lines-between-class-members': [
         'error',
         'always',
         {
-            'exceptAfterSingleLine': false
-        }
+            exceptAfterSingleLine: false,
+        },
     ],
     'lines-around-directive': [
         'error',
         {
-            'before': 'always',
-            'after': 'always'
-        }
+            before: 'always',
+            after: 'always',
+        },
     ],
     'newline-per-chained-call': [
         'error',
         {
-            'ignoreChainWithDepth': 4
-        }
+            ignoreChainWithDepth: 4,
+        },
     ],
     'function-call-argument-newline': ['error', 'consistent'],
     'func-call-spacing': ['error', 'never'],
@@ -201,46 +202,46 @@ export const formatEslintRules: Linter.RulesRecord = {
     'comma-dangle': [
         'error',
         {
-            'arrays': 'always-multiline',
-            'objects': 'always-multiline',
-            'imports': 'always-multiline',
-            'exports': 'always-multiline',
-            'functions': 'always-multiline'
-        }
+            arrays: 'always-multiline',
+            objects: 'always-multiline',
+            imports: 'always-multiline',
+            exports: 'always-multiline',
+            functions: 'always-multiline',
+        },
     ],
     'comma-style': [
         'error',
         'last',
         {
-            'exceptions': {
-                'ArrayExpression': false,
-                'ArrayPattern': false,
-                'ArrowFunctionExpression': false,
-                'CallExpression': false,
-                'FunctionDeclaration': false,
-                'FunctionExpression': false,
-                'ImportDeclaration': false,
-                'ObjectExpression': false,
-                'ObjectPattern': false,
-                'VariableDeclaration': false,
-                'NewExpression': false
-            }
-        }
+            exceptions: {
+                ArrayExpression: false,
+                ArrayPattern: false,
+                ArrowFunctionExpression: false,
+                CallExpression: false,
+                FunctionDeclaration: false,
+                FunctionExpression: false,
+                ImportDeclaration: false,
+                ObjectExpression: false,
+                ObjectPattern: false,
+                VariableDeclaration: false,
+                NewExpression: false,
+            },
+        },
     ],
     'comma-spacing': [
         'error',
         {
-            'before': false,
-            'after': true
-        }
+            before: false,
+            after: true,
+        },
     ],
     'computed-property-spacing': ['error', 'never'],
     'generator-star-spacing': [
         'error',
         {
-            'before': false,
-            'after': true
-        }
+            before: false,
+            after: true,
+        },
     ],
     'rest-spread-spacing': ['error', 'never'],
     'array-bracket-newline': ['error', 'consistent'],
@@ -248,11 +249,11 @@ export const formatEslintRules: Linter.RulesRecord = {
     'array-element-newline': [
         'error',
         {
-            'ArrayExpression': 'consistent',
-            'ArrayPattern': {
-                'minItems': 3
-            }
-        }
+            ArrayExpression: 'consistent',
+            ArrayPattern: {
+                minItems: 3,
+            },
+        },
     ],
     'block-spacing': ['error', 'always'],
     'arrow-parens': ['error', 'always'],
@@ -260,34 +261,35 @@ export const formatEslintRules: Linter.RulesRecord = {
     'arrow-spacing': [
         'error',
         {
-            'before': true,
-            'after': true
-        }
+            before: true,
+            after: true,
+        },
     ],
     'implicit-arrow-linebreak': ['error', 'beside'],
-    'indent': [
+    indent: [
         'error',
+        // eslint-disable-next-line no-magic-numbers -- Indent of 4 spaces.
         4,
         {
-            'SwitchCase': 1,
-            'VariableDeclarator': 1,
-            'outerIIFEBody': 1,
-            'FunctionDeclaration': {
-                'parameters': 1,
-                'body': 1
+            SwitchCase: 1,
+            VariableDeclarator: 1,
+            outerIIFEBody: 1,
+            FunctionDeclaration: {
+                parameters: 1,
+                body: 1,
             },
-            'FunctionExpression': {
-                'parameters': 1,
-                'body': 1
+            FunctionExpression: {
+                parameters: 1,
+                body: 1,
             },
-            'CallExpression': {
-                'arguments': 1
+            CallExpression: {
+                arguments: 1,
             },
-            'ArrayExpression': 1,
-            'ObjectExpression': 1,
-            'ImportDeclaration': 1,
-            'flatTernaryExpressions': false,
-            'ignoredNodes': [
+            ArrayExpression: 1,
+            ObjectExpression: 1,
+            ImportDeclaration: 1,
+            flatTernaryExpressions: false,
+            ignoredNodes: [
                 'JSXElement',
                 'JSXElement > *',
                 'JSXAttribute',
@@ -303,27 +305,28 @@ export const formatEslintRules: Linter.RulesRecord = {
                 'JSXClosingFragment',
                 'JSXText',
                 'JSXEmptyExpression',
-                'JSXSpreadChild'
+                'JSXSpreadChild',
             ],
-            'ignoreComments': false,
-            'offsetTernaryExpressions': false
-        }
+            ignoreComments: false,
+            offsetTernaryExpressions: false,
+        },
     ],
     '@typescript-eslint/indent': [
         'error',
+        // eslint-disable-next-line no-magic-numbers -- Indent of 4 spaces.
         4,
         {
-            'MemberExpression': 1,
-            'SwitchCase': 1,
-            'ignoredNodes': [
+            MemberExpression: 1,
+            SwitchCase: 1,
+            ignoredNodes: [
                 'FunctionExpression > .params[decorators.length > 0]',
                 'FunctionExpression > .params > :matches(Decorator, :not(:first-child))',
-                'ClassBody.body > PropertyDefinition[decorators.length > 0] > .key'
+                'ClassBody.body > PropertyDefinition[decorators.length > 0] > .key',
             ],
-            'flatTernaryExpressions': false,
-            'offsetTernaryExpressions': false,
-            'ignoreComments': false
-        }
+            flatTernaryExpressions: false,
+            offsetTernaryExpressions: false,
+            ignoreComments: false,
+        },
     ],
     'jsx-quotes': ['error', 'prefer-double'],
     'linebreak-style': ['off', 'unix'],
@@ -331,30 +334,30 @@ export const formatEslintRules: Linter.RulesRecord = {
     'object-curly-newline': [
         'error',
         {
-            'consistent': true
-        }
+            consistent: true,
+        },
     ],
     'operator-linebreak': ['error', 'after'],
-    "sort-imports": "off",
-    "simple-import-sort/imports": [
-        "error",
+    'sort-imports': 'off',
+    'simple-import-sort/imports': [
+        'error',
         {
-            "groups": [
+            groups: [
                 // Packages. `react` related packages come first.
-                ["^react$", "^@nest", "^@?\\w"],
+                ['^react$', '^@nest', '^@?\\w'],
                 // Internal packages.
-                ["@common", "^(@|@company|@ui|components|utils|config|vendored-lib)(/.*|$)"],
+                ['@common', '^(@|@company|@ui|components|utils|config|vendored-lib)(/.*|$)'],
                 // Side effect imports.
-                ["^\\u0000"],
+                ['^\\u0000'],
                 // Parent imports. Put `..` last.
-                ["^\\.\\.(?!/?$)", "^\\.\\./?$"],
+                ['^\\.\\.(?!/?$)', '^\\.\\./?$'],
                 // Other relative imports. Put same-folder imports and `.` last.
-                ["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"],
+                ['^\\./(?=.*/)(?!/?$)', '^\\.(?!/?$)', '^\\./?$'],
                 // Style imports.
-                ["^.+\\.s?css$"]
-            ]
-        }
+                ['^.+\\.s?css$'],
+            ],
+        },
     ],
-    "simple-import-sort/exports": "error",
-    "import/newline-after-import": "error",
+    'simple-import-sort/exports': 'error',
+    'import/newline-after-import': 'error',
 };

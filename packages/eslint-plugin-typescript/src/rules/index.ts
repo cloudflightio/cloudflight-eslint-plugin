@@ -1,8 +1,9 @@
 import {Rule} from 'eslint';
+
+import {PackageForceAbsoluteVersionDependenciesRule} from './package/package-force-absolute-version-dependencies.rule';
 import {PackageForcePrivateRule} from './package/package-force-private.rule';
-import {TscStrictRule} from './ts-config/tsc-strict.rule';
-import {TscAllowUnusedLabelsRule} from './ts-config/tsc-allow-unused-labels.rule';
 import {TscAllowUnreachableCodeRule} from './ts-config/tsc-allow-unreachable-code.rule';
+import {TscAllowUnusedLabelsRule} from './ts-config/tsc-allow-unused-labels.rule';
 import {TscEsModuleInteropRule} from './ts-config/tsc-es-module-interop.rule';
 import {TscExactOptionalPropertyTypesRule} from './ts-config/tsc-exact-optional-property-types.rule';
 import {TscForceConsistentCasingInFileNamesRule} from './ts-config/tsc-force-consistent-casing-in-file-names.rule';
@@ -14,9 +15,9 @@ import {TscNoImplicitOverrideRule} from './ts-config/tsc-no-implicit-override.ru
 import {TscNoImplicitReturnsRule} from './ts-config/tsc-no-implicit-returns.rule';
 import {TscNoPropertyAccessFromIndexSignatureRule} from './ts-config/tsc-no-property-access-from-index-signature.rule';
 import {TscNoUncheckedIndexedAccessRule} from './ts-config/tsc-no-unchecked-indexed-access.rule';
+import {TscStrictRule} from './ts-config/tsc-strict.rule';
 import {TscUseDefineForClassFieldsRule} from './ts-config/tsc-use-define-for-class-fields.rule';
 import {NoMomentJsRule} from './no-moment-js';
-import {PackageForceAbsoluteVersionDependenciesRule} from './package/package-force-absolute-version-dependencies.rule';
 import {NoOnEventAssign} from './no-on-event-assign';
 
 export const rules: Record<string, Rule.RuleModule> = {

@@ -1,4 +1,5 @@
 import {RuleTester} from 'eslint';
+
 import {PackageForcePrivateRule} from './package-force-private.rule';
 
 const ruleTester = new RuleTester({
@@ -25,13 +26,13 @@ ruleTester.run('package-force-private', PackageForcePrivateRule, {
         {
             code: '{"private": false, "name": "package-private-test"}',
             output: '{"private": true, "name": "package-private-test"}',
-            errors: [{message: `package.json option 'private' must be set to 'true'!`}],
+            errors: [{message: 'package.json option \'private\' must be set to \'true\'!'}],
         },
         {
             code: '{"private": false, "name": "package-private-test", "publishConfig": {}}',
             options: [{ignorePublished: false}],
             output: '{"private": true, "name": "package-private-test", "publishConfig": {}}',
-            errors: [{message: `package.json option 'private' must be set to 'true'!`}],
+            errors: [{message: 'package.json option \'private\' must be set to \'true\'!'}],
         },
         {
             code: '{"name": "package-private-test"}',

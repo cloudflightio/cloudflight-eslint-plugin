@@ -16,7 +16,7 @@
     "description": "",
     "scripts": {
         "build": "yarn workspaces foreach -t run build-package",
-        "lint": "eslint . && prettier --check .",
+        "lint": "eslint .",
         "test": "yarn workspaces foreach run test-package",
         "postinstall": "husky install",
         "publish-workspaces": "node ./scripts/prepare.js && yarn workspaces foreach --no-private npm publish"

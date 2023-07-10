@@ -1,4 +1,5 @@
 import {Rule} from 'eslint';
+
 import {imgUsesNgsrcRule} from './img-uses-ngsrc';
 
 export const rules: Record<string, Rule.RuleModule> = {
