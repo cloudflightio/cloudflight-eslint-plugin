@@ -9,4 +9,7 @@ export const importEslintRules: Linter.RulesRecord = {
     [`${pluginPrefix}/no-mutable-exports`]: ['error'],
     [`${pluginPrefix}/no-unresolved`]: ['error'],
     [`${pluginPrefix}/no-useless-path-segments`]: ['error'],
+    [`${pluginPrefix}/no-duplicates`]: ['error'],
+    [`${pluginPrefix}/no-self-import`]: ['error'],
+    [`${pluginPrefix}/export`]: ['error'],
 };

@@ -356,4 +356,5 @@ export const formatEslintRules: Linter.RulesRecord = {
         }
     ],
     "simple-import-sort/exports": "error",
+    "import/newline-after-import": "error",
 };
