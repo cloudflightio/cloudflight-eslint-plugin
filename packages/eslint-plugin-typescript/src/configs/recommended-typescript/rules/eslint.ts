@@ -1,21 +1,10 @@
-import {Linter} from 'eslint';
+import type {Linter} from 'eslint';
 
 export const eslintRules: Linter.RulesRecord = {
     complexity: ['error', {max: 20}],
     curly: ['error'],
-    'eol-last': ['error'],
     eqeqeq: ['error', 'always', {null: 'ignore'}],
     'max-classes-per-file': ['error', 1],
-    'max-len': [
-        'error',
-        {
-            ignorePattern: '^(import|export) [^,]+ from',
-            ignoreRegExpLiterals: true,
-            ignoreTemplateLiterals: true,
-            ignoreComments: true,
-            code: 140,
-        },
-    ],
     'new-parens': ['error'],
     'no-async-promise-executor': ['error'],
     'no-bitwise': ['error'],
@@ -86,6 +75,8 @@ export const eslintRules: Linter.RulesRecord = {
     'no-multi-str': ['error'],
     'no-useless-computed-key': ['error'],
     'no-case-declarations': ['error'],
+    'no-tabs': ['error'],
+    'semi-style': ['error', 'last'],
     'default-case-last': ['error'],
     'default-case': [
         'error',
