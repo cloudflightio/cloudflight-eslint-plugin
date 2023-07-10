@@ -7,7 +7,7 @@ import {customRules} from './rules/custom';
 import {rxjsRules} from './rules/rxjs';
 
 export const RecommendedTypescriptConfig: Linter.BaseConfig = {
-    plugins: ['@cloudflight/typescript', '@typescript-eslint', 'import', 'rxjs'],
+    plugins: ['@cloudflight/typescript', '@typescript-eslint', 'import', 'rxjs', 'simple-import-sort'],
     parser: '@typescript-eslint/parser',
     extends: ['plugin:import/typescript'],
     rules: {
@@ -21,7 +21,7 @@ export const RecommendedTypescriptConfig: Linter.BaseConfig = {
 };
 
 export const FormattingTypescriptConfig: Linter.BaseConfig = {
-    plugins: [],
+    plugins: ['import', 'simple-import-sort'],
     parser: '@typescript-eslint/parser',
     extends: [],
     rules: {
