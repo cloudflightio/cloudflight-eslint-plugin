@@ -335,4 +335,25 @@ export const formatEslintRules: Linter.RulesRecord = {
         }
     ],
     'operator-linebreak': ['error', 'after'],
+    "sort-imports": "off",
+    "simple-import-sort/imports": [
+        "error",
+        {
+            "groups": [
+                // Packages. `react` related packages come first.
+                ["^react$", "^@nest", "^@?\\w"],
+                // Internal packages.
+                ["@common", "^(@|@company|@ui|components|utils|config|vendored-lib)(/.*|$)"],
+                // Side effect imports.
+                ["^\\u0000"],
+                // Parent imports. Put `..` last.
+                ["^\\.\\.(?!/?$)", "^\\.\\./?$"],
+                // Other relative imports. Put same-folder imports and `.` last.
+                ["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"],
+                // Style imports.
+                ["^.+\\.s?css$"]
+            ]
+        }
+    ],
+    "simple-import-sort/exports": "error",
 };
