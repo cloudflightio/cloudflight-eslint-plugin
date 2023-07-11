@@ -109,9 +109,15 @@ export const formatEslintRules: Linter.RulesRecord = {
             allowSingleLineBlocks: true,
         },
     ],
-    // TODO: Discuss this rule.
+    'padding-line-between-statements': [
+        'error',
+        {blankLine: 'always', prev: '*', next: 'return'},
+        {blankLine: 'always', prev: 'const', next: '*'},
+        {blankLine: 'any', prev: 'const', next: ['const', 'let', 'var']},
+        {blankLine: 'always', prev: 'block', next: '*'},
+    ],
     'brace-style': [
-        'off',
+        'error',
         'stroustrup',
         {
             allowSingleLine: false,
