@@ -8,11 +8,10 @@ import {rxjsRules} from './rules/rxjs';
 import {typescriptEslintRules} from './rules/typescript-eslint';
 
 export const RecommendedTypescriptConfig: Linter.BaseConfig = {
-    plugins: ['@cloudflight/typescript', '@typescript-eslint', 'import', 'rxjs', 'simple-import-sort'],
+    plugins: ['@cloudflight/typescript', '@typescript-eslint', 'import', 'rxjs'],
     parser: '@typescript-eslint/parser',
     extends: ['plugin:import/typescript'],
     rules: {
-        ...formatEslintRules,
         ...eslintRules,
         ...typescriptEslintRules,
         ...importEslintRules,
