@@ -1,7 +1,8 @@
 import {Rule} from 'eslint';
 import type {Literal, ObjectExpression, Property} from 'estree';
-import {findProperty, reportMissingProperty, reportWrongPropertyValue, validateRootJsonProperty} from './json-util';
+
 import {JsonPropertyAssertion} from './json-property-assertion';
+import {findProperty, reportMissingProperty, reportWrongPropertyValue, validateRootJsonProperty} from './json-util';
 
 const filename = 'TS compiler';
 
@@ -29,10 +30,8 @@ function validateProperty(
             if (isRootTsConfig(propertyNode)) {
                 reportMissingProperty(context, propertyNode, propertyAssertion, compilerOptions, filename);
             }
-        } else {
-            if ((<Literal>property.value).value !== propertyAssertion.expectedValue) {
-                reportWrongPropertyValue(context, property, propertyAssertion, filename);
-            }
+        } else if ((<Literal>property.value).value !== propertyAssertion.expectedValue) {
+            reportWrongPropertyValue(context, property, propertyAssertion, filename);
         }
     }
 }

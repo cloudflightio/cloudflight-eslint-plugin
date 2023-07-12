@@ -1,5 +1,6 @@
-import {imgUsesNgsrcRule} from './img-uses-ngsrc';
 import {ESLintUtils} from '@typescript-eslint/utils';
+
+import {imgUsesNgsrcRule} from './img-uses-ngsrc';
 
 const ruleTester = new ESLintUtils.RuleTester({
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment

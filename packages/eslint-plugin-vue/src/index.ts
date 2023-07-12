@@ -1,2 +1,2 @@
-export {rules} from './rules';
 export {configs} from './configs';
+export {rules} from './rules';

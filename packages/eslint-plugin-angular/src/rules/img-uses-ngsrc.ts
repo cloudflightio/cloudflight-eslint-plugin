@@ -28,7 +28,7 @@ export const imgUsesNgsrcRule = createRule<[], MessageIds>({
         const parserServices = getTemplateParserServices(context);
 
         return {
-            [`Element$1[name=img]`](element: TmplAstElement) {
+            'Element$1[name=img]'(element: TmplAstElement) {
                 const ngSrcPresent = hasNgSrcAttribute(element);
                 const srcPresent = hasNormalSrcAttribute(element);
 

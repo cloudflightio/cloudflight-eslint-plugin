@@ -1,4 +1,5 @@
 import {RuleTester} from 'eslint';
+
 import {NoMomentJsRule} from './no-moment-js';
 
 const ruleTester = new RuleTester({

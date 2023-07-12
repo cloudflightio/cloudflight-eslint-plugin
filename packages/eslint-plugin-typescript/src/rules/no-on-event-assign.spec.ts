@@ -1,4 +1,5 @@
 import {RuleTester} from 'eslint';
+
 import {NoOnEventAssign} from './no-on-event-assign';
 
 const ruleTester = new RuleTester({

@@ -1,4 +1,5 @@
 import {Linter} from 'eslint';
+
 import {angularTemplateEslintRules} from './rules/angular-eslint-template';
 import {customRules} from './rules/custom';
 

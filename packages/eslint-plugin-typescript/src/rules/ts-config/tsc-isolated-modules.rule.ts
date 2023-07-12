@@ -1,4 +1,5 @@
 import {Rule} from 'eslint';
+
 import {tscRule} from '../../util/tsc-util';
 
 export const TscIsolatedModulesRule: Rule.RuleModule = {
