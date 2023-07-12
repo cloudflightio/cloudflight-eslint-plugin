@@ -237,3 +237,6 @@ dist
 **/dist/
 .idea/
 packages/**/LICENSE
+
+.vitepress/dist
+.vitepress/cache
