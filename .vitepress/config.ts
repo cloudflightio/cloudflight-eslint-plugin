@@ -15,6 +15,7 @@ const vueLink = "/eslint-plugin-vue/";
 export default defineConfig({
     title: "Cloudflight ES-Lint Plugin",
     description: "Documentation for all Cloudflight ES-Lint Plugins",
+    base: '/cloudflight-eslint-plugin/',
     srcExclude: ['**/README.md'],
     themeConfig: {
         // https://vitepress.dev/reference/default-theme-config

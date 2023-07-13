@@ -2,8 +2,6 @@
 
 The Cloudflight ESLint Plugin Typescript provides a configuration of ESLint rules recommended by Cloudflight.
 
-You can find the directory of all rules including their reasoning [here](src/configs/recommended-typescript/rules).
-
 ## Dependencies
 
 The following dependencies are required:

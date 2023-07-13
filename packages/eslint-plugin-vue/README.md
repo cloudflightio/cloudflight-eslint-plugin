@@ -2,8 +2,6 @@
 
 The Cloudflight ESLint Plugin for Vue provides multiple configurations of ESLint rules recommended by Cloudflight.
 
-You can find the directory of all rules including their reasoning [here](src/configs).
-
 ## Dependencies
 
 The following dependencies are required:
