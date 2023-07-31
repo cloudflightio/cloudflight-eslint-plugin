@@ -25,15 +25,5 @@ export const RecommendedConfig: Linter.BaseConfig = {
 
         // we use typescript, so node-builtins are typed and checked via TS
         'node/no-unsupported-features/node-builtins': 'off',
-
-        // allow ".ts" extension, as we use typescript by default
-        'node/no-missing-import': [
-            'error',
-            {
-                allowModules: [],
-                resolvePaths: [],
-                tryExtensions: ['.js', '.json', '.node', '.ts'],
-            },
-        ],
     },
 };
