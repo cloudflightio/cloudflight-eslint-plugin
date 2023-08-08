@@ -16,5 +16,6 @@ module.exports = {
     },
     rules: {
         '@cloudflight/typescript/package-force-absolute-version-dependencies': 'off',
+        '@typescript-eslint/consistent-type-assertions': 'off',
     },
 };

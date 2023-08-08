@@ -26,6 +26,7 @@ export function findProperty(properties: (Property | SpreadElement)[], propertyK
         if (o.type === 'Property') {
             return getPropertyName(o) === propertyKey;
         }
+
         return false;
     });
 }
@@ -37,7 +38,8 @@ export function findPropertyPath(propertyNode: Property & Rule.NodeParentExtensi
         let parent: (Property & Rule.NodeParentExtension) | undefined;
         if (propertyNode.parent.type === 'Property') {
             parent = propertyNode.parent;
-        } else if (propertyNode.parent.type === 'ObjectExpression' && propertyNode.parent.parent.type === 'Property') {
+        }
+        else if (propertyNode.parent.type === 'ObjectExpression' && propertyNode.parent.parent.type === 'Property') {
             parent = propertyNode.parent.parent;
         }
 
@@ -65,13 +67,16 @@ export function reportMissingProperty(
         message: `${ruleContextName} option '${property.key}' is missing!`,
         fix: (fixer) => {
             const parentOrSelf = parent ?? propertyNode;
+
             if (parentOrSelf.type === 'ObjectExpression') {
                 const properties = parentOrSelf.properties;
                 const range = properties[properties.length - 1]?.range;
                 const propertyValue = JSON.stringify(property.expectedValue);
+
                 if (range) {
                     return fixer.insertTextAfterRange(range, `,\n"${property.key}": ${propertyValue}`);
-                } else if (properties.length === 0 && parentOrSelf.range) {
+                }
+                else if (properties.length === 0 && parentOrSelf.range) {
                     return fixer.replaceTextRange(parentOrSelf.range, `{"${property.key}": ${propertyValue}}`);
                 }
             }
@@ -89,7 +94,7 @@ export function reportWrongPropertyValue(
 ): void {
     context.report({
         node: target,
-        message: `${ruleContextName} option '${property.key}' must be set to '${property.expectedValue}'!`,
+        message: `${ruleContextName} option '${property.key}' must be set to '${property.expectedValue as string}'!`,
         fix: (fixer) => fixer.replaceText(target.value, JSON.stringify(property.expectedValue)),
     });
 }
@@ -132,14 +137,17 @@ function validateProperty(
     ruleContextName: string,
 ): void {
     const propertyPath = findPropertyPath(propertyNode);
+
     if (propertyPath === propertyAssertion.key) {
-        if ((<Literal>propertyNode.value).value !== propertyAssertion.expectedValue) {
+        if ((propertyNode.value as Literal).value !== propertyAssertion.expectedValue) {
             reportWrongPropertyValue(context, propertyNode, propertyAssertion, ruleContextName);
         }
-    } else if (propertyAssertion.key.startsWith(propertyPath)) {
+    }
+    else if (propertyAssertion.key.startsWith(propertyPath)) {
         if (propertyNode.value.type === 'ObjectExpression') {
             const nextPath = propertyAssertion.key.substring(0, propertyPath.length).split('.')[0] ?? '';
             const nextProperty = findProperty(propertyNode.value.properties, nextPath);
+
             if (nextPath && !nextProperty) {
                 reportMissingProperty(
                     context,

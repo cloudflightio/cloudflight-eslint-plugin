@@ -10,7 +10,11 @@ import {typescriptEslintRules} from './rules/typescript-eslint';
 export const RecommendedTypescriptConfig: Linter.BaseConfig = {
     plugins: ['@cloudflight/typescript', '@typescript-eslint', 'import', 'rxjs'],
     parser: '@typescript-eslint/parser',
-    extends: ['plugin:import/typescript'],
+    extends: [
+        'plugin:@typescript-eslint/strict-type-checked',
+        'plugin:@typescript-eslint/stylistic-type-checked',
+        'plugin:import/typescript',
+    ],
     rules: {
         ...eslintRules,
         ...typescriptEslintRules,
