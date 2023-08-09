@@ -1,6 +1,6 @@
 {
     "name": "@cloudflight/eslint-plugin-typescript",
-    "version": "0.19.0",
+    "version": "0.19.1",
     "description": "Cloudflight eslint-plugin & eslint-config for typescript",
     "volta": {
         "extends": "../../package.json"
@@ -27,8 +27,8 @@
         "test-package": "jest"
     },
     "dependencies": {
-        "@typescript-eslint/eslint-plugin": "^6.2.1",
-        "@typescript-eslint/parser": "^6.2.1",
+        "@typescript-eslint/eslint-plugin": "^6.3.0",
+        "@typescript-eslint/parser": "^6.3.0",
         "eslint-plugin-import": "^2.28.0",
         "eslint-plugin-json-es": "^1.5.7",
         "eslint-plugin-rxjs": "^5.0.3",

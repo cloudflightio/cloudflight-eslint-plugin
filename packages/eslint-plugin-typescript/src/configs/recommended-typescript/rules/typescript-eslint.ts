@@ -44,6 +44,8 @@ export const typescriptEslintRules: Linter.RulesRecord = {
         'error',
         {default: ['static-field', 'field', 'signature', 'constructor', 'static-method', 'method']},
     ],
+    // this rule prevents oneliner functions, which are very useful in component templates
+    [`${pluginPrefix}/no-confusing-void-expression`]: 'off',
     [`${pluginPrefix}/no-floating-promises`]: ['error', {ignoreVoid: true}],
     [`${pluginPrefix}/no-inferrable-types`]: ['error', {ignoreParameters: true}],
     'no-invalid-this': 'off',
@@ -58,6 +60,11 @@ export const typescriptEslintRules: Linter.RulesRecord = {
     // typescript offers the compiler setting 'noPropertyAccessFromIndexSignature' which would solve this issue,
     // but it is not perfect. It also adds 'undefined' to the type even if there was a bounds-check already.
     [`${pluginPrefix}/no-unnecessary-condition`]: ['off', {allowConstantLoopConditions: true}],
+    // this rule makes it hard to work with the default functionalities of js itself, thus disabled
+    [`${pluginPrefix}/no-unsafe-argument`]: 'off',
+    // enums can be used as a holder of constants, working
+    // with external APIs can be painful if this is not allowed
+    [`${pluginPrefix}/no-unsafe-enum-comparison`]: 'off',
     'no-unused-vars': 'off',
     [`${pluginPrefix}/no-unused-vars`]: ['error', {args: 'none', ignoreRestSiblings: true}],
     [`${pluginPrefix}/promise-function-async`]: ['error'],

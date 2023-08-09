@@ -2,7 +2,12 @@ import type {Linter} from 'eslint';
 
 export const eslintRules: Linter.RulesRecord = {
     complexity: ['error', {max: 20}],
+    // this rule conflicts with switch-exhaustiveness-check and should not be turned on
+    // with typescript, this would not become an issue either
+    'consistent-return': 'off',
     curly: ['error'],
+    // this rule conflicts with switch-exhaustiveness-check and should not be turned on
+    'default-case': 'off',
     eqeqeq: ['error', 'always', {null: 'ignore'}],
     'max-classes-per-file': ['error', 1],
     'new-parens': ['error'],
@@ -15,7 +20,6 @@ export const eslintRules: Linter.RulesRecord = {
     'no-duplicate-imports': ['error'],
     'no-empty': ['error'],
     'no-eval': ['error'],
-    'no-void': ['error'],
     'no-with': ['error'],
     'no-ex-assign': ['error'],
     'no-fallthrough': ['error'],
@@ -30,7 +34,6 @@ export const eslintRules: Linter.RulesRecord = {
     'no-unsafe-finally': ['error'],
     'no-unsafe-negation': ['error'],
     'no-unused-labels': ['error'],
-    'no-return-await': ['error'],
     'no-return-assign': ['error', 'always'],
     'no-script-url': ['error'],
     'no-throw-literal': ['error'],
@@ -78,12 +81,6 @@ export const eslintRules: Linter.RulesRecord = {
     'no-tabs': ['error'],
     'semi-style': ['error', 'last'],
     'default-case-last': ['error'],
-    'default-case': [
-        'error',
-        {
-            commentPattern: '^no default$',
-        },
-    ],
     'unicode-bom': ['error', 'never'],
     'for-direction': ['error'],
     'block-scoped-var': ['error'],
@@ -105,7 +102,6 @@ export const eslintRules: Linter.RulesRecord = {
         },
     ],
     'prefer-template': ['error'],
-    'consistent-return': ['error'],
     'symbol-description': ['error'],
     strict: ['error', 'never'],
     yoda: ['error'],
