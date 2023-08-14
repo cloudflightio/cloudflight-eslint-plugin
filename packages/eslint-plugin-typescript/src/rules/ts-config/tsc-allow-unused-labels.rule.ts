@@ -1,11 +1,19 @@
-import {Rule} from 'eslint';
-
+import {createTscRule} from '../../util/create-rule';
 import {tscRule} from '../../util/tsc-util';
 
-export const TscAllowUnusedLabelsRule: Rule.RuleModule = {
-    create: (context) => tscRule(context, {key: 'allowUnusedLabels', expectedValue: false}),
+export const TscAllowUnusedLabelsRuleName = 'tsc-allow-unused-labels';
+export const TscAllowUnusedLabelsRule = createTscRule({
+    name: TscAllowUnusedLabelsRuleName,
     meta: {
         type: 'problem',
         fixable: 'code',
+        docs: {
+            description: 'https://www.typescriptlang.org/tsconfig/#allowUnusedLabels',
+            recommended: 'error',
+        },
+        schema: [],
+        messages: {},
     },
-};
+    defaultOptions: [],
+    create: (context) => tscRule(context, {key: 'allowUnusedLabels', expectedValue: false}),
+});

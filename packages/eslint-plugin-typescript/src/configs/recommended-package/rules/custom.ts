@@ -1,8 +1,13 @@
-import {Linter} from 'eslint';
+import {TSESLint} from '@typescript-eslint/utils';
+
+import {
+    PackageForceAbsoluteVersionDependenciesRuleName,
+} from '../../../rules/package/package-force-absolute-version-dependencies.rule';
+import {PackageForcePrivateRuleName} from '../../../rules/package/package-force-private.rule';
 
 const pluginPrefix = '@cloudflight/typescript';
 
-export const customRules: Linter.RulesRecord = {
-    [`${pluginPrefix}/package-force-private`]: ['error'],
-    [`${pluginPrefix}/package-force-absolute-version-dependencies`]: ['error'],
+export const customRules: TSESLint.Linter.RulesRecord = {
+    [`${pluginPrefix}/${PackageForcePrivateRuleName}`]: ['error'],
+    [`${pluginPrefix}/${PackageForceAbsoluteVersionDependenciesRuleName}`]: ['error'],
 };

@@ -1,8 +1,8 @@
-import type {Linter} from 'eslint';
+import {TSESLint} from '@typescript-eslint/utils';
 
 const pluginPrefix = '@typescript-eslint';
 
-export const typescriptEslintRules: Linter.RulesRecord = {
+export const typescriptEslintRules: TSESLint.Linter.RulesRecord = {
     [`${pluginPrefix}/ban-types`]: [
         'error',
         {

@@ -1,16 +1,15 @@
-import {Rule} from 'eslint';
-import type {Literal, Node, ObjectExpression, Program, Property, SpreadElement} from 'estree';
+import {AST_NODE_TYPES, TSESLint, TSESTree} from '@typescript-eslint/utils';
 
 import {JsonPropertyAssertion} from './json-property-assertion';
 
 /**
  * Create a new rule validating a property value of a given json file.
- * @param context ESLint {@link Rule.RuleContext} for reporting issues.
+ * @param context ESLint {@link TSESLint.RuleContext} for reporting issues.
  * @param propertyAssertion Descriptor of the property and expected value which should be validated.
  * @param ruleContextName A human readable string to identify the context of the evaluated rule used for error messages.
  * Could be a filename, eg `package.json`, or some logical structure inside a file, eg `compiler options`.
  */
-export function jsonRule(context: Rule.RuleContext, propertyAssertion: JsonPropertyAssertion, ruleContextName: string): Rule.RuleListener {
+export function jsonRule(context: TSESLint.RuleContext<string, unknown[]>, propertyAssertion: JsonPropertyAssertion, ruleContextName: string): TSESLint.RuleListener {
     return {
         Property(propertyNode) {
             validateProperty(propertyNode, propertyAssertion, context, ruleContextName);
@@ -21,9 +20,9 @@ export function jsonRule(context: Rule.RuleContext, propertyAssertion: JsonPrope
     };
 }
 
-export function findProperty(properties: (Property | SpreadElement)[], propertyKey: string): Property | undefined {
-    return properties.find((o): o is Property => {
-        if (o.type === 'Property') {
+export function findProperty(properties: (TSESTree.Property | TSESTree.SpreadElement)[], propertyKey: string): TSESTree.Property | undefined {
+    return properties.find((o): o is TSESTree.Property => {
+        if (o.type === AST_NODE_TYPES.Property) {
             return getPropertyName(o) === propertyKey;
         }
 
@@ -31,15 +30,15 @@ export function findProperty(properties: (Property | SpreadElement)[], propertyK
     });
 }
 
-export function findPropertyPath(propertyNode: Property & Rule.NodeParentExtension): string {
+export function findPropertyPath(propertyNode: TSESTree.Property): string {
     let key = getPropertyName(propertyNode) ?? '';
 
     if (propertyNode.parent != null) {
-        let parent: (Property & Rule.NodeParentExtension) | undefined;
-        if (propertyNode.parent.type === 'Property') {
+        let parent: TSESTree.Property | undefined;
+        if (propertyNode.parent.type === AST_NODE_TYPES.Property) {
             parent = propertyNode.parent;
         }
-        else if (propertyNode.parent.type === 'ObjectExpression' && propertyNode.parent.parent.type === 'Property') {
+        else if (propertyNode.parent.type === AST_NODE_TYPES.ObjectExpression && propertyNode.parent.parent?.type === AST_NODE_TYPES.Property) {
             parent = propertyNode.parent.parent;
         }
 
@@ -51,24 +50,25 @@ export function findPropertyPath(propertyNode: Property & Rule.NodeParentExtensi
     return key;
 }
 
-export function getPropertyName(property: Property): string | undefined {
-    return (property.key as Literal).value?.toString();
+export function getPropertyName(property: TSESTree.Property): string | undefined {
+    return (property.key as TSESTree.Literal).value?.toString();
 }
 
 export function reportMissingProperty(
-    context: Rule.RuleContext,
-    propertyNode: Node,
+    context: TSESLint.RuleContext<string, unknown[]>,
+    propertyNode: TSESTree.Node,
     property: JsonPropertyAssertion,
-    parent: ObjectExpression | undefined,
+    parent: TSESTree.ObjectExpression | undefined,
     ruleContextName: string,
 ): void {
     context.report({
         node: propertyNode,
+        // @ts-expect-error typescript-eslint forbids this for some reason, but is fine for our case
         message: `${ruleContextName} option '${property.key}' is missing!`,
         fix: (fixer) => {
             const parentOrSelf = parent ?? propertyNode;
 
-            if (parentOrSelf.type === 'ObjectExpression') {
+            if (parentOrSelf.type === AST_NODE_TYPES.ObjectExpression) {
                 const properties = parentOrSelf.properties;
                 const range = properties[properties.length - 1]?.range;
                 const propertyValue = JSON.stringify(property.expectedValue);
@@ -76,7 +76,7 @@ export function reportMissingProperty(
                 if (range) {
                     return fixer.insertTextAfterRange(range, `,\n"${property.key}": ${propertyValue}`);
                 }
-                else if (properties.length === 0 && parentOrSelf.range) {
+                else if (properties.length === 0 && parentOrSelf.range != null) {
                     return fixer.replaceTextRange(parentOrSelf.range, `{"${property.key}": ${propertyValue}}`);
                 }
             }
@@ -87,28 +87,29 @@ export function reportMissingProperty(
 }
 
 export function reportWrongPropertyValue(
-    context: Rule.RuleContext,
-    target: Property,
+    context: TSESLint.RuleContext<string, unknown[]>,
+    target: TSESTree.Property,
     property: JsonPropertyAssertion,
     ruleContextName: string,
 ): void {
     context.report({
         node: target,
+        // @ts-expect-error typescript-eslint forbids this for some reason, but is fine for our case
         message: `${ruleContextName} option '${property.key}' must be set to '${property.expectedValue as string}'!`,
         fix: (fixer) => fixer.replaceText(target.value, JSON.stringify(property.expectedValue)),
     });
 }
 
 export function validateRootJsonProperty(
-    jsonRoot: Program,
+    jsonRoot: TSESTree.Program,
     propertyAssertion: JsonPropertyAssertion,
-    context: Rule.RuleContext,
+    context: TSESLint.RuleContext<string, unknown[]>,
     ruleContextName: string,
 ): void {
     // For whatever reason the TSCompiler cannot deduce that elements inside body can be of type ObjectExpression, so we cast via unknown
-    const jsonRootObject = jsonRoot.body[0] as unknown as ObjectExpression | undefined;
+    const jsonRootObject = jsonRoot.body[0] as unknown as TSESTree.ObjectExpression | undefined;
 
-    if (jsonRoot.body.length !== 1 || jsonRootObject?.type !== 'ObjectExpression') {
+    if (jsonRoot.body.length !== 1 || jsonRootObject?.type !== AST_NODE_TYPES.ObjectExpression) {
         return;
     }
 
@@ -131,20 +132,20 @@ export function validateRootJsonProperty(
 }
 
 function validateProperty(
-    propertyNode: Property & Rule.NodeParentExtension,
+    propertyNode: TSESTree.Property,
     propertyAssertion: JsonPropertyAssertion,
-    context: Rule.RuleContext,
+    context: TSESLint.RuleContext<string, unknown[]>,
     ruleContextName: string,
 ): void {
     const propertyPath = findPropertyPath(propertyNode);
 
     if (propertyPath === propertyAssertion.key) {
-        if ((propertyNode.value as Literal).value !== propertyAssertion.expectedValue) {
+        if ((propertyNode.value as TSESTree.Literal).value !== propertyAssertion.expectedValue) {
             reportWrongPropertyValue(context, propertyNode, propertyAssertion, ruleContextName);
         }
     }
     else if (propertyAssertion.key.startsWith(propertyPath)) {
-        if (propertyNode.value.type === 'ObjectExpression') {
+        if (propertyNode.value.type === AST_NODE_TYPES.ObjectExpression) {
             const nextPath = propertyAssertion.key.substring(0, propertyPath.length).split('.')[0] ?? '';
             const nextProperty = findProperty(propertyNode.value.properties, nextPath);
 

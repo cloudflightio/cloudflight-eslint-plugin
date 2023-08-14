@@ -1,18 +1,31 @@
-import {Rule} from 'eslint';
+import {createRule} from '../util/create-rule';
 
-const message = 'Momentjs is deprecated. It is recommended to use luxon or date-fns instead.';
-
-export const NoMomentJsRule: Rule.RuleModule = {
+export const NoMomentJsRuleName = 'no-moment-js';
+export const NoMomentJsRule = createRule<[], 'noMomentJs'>({
+    name: NoMomentJsRuleName,
+    meta: {
+        type: 'problem',
+        fixable: 'code',
+        docs: {
+            description: 'Enforces that all packages have absolute versions.',
+            recommended: 'error',
+        },
+        schema: [],
+        messages: {
+            noMomentJs: 'Momentjs is deprecated. It is recommended to use luxon or date-fns instead.',
+        },
+    },
+    defaultOptions: [],
     create(context) {
         return {
             ImportExpression(node) {
                 if (node.source.type === 'Literal' && node.source.value === 'moment') {
-                    context.report({node, message});
+                    context.report({node, messageId: 'noMomentJs'});
                 }
             },
             ImportDeclaration(node) {
                 if (node.source.type === 'Literal' && node.source.value === 'moment') {
-                    context.report({node, message});
+                    context.report({node, messageId: 'noMomentJs'});
                 }
             },
             CallExpression(node) {
@@ -23,9 +36,9 @@ export const NoMomentJsRule: Rule.RuleModule = {
                 const sourceToRequire = node.arguments[0];
 
                 if (sourceToRequire?.type === 'Literal' && sourceToRequire.value === 'moment') {
-                    context.report({node, message});
+                    context.report({node, messageId: 'noMomentJs'});
                 }
             },
         };
     },
-};
+});

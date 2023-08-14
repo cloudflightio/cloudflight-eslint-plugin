@@ -1,11 +1,15 @@
-import {RuleTester} from 'eslint';
+import {TSESLint} from '@typescript-eslint/utils';
 
-import {PackageForceAbsoluteVersionDependenciesRule} from './package-force-absolute-version-dependencies.rule';
+import {
+    PackageForceAbsoluteVersionDependenciesRule,
+    PackageForceAbsoluteVersionDependenciesRuleName,
+} from './package-force-absolute-version-dependencies.rule';
 
-const ruleTester = new RuleTester({
+const ruleTester = new TSESLint.RuleTester({
     parser: require.resolve('eslint-plugin-json-es'),
 });
-ruleTester.run('package-force-absolute-version-dependencies', PackageForceAbsoluteVersionDependenciesRule, {
+
+ruleTester.run(PackageForceAbsoluteVersionDependenciesRuleName, PackageForceAbsoluteVersionDependenciesRule, {
     valid: [
         {
             code: '{"dependencies": { "dependency": "1.0.0"}}',
@@ -36,71 +40,85 @@ ruleTester.run('package-force-absolute-version-dependencies', PackageForceAbsolu
         {
             code: '{"dependencies": { "dependency": ">1.0.0"}}',
             output: '{"dependencies": { "dependency": "1.0.0"}}',
+            // @ts-expect-error typescript-eslint forbids this for some reason, but is fine for our case
             errors: [{message: 'dependencies option \'dependency\' must be set to \'1.0.0\'!'}],
         },
         {
             code: '{"devDependencies": { "dependency": ">1.0.0"}}',
             output: '{"devDependencies": { "dependency": "1.0.0"}}',
+            // @ts-expect-error typescript-eslint forbids this for some reason, but is fine for our case
             errors: [{message: 'devDependencies option \'dependency\' must be set to \'1.0.0\'!'}],
         },
         {
             code: '{"dependencies": { "dependency": ">=1.0.0"}}',
             output: '{"dependencies": { "dependency": "1.0.0"}}',
+            // @ts-expect-error typescript-eslint forbids this for some reason, but is fine for our case
             errors: [{message: 'dependencies option \'dependency\' must be set to \'1.0.0\'!'}],
         },
         {
             code: '{"dependencies": { "dependency": "<1.0.0"}}',
             output: '{"dependencies": { "dependency": "1.0.0"}}',
+            // @ts-expect-error typescript-eslint forbids this for some reason, but is fine for our case
             errors: [{message: 'dependencies option \'dependency\' must be set to \'1.0.0\'!'}],
         },
         {
             code: '{"dependencies": { "dependency": "<=1.0.0"}}',
             output: '{"dependencies": { "dependency": "1.0.0"}}',
+            // @ts-expect-error typescript-eslint forbids this for some reason, but is fine for our case
             errors: [{message: 'dependencies option \'dependency\' must be set to \'1.0.0\'!'}],
         },
         {
             code: '{"dependencies": { "dependency": "~1.0.0"}}',
             output: '{"dependencies": { "dependency": "1.0.0"}}',
+            // @ts-expect-error typescript-eslint forbids this for some reason, but is fine for our case
             errors: [{message: 'dependencies option \'dependency\' must be set to \'1.0.0\'!'}],
         },
         {
             code: '{"dependencies": { "dependency": "^1.0.0"}}',
             output: '{"dependencies": { "dependency": "1.0.0"}}',
+            // @ts-expect-error typescript-eslint forbids this for some reason, but is fine for our case
             errors: [{message: 'dependencies option \'dependency\' must be set to \'1.0.0\'!'}],
         },
         {
             code: '{"dependencies": { "dependency": "1.0.x"}}',
             output: '{"dependencies": { "dependency": "1.0.0"}}',
+            // @ts-expect-error typescript-eslint forbids this for some reason, but is fine for our case
             errors: [{message: 'dependencies option \'dependency\' must be set to \'1.0.0\'!'}],
         },
         {
             code: '{"dependencies": { "dependency": "1.x.0"}}',
             output: '{"dependencies": { "dependency": "1.0.0"}}',
+            // @ts-expect-error typescript-eslint forbids this for some reason, but is fine for our case
             errors: [{message: 'dependencies option \'dependency\' must be set to \'1.0.0\'!'}],
         },
         {
             code: '{"dependencies": { "dependency": "1.x.x"}}',
             output: '{"dependencies": { "dependency": "1.0.0"}}',
+            // @ts-expect-error typescript-eslint forbids this for some reason, but is fine for our case
             errors: [{message: 'dependencies option \'dependency\' must be set to \'1.0.0\'!'}],
         },
         {
             code: '{"dependencies": { "dependency": "*"}}',
             output: '{"dependencies": { "dependency": "*"}}',
+            // @ts-expect-error typescript-eslint forbids this for some reason, but is fine for our case
             errors: [{message: 'dependencies option \'dependency\' must be set to an absolute version!'}],
         },
         {
             code: '{"dependencies": { "dependency": ""}}',
             output: '{"dependencies": { "dependency": ""}}',
+            // @ts-expect-error typescript-eslint forbids this for some reason, but is fine for our case
             errors: [{message: 'dependencies option \'dependency\' must be set to an absolute version!'}],
         },
         {
             code: '{"dependencies": { "dependency": "1.0.0 - 2.0.0"}}',
             output: '{"dependencies": { "dependency": "1.0.0"}}',
+            // @ts-expect-error typescript-eslint forbids this for some reason, but is fine for our case
             errors: [{message: 'dependencies option \'dependency\' must be set to \'1.0.0\'!'}],
         },
         {
             code: '{"dependencies": { "dependency": "4.0.0 || 1.0.0 - 2.0.0"}}',
             output: '{"dependencies": { "dependency": "4.0.0"}}',
+            // @ts-expect-error typescript-eslint forbids this for some reason, but is fine for our case
             errors: [{message: 'dependencies option \'dependency\' must be set to \'4.0.0\'!'}],
         },
     ],

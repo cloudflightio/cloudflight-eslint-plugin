@@ -1,37 +1,37 @@
-import {RuleTester} from 'eslint';
+import {AST_NODE_TYPES, TSESLint} from '@typescript-eslint/utils';
 
-import {NoMomentJsRule} from './no-moment-js';
+import {NoMomentJsRule, NoMomentJsRuleName} from './no-moment-js';
 
-const ruleTester = new RuleTester({
+const ruleTester = new TSESLint.RuleTester({
     parser: require.resolve('@typescript-eslint/parser'),
 });
 
-ruleTester.run('no-moment-js', NoMomentJsRule, {
+ruleTester.run(NoMomentJsRuleName, NoMomentJsRule, {
     valid: ["import('foo').then()", "import { fn } from 'foo'", "const { fn } = require('foo')"],
     invalid: [
         {
             code: "import('moment').then(()=>{})",
-            errors: [{type: 'ImportExpression'}],
+            errors: [{type: AST_NODE_TYPES.ImportExpression, messageId: 'noMomentJs'}],
         },
         {
             code: "const fn = await import('moment')",
-            errors: [{type: 'ImportExpression'}],
+            errors: [{type: AST_NODE_TYPES.ImportExpression, messageId: 'noMomentJs'}],
         },
         {
             code: "import moment from 'moment'",
-            errors: [{type: 'ImportDeclaration'}],
+            errors: [{type: AST_NODE_TYPES.ImportDeclaration, messageId: 'noMomentJs'}],
         },
         {
             code: "import * as moment from 'moment'",
-            errors: [{type: 'ImportDeclaration'}],
+            errors: [{type: AST_NODE_TYPES.ImportDeclaration, messageId: 'noMomentJs'}],
         },
         {
             code: "const moment = require('moment')",
-            errors: [{type: 'CallExpression'}],
+            errors: [{type: AST_NODE_TYPES.CallExpression, messageId: 'noMomentJs'}],
         },
         {
             code: "const format = require('moment').format",
-            errors: [{type: 'CallExpression'}],
+            errors: [{type: AST_NODE_TYPES.CallExpression, messageId: 'noMomentJs'}],
         },
     ],
 });

@@ -1,25 +1,25 @@
-import {RuleTester} from 'eslint';
+import {AST_NODE_TYPES, TSESLint} from '@typescript-eslint/utils';
 
-import {NoOnEventAssign} from './no-on-event-assign';
+import {NoOnEventAssign, NoOnEventAssignName} from './no-on-event-assign';
 
-const ruleTester = new RuleTester({
+const ruleTester = new TSESLint.RuleTester({
     parser: require.resolve('@typescript-eslint/parser'),
 });
 
-ruleTester.run('no-on-event-assign', NoOnEventAssign, {
+ruleTester.run(NoOnEventAssignName, NoOnEventAssign, {
     valid: ["target.addEventlistener('click', () => {})"],
     invalid: [
         {
             code: 'target.onclick = function(){}',
-            errors: [{type: 'AssignmentExpression'}],
+            errors: [{type: AST_NODE_TYPES.AssignmentExpression, messageId: 'noAssign'}],
         },
         {
             code: 'target.onclick = () => {}',
-            errors: [{type: 'AssignmentExpression'}],
+            errors: [{type: AST_NODE_TYPES.AssignmentExpression, messageId: 'noAssign'}],
         },
         {
             code: 'target.onclick = undefined',
-            errors: [{type: 'AssignmentExpression'}],
+            errors: [{type: AST_NODE_TYPES.AssignmentExpression, messageId: 'noAssign'}],
         },
     ],
 });

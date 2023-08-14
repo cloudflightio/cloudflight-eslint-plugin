@@ -9,13 +9,14 @@ const createRule = ESLintUtils.RuleCreator(
     (name) => `https://github.com/cloudflightio/cloudflight-eslint-plugin/tree/main/packages/eslint-plugin-angular/src/rules/${name}.ts`,
 );
 
+export const imgUsesNgsrcRuleName = 'img-uses-ngsrc';
 export const imgUsesNgsrcRule = createRule<[], MessageIds>({
-    name: 'img-uses-ngsrc',
+    name: imgUsesNgsrcRuleName,
     meta: {
         type: 'suggestion',
         docs: {
             description: 'Ensures ngSrc is used instead of src for img elements.',
-            recommended: false,
+            recommended: 'error',
         },
         schema: [],
         messages: {

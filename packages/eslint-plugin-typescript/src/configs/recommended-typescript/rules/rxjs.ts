@@ -1,8 +1,8 @@
-import type {Linter} from 'eslint';
+import {TSESLint} from '@typescript-eslint/utils';
 
 const pluginPrefix = 'rxjs';
 
-export const rxjsRules: Linter.RulesRecord = {
+export const rxjsRules: TSESLint.Linter.RulesRecord = {
     [`${pluginPrefix}/finnish`]: ['error'],
     [`${pluginPrefix}/no-async-subscribe`]: ['error'],
     [`${pluginPrefix}/no-connectable`]: ['error'],

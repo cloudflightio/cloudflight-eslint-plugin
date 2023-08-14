@@ -1,8 +1,8 @@
-import {Linter} from 'eslint';
+import {TSESLint} from '@typescript-eslint/utils';
 
 import {customRules} from './rules/custom';
 
-export const RecommendedJsonConfig: Linter.BaseConfig = {
+export const RecommendedJsonConfig: TSESLint.Linter.Config = {
     plugins: ['@cloudflight/typescript'],
     parser: 'eslint-plugin-json-es',
     rules: {

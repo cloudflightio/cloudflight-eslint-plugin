@@ -1,7 +1,7 @@
-import {Rule} from 'eslint';
+import {TSESLint} from '@typescript-eslint/utils';
 
-import {imgUsesNgsrcRule} from './img-uses-ngsrc';
+import {imgUsesNgsrcRule, imgUsesNgsrcRuleName} from './img-uses-ngsrc';
 
-export const rules: Record<string, Rule.RuleModule> = {
-    'img-uses-ngsrc': imgUsesNgsrcRule as unknown as Rule.RuleModule,
+export const rules: Record<string, TSESLint.RuleModule<string, readonly unknown[]>> = {
+    [imgUsesNgsrcRuleName]: imgUsesNgsrcRule,
 };

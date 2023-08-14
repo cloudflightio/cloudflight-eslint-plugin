@@ -1,7 +1,7 @@
 import {configs} from '@cloudflight/eslint-plugin-typescript';
-import {Linter} from 'eslint';
+import {TSESLint} from '@typescript-eslint/utils';
 
-export const RecommendedConfig: Linter.BaseConfig = {
+export const RecommendedConfig: TSESLint.Linter.Config = {
     extends: [
         'plugin:@cloudflight/typescript/recommended',
         'plugin:vue/vue3-recommended',

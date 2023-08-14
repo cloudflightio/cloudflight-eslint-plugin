@@ -1,8 +1,11 @@
-import type {Linter} from 'eslint';
+import {TSESLint} from '@typescript-eslint/utils';
+
+import {NoMomentJsRuleName} from '../../../rules/no-moment-js';
+import {NoOnEventAssignName} from '../../../rules/no-on-event-assign';
 
 const pluginPrefix = '@cloudflight/typescript';
 
-export const customRules: Linter.RulesRecord = {
-    [`${pluginPrefix}/no-moment-js`]: ['error'],
-    [`${pluginPrefix}/no-on-event-assign`]: ['error'],
+export const customRules: TSESLint.Linter.RulesRecord = {
+    [`${pluginPrefix}/${NoMomentJsRuleName}`]: ['error'],
+    [`${pluginPrefix}/${NoOnEventAssignName}`]: ['error'],
 };
