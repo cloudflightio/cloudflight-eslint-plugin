@@ -1,8 +1,8 @@
-import type {Linter} from 'eslint';
+import {TSESLint} from '@typescript-eslint/utils';
 
 const pluginPrefix = 'import';
 
-export const importEslintRules: Linter.RulesRecord = {
+export const importEslintRules: TSESLint.Linter.RulesRecord = {
     [`${pluginPrefix}/first`]: ['error'],
     [`${pluginPrefix}/no-absolute-path`]: ['error'],
     [`${pluginPrefix}/no-cycle`]: ['error', {ignoreExternal: true}],

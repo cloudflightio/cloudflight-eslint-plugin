@@ -1,6 +1,6 @@
-import {Linter} from 'eslint';
+import {TSESLint} from '@typescript-eslint/utils';
 
-export const RecommendedConfig: Linter.BaseConfig = {
+export const RecommendedConfig: TSESLint.Linter.Config = {
     plugins: ['@cloudflight/angular'],
     overrides: [
         {

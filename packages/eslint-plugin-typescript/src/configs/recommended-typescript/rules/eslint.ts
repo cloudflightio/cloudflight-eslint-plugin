@@ -1,6 +1,6 @@
-import type {Linter} from 'eslint';
+import {TSESLint} from '@typescript-eslint/utils';
 
-export const eslintRules: Linter.RulesRecord = {
+export const eslintRules: TSESLint.Linter.RulesRecord = {
     complexity: ['error', {max: 20}],
     // this rule conflicts with switch-exhaustiveness-check and should not be turned on
     // with typescript, this would not become an issue either

@@ -1,10 +1,22 @@
-import {Rule} from 'eslint';
-
+import {createPackageRule} from '../../util/create-rule';
 import {findPropertyPath, getPropertyName, reportWrongPropertyValue} from '../../util/json-util';
 
 const semVerRegex = /\d+\.(\d+|x)\.(\d+|x)/;
 
-export const PackageForceAbsoluteVersionDependenciesRule: Rule.RuleModule = {
+export const PackageForceAbsoluteVersionDependenciesRuleName = 'package-force-absolute-version-dependencies';
+export const PackageForceAbsoluteVersionDependenciesRule = createPackageRule<[], string>({
+    name: PackageForceAbsoluteVersionDependenciesRuleName,
+    meta: {
+        type: 'problem',
+        fixable: 'code',
+        docs: {
+            description: 'Enforces that all packages have absolute versions.',
+            recommended: 'error',
+        },
+        schema: [],
+        messages: {},
+    },
+    defaultOptions: [],
     create: (context) => ({
         Property(propertyNode) {
             const propertyPath = findPropertyPath(propertyNode);
@@ -28,17 +40,19 @@ export const PackageForceAbsoluteVersionDependenciesRule: Rule.RuleModule = {
             if (isAnyVersion && propertyName != null && propertyName !== '') {
                 context.report({
                     node: propertyNode,
+                    // @ts-expect-error typescript-eslint forbids this for some reason, but is fine for our case
                     message: `${dependencyContext} option '${propertyName}' must be set to an absolute version!`,
                 });
-            } else if (foundVersion != null && foundVersion !== '') {
+            }
+            else if (foundVersion != null && foundVersion !== '') {
                 const isAbsoluteVersion = propertyValue.length === JSON.stringify(foundVersion).length && !propertyValue.includes('x');
 
                 if (
                     !isAbsoluteVersion &&
-                        dependencyContext != null &&
-                        dependencyContext !== '' &&
-                        propertyName != null &&
-                        propertyName !== ''
+                    dependencyContext != null &&
+                    dependencyContext !== '' &&
+                    propertyName != null &&
+                    propertyName !== ''
                 ) {
                     reportWrongPropertyValue(
                         context,
@@ -53,8 +67,4 @@ export const PackageForceAbsoluteVersionDependenciesRule: Rule.RuleModule = {
             }
         },
     }),
-    meta: {
-        type: 'problem',
-        fixable: 'code',
-    },
-};
+});

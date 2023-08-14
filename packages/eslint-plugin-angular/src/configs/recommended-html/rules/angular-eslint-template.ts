@@ -1,8 +1,8 @@
-import {Linter} from 'eslint';
+import {TSESLint} from '@typescript-eslint/utils';
 
 const pluginPrefix = '@angular-eslint/template';
 
-export const angularTemplateEslintRules: Linter.RulesRecord = {
+export const angularTemplateEslintRules: TSESLint.Linter.RulesRecord = {
     [`${pluginPrefix}/alt-text`]: ['error'],
     [`${pluginPrefix}/banana-in-box`]: ['error'],
     [`${pluginPrefix}/button-has-type`]: ['error'],

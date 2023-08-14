@@ -1,7 +1,7 @@
-import {Linter} from 'eslint';
+import {TSESLint} from '@typescript-eslint/utils';
 
 import {RecommendedConfig} from './recommended/recommended.config';
 
-export const configs: Record<string, Linter.BaseConfig> = {
+export const configs: Record<string, TSESLint.Linter.Config> = {
     recommended: RecommendedConfig,
 };

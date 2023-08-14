@@ -1,6 +1,4 @@
-import {Rule} from 'eslint';
-
-const message = 'Directly assigning to the `on` events is not recommended. Use `addEventListener` instead.';
+import {createRule} from '../util/create-rule';
 
 const disallowedEvents = [
     'onabort',
@@ -96,7 +94,22 @@ const disallowedEvents = [
     'onwheel',
 ];
 
-export const NoOnEventAssign: Rule.RuleModule = {
+export const NoOnEventAssignName = 'no-on-event-assign';
+export const NoOnEventAssign = createRule<[], 'noAssign'>({
+    name: NoOnEventAssignName,
+    meta: {
+        type: 'problem',
+        fixable: 'code',
+        docs: {
+            description: 'Enforces that all packages have absolute versions.',
+            recommended: 'error',
+        },
+        schema: [],
+        messages: {
+            noAssign: 'Directly assigning to the `on` events is not recommended. Use `addEventListener` instead.',
+        },
+    },
+    defaultOptions: [],
     create(context) {
         return {
             AssignmentExpression(node) {
@@ -109,9 +122,9 @@ export const NoOnEventAssign: Rule.RuleModule = {
                 }
 
                 if (disallowedEvents.includes(node.left.property.name)) {
-                    context.report({node, message});
+                    context.report({node, messageId: 'noAssign'});
                 }
             },
         };
     },
-};
+});

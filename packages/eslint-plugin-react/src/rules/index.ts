@@ -1,3 +1,3 @@
-import {Rule} from 'eslint';
+import {TSESLint} from '@typescript-eslint/utils';
 
-export const rules: Record<string, Rule.RuleModule> = {};
+export const rules: Record<string, TSESLint.RuleModule<string, readonly unknown[]>> = {};

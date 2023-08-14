@@ -1,6 +1,6 @@
 import {ESLintUtils} from '@typescript-eslint/utils';
 
-import {imgUsesNgsrcRule} from './img-uses-ngsrc';
+import {imgUsesNgsrcRule, imgUsesNgsrcRuleName} from './img-uses-ngsrc';
 
 const ruleTester = new ESLintUtils.RuleTester({
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -8,7 +8,7 @@ const ruleTester = new ESLintUtils.RuleTester({
     parser: require.resolve('@angular-eslint/template-parser'),
 });
 
-ruleTester.run('img-uses-ngsrc', imgUsesNgsrcRule, {
+ruleTester.run(imgUsesNgsrcRuleName, imgUsesNgsrcRule, {
     valid: ['<img ngSrc="http://localhost">', "<img [ngSrc]=\"'http://localhost'>", '<img [ngSrc]="value">'],
     invalid: [
         {

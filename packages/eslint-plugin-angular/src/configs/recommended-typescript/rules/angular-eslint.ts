@@ -1,8 +1,8 @@
-import {Linter} from 'eslint';
+import {TSESLint} from '@typescript-eslint/utils';
 
 const pluginPrefix = '@angular-eslint';
 
-export const angularEslintRules: Linter.RulesRecord = {
+export const angularEslintRules: TSESLint.Linter.RulesRecord = {
     [`${pluginPrefix}/component-class-suffix`]: [
         'error',
         {

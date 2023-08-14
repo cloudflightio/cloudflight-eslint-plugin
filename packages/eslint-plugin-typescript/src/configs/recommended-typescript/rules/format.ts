@@ -1,6 +1,6 @@
-import type {Linter} from 'eslint';
+import {TSESLint} from '@typescript-eslint/utils';
 
-export const formatEslintRules: Linter.RulesRecord = {
+export const formatEslintRules: TSESLint.Linter.RulesRecord = {
     'max-len': [
         'error',
         {
