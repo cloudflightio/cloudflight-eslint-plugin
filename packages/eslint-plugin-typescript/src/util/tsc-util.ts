@@ -1,7 +1,8 @@
-import {TSESLint, TSESTree} from '@typescript-eslint/utils';
+import {AST_NODE_TYPES, TSESLint, TSESTree} from '@typescript-eslint/utils';
 
 import {JsonPropertyAssertion} from './json-property-assertion';
 import {findProperty, reportMissingProperty, reportWrongPropertyValue, validateRootJsonProperty} from './json-util';
+import {isLiteral, isObjectExpression} from './node-types';
 
 const filename = 'TS compiler';
 
@@ -21,28 +22,41 @@ function validateProperty(
     propertyAssertion: JsonPropertyAssertion,
     context: TSESLint.RuleContext<string, unknown[]>,
 ): void {
-    if ((propertyNode.key as TSESTree.Literal).value === 'compilerOptions') {
-        const compilerOptions = propertyNode.value as TSESTree.ObjectExpression;
+    if (isLiteral(propertyNode.key) && propertyNode.key.value === 'compilerOptions') {
+        const compilerOptions = propertyNode.value;
+
+        if (!isObjectExpression(compilerOptions)) {
+            return;
+        }
+
         const property = findProperty(compilerOptions.properties, propertyAssertion.key);
 
-        if (property === undefined) {
+        if (property == null) {
             if (isRootTsConfig(propertyNode)) {
                 reportMissingProperty(context, propertyNode, propertyAssertion, compilerOptions, filename);
             }
         }
-        else if ((property.value as TSESTree.Literal).value !== propertyAssertion.expectedValue) {
+        else if (isLiteral(property.value) && property.value.value !== propertyAssertion.expectedValue) {
             reportWrongPropertyValue(context, property, propertyAssertion, filename);
         }
     }
 }
 
 function isRootTsConfig(propertyNode: TSESTree.Property): boolean {
-    const tsConfigRootNode: TSESTree.ObjectExpression = propertyNode.parent as TSESTree.ObjectExpression;
+    if (propertyNode.parent == null) {
+        return false;
+    }
+
+    const tsConfigRootNode = propertyNode.parent;
+
+    if (!isObjectExpression(tsConfigRootNode)) {
+        return false;
+    }
 
     return (
         tsConfigRootNode.properties.findIndex((p) => {
-            if (p.type === 'Property') {
-                return (p.key as TSESTree.Literal).value === 'extends';
+            if (p.type === AST_NODE_TYPES.Property && isLiteral(p.key)) {
+                return p.key.value === 'extends';
             }
 
             return false;

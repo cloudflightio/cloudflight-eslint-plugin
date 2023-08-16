@@ -1,8 +1,7 @@
-import {TSESTree} from '@typescript-eslint/utils';
-
 import {createPackageRule} from '../../util/create-rule';
 import {JsonPropertyAssertion} from '../../util/json-property-assertion';
 import {findProperty, jsonRule, reportMissingProperty, reportWrongPropertyValue} from '../../util/json-util';
+import {isLiteral, isObjectExpression} from '../../util/node-types';
 
 interface RuleOptions {
     ignorePublished: boolean;
@@ -47,25 +46,30 @@ export const PackageForcePrivateRule = createPackageRule<RuleOptions[], string>(
 
         return {
             Program(program) {
-                const jsonRootObject = program.body[0] as unknown as TSESTree.ObjectExpression | undefined;
+                const jsonRootObject: unknown = program.body[0];
 
-                if (!(program.body.length === 1 && jsonRootObject?.type === 'ObjectExpression')) {
+                if (program.body.length !== 1 || !isObjectExpression(jsonRootObject)) {
                     return;
                 }
 
                 const privateProperty = findProperty(jsonRootObject.properties, 'private');
-                const privateValue = (privateProperty?.value as TSESTree.Literal)?.value === true;
                 const publishConfigProperty = findProperty(jsonRootObject.properties, 'publishConfig');
-                const isPublic = !privateProperty || !privateValue;
 
-                if (!(isPublic && !publishConfigProperty)) {
+                if (privateProperty == null && publishConfigProperty == null) {
+                    reportMissingProperty(context, jsonRootObject, privatePropertyAssertion, jsonRootObject, 'package.json');
+
                     return;
                 }
 
-                if (!privateProperty) {
-                    reportMissingProperty(context, jsonRootObject, privatePropertyAssertion, jsonRootObject, 'package.json');
+                if (privateProperty?.value == null || !isLiteral(privateProperty.value)) {
+                    return;
                 }
-                else {
+
+                if (privateProperty.value.value === true) {
+                    return;
+                }
+
+                if (publishConfigProperty == null) {
                     reportWrongPropertyValue(context, privateProperty, privatePropertyAssertion, 'package.json');
                 }
             },
