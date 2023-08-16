@@ -1,6 +1,7 @@
 import {AST_NODE_TYPES, TSESLint, TSESTree} from '@typescript-eslint/utils';
 
 import {JsonPropertyAssertion} from './json-property-assertion';
+import {isLiteral, isObjectExpression} from './node-types';
 
 /**
  * Create a new rule validating a property value of a given json file.
@@ -51,7 +52,11 @@ export function findPropertyPath(propertyNode: TSESTree.Property): string {
 }
 
 export function getPropertyName(property: TSESTree.Property): string | undefined {
-    return (property.key as TSESTree.Literal).value?.toString();
+    if (!isLiteral(property.key)) {
+        return undefined;
+    }
+
+    return property.key.value?.toString();
 }
 
 export function reportMissingProperty(
@@ -95,7 +100,7 @@ export function reportWrongPropertyValue(
     context.report({
         node: target,
         // @ts-expect-error typescript-eslint forbids this for some reason, but is fine for our case
-        message: `${ruleContextName} option '${property.key}' must be set to '${property.expectedValue as string}'!`,
+        message: `${ruleContextName} option '${property.key}' must be set to '${String(property.expectedValue)}'!`,
         fix: (fixer) => fixer.replaceText(target.value, JSON.stringify(property.expectedValue)),
     });
 }
@@ -106,10 +111,9 @@ export function validateRootJsonProperty(
     context: TSESLint.RuleContext<string, unknown[]>,
     ruleContextName: string,
 ): void {
-    // For whatever reason the TSCompiler cannot deduce that elements inside body can be of type ObjectExpression, so we cast via unknown
-    const jsonRootObject = jsonRoot.body[0] as unknown as TSESTree.ObjectExpression | undefined;
+    const jsonRootObject: unknown = jsonRoot.body[0];
 
-    if (jsonRoot.body.length !== 1 || jsonRootObject?.type !== AST_NODE_TYPES.ObjectExpression) {
+    if (jsonRoot.body.length !== 1 || !isObjectExpression(jsonRootObject)) {
         return;
     }
 
@@ -140,7 +144,7 @@ function validateProperty(
     const propertyPath = findPropertyPath(propertyNode);
 
     if (propertyPath === propertyAssertion.key) {
-        if ((propertyNode.value as TSESTree.Literal).value !== propertyAssertion.expectedValue) {
+        if (isLiteral(propertyNode.value) && propertyNode.value.value !== propertyAssertion.expectedValue) {
             reportWrongPropertyValue(context, propertyNode, propertyAssertion, ruleContextName);
         }
     }
