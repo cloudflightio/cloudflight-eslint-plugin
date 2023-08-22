@@ -15,9 +15,9 @@
     },
     "description": "",
     "scripts": {
-        "build": "yarn workspaces foreach -t run build-package",
+        "build": "yarn workspaces foreach -pt run build-package",
         "lint": "eslint .",
-        "test": "yarn workspaces foreach run test-package",
+        "test": "yarn workspaces foreach -p run test-package",
         "postinstall": "husky install && git update-index --chmod=+x ./.husky/pre-commit",
         "publish-workspaces": "node ./scripts/prepare.js && yarn workspaces foreach --no-private npm publish"
     },
