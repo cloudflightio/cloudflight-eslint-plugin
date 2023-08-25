@@ -1,6 +1,6 @@
 import {createRule} from '../util/create-rule';
 
-const disallowedEvents = [
+const disallowedEvents = new Set([
     'onabort',
     'onanimationcancel',
     'onanimationend',
@@ -92,7 +92,7 @@ const disallowedEvents = [
     'onwebkitanimationstart',
     'onwebkittransitionend',
     'onwheel',
-];
+]);
 
 export const NoOnEventAssignName = 'no-on-event-assign';
 /**
@@ -125,7 +125,7 @@ export const NoOnEventAssign = createRule<[], 'noAssign'>({
                     return;
                 }
 
-                if (disallowedEvents.includes(node.left.property.name)) {
+                if (disallowedEvents.has(node.left.property.name)) {
                     context.report({node, messageId: 'noAssign'});
                 }
             },
