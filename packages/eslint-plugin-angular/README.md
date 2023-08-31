@@ -9,7 +9,7 @@ You can find the directory of all rules including their reasoning [here](src/con
 The following dependencies are required:
 
 ```
-"@cloudflight/eslint-plugin-typescript": ">=0.19.1",
+"@cloudflight/eslint-plugin-typescript": ">=0.20.0",
 "@rushstack/eslint-patch": "1.2.0",
 "eslint": ">=8.0.0 <9.0.0"
 ```
@@ -46,3 +46,36 @@ module.exports = {
     ...
 };
 ```
+
+## Formatting
+
+This package also includes configs for formatting typescript.
+
+In your `package.json` add the following:
+
+```
+"devDependencies": {
+    ...
+    "@cloudflight/eslint-plugin-angular": "<version>",
+    ...
+  }
+```
+
+Create a new file called `.eslintrc.format.js` and add the following:
+
+```
+require('@rushstack/eslint-patch/modern-module-resolution');
+
+module.exports = {
+    root: true,
+    plugins: ['@cloudflight/typescript'],
+    extends: ['plugin:@cloudflight/angular/formatting'],
+    ignorePatterns: ['jest.config*.ts'],
+    env: {
+        es6: true,
+        node: true,
+    },
+};
+```
+
+With the command `eslint . --config .eslintrc.format.js` your project can be checked for formatting violations.

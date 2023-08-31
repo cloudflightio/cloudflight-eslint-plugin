@@ -13,3 +13,17 @@ export const RecommendedConfig: TSESLint.Linter.Config = {
         },
     ],
 };
+
+export const FormatConfig: TSESLint.Linter.Config = {
+    plugins: ['@cloudflight/angular'],
+    overrides: [
+        {
+            files: ['*.html'],
+            extends: ['plugin:@cloudflight/angular/html-formatting'],
+        },
+        {
+            files: ['*.ts'],
+            extends: ['plugin:@cloudflight/typescript/formatting'],
+        },
+    ],
+};
