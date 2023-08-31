@@ -3,17 +3,15 @@ import {TSESLint} from '@typescript-eslint/utils';
 const pluginPrefix = '@angular-eslint/template';
 
 export const angularTemplateEslintRules: TSESLint.Linter.RulesRecord = {
-    [`${pluginPrefix}/alt-text`]: ['error'],
-    [`${pluginPrefix}/banana-in-box`]: ['error'],
     [`${pluginPrefix}/button-has-type`]: ['error'],
-    [`${pluginPrefix}/elements-content`]: ['error'],
     [`${pluginPrefix}/eqeqeq`]: [
         'off', // disable it for now since it does not work correctly
         {
             allowNullOrUndefined: true,
         },
     ],
-    [`${pluginPrefix}/interactive-supports-focus`]: ['error'],
+    // does not work with custom input components
+    [`${pluginPrefix}/label-has-associated-control`]: 'off',
     [`${pluginPrefix}/no-any`]: ['error'],
     [`${pluginPrefix}/no-call-expression`]: [
         'error',
@@ -25,8 +23,6 @@ export const angularTemplateEslintRules: TSESLint.Linter.RulesRecord = {
     [`${pluginPrefix}/no-duplicate-attributes`]: ['error'],
     [`${pluginPrefix}/no-inline-styles`]: ['error'],
     [`${pluginPrefix}/no-interpolation-in-attributes`]: ['error'],
-    [`${pluginPrefix}/no-negated-async`]: ['error'],
     [`${pluginPrefix}/no-positive-tabindex`]: ['error'],
-    [`${pluginPrefix}/role-has-required-aria`]: ['error'],
-    [`${pluginPrefix}/valid-aria`]: ['error'],
+    [`${pluginPrefix}/use-track-by-function`]: ['error'],
 };
