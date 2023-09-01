@@ -7,8 +7,13 @@ import {importEslintRules} from './rules/import';
 import {rxjsRules} from './rules/rxjs';
 import {typescriptEslintRules} from './rules/typescript-eslint';
 
+/**
+ * all plugins should be imported by both configs so eslint does not
+ * complain about unknown rules when disabling some of them
+ */
+
 export const RecommendedTypescriptConfig: TSESLint.Linter.Config = {
-    plugins: ['@cloudflight/typescript', '@typescript-eslint', 'import', 'rxjs'],
+    plugins: ['@cloudflight/typescript', '@typescript-eslint', 'rxjs', 'import', 'simple-import-sort'],
     parser: '@typescript-eslint/parser',
     extends: [
         'plugin:@typescript-eslint/strict-type-checked',
@@ -25,7 +30,7 @@ export const RecommendedTypescriptConfig: TSESLint.Linter.Config = {
 };
 
 export const FormattingTypescriptConfig: TSESLint.Linter.Config = {
-    plugins: ['import', 'simple-import-sort'],
+    plugins: ['@cloudflight/typescript', '@typescript-eslint', 'rxjs', 'import', 'simple-import-sort'],
     parser: '@typescript-eslint/parser',
     extends: [],
     rules: {
