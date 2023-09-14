@@ -1,6 +1,8 @@
 import {configs} from '@cloudflight/eslint-plugin-typescript';
 import {TSESLint} from '@typescript-eslint/utils';
 
+const htmlIndent = 4;
+
 export const RecommendedConfig: TSESLint.Linter.Config = {
     extends: [
         'plugin:@cloudflight/typescript/recommended',
@@ -29,6 +31,7 @@ export const RecommendedConfig: TSESLint.Linter.Config = {
             },
         ],
         'vue/html-button-has-type': 'error',
+        'vue/html-indent': ['error', htmlIndent],
         'vue/no-ref-object-destructure': 'error',
         'vue/no-undef-properties': 'error'},
 };
