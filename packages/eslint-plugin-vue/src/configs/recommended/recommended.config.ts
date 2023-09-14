@@ -10,6 +10,9 @@ export const RecommendedConfig: TSESLint.Linter.Config = {
         '@vue/eslint-config-typescript',
     ],
     rules: {...configs['recommended-typescript']?.rules ?? {},
+        // vue.js components have the any type when used with typescript import
+        // such as `import MyComponent from './my-component.vue'`
+        '@typescript-eslint/no-unsafe-assignment': 'off',
         'vue/block-lang': [
             'error',
             {
