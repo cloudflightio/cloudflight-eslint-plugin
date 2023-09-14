@@ -1,6 +1,7 @@
 import {TSESLint} from '@typescript-eslint/utils';
 
 import {angularEslintRules} from './rules/angular-eslint';
+import {eslintRules} from './rules/eslint';
 import {typescriptEslintRules} from './rules/typescript-eslint';
 
 export const RecommendedTypescriptConfig: TSESLint.Linter.Config = {
@@ -9,6 +10,7 @@ export const RecommendedTypescriptConfig: TSESLint.Linter.Config = {
     extends: ['plugin:@cloudflight/typescript/recommended'],
     rules: {
         ...angularEslintRules,
+        ...eslintRules,
         ...typescriptEslintRules,
     },
 };
