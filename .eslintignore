@@ -3,3 +3,4 @@ node_modules/
 .eslintrc.format.js
 .eslintrc.js
 .git/
+scripts/
