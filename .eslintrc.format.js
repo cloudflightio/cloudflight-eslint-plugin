@@ -4,7 +4,7 @@ module.exports = {
     root: true,
     plugins: ['@cloudflight/typescript'],
     extends: ['plugin:@cloudflight/typescript/formatting'],
-    ignorePatterns: ['jest.config*.ts'],
+    ignorePatterns: ['*.json'],
     env: {
         es6: true,
         node: true,
