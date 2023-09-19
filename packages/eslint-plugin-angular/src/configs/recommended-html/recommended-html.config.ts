@@ -1,7 +1,6 @@
 import {TSESLint} from '@typescript-eslint/utils';
 
 import {angularTemplateEslintRules} from './rules/angular-eslint-template';
-import {customRules} from './rules/custom';
 import {formatAngularTemplateEslintRules} from './rules/format';
 
 export const RecommendedHtmlConfig: TSESLint.Linter.Config = {
@@ -10,7 +9,6 @@ export const RecommendedHtmlConfig: TSESLint.Linter.Config = {
     extends: ['plugin:@angular-eslint/template/accessibility', 'plugin:@angular-eslint/template/recommended'],
     rules: {
         ...angularTemplateEslintRules,
-        ...customRules,
     },
 };
 
