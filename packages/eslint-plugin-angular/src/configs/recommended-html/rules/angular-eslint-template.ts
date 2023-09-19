@@ -24,5 +24,9 @@ export const angularTemplateEslintRules: TSESLint.Linter.RulesRecord = {
     [`${pluginPrefix}/no-inline-styles`]: ['error'],
     [`${pluginPrefix}/no-interpolation-in-attributes`]: ['error'],
     [`${pluginPrefix}/no-positive-tabindex`]: ['error'],
-    [`${pluginPrefix}/use-track-by-function`]: ['error'],
+    [`${pluginPrefix}/prefer-ngsrc`]: 'error',
+    // does not provide any value for primitive types
+    // it is fine to not have this automated for now
+    // since it is a performance improvement and not a bug
+    [`${pluginPrefix}/use-track-by-function`]: 'off',
 };
