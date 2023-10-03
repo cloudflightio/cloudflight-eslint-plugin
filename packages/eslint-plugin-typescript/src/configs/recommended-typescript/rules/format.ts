@@ -18,13 +18,6 @@ export const formatEslintRules: TSESLint.Linter.RulesRecord = {
             ignoreEOLComments: false,
         },
     ],
-    'dot-notation': [
-        'error',
-        {
-            allowKeywords: true,
-            allowPattern: '',
-        },
-    ],
     'dot-location': ['error', 'property'],
     'template-tag-spacing': ['error', 'never'],
     'template-curly-spacing': ['error', 'never'],
@@ -89,13 +82,6 @@ export const formatEslintRules: TSESLint.Linter.RulesRecord = {
         {
             before: false,
             after: true,
-        },
-    ],
-    quotes: [
-        'error',
-        'single',
-        {
-            avoidEscape: true,
         },
     ],
     'padded-blocks': [
@@ -272,6 +258,15 @@ export const formatEslintRules: TSESLint.Linter.RulesRecord = {
         },
     ],
     'implicit-arrow-linebreak': ['error', 'beside'],
+    'dot-notation': 'off',
+    '@typescript-eslint/dot-notation': [
+        'error',
+        {
+            allowKeywords: true,
+            allowPattern: '',
+            allowIndexSignaturePropertyAccess: true,
+        },
+    ],
     indent: [
         'error',
         // eslint-disable-next-line no-magic-numbers -- Indent of 4 spaces.
@@ -332,6 +327,15 @@ export const formatEslintRules: TSESLint.Linter.RulesRecord = {
             flatTernaryExpressions: false,
             offsetTernaryExpressions: false,
             ignoreComments: false,
+        },
+    ],
+    quotes: 'off',
+    '@typescript-eslint/quotes': [
+        'error',
+        'single',
+        {
+            avoidEscape: true,
+            allowTemplateLiterals: true,
         },
     ],
     'jsx-quotes': ['error', 'prefer-double'],
