@@ -68,8 +68,6 @@ export const typescriptEslintRules: TSESLint.Linter.RulesRecord = {
     'no-unused-vars': 'off',
     [`${pluginPrefix}/no-unused-vars`]: ['error', {args: 'none', ignoreRestSiblings: true}],
     [`${pluginPrefix}/promise-function-async`]: ['error'],
-    quotes: 'off',
-    [`${pluginPrefix}/quotes`]: ['error', 'single', {avoidEscape: true, allowTemplateLiterals: true}],
     [`${pluginPrefix}/require-array-sort-compare`]: ['error'],
     semi: 'off',
     [`${pluginPrefix}/semi`]: ['error'],
