@@ -15,7 +15,7 @@
     },
     "description": "",
     "scripts": {
-        "build": "yarn workspaces foreach -ptA run build-package",
+        "build": "yarn workspaces foreach -pA --topological-dev run build-package",
         "lint": "eslint . && eslint --config .eslintrc.format.js .",
         "test": "yarn workspaces foreach -pA run test-package",
         "postinstall": "husky install && git update-index --chmod=+x ./.husky/pre-commit",
