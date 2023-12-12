@@ -65,6 +65,7 @@ export const typescriptEslintRules: TSESLint.Linter.RulesRecord = {
     // enums can be used as a holder of constants, working
     // with external APIs can be painful if this is not allowed
     [`${pluginPrefix}/no-unsafe-enum-comparison`]: 'off',
+    [`${pluginPrefix}/no-unsafe-unary-minus`]: 'error',
     'no-unused-vars': 'off',
     [`${pluginPrefix}/no-unused-vars`]: ['error', {args: 'none', ignoreRestSiblings: true}],
     [`${pluginPrefix}/promise-function-async`]: ['error'],
