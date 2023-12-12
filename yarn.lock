@@ -531,7 +531,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@cloudflight/eslint-plugin-typescript@workspace:packages/eslint-plugin-typescript":
+"@cloudflight/eslint-plugin-typescript@workspace:*, @cloudflight/eslint-plugin-typescript@workspace:packages/eslint-plugin-typescript":
   version: 0.0.0-use.local
   resolution: "@cloudflight/eslint-plugin-typescript@workspace:packages/eslint-plugin-typescript"
   dependencies:
@@ -551,6 +551,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@cloudflight/eslint-plugin-vue@workspace:packages/eslint-plugin-vue"
   dependencies:
+    "@cloudflight/eslint-plugin-typescript": "workspace:*"
     "@vue/eslint-config-typescript": "npm:^12.0.0"
     eslint-plugin-vue: "npm:^9.19.2"
     typescript: "npm:5.3.3"
