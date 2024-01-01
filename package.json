@@ -30,7 +30,7 @@
     "devDependencies": {
         "@angular-eslint/eslint-plugin": "16.3.1",
         "@angular-eslint/eslint-plugin-template": "16.3.1",
-        "@angular-eslint/template-parser": "16.3.1",
+        "@angular-eslint/template-parser": "17.1.1",
         "@rushstack/eslint-patch": "1.6.0",
         "@types/eslint": "8.44.8",
         "@types/estree": "1.0.5",
