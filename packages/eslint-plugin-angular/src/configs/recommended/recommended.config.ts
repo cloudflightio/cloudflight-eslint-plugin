@@ -1,6 +1,6 @@
 import {TSESLint} from '@typescript-eslint/utils';
 
-export const RecommendedConfig: TSESLint.Linter.Config = {
+export const RecommendedConfig: TSESLint.Linter.ConfigType = {
     plugins: ['@cloudflight/angular'],
     overrides: [
         {
@@ -14,7 +14,7 @@ export const RecommendedConfig: TSESLint.Linter.Config = {
     ],
 };
 
-export const FormatConfig: TSESLint.Linter.Config = {
+export const FormatConfig: TSESLint.Linter.ConfigType = {
     plugins: ['@cloudflight/angular'],
     overrides: [
         {

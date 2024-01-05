@@ -2,6 +2,10 @@ import {createTscRule} from '../../util/create-rule';
 import {tscRule} from '../../util/tsc-util';
 
 export const TscNoFallThroughCasesInSwitchRuleName = 'tsc-no-fall-through-cases-in-switch';
+/**
+ * Comment needed to prevent type declaration generation, which is broken.
+ * @internal
+ */
 export const TscNoFallThroughCasesInSwitchRule = createTscRule({
     name: TscNoFallThroughCasesInSwitchRuleName,
     meta: {
@@ -9,7 +13,7 @@ export const TscNoFallThroughCasesInSwitchRule = createTscRule({
         fixable: 'code',
         docs: {
             description: 'https://www.typescriptlang.org/tsconfig/#noFallthroughCasesInSwitch',
-            recommended: 'error',
+            recommended: 'strict',
         },
         schema: [],
         messages: {},

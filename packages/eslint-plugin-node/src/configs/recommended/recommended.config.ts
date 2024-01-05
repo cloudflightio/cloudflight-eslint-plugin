@@ -1,11 +1,11 @@
 import {TSESLint} from '@typescript-eslint/utils';
 
-export const RecommendedConfig: TSESLint.Linter.Config = {
+export const RecommendedConfig: TSESLint.Linter.ConfigType = {
     extends: [
         'plugin:@cloudflight/typescript/recommended',
         'plugin:node/recommended',
         'plugin:no-unsanitized/DOM',
-        'plugin:security/recommended',
+        'plugin:security/recommended-legacy',
     ],
     rules: {
         // require all requires be top-level

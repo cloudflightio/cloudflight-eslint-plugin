@@ -13,6 +13,10 @@ const privatePropertyAssertion: JsonPropertyAssertion = {
 };
 
 export const PackageForcePrivateRuleName = 'package-force-private';
+/**
+ * Comment needed to prevent type declaration generation, which is broken.
+ * @internal
+ */
 export const PackageForcePrivateRule = createPackageRule<RuleOptions[], string>({
     name: PackageForcePrivateRuleName,
     meta: {
@@ -20,7 +24,7 @@ export const PackageForcePrivateRule = createPackageRule<RuleOptions[], string>(
         fixable: 'code',
         docs: {
             description: 'Enforces that all packages are private, in other words non-publishable.',
-            recommended: 'error',
+            recommended: 'strict',
         },
         schema: [
             {

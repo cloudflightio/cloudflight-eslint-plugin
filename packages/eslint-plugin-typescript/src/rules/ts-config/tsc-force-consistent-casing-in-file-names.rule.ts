@@ -2,6 +2,10 @@ import {createTscRule} from '../../util/create-rule';
 import {tscRule} from '../../util/tsc-util';
 
 export const TscForceConsistentCasingInFileNamesRuleName = 'tsc-force-consistent-casing-in-file-names';
+/**
+ * Comment needed to prevent type declaration generation, which is broken.
+ * @internal
+ */
 export const TscForceConsistentCasingInFileNamesRule = createTscRule({
     name: TscForceConsistentCasingInFileNamesRuleName,
     meta: {
@@ -9,7 +13,7 @@ export const TscForceConsistentCasingInFileNamesRule = createTscRule({
         fixable: 'code',
         docs: {
             description: 'https://www.typescriptlang.org/tsconfig/#forceConsistentCasingInFileNames',
-            recommended: 'error',
+            recommended: 'strict',
         },
         schema: [],
         messages: {},

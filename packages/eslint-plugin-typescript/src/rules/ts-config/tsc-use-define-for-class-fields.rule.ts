@@ -2,6 +2,10 @@ import {createTscRule} from '../../util/create-rule';
 import {tscRule} from '../../util/tsc-util';
 
 export const TscUseDefineForClassFieldsRuleName = 'tsc-use-define-for-class-fields';
+/**
+ * Comment needed to prevent type declaration generation, which is broken.
+ * @internal
+ */
 export const TscUseDefineForClassFieldsRule = createTscRule({
     name: TscUseDefineForClassFieldsRuleName,
     meta: {
@@ -9,7 +13,7 @@ export const TscUseDefineForClassFieldsRule = createTscRule({
         fixable: 'code',
         docs: {
             description: 'https://www.typescriptlang.org/tsconfig/#useDefineForClassFields',
-            recommended: 'error',
+            recommended: 'strict',
         },
         schema: [],
         messages: {},
