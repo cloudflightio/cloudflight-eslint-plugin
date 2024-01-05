@@ -2,6 +2,10 @@ import {createTscRule} from '../../util/create-rule';
 import {tscRule} from '../../util/tsc-util';
 
 export const TscNoImplicitReturnsRuleName = 'tsc-no-implicit-returns';
+/**
+ * Comment needed to prevent type declaration generation, which is broken.
+ * @internal
+ */
 export const TscNoImplicitReturnsRule = createTscRule({
     name: TscNoImplicitReturnsRuleName,
     meta: {
@@ -9,7 +13,7 @@ export const TscNoImplicitReturnsRule = createTscRule({
         fixable: 'code',
         docs: {
             description: 'https://www.typescriptlang.org/tsconfig/#noImplicitReturns',
-            recommended: 'error',
+            recommended: 'strict',
         },
         schema: [],
         messages: {},

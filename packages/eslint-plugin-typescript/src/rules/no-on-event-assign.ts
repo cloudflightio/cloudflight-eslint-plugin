@@ -95,6 +95,10 @@ const disallowedEvents = [
 ];
 
 export const NoOnEventAssignName = 'no-on-event-assign';
+/**
+ * Comment needed to prevent type declaration generation, which is broken.
+ * @internal
+ */
 export const NoOnEventAssign = createRule<[], 'noAssign'>({
     name: NoOnEventAssignName,
     meta: {
@@ -102,7 +106,7 @@ export const NoOnEventAssign = createRule<[], 'noAssign'>({
         fixable: 'code',
         docs: {
             description: 'Enforces that all packages have absolute versions.',
-            recommended: 'error',
+            recommended: 'strict',
         },
         schema: [],
         messages: {

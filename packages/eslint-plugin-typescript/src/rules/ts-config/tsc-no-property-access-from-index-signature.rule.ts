@@ -2,6 +2,10 @@ import {createTscRule} from '../../util/create-rule';
 import {tscRule} from '../../util/tsc-util';
 
 export const TscNoPropertyAccessFromIndexSignatureRuleName = 'tsc-no-property-access-from-index-signature';
+/**
+ * Comment needed to prevent type declaration generation, which is broken.
+ * @internal
+ */
 export const TscNoPropertyAccessFromIndexSignatureRule = createTscRule({
     name: TscNoPropertyAccessFromIndexSignatureRuleName,
     meta: {
@@ -9,7 +13,7 @@ export const TscNoPropertyAccessFromIndexSignatureRule = createTscRule({
         fixable: 'code',
         docs: {
             description: 'https://www.typescriptlang.org/tsconfig/#noPropertyAccessFromIndexSignature',
-            recommended: 'error',
+            recommended: 'strict',
         },
         schema: [],
         messages: {},

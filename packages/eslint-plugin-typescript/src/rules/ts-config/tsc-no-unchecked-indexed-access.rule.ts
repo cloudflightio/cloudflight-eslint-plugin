@@ -2,6 +2,10 @@ import {createTscRule} from '../../util/create-rule';
 import {tscRule} from '../../util/tsc-util';
 
 export const TscNoUncheckedIndexedAccessRuleName = 'tsc-no-unchecked-indexed-access';
+/**
+ * Comment needed to prevent type declaration generation, which is broken.
+ * @internal
+ */
 export const TscNoUncheckedIndexedAccessRule = createTscRule({
     name: TscNoUncheckedIndexedAccessRuleName,
     meta: {
@@ -9,7 +13,7 @@ export const TscNoUncheckedIndexedAccessRule = createTscRule({
         fixable: 'code',
         docs: {
             description: 'https://www.typescriptlang.org/tsconfig/#noUncheckedIndexedAccess',
-            recommended: 'error',
+            recommended: 'strict',
         },
         schema: [],
         messages: {},

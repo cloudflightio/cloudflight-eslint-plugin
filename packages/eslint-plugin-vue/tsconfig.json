@@ -4,8 +4,8 @@
         "target": "ES2015",
         "useDefineForClassFields": true,
 
-        "module": "CommonJS",
-
+        "module": "NodeNext",
+        "moduleResolution": "NodeNext",
         "declaration": true,
         "outDir": "./dist/",
         "importHelpers": true,

@@ -1,6 +1,10 @@
 import {createRule} from '../util/create-rule';
 
 export const NoMomentJsRuleName = 'no-moment-js';
+/**
+ * Comment needed to prevent type declaration generation, which is broken.
+ * @internal
+ */
 export const NoMomentJsRule = createRule<[], 'noMomentJs'>({
     name: NoMomentJsRuleName,
     meta: {
@@ -8,7 +12,7 @@ export const NoMomentJsRule = createRule<[], 'noMomentJs'>({
         fixable: 'code',
         docs: {
             description: 'Enforces that all packages have absolute versions.',
-            recommended: 'error',
+            recommended: 'strict',
         },
         schema: [],
         messages: {

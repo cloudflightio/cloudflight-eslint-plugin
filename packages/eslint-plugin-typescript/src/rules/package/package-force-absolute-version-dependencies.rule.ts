@@ -4,6 +4,10 @@ import {findPropertyPath, getPropertyName, reportWrongPropertyValue} from '../..
 const semVerRegex = /\d+\.(\d+|x)\.(\d+|x)/;
 
 export const PackageForceAbsoluteVersionDependenciesRuleName = 'package-force-absolute-version-dependencies';
+/**
+ * Comment needed to prevent type declaration generation, which is broken.
+ * @internal
+ */
 export const PackageForceAbsoluteVersionDependenciesRule = createPackageRule<[], string>({
     name: PackageForceAbsoluteVersionDependenciesRuleName,
     meta: {
@@ -11,7 +15,7 @@ export const PackageForceAbsoluteVersionDependenciesRule = createPackageRule<[],
         fixable: 'code',
         docs: {
             description: 'Enforces that all packages have absolute versions.',
-            recommended: 'error',
+            recommended: 'strict',
         },
         schema: [],
         messages: {},

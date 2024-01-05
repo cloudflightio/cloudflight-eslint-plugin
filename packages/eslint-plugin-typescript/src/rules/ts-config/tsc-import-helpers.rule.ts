@@ -2,6 +2,10 @@ import {createTscRule} from '../../util/create-rule';
 import {tscRule} from '../../util/tsc-util';
 
 export const TscImportHelpersRuleName = 'tsc-import-helpers';
+/**
+ * Comment needed to prevent type declaration generation, which is broken.
+ * @internal
+ */
 export const TscImportHelpersRule = createTscRule({
     name: TscImportHelpersRuleName,
     meta: {
@@ -9,7 +13,7 @@ export const TscImportHelpersRule = createTscRule({
         fixable: 'code',
         docs: {
             description: 'https://www.typescriptlang.org/tsconfig/#importHelpers',
-            recommended: 'error',
+            recommended: 'strict',
         },
         schema: [],
         messages: {},

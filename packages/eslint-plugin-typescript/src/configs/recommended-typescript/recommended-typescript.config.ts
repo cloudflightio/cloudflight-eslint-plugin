@@ -12,7 +12,7 @@ import {typescriptEslintRules} from './rules/typescript-eslint';
  * complain about unknown rules when disabling some of them
  */
 
-export const RecommendedTypescriptConfig: TSESLint.Linter.Config = {
+export const RecommendedTypescriptConfig: TSESLint.Linter.ConfigType = {
     plugins: ['@cloudflight/typescript', '@typescript-eslint', 'rxjs', 'import', 'simple-import-sort'],
     parser: '@typescript-eslint/parser',
     extends: [
@@ -29,7 +29,7 @@ export const RecommendedTypescriptConfig: TSESLint.Linter.Config = {
     },
 };
 
-export const FormattingTypescriptConfig: TSESLint.Linter.Config = {
+export const FormattingTypescriptConfig: TSESLint.Linter.ConfigType = {
     plugins: ['@cloudflight/typescript', '@typescript-eslint', 'rxjs', 'import', 'simple-import-sort'],
     parser: '@typescript-eslint/parser',
     extends: [],
