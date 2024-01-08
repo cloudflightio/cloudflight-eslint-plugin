@@ -79,3 +79,19 @@ module.exports = {
 ```
 
 With the command `eslint . --config .eslintrc.format.js` your project can be checked for formatting violations.
+
+### Pre-Commit Hook
+
+The reason we created another eslint config file just for formatting instead of adding it to the existing one is to separate between linting and formatting, which are two different concerns. Furthermore, with the separation we also gain the ability to fix the formatting automatically before commit. Automatically fixing linting bugs with `eslint --fix` is not recommended, since it changes the intent of the code.
+
+To automatically format your code before committing, set up [husky](https://typicode.github.io/husky/) and [lint-staged](https://github.com/okonet/lint-staged) with the following content in your `package.json`.
+
+```json
+{
+    // ...
+    "lint-staged": {
+        "*.html": "eslint --config .eslintrc.format.cjs --fix",
+        "*.ts": "eslint --config .eslintrc.format.cjs --fix"
+    }
+}
+```
