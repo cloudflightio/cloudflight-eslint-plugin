@@ -82,7 +82,7 @@ To automatically format your code before committing, set up [husky](https://typi
 {
     // ...
     "lint-staged": {
-        "**/*": "eslint --config .eslintrc.format.js --fix"
+        "*.ts": "eslint --config .eslintrc.format.cjs --fix"
     }
 }
 ```
