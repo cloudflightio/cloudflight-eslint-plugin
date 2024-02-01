@@ -31,7 +31,7 @@
         "@angular-eslint/eslint-plugin": "17.1.1",
         "@angular-eslint/eslint-plugin-template": "17.1.1",
         "@angular-eslint/template-parser": "17.1.1",
-        "@rushstack/eslint-patch": "1.6.1",
+        "@rushstack/eslint-patch": "1.7.2",
         "@types/eslint": "8.56.1",
         "@types/estree": "1.0.5",
         "@types/jest": "29.5.11",
