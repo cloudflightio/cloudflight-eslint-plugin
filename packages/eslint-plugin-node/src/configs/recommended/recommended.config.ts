@@ -11,6 +11,14 @@ export const RecommendedConfig: TSESLint.Linter.ConfigType = {
         // require all requires be top-level
         'node/global-require': 'error',
 
+        // allow typescript files
+        'node/no-missing-import': [
+            'error',
+            {
+                tryExtensions: ['.js', '.ts', '.json', '.node'],
+            },
+        ],
+
         // disallow use of new operator with the require function
         'node/no-new-require': 'error',
 
