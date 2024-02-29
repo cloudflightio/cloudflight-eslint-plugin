@@ -8,7 +8,7 @@ export const RecommendedConfig: TSESLint.Linter.ConfigType = {
             extends: ['plugin:@cloudflight/typescript/recommended-json'],
         },
         {
-            files: ['*.ts', '*.tsx'],
+            files: ['*.ts', '*.tsx', '*.mts', '*.cts'],
             extends: ['plugin:@cloudflight/typescript/recommended-typescript'],
         },
         {
