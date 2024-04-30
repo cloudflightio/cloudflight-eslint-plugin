@@ -13,13 +13,9 @@ export const angularTemplateEslintRules: TSESLint.Linter.RulesRecord = {
     // does not work with custom input components
     [`${pluginPrefix}/label-has-associated-control`]: 'off',
     [`${pluginPrefix}/no-any`]: ['error'],
-    [`${pluginPrefix}/no-call-expression`]: [
-        'error',
-        {
-            // support for transloco
-            allowList: ['t'],
-        },
-    ],
+    // disabled as there is no way to allow signals only and is unlikely to ever be supported
+    // see: https://github.com/angular-eslint/angular-eslint/issues/1380
+    [`${pluginPrefix}/no-call-expression`]: 'off',
     [`${pluginPrefix}/no-duplicate-attributes`]: ['error'],
     [`${pluginPrefix}/no-inline-styles`]: ['error'],
     [`${pluginPrefix}/no-interpolation-in-attributes`]: ['error'],
