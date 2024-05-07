@@ -9,8 +9,8 @@ You can find the directory of all rules including their reasoning [here](src/con
 The following dependencies are required:
 
 ```
-"@cloudflight/eslint-plugin-typescript": ">=0.25.0",
-"@rushstack/eslint-patch": "1.2.0",
+"@cloudflight/eslint-plugin-typescript": ">=0.26.0",
+"@rushstack/eslint-patch": "1.10.2",
 "eslint": ">=8.0.0 <9.0.0"
 ```
 
