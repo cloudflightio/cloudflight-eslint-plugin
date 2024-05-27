@@ -9,7 +9,7 @@ You can find the directory of all rules including their reasoning [here](src/con
 The following dependencies are required:
 
 ```
-"@rushstack/eslint-patch": "1.2.0",
+"@rushstack/eslint-patch": "1.10.2",
 "eslint": ">=8.0.0 <9.0.0"
 ```
 

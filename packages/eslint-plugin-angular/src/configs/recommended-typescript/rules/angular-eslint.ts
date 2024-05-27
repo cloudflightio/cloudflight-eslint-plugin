@@ -28,4 +28,5 @@ export const angularEslintRules: TSESLint.Linter.RulesRecord = {
     [`${pluginPrefix}/relative-url-prefix`]: ['error'],
     [`${pluginPrefix}/use-lifecycle-interface`]: ['error'],
     [`${pluginPrefix}/use-pipe-transform-interface`]: ['error'],
+    [`${pluginPrefix}/prefer-standalone`]: ['error'],
 };
