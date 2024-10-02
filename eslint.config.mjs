@@ -11,4 +11,12 @@ const gitignorePath = resolve(directory, '.gitignore');
 export default tseslint.config(
     includeIgnoreFile(gitignorePath),
     ...config,
+    {
+        languageOptions: {
+            parserOptions: {
+                projectService: true,
+                tsconfigRootDir: import.meta.dirname,
+            },
+        },
+    },
 );

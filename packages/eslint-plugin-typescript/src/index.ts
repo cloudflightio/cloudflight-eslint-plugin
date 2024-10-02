@@ -1,11 +1,17 @@
-import type {TSESLint} from '@typescript-eslint/utils';
-import globals from 'globals';
 import pluginJs from '@eslint/js';
 import tseslint from 'typescript-eslint';
+import {eslintRules} from './configs/recommended-typescript/rules/eslint';
+import {typescriptEslintRules} from './configs/recommended-typescript/rules/typescript-eslint';
 
-export const config: TSESLint.FlatConfig.ConfigArray = [
-    {files: ["**/*.{js,mjs,cjs,ts}"]},
-    {languageOptions: {globals: globals.browser}},
-    pluginJs.configs.recommended,
-    ...tseslint.configs.recommended,
-];
+export const config = tseslint.config({
+    files: ['**/*.{js,mjs,cjs,ts,mts,cts}'],
+    ignores: ['jest.config*.ts'],
+    extends: [
+        pluginJs.configs.recommended,
+        ...tseslint.configs.recommendedTypeChecked,
+    ],
+    rules: {
+        ...eslintRules,
+        ...typescriptEslintRules,
+    }
+});
