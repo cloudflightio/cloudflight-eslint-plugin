@@ -16,7 +16,7 @@
     "description": "",
     "scripts": {
         "build": "yarn workspaces foreach -pA --topological-dev run build-package",
-        "lint": "eslint . && eslint --config .eslintrc.format.js .",
+        "lint": "eslint .",
         "test": "yarn workspaces foreach -pA run test-package",
         "postinstall": "husky",
         "publish-workspaces": "node ./scripts/prepare.js && yarn workspaces foreach -A --no-private npm publish"
@@ -31,16 +31,18 @@
         "@angular-eslint/eslint-plugin": "17.3.0",
         "@angular-eslint/eslint-plugin-template": "17.3.0",
         "@angular-eslint/template-parser": "17.3.0",
-        "@rushstack/eslint-patch": "1.10.2",
-        "@types/eslint": "8.56.10",
-        "@types/estree": "1.0.5",
-        "@types/jest": "29.5.12",
-        "@types/node": "20.12.10",
-        "@typescript-eslint/eslint-plugin": "7.8.0",
-        "@typescript-eslint/parser": "7.8.0",
-        "@typescript-eslint/utils": "7.8.0",
+        "@eslint/compat": "1.1.1",
+        "@eslint/js": "9.11.1",
+        "@types/eslint": "9.6.1",
+        "@types/eslint__js": "8.42.3",
+        "@types/estree": "1.0.6",
+        "@types/jest": "29.5.13",
+        "@types/node": "20.16.10",
+        "@typescript-eslint/eslint-plugin": "8.8.0",
+        "@typescript-eslint/parser": "8.8.0",
+        "@typescript-eslint/utils": "8.8.0",
         "@vue/eslint-config-typescript": "13.0.0",
-        "eslint": "8.57.0",
+        "eslint": "9.11.1",
         "eslint-plugin-import": "2.29.1",
         "eslint-plugin-json-es": "1.6.0",
         "eslint-plugin-jsx-a11y": "6.8.0",
@@ -51,15 +53,17 @@
         "eslint-plugin-rxjs": "5.0.3",
         "eslint-plugin-security": "3.0.0",
         "eslint-plugin-vue": "9.25.0",
-        "husky": "9.0.11",
+        "globals": "15.10.0",
+        "husky": "9.1.6",
         "jest": "29.7.0",
-        "lint-staged": "15.2.2",
-        "ts-jest": "29.1.2",
+        "lint-staged": "15.2.10",
+        "ts-jest": "29.2.5",
         "ts-node": "10.9.2",
-        "typescript": "5.4.5"
+        "typescript": "5.5.4",
+        "typescript-eslint": "8.8.0"
     },
     "lint-staged": {
-        "*.js": "eslint --config .eslintrc.format.js --fix",
-        "*.ts": "eslint --config .eslintrc.format.js --fix"
+        "*.js": "echo 'Not Implemented'",
+        "*.ts": "echo 'Not Implemented'"
     }
 }

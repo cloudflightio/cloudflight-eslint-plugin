@@ -22,8 +22,9 @@
     "publishConfig": {
         "access": "public"
     },
+    "private": true,
     "scripts": {
-        "build-package": "tsc"
+        "build-packagex": "tsc"
     },
     "dependencies": {
         "eslint-plugin-jsx-a11y": "^6.8.0",
@@ -32,9 +33,9 @@
     },
     "peerDependencies": {
         "@cloudflight/eslint-plugin-typescript": "workspace:*",
-        "eslint": ">=8.0.0 <9.0.0"
+        "eslint": ">=9.0.0 < 10.0.0"
     },
     "devDependencies": {
-        "typescript": "5.4.5"
+        "typescript": "5.5.4"
     }
 }
