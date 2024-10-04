@@ -1,4 +1,4 @@
-import {createRule} from '../util/create-rule';
+import {createRule} from '../../util/create-rule';
 
 const disallowedEvents = [
     'onabort',
@@ -106,7 +106,6 @@ export const NoOnEventAssign = createRule<[], 'noAssign'>({
         fixable: 'code',
         docs: {
             description: 'Enforces that all packages have absolute versions.',
-            recommended: 'strict',
         },
         schema: [],
         messages: {
