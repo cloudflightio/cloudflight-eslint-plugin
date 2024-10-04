@@ -10,8 +10,7 @@ The following dependencies are required:
 
 ```
 "@cloudflight/eslint-plugin-typescript": ">=0.26.0",
-"@rushstack/eslint-patch": "1.10.2",
-"eslint": ">=8.0.0 <9.0.0"
+"eslint": ">=9.0.0 < 10.0.0"
 ```
 
 ## Usage
