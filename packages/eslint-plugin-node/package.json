@@ -22,20 +22,21 @@
     "publishConfig": {
         "access": "public"
     },
-    "private": true,
     "scripts": {
-        "build-packagex": "tsc"
+        "build-package": "tsc"
     },
     "dependencies": {
-        "eslint-plugin-no-unsanitized": "^4.0.2",
-        "eslint-plugin-node": "^11.1.0",
-        "eslint-plugin-security": "^3.0.0"
+        "@cloudflight/eslint-plugin-typescript": "workspace:*",
+        "eslint-plugin-n": "17.10.3",
+        "eslint-plugin-no-unsanitized": "^4.1.2",
+        "eslint-plugin-security": "^3.0.1"
     },
     "peerDependencies": {
-        "@cloudflight/eslint-plugin-typescript": "workspace:*",
         "eslint": ">=9.0.0 < 10.0.0"
     },
     "devDependencies": {
+        "@types/eslint-plugin-no-unsanitized": "workspace:*",
+        "@types/eslint-plugin-security": "workspace:*",
         "typescript": "5.5.4"
     }
 }
