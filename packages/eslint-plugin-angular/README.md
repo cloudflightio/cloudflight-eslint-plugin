@@ -9,7 +9,6 @@ You can find the directory of all rules including their reasoning [here](src/con
 The following dependencies are required:
 
 ```
-"@cloudflight/eslint-plugin-typescript": ">=0.26.0",
 "eslint": ">=9.0.0 < 10.0.0"
 ```
 
@@ -27,23 +26,37 @@ In your `package.json` add the following:
 
 The plugin provides 3 different configurations:
 
--   @cloudflight/angular/recommended
+-   cloudflightAngularConfig
     -   Both of the below 2 configurations
--   @cloudflight/angular/recommended-html
+-   cloudflightAngularTemplateConfig
     -   Only contains rules for HTML files
--   @cloudflight/angular/recommended-typescript
+-   cloudflightAngularTypescriptConfig
     -   Only contains rules for TS files
 
-Now open your `.eslintrc.js` and add one of the configurations:
+Now open your `eslint.config.mts` and add one of the configurations:
 
-```
-require('@rushstack/eslint-patch/modern-module-resolution');
+```ts
+import { cloudflightAngularConfig } from '@cloudflight/eslint-plugin-angular';
+import { includeIgnoreFile } from '@eslint/compat';
+import { dirname, normalize, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-module.exports = {
-    ...
-    extends: ['plugin:@cloudflight/angular/recommended'],
-    ...
-};
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+const gitignorePath = normalize(resolve(__dirname, '.gitignore'));
+
+export default [
+    includeIgnoreFile(gitignorePath),
+    ...cloudflightAngularConfig,
+    {
+        languageOptions: {
+            parserOptions: {
+                project: ['tsconfig.*?.json'],
+                tsconfigRootDir: import.meta.dirname,
+            },
+        },
+    },
+];
 ```
 
 ## Formatting

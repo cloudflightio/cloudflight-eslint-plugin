@@ -14,7 +14,7 @@ export default tseslint.config(
         // these files are temporarily disabled for linting
         // until we are done with migrating everything to v9
         ignores: [
-            'packages/eslint-plugin-angular/*',
+            'packages/eslint-plugin-angular/src/configs/format-template.ts',
             'packages/eslint-plugin-node/*',
             'packages/eslint-plugin-react/*',
             'packages/eslint-plugin-typescript/src/configs/index.ts',
