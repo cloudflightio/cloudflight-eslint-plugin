@@ -2,7 +2,7 @@ import tseslint from 'typescript-eslint';
 import {includeIgnoreFile} from '@eslint/compat';
 import {dirname, resolve} from 'node:path';
 import {fileURLToPath} from 'node:url';
-import { config } from '@cloudflight/eslint-plugin-typescript';
+import { cloudflightTypescriptConfig } from '@cloudflight/eslint-plugin-typescript';
 
 const filename = fileURLToPath(import.meta.url);
 const directory = dirname(filename);
@@ -17,7 +17,6 @@ export default tseslint.config(
             'packages/eslint-plugin-angular/*',
             'packages/eslint-plugin-node/*',
             'packages/eslint-plugin-react/*',
-            'packages/eslint-plugin-vue/*',
             'packages/eslint-plugin-typescript/src/configs/index.ts',
             'packages/eslint-plugin-typescript/src/configs/recommended/*',
             'packages/eslint-plugin-typescript/src/configs/recommended-json/*',
@@ -30,9 +29,10 @@ export default tseslint.config(
             'scripts/*',
             '.eslintrc.format.js',
             'eslint.config.mjs',
+            'jest.config*.ts',
         ]
     },
-    ...config,
+    ...cloudflightTypescriptConfig,
     {
         languageOptions: {
             parserOptions: {

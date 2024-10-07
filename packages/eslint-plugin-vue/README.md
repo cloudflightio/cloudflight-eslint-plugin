@@ -9,7 +9,6 @@ You can find the directory of all rules including their reasoning [here](src/con
 The following dependencies are required:
 
 ```
-"@cloudflight/eslint-plugin-typescript": ">=0.26.0",
 "eslint": ">=9.0.0 < 10.0.0"
 ```
 
@@ -25,22 +24,28 @@ In your `package.json` add the following:
   }
 ```
 
-The plugin provides 1 configuration:
+Now open your `eslint.config.mts` and add one of the configurations:
 
--   @cloudflight/vue/recommended
-    -   Contains rules for Vuejs files
+```ts
+import { cloudflightVueConfig } from '@cloudflight/eslint-plugin-vue';
+import { includeIgnoreFile } from '@eslint/compat';
+import { dirname, normalize, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-Now open your `.eslintrc.js` and add one of the configurations:
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+const gitignorePath = normalize(resolve(__dirname, '.gitignore'));
 
-```
-require('@rushstack/eslint-patch/modern-module-resolution');
-
-module.exports = {
-    ...
-    extends: ['plugin:@cloudflight/vue/recommended'],
-    parserOptions: {
-        parser: '@typescript-eslint/parser',
+export default [
+    includeIgnoreFile(gitignorePath),
+    ...cloudflightVueConfig,
+    {
+        languageOptions: {
+            parserOptions: {
+                project: ['tsconfig.*?.json'],
+                tsconfigRootDir: import.meta.dirname,
+            },
+        },
     },
-    ...
-};
+];
 ```

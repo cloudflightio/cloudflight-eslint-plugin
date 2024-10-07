@@ -5,10 +5,9 @@ import {typescriptEslintRules} from './configs/recommended-typescript/rules/type
 import {customRules} from './configs/recommended-typescript/rules/custom';
 import {cloudflightTypescriptPlugin} from './rules';
 
-export const config = tseslint.config(
+export const cloudflightTypescriptConfig = tseslint.config(
     {
         files: ['**/*.{js,mjs,cjs,ts,mts,cts}'],
-        ignores: ['jest.config*.ts'],
         plugins: {
             '@cloudflight/typescript': cloudflightTypescriptPlugin,
         },

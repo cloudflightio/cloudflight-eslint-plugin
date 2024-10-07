@@ -24,16 +24,30 @@ In your `package.json` add the following:
   }
 ```
 
-Now open your `.eslintrc.js` and add the following:
+Now open your `eslint.config.mts` and add one of the configurations:
 
-```
-require('@rushstack/eslint-patch/modern-module-resolution');
+```ts
+import { cloudflightTypescriptConfig } from '@cloudflight/eslint-plugin-typescript';
+import { includeIgnoreFile } from '@eslint/compat';
+import { dirname, normalize, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-module.exports = {
-    ...
-    extends: ['plugin:@cloudflight/typescript/recommended'],
-    ...
-};
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+const gitignorePath = normalize(resolve(__dirname, '.gitignore'));
+
+export default [
+    includeIgnoreFile(gitignorePath),
+    ...cloudflightTypescriptConfig,
+    {
+        languageOptions: {
+            parserOptions: {
+                project: ['tsconfig.*?.json'],
+                tsconfigRootDir: import.meta.dirname,
+            },
+        },
+    },
+];
 ```
 
 When executing your next `eslint .` it will now validate your code against the cloudflight-recommended rules.
