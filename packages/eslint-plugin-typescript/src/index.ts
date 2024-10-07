@@ -10,7 +10,7 @@ import {importEslintRules} from './configs/import';
 
 /**
  * @deprecated Use `cloudflightTypescriptConfig` instead
- * This is only for internal use because eslint-plugin-import-x cannot work with vue-eslint-parser
+ * This is only for internal use only
  */
 export const cloudflightTypescriptBaseConfig = tseslint.config(
     {
@@ -23,37 +23,54 @@ export const cloudflightTypescriptBaseConfig = tseslint.config(
             ...tseslint.configs.strictTypeChecked,
             ...tseslint.configs.stylisticTypeChecked,
         ],
+        name: 'cloudflight/typescript/base-rules',
         rules: {
             ...eslintRules,
             ...typescriptEslintRules,
             ...customRules,
-        }
-    },
-    {
-        files: ['**/*.{js,mjs,cjs}'],
-        extends: [tseslint.configs.disableTypeChecked],
-        rules: {
-            ...typescriptEslintRulesDisableTypeChecked,
-        }
+        },
     },
 );
+
+/**
+ * @deprecated Use `cloudflightTypescriptConfig` instead
+ * This is only for internal use only
+ */
+export const cloudflightTypescriptImportConfig = tseslint.config({
+    files: ['**/*.{js,mjs,cjs,ts,mts,cts}'],
+    extends: [
+        eslintPluginImportX.flatConfigs.recommended,
+        eslintPluginImportX.flatConfigs.typescript,
+    ],
+    languageOptions: {
+        parser: tsParser,
+        ecmaVersion: 'latest',
+        sourceType: 'module',
+    },
+    name: 'cloudflight/typescript/import-rules',
+    rules: {
+        ...importEslintRules,
+    },
+});
+
+/**
+ * @deprecated Use `cloudflightTypescriptConfig` instead
+ * This is only for internal use only
+ */
+export const cloudflightTypescriptDisableTypeCheckedConfig = tseslint.config({
+    files: ['**/*.{js,mjs,cjs}'],
+    extends: [tseslint.configs.disableTypeChecked],
+    name: 'cloudflight/typescript/disable-type-checked-rules',
+    rules: {
+        ...typescriptEslintRulesDisableTypeChecked,
+    },
+});
 
 export const cloudflightTypescriptConfig = tseslint.config(
     // eslint-disable-next-line @typescript-eslint/no-deprecated
     ...cloudflightTypescriptBaseConfig,
-    {
-        files: ['**/*.{js,mjs,cjs,ts,mts,cts}'],
-        extends: [
-            eslintPluginImportX.flatConfigs.recommended,
-            eslintPluginImportX.flatConfigs.typescript,
-        ],
-        languageOptions: {
-            parser: tsParser,
-            ecmaVersion: 'latest',
-            sourceType: 'module',
-        },
-        rules: {
-            ...importEslintRules,
-        },
-    }
+    // eslint-disable-next-line @typescript-eslint/no-deprecated
+    ...cloudflightTypescriptImportConfig,
+    // eslint-disable-next-line @typescript-eslint/no-deprecated
+    ...cloudflightTypescriptDisableTypeCheckedConfig,
 );

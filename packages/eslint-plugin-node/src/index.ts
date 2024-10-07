@@ -16,6 +16,7 @@ export const cloudflightNodeConfig = tseslint.config(
             nounsanitized.configs.recommended,
             pluginSecurity.configs.recommended,
         ],
+        name: 'cloudflight/node/rules',
         rules: {
             ...nodeRules,
             ...securityRules,

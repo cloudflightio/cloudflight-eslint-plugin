@@ -15,7 +15,6 @@ export default tseslint.config(
         // until we are done with migrating everything to v9
         ignores: [
             'packages/eslint-plugin-angular/src/configs/format-template.ts',
-            'packages/eslint-plugin-react/*',
             'packages/eslint-plugin-typescript/src/configs/index.ts',
             'packages/eslint-plugin-typescript/src/configs/json.ts',
             'packages/eslint-plugin-typescript/src/configs/package.ts',
