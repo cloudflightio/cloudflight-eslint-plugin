@@ -1,2 +1,43 @@
-export {configs} from './configs';
-export {rules} from './rules';
+import tseslint from 'typescript-eslint';
+import angular from 'angular-eslint';
+import {cloudflightTypescriptConfig} from '@cloudflight/eslint-plugin-typescript';
+import {eslintRules} from './configs/eslint';
+import {typescriptEslintRules} from './configs/typescript-eslint';
+import {angularEslintRules} from './configs/angular-eslint';
+import {angularTemplateEslintRules} from './configs/angular-eslint-template';
+
+export const cloudflightAngularTypescriptConfig = tseslint.config(
+    {
+        files: ['**/*.{ts,mts,cts}'],
+        extends: [
+            ...cloudflightTypescriptConfig,
+            ...angular.configs.tsRecommended,
+        ],
+        processor: angular.processInlineTemplates,
+        rules: {
+            ...eslintRules,
+            ...typescriptEslintRules,
+            ...angularEslintRules,
+        }
+    },
+);
+
+export const cloudflightAngularTemplateConfig = tseslint.config(
+    {
+        files: ['**/*.html'],
+        extends: [
+            ...angular.configs.templateRecommended,
+            ...angular.configs.templateAccessibility,
+        ],
+        rules: {
+            ...angularTemplateEslintRules,
+            // todo: this should be its own config
+            // ...formatAngularTemplateEslintRules,
+        }
+    }
+);
+
+export const cloudflightAngularConfig = tseslint.config(
+    ...cloudflightAngularTypescriptConfig,
+    ...cloudflightAngularTemplateConfig,
+);
