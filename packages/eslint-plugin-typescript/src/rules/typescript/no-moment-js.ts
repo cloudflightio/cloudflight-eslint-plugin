@@ -1,4 +1,4 @@
-import {createRule} from '../util/create-rule';
+import {createRule} from '../../util/create-rule';
 
 export const NoMomentJsRuleName = 'no-moment-js';
 /**
@@ -12,7 +12,6 @@ export const NoMomentJsRule = createRule<[], 'noMomentJs'>({
         fixable: 'code',
         docs: {
             description: 'Enforces that all packages have absolute versions.',
-            recommended: 'strict',
         },
         schema: [],
         messages: {
