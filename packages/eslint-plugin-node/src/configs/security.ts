@@ -13,7 +13,7 @@ function warningEntryToError(value: TSESLint.Linter.RuleEntry): TSESLint.Linter.
     const level = Array.isArray(value) ? value[0] : value;
     const updatedLevel = warningLevelToError(level);
 
-    return Array.isArray(value) ? [updatedLevel, value.slice(1)] : updatedLevel;
+    return Array.isArray(value) ? [updatedLevel, ...value.slice(1)] : updatedLevel;
 }
 
 function warningLevelToError(level: TSESLint.Linter.RuleLevel): TSESLint.Linter.RuleLevel {
