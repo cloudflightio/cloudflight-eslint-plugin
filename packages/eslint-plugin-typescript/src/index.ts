@@ -14,6 +14,7 @@ export const cloudflightTypescriptConfig = tseslint.config(
         extends: [
             pluginJs.configs.recommended,
             ...tseslint.configs.recommendedTypeChecked,
+            ...tseslint.configs.strictTypeChecked,
         ],
         rules: {
             ...eslintRules,
