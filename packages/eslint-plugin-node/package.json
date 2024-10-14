@@ -1,6 +1,6 @@
 {
     "name": "@cloudflight/eslint-plugin-node",
-    "version": "1.0.0-rc5",
+    "version": "1.0.0-rc6",
     "description": "Cloudflight eslint-plugin & eslint-config for node",
     "volta": {
         "extends": "../../package.json"

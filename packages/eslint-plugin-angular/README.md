@@ -33,7 +33,7 @@ The plugin provides 3 different configurations:
 -   cloudflightAngularTypescriptConfig
     -   Only contains rules for TS files
 
-Now open your `eslint.config.mts` and add one of the configurations:
+Now open your `eslint.config.mjs` and add one of the configurations:
 
 ```ts
 import { cloudflightAngularConfig } from '@cloudflight/eslint-plugin-angular';
@@ -52,6 +52,14 @@ export default [
             parserOptions: {
                 project: ['tsconfig*(.*).json'],
                 tsconfigRootDir: import.meta.dirname,
+            },
+        },
+        settings: {
+            'import-x/resolver': {
+                typescript: {
+                    alwaysTryTypes: true,
+                    project: ['tsconfig*(.*).json'],
+                },
             },
         },
     },

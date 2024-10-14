@@ -20,7 +20,6 @@ export default tseslint.config(
             'packages/eslint-plugin-typescript/src/configs/json.ts',
             'packages/eslint-plugin-typescript/src/configs/package.ts',
             'packages/eslint-plugin-typescript/src/configs/format.ts',
-            'packages/eslint-plugin-typescript/src/configs/import.ts',
             'packages/eslint-plugin-typescript/src/configs/rxjs.ts',
             'packages/eslint-plugin-typescript/src/rules/package/*',
             'packages/eslint-plugin-typescript/src/rules/ts-config/*',
@@ -38,6 +37,11 @@ export default tseslint.config(
                 project: ['./packages/*/tsconfig.json', './packages/*/tsconfig.spec.json'],
                 tsconfigRootDir: import.meta.dirname,
             },
+        },
+    },
+    {
+        rules: {
+            'import-x/no-named-as-default-member': 'off',
         },
     },
 );

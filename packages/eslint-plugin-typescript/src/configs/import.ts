@@ -1,6 +1,6 @@
 import {TSESLint} from '@typescript-eslint/utils';
 
-const pluginPrefix = 'import';
+const pluginPrefix = 'import-x';
 
 export const importEslintRules: TSESLint.Linter.RulesRecord = {
     [`${pluginPrefix}/first`]: ['error'],
