@@ -7,10 +7,10 @@ import {angularEslintRules} from './configs/angular-eslint';
 import {angularTemplateEslintRules} from './configs/angular-eslint-template';
 
 export const cloudflightAngularTypescriptConfig = tseslint.config(
+    ...cloudflightTypescriptConfig,
     {
         files: ['**/*.{ts,mts,cts}'],
         extends: [
-            ...cloudflightTypescriptConfig,
             ...angular.configs.tsRecommended,
         ],
         processor: angular.processInlineTemplates,

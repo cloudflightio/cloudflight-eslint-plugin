@@ -40,6 +40,11 @@ export const typescriptEslintRules: TSESLint.Linter.RulesRecord = {
     [`${pluginPrefix}/no-unused-vars`]: ['error', {args: 'none', ignoreRestSiblings: true}],
     [`${pluginPrefix}/promise-function-async`]: ['error'],
     [`${pluginPrefix}/require-array-sort-compare`]: ['error'],
+    [`${pluginPrefix}/require-await`]: 'error',
     [`${pluginPrefix}/strict-boolean-expressions`]: ['error'],
     [`${pluginPrefix}/switch-exhaustiveness-check`]: ['error'],
+};
+
+export const typescriptEslintRulesDisableTypeChecked: TSESLint.Linter.RulesRecord = {
+    [`${pluginPrefix}/explicit-function-return-type`]: 'off',
 };

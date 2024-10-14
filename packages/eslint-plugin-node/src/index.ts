@@ -7,10 +7,10 @@ import {securityRules} from './configs/security';
 import {nodeRules} from './configs/node';
 
 export const cloudflightNodeConfig = tseslint.config(
+    ...cloudflightTypescriptConfig,
     {
         files: ['**/*.{js,mjs,cjs,ts,mts,cts}'],
         extends: [
-            ...cloudflightTypescriptConfig,
             pluginNode.configs['flat/recommended'],
             nounsanitized.configs.recommended,
             pluginSecurity.configs.recommended,

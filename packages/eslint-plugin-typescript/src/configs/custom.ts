@@ -1,7 +1,7 @@
 import {TSESLint} from '@typescript-eslint/utils';
 
-import {NoMomentJsRuleName} from '../../../rules/typescript/no-moment-js';
-import {NoOnEventAssignName} from '../../../rules/typescript/no-on-event-assign';
+import {NoMomentJsRuleName} from '../rules/typescript/no-moment-js';
+import {NoOnEventAssignName} from '../rules/typescript/no-on-event-assign';
 
 const pluginPrefix = '@cloudflight/typescript';
 

@@ -1,8 +1,8 @@
 import pluginJs from '@eslint/js';
 import tseslint from 'typescript-eslint';
-import {eslintRules} from './configs/recommended-typescript/rules/eslint';
-import {typescriptEslintRules} from './configs/recommended-typescript/rules/typescript-eslint';
-import {customRules} from './configs/recommended-typescript/rules/custom';
+import {eslintRules} from './configs/eslint';
+import {typescriptEslintRules, typescriptEslintRulesDisableTypeChecked} from './configs/typescript-eslint';
+import {customRules} from './configs/custom';
 import {cloudflightTypescriptPlugin} from './rules';
 
 export const cloudflightTypescriptConfig = tseslint.config(
@@ -13,8 +13,8 @@ export const cloudflightTypescriptConfig = tseslint.config(
         },
         extends: [
             pluginJs.configs.recommended,
-            ...tseslint.configs.recommendedTypeChecked,
             ...tseslint.configs.strictTypeChecked,
+            ...tseslint.configs.stylisticTypeChecked,
         ],
         rules: {
             ...eslintRules,
@@ -25,5 +25,8 @@ export const cloudflightTypescriptConfig = tseslint.config(
     {
         files: ['**/*.{js,mjs,cjs}'],
         extends: [tseslint.configs.disableTypeChecked],
+        rules: {
+            ...typescriptEslintRulesDisableTypeChecked,
+        }
     },
 );

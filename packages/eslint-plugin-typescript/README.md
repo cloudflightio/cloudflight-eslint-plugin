@@ -2,7 +2,7 @@
 
 The Cloudflight ESLint Plugin Typescript provides a configuration of ESLint rules recommended by Cloudflight.
 
-You can find the directory of all rules including their reasoning [here](src/configs/recommended-typescript/rules).
+You can find the directory of all rules including their reasoning [here](src/configs).
 
 ## Dependencies
 
@@ -32,9 +32,8 @@ import { includeIgnoreFile } from '@eslint/compat';
 import { dirname, normalize, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-const gitignorePath = normalize(resolve(__dirname, '.gitignore'));
+const directory = dirname(fileURLToPath(import.meta.url));
+const gitignorePath = normalize(resolve(directory, '.gitignore'));
 
 export default [
     includeIgnoreFile(gitignorePath),
@@ -42,7 +41,7 @@ export default [
     {
         languageOptions: {
             parserOptions: {
-                project: ['tsconfig.*?.json'],
+                project: ['tsconfig*(.*).json'],
                 tsconfigRootDir: import.meta.dirname,
             },
         },
