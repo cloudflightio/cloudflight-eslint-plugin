@@ -4,13 +4,8 @@ export const nodeRules: TSESLint.Linter.RulesRecord = {
     // require all requires be top-level
     'n/global-require': 'error',
 
-    // allow typescript files
-    'n/no-missing-import': [
-        'error',
-        {
-            tryExtensions: ['.js', '.ts', '.json', '.node'],
-        },
-    ],
+    // disabled because of https://github.com/eslint-community/eslint-plugin-n/issues/349
+    'n/no-missing-import': 'off',
 
     // disallow use of new operator with the require function
     'n/no-new-require': 'error',

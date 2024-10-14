@@ -10,7 +10,6 @@ export const eslintRules: TSESLint.Linter.RulesRecord = {
     'default-case': 'off',
     eqeqeq: ['error', 'always', {null: 'ignore'}],
     'max-classes-per-file': ['error', 1],
-    'new-parens': ['error'],
     'no-async-promise-executor': ['error'],
     'no-bitwise': ['error'],
     'no-console': ['error'],
@@ -52,7 +51,6 @@ export const eslintRules: TSESLint.Linter.RulesRecord = {
     'no-proto': ['error'],
     'no-implied-eval': ['error'],
     'no-iterator': ['error'],
-    'no-floating-decimal': ['error'],
     'no-caller': ['error'],
     'no-empty-pattern': ['error'],
     'no-extend-native': ['error'],
@@ -70,7 +68,6 @@ export const eslintRules: TSESLint.Linter.RulesRecord = {
     'no-compare-neg-zero': ['error'],
     'no-cond-assign': ['error', 'always'],
     'no-nested-ternary': ['error'],
-    'no-new-object': ['error'],
     'no-lonely-if': ['error'],
     'no-shadow-restricted-names': ['error'],
     'no-undef-init': ['error'],
@@ -78,8 +75,6 @@ export const eslintRules: TSESLint.Linter.RulesRecord = {
     'no-multi-str': ['error'],
     'no-useless-computed-key': ['error'],
     'no-case-declarations': ['error'],
-    'no-tabs': ['error'],
-    'semi-style': ['error', 'last'],
     'default-case-last': ['error'],
     'unicode-bom': ['error', 'never'],
     'for-direction': ['error'],
@@ -105,7 +100,6 @@ export const eslintRules: TSESLint.Linter.RulesRecord = {
     'symbol-description': ['error'],
     strict: ['error', 'never'],
     yoda: ['error'],
-    'quote-props': ['error', 'as-needed'],
     radix: ['error'],
     'require-yield': ['error'],
     'use-isnan': ['error'],
@@ -113,13 +107,6 @@ export const eslintRules: TSESLint.Linter.RulesRecord = {
     'func-names': ['warn'],
     'one-var': ['error', 'never'],
     'one-var-declaration-per-line': ['error', 'always'],
-    'nonblock-statement-body-position': [
-        'error',
-        'beside',
-        {
-            overrides: {},
-        },
-    ],
     camelcase: [
         'error',
         {
@@ -290,55 +277,6 @@ export const eslintRules: TSESLint.Linter.RulesRecord = {
             defaultAssignment: false,
         },
     ],
-    'no-mixed-operators': [
-        'error',
-        {
-            groups: [
-                [
-                    '%',
-                    '**',
-                ],
-                [
-                    '%',
-                    '+',
-                ],
-                [
-                    '%',
-                    '-',
-                ],
-                [
-                    '%',
-                    '*',
-                ],
-                [
-                    '%',
-                    '/',
-                ],
-                [
-                    '/',
-                    '*',
-                ],
-                [
-                    '&',
-                    '|',
-                    '<<',
-                    '>>',
-                    '>>>',
-                ],
-                [
-                    '==',
-                    '!=',
-                    '===',
-                    '!==',
-                ],
-                [
-                    '&&',
-                    '||',
-                ],
-            ],
-            allowSamePrecedence: false,
-        },
-    ],
     'no-restricted-globals': [
         'error',
         {
@@ -412,13 +350,6 @@ export const eslintRules: TSESLint.Linter.RulesRecord = {
         'error',
         {
             allowImplicit: true,
-        },
-    ],
-    'no-confusing-arrow': [
-        'error',
-        {
-            allowParens: true,
-            onlyOneSimpleParam: false,
         },
     ],
     'no-useless-rename': [
