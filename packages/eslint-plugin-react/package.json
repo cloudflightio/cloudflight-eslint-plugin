@@ -36,6 +36,7 @@
         "eslint": ">=9.0.0 < 10.0.0"
     },
     "devDependencies": {
+        "@types/eslint-plugin-jsx-a11y": "workspace:*",
         "@types/eslint-plugin-react-hooks": "workspace:*",
         "typescript": "5.5.4"
     }

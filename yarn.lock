@@ -539,6 +539,7 @@ __metadata:
   resolution: "@cloudflight/eslint-plugin-react@workspace:packages/eslint-plugin-react"
   dependencies:
     "@cloudflight/eslint-plugin-typescript": "workspace:*"
+    "@types/eslint-plugin-jsx-a11y": "workspace:*"
     "@types/eslint-plugin-react-hooks": "workspace:*"
     "@typescript-eslint/parser": "npm:^8.8.0"
     eslint-plugin-jsx-a11y: "npm:^6.10.0"
@@ -1202,6 +1203,14 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/eslint-plugin-jsx-a11y@workspace:*, @types/eslint-plugin-jsx-a11y@workspace:packages/types-eslint-plugin-jsx-a11y":
+  version: 0.0.0-use.local
+  resolution: "@types/eslint-plugin-jsx-a11y@workspace:packages/types-eslint-plugin-jsx-a11y"
+  dependencies:
+    "@types/eslint": "npm:*"
+  languageName: unknown
+  linkType: soft
+
 "@types/eslint-plugin-no-unsanitized@workspace:*, @types/eslint-plugin-no-unsanitized@workspace:packages/types-eslint-plugin-no-unsanitized":
   version: 0.0.0-use.local
   resolution: "@types/eslint-plugin-no-unsanitized@workspace:packages/types-eslint-plugin-no-unsanitized"
@@ -1210,17 +1219,17 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@types/eslint-plugin-react-hooks@workspace:*, @types/eslint-plugin-react-hooks@workspace:packages/types-eslint-plugin-security":
+"@types/eslint-plugin-react-hooks@workspace:*, @types/eslint-plugin-react-hooks@workspace:packages/types-eslint-plugin-react-hooks":
   version: 0.0.0-use.local
-  resolution: "@types/eslint-plugin-react-hooks@workspace:packages/types-eslint-plugin-security"
+  resolution: "@types/eslint-plugin-react-hooks@workspace:packages/types-eslint-plugin-react-hooks"
   dependencies:
     "@types/eslint": "npm:*"
   languageName: unknown
   linkType: soft
 
-"@types/eslint-plugin-security@workspace:*, @types/eslint-plugin-security@workspace:packages/types-eslint-plugin-react-hooks":
+"@types/eslint-plugin-security@workspace:*, @types/eslint-plugin-security@workspace:packages/types-eslint-plugin-security":
   version: 0.0.0-use.local
-  resolution: "@types/eslint-plugin-security@workspace:packages/types-eslint-plugin-react-hooks"
+  resolution: "@types/eslint-plugin-security@workspace:packages/types-eslint-plugin-security"
   dependencies:
     "@types/eslint": "npm:*"
   languageName: unknown

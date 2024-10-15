@@ -10,6 +10,7 @@ import * as tsParser from '@typescript-eslint/parser';
 // eslint-disable-next-line import-x/default
 import react from 'eslint-plugin-react';
 import pluginReactHooks from 'eslint-plugin-react-hooks';
+import jsxA11y from 'eslint-plugin-jsx-a11y';
 import {reactRules} from './configs/react';
 
 export const cloudflightReactConfig = tseslint.config(
@@ -33,6 +34,7 @@ export const cloudflightReactConfig = tseslint.config(
             // see https://github.com/jsx-eslint/eslint-plugin-react/issues/3838
             // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
             react.configs.flat['jsx-runtime'] as TSESLint.FlatConfig.Config,
+            jsxA11y.flatConfigs.recommended,
         ],
         languageOptions: {
             parser: tsParser,
