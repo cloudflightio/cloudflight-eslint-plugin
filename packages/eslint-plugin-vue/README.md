@@ -24,7 +24,7 @@ In your `package.json` add the following:
   }
 ```
 
-Now open your `eslint.config.mts` and add one of the configurations:
+Now open your `eslint.config.mjs` and add one of the configurations:
 
 ```ts
 import { cloudflightVueConfig } from '@cloudflight/eslint-plugin-vue';
@@ -43,6 +43,14 @@ export default [
             parserOptions: {
                 project: ['tsconfig*(.*).json'],
                 tsconfigRootDir: import.meta.dirname,
+            },
+        },
+        settings: {
+            'import-x/resolver': {
+                typescript: {
+                    alwaysTryTypes: true,
+                    project: ['tsconfig*(.*).json'],
+                },
             },
         },
     },

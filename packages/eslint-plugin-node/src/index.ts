@@ -5,6 +5,7 @@ import pluginSecurity from 'eslint-plugin-security';
 import pluginNode from 'eslint-plugin-n';
 import {securityRules} from './configs/security';
 import {nodeRules} from './configs/node';
+import {importEslintRules} from './configs/import';
 
 export const cloudflightNodeConfig = tseslint.config(
     ...cloudflightTypescriptConfig,
@@ -18,6 +19,7 @@ export const cloudflightNodeConfig = tseslint.config(
         rules: {
             ...nodeRules,
             ...securityRules,
+            ...importEslintRules,
         }
     },
 );
