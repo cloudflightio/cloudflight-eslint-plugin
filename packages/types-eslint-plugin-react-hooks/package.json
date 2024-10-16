@@ -14,5 +14,5 @@
     "dependencies": {
         "@types/eslint": "*"
     },
-    "typeScriptVersion": "4.5"
+    "typeScriptVersion": "5.5"
 }
