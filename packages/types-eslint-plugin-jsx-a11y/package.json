@@ -1,7 +1,7 @@
 {
-    "name": "@types/eslint-plugin-security",
+    "name": "@types/eslint-plugin-jsx-a11y",
     "version": "0.1.0",
-    "description": "TypeScript definitions for eslint-plugin-security",
+    "description": "TypeScript definitions for eslint-plugin-jsx-a11y",
     "homepage": "https://github.com/cloudflightio/cloudflight-eslint-plugin",
     "bugs": {
         "url": "https://github.com/cloudflightio/cloudflight-eslint-plugin/issues"

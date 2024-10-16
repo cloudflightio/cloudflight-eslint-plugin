@@ -14,6 +14,7 @@ export const cloudflightAngularTypescriptConfig = tseslint.config(
             ...angular.configs.tsRecommended,
         ],
         processor: angular.processInlineTemplates,
+        name: 'cloudflight/angular/typescript/rules',
         rules: {
             ...eslintRules,
             ...typescriptEslintRules,
@@ -29,6 +30,7 @@ export const cloudflightAngularTemplateConfig = tseslint.config(
             ...angular.configs.templateRecommended,
             ...angular.configs.templateAccessibility,
         ],
+        name: 'cloudflight/angular/template/rules',
         rules: {
             ...angularTemplateEslintRules,
             // todo: this should be its own config

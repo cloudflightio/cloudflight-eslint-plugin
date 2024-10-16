@@ -13,6 +13,8 @@ export const cloudflightVueConfig = tseslint.config(
     {
         files: ['**/*.vue'],
         extends: [
+            // we can only import the base config here because eslint-plugin-import-x
+            // does not work with vue-eslint-parser properly
             // eslint-disable-next-line @typescript-eslint/no-deprecated
             ...cloudflightTypescriptBaseConfig,
             // .d.ts file for eslint-plugin-vue has been implemented but not released yet, if the
@@ -21,6 +23,7 @@ export const cloudflightVueConfig = tseslint.config(
             ...pluginVue.configs['flat/recommended'] as TSESLint.FlatConfig.ConfigArray,
             ...vueTsEslintConfig(),
         ],
+        name: 'cloudflight/vue/rules',
         rules: {
             ...typescriptRules,
             ...vueRules,

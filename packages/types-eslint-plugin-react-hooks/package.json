@@ -1,7 +1,7 @@
 {
-    "name": "@types/eslint-plugin-security",
+    "name": "@types/eslint-plugin-react-hooks",
     "version": "0.1.0",
-    "description": "TypeScript definitions for eslint-plugin-security",
+    "description": "TypeScript definitions for eslint-plugin-react-hooks",
     "homepage": "https://github.com/cloudflightio/cloudflight-eslint-plugin",
     "bugs": {
         "url": "https://github.com/cloudflightio/cloudflight-eslint-plugin/issues"

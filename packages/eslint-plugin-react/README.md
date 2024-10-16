@@ -9,7 +9,6 @@ You can find the directory of all rules including their reasoning [here](src/con
 The following dependencies are required:
 
 ```
-"@cloudflight/eslint-plugin-typescript": ">=0.26.0",
 "eslint": ">=9.0.0 < 10.0.0"
 ```
 
@@ -25,19 +24,40 @@ In your `package.json` add the following:
   }
 ```
 
-The plugin provides 1 configuration:
+Now open your `eslint.config.mjs` and add one of the configurations:
 
--   @cloudflight/react/recommended
-    -   Contains rules for React files
+```ts
+import { cloudflightReactConfig } from '@cloudflight/eslint-plugin-react';
+import { includeIgnoreFile } from '@eslint/compat';
+import { dirname, normalize, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-Now open your `.eslintrc.js` and add one of the configurations:
+const directory = dirname(fileURLToPath(import.meta.url));
+const gitignorePath = normalize(resolve(directory, '.gitignore'));
 
+export default [
+    includeIgnoreFile(gitignorePath),
+    ...cloudflightReactConfig,
+    {
+        languageOptions: {
+            parserOptions: {
+                project: ['tsconfig*(.*).json'],
+                tsconfigRootDir: import.meta.dirname,
+            },
+        },
+        settings: {
+            'import-x/resolver': {
+                typescript: {
+                    alwaysTryTypes: true,
+                    project: ['tsconfig*(.*).json'],
+                },
+            },
+            react: {
+                version: 'detect',
+            },
+        },
+    },
+];
 ```
-require('@rushstack/eslint-patch/modern-module-resolution');
 
-module.exports = {
-    ...
-    extends: ['plugin:@cloudflight/react/recommended'],
-    ...
-};
-```
+When executing your next `eslint .` it will now validate your code against the cloudflight-recommended rules.
