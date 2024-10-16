@@ -20,7 +20,7 @@ export const typescriptEslintRules: TSESLint.Linter.RulesRecord = {
     [`${pluginPrefix}/no-inferrable-types`]: ['error', {ignoreParameters: true}],
     'no-invalid-this': 'off',
     [`${pluginPrefix}/no-invalid-this`]: ['error'],
-    [`${pluginPrefix}/no-invalid-void-type`]: ['error', {allowInGenericTypeArguments: true}],
+    [`${pluginPrefix}/no-invalid-void-type`]: ['error', {allowInGenericTypeArguments: true, allowAsThisParameter: true}],
     'no-restricted-imports': 'off',
     [`${pluginPrefix}/no-restricted-imports`]: ['error', {name: 'rxjs/Rx', message: "Please import directly from 'rxjs' instead"}],
     'no-shadow': 'off',
