@@ -1,7 +1,9 @@
-import {TSESLint} from '@typescript-eslint/utils';
+import type {TSESLint} from '@typescript-eslint/utils';
+
+const pluginPrefix = '@stylistic';
 
 export const formatEslintRules: TSESLint.Linter.RulesRecord = {
-    'max-len': [
+    [`${pluginPrefix}/max-len`]: [
         'error',
         {
             ignorePattern: '^(import|export) [^,]+ from',
@@ -11,24 +13,24 @@ export const formatEslintRules: TSESLint.Linter.RulesRecord = {
             code: 280,
         },
     ],
-    'eol-last': ['error', 'always'],
-    'no-multi-spaces': [
+    [`${pluginPrefix}/eol-last`]: ['error', 'always'],
+    [`${pluginPrefix}/no-multi-spaces`]: [
         'error',
         {
             ignoreEOLComments: false,
         },
     ],
-    'dot-location': ['error', 'property'],
-    'template-tag-spacing': ['error', 'never'],
-    'template-curly-spacing': ['error', 'never'],
-    'switch-colon-spacing': [
+    [`${pluginPrefix}/dot-location`]: ['error', 'property'],
+    [`${pluginPrefix}/template-tag-spacing`]: ['error', 'never'],
+    [`${pluginPrefix}/template-curly-spacing`]: ['error', 'never'],
+    [`${pluginPrefix}/switch-colon-spacing`]: [
         'error',
         {
             after: true,
             before: false,
         },
     ],
-    'spaced-comment': [
+    [`${pluginPrefix}/spaced-comment`]: [
         'error',
         'always',
         {
@@ -58,8 +60,8 @@ export const formatEslintRules: TSESLint.Linter.RulesRecord = {
             },
         },
     ],
-    'space-infix-ops': ['error'],
-    'space-unary-ops': [
+    [`${pluginPrefix}/space-infix-ops`]: ['error'],
+    [`${pluginPrefix}/space-unary-ops`]: [
         'error',
         {
             words: true,
@@ -67,9 +69,9 @@ export const formatEslintRules: TSESLint.Linter.RulesRecord = {
             overrides: {},
         },
     ],
-    'space-in-parens': ['error', 'never'],
-    'space-before-blocks': ['error'],
-    'space-before-function-paren': [
+    [`${pluginPrefix}/space-in-parens`]: ['error', 'never'],
+    [`${pluginPrefix}/space-before-blocks`]: ['error'],
+    [`${pluginPrefix}/space-before-function-paren`]: [
         'error',
         {
             anonymous: 'always',
@@ -77,14 +79,14 @@ export const formatEslintRules: TSESLint.Linter.RulesRecord = {
             asyncArrow: 'always',
         },
     ],
-    'semi-spacing': [
+    [`${pluginPrefix}/semi-spacing`]: [
         'error',
         {
             before: false,
             after: true,
         },
     ],
-    'padded-blocks': [
+    [`${pluginPrefix}/padded-blocks`]: [
         'error',
         {
             blocks: 'never',
@@ -95,38 +97,37 @@ export const formatEslintRules: TSESLint.Linter.RulesRecord = {
             allowSingleLineBlocks: true,
         },
     ],
-    'padding-line-between-statements': [
+    [`${pluginPrefix}/padding-line-between-statements`]: [
         'error',
         {blankLine: 'always', prev: '*', next: 'return'},
         {blankLine: 'always', prev: 'const', next: '*'},
         {blankLine: 'any', prev: 'const', next: ['const', 'let', 'var']},
         {blankLine: 'always', prev: 'block', next: '*'},
     ],
-    'brace-style': [
+    [`${pluginPrefix}/brace-style`]: [
         'error',
         'stroustrup',
         {
             allowSingleLine: false,
         },
     ],
-    'no-spaced-func': ['error'],
-    'no-trailing-spaces': [
+    [`${pluginPrefix}/no-trailing-spaces`]: [
         'error',
         {
             skipBlankLines: false,
             ignoreComments: false,
         },
     ],
-    'no-whitespace-before-property': ['error'],
-    'object-property-newline': [
+    [`${pluginPrefix}/no-whitespace-before-property`]: ['error'],
+    [`${pluginPrefix}/object-property-newline`]: [
         'error',
         {
             allowAllPropertiesOnSameLine: true,
             allowMultiplePropertiesPerLine: false,
         },
     ],
-    'no-mixed-spaces-and-tabs': ['error'],
-    'no-multiple-empty-lines': [
+    [`${pluginPrefix}/no-mixed-spaces-and-tabs`]: ['error'],
+    [`${pluginPrefix}/no-multiple-empty-lines`]: [
         'error',
         {
             max: 1,
@@ -134,14 +135,14 @@ export const formatEslintRules: TSESLint.Linter.RulesRecord = {
             maxEOF: 0,
         },
     ],
-    'key-spacing': [
+    [`${pluginPrefix}/key-spacing`]: [
         'error',
         {
             beforeColon: false,
             afterColon: true,
         },
     ],
-    'keyword-spacing': [
+    [`${pluginPrefix}/keyword-spacing`]: [
         'error',
         {
             before: true,
@@ -160,7 +161,7 @@ export const formatEslintRules: TSESLint.Linter.RulesRecord = {
         },
     ],
     // this rule is disabled, but configured in case anyone enables this rule.
-    'line-comment-position': [
+    [`${pluginPrefix}/line-comment-position`]: [
         'off',
         {
             position: 'above',
@@ -168,30 +169,23 @@ export const formatEslintRules: TSESLint.Linter.RulesRecord = {
             applyDefaultPatterns: true,
         },
     ],
-    'lines-between-class-members': [
+    [`${pluginPrefix}/lines-between-class-members`]: [
         'error',
         'always',
         {
             exceptAfterSingleLine: false,
         },
     ],
-    'lines-around-directive': [
-        'error',
-        {
-            before: 'always',
-            after: 'always',
-        },
-    ],
-    'newline-per-chained-call': [
+    [`${pluginPrefix}/newline-per-chained-call`]: [
         'error',
         {
             ignoreChainWithDepth: 4,
         },
     ],
-    'function-call-argument-newline': ['error', 'consistent'],
-    'func-call-spacing': ['error', 'never'],
-    'function-paren-newline': ['error', 'multiline-arguments'],
-    'comma-dangle': [
+    [`${pluginPrefix}/function-call-argument-newline`]: ['error', 'consistent'],
+    [`${pluginPrefix}/func-call-spacing`]: ['error', 'never'],
+    [`${pluginPrefix}/function-paren-newline`]: ['error', 'multiline-arguments'],
+    [`${pluginPrefix}/comma-dangle`]: [
         'error',
         {
             arrays: 'always-multiline',
@@ -201,7 +195,7 @@ export const formatEslintRules: TSESLint.Linter.RulesRecord = {
             functions: 'always-multiline',
         },
     ],
-    'comma-style': [
+    [`${pluginPrefix}/comma-style`]: [
         'error',
         'last',
         {
@@ -220,25 +214,25 @@ export const formatEslintRules: TSESLint.Linter.RulesRecord = {
             },
         },
     ],
-    'comma-spacing': [
+    [`${pluginPrefix}/comma-spacing`]: [
         'error',
         {
             before: false,
             after: true,
         },
     ],
-    'computed-property-spacing': ['error', 'never'],
-    'generator-star-spacing': [
+    [`${pluginPrefix}/computed-property-spacing`]: ['error', 'never'],
+    [`${pluginPrefix}/generator-star-spacing`]: [
         'error',
         {
             before: false,
             after: true,
         },
     ],
-    'rest-spread-spacing': ['error', 'never'],
-    'array-bracket-newline': ['error', 'consistent'],
-    'array-bracket-spacing': ['error', 'never'],
-    'array-element-newline': [
+    [`${pluginPrefix}/rest-spread-spacing`]: ['error', 'never'],
+    [`${pluginPrefix}/array-bracket-newline`]: ['error', 'consistent'],
+    [`${pluginPrefix}/array-bracket-spacing`]: ['error', 'never'],
+    [`${pluginPrefix}/array-element-newline`]: [
         'error',
         {
             ArrayExpression: 'consistent',
@@ -247,29 +241,19 @@ export const formatEslintRules: TSESLint.Linter.RulesRecord = {
             },
         },
     ],
-    'block-spacing': ['error', 'always'],
-    'arrow-parens': ['error', 'always'],
-    'arrow-body-style': ['error', 'as-needed'],
-    'arrow-spacing': [
+    [`${pluginPrefix}/block-spacing`]: ['error', 'always'],
+    [`${pluginPrefix}/arrow-parens`]: ['error', 'always'],
+    [`${pluginPrefix}/arrow-spacing`]: [
         'error',
         {
             before: true,
             after: true,
         },
     ],
-    'implicit-arrow-linebreak': ['error', 'beside'],
-    'dot-notation': 'off',
-    '@typescript-eslint/dot-notation': [
+    [`${pluginPrefix}/implicit-arrow-linebreak`]: ['error', 'beside'],
+    [`${pluginPrefix}/indent`]: [
         'error',
-        {
-            allowKeywords: true,
-            allowPattern: '',
-            allowIndexSignaturePropertyAccess: true,
-        },
-    ],
-    indent: [
-        'error',
-        // eslint-disable-next-line no-magic-numbers -- Indent of 4 spaces.
+        // eslint-disable-next-line no-magic-numbers
         4,
         {
             SwitchCase: 1,
@@ -307,30 +291,16 @@ export const formatEslintRules: TSESLint.Linter.RulesRecord = {
                 'JSXText',
                 'JSXEmptyExpression',
                 'JSXSpreadChild',
-            ],
-            ignoreComments: false,
-            offsetTernaryExpressions: false,
-        },
-    ],
-    '@typescript-eslint/indent': [
-        'error',
-        // eslint-disable-next-line no-magic-numbers -- Indent of 4 spaces.
-        4,
-        {
-            MemberExpression: 1,
-            SwitchCase: 1,
-            ignoredNodes: [
                 'FunctionExpression > .params[decorators.length > 0]',
                 'FunctionExpression > .params > :matches(Decorator, :not(:first-child))',
                 'ClassBody.body > PropertyDefinition[decorators.length > 0] > .key',
             ],
-            flatTernaryExpressions: false,
-            offsetTernaryExpressions: false,
             ignoreComments: false,
+            offsetTernaryExpressions: false,
+            MemberExpression: 1,
         },
     ],
-    quotes: 'off',
-    '@typescript-eslint/quotes': [
+    [`${pluginPrefix}/quotes`]: [
         'error',
         'single',
         {
@@ -338,36 +308,50 @@ export const formatEslintRules: TSESLint.Linter.RulesRecord = {
             allowTemplateLiterals: true,
         },
     ],
-    'jsx-quotes': ['error', 'prefer-double'],
-    'linebreak-style': ['off', 'unix'],
-    'object-curly-spacing': ['error', 'never'],
-    'object-curly-newline': [
+    [`${pluginPrefix}/jsx-quotes`]: ['error', 'prefer-double'],
+    [`${pluginPrefix}/linebreak-style`]: ['off', 'unix'],
+    [`${pluginPrefix}/object-curly-spacing`]: ['error', 'never'],
+    [`${pluginPrefix}/object-curly-newline`]: [
         'error',
         {
             consistent: true,
         },
     ],
-    'operator-linebreak': ['error', 'after'],
-    'sort-imports': 'off',
-    'simple-import-sort/imports': [
+    [`${pluginPrefix}/operator-linebreak`]: ['error', 'after'],
+    'perfectionist/sort-imports': [
         'error',
         {
-            groups: [
-                // Packages. `react` related packages come first.
-                ['^react$', '^@nest', '^@?\\w'],
-                // Internal packages.
-                ['@common', '^(@|@company|@ui|components|utils|config|vendored-lib)(/.*|$)'],
-                // Side effect imports.
-                ['^\\u0000'],
-                // Parent imports. Put `..` last.
-                ['^\\.\\.(?!/?$)', '^\\.\\./?$'],
-                // Other relative imports. Put same-folder imports and `.` last.
-                ['^\\./(?=.*/)(?!/?$)', '^\\.(?!/?$)', '^\\./?$'],
-                // Style imports.
-                ['^.+\\.s?css$'],
-            ],
+            type: 'natural',
+            order: 'asc',
         },
     ],
-    'simple-import-sort/exports': 'error',
-    'import/newline-after-import': 'error',
+    'perfectionist/sort-exports': [
+        'error',
+        {
+            type: 'natural',
+            order: 'asc',
+        },
+    ],
+    'perfectionist/sort-named-imports': [
+        'error',
+        {
+            type: 'natural',
+            order: 'asc',
+        },
+    ],
+    'perfectionist/sort-named-exports': [
+        'error',
+        {
+            type: 'natural',
+            order: 'asc',
+        },
+    ],
+    'import-x/newline-after-import': 'error',
+    [`${pluginPrefix}/member-delimiter-style`]: [
+        'error',
+        {multiline: {delimiter: 'semi', requireLast: true}, singleline: {delimiter: 'semi', requireLast: false}},
+    ],
+    [`${pluginPrefix}/semi`]: ['error'],
+    [`${pluginPrefix}/no-extra-semi`]: ['error'],
+    [`${pluginPrefix}/type-annotation-spacing`]: ['error'],
 };

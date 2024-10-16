@@ -19,7 +19,8 @@ function warningEntryToError(value: TSESLint.Linter.RuleEntry): TSESLint.Linter.
 function warningLevelToError(level: TSESLint.Linter.RuleLevel): TSESLint.Linter.RuleLevel {
     if (level === 'warn') {
         return 'error';
-    } else if (level === 1) {
+    }
+    else if (level === 1) {
         return 'error';
     }
 

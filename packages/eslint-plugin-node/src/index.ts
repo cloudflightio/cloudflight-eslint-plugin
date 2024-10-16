@@ -1,11 +1,12 @@
-import tseslint from 'typescript-eslint';
-import { cloudflightTypescriptConfig } from '@cloudflight/eslint-plugin-typescript';
+import {cloudflightTypescriptConfig} from '@cloudflight/eslint-plugin-typescript';
+import pluginNode from 'eslint-plugin-n';
 import nounsanitized from 'eslint-plugin-no-unsanitized';
 import pluginSecurity from 'eslint-plugin-security';
-import pluginNode from 'eslint-plugin-n';
-import {securityRules} from './configs/security';
-import {nodeRules} from './configs/node';
+import tseslint from 'typescript-eslint';
+
 import {importEslintRules} from './configs/import';
+import {nodeRules} from './configs/node';
+import {securityRules} from './configs/security';
 
 export const cloudflightNodeConfig = tseslint.config(
     ...cloudflightTypescriptConfig,
@@ -21,6 +22,6 @@ export const cloudflightNodeConfig = tseslint.config(
             ...nodeRules,
             ...securityRules,
             ...importEslintRules,
-        }
+        },
     },
 );

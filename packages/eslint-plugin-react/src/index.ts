@@ -1,16 +1,18 @@
-import tseslint from 'typescript-eslint';
+import type {TSESLint} from '@typescript-eslint/utils';
+
 import {
     cloudflightTypescriptBaseConfig,
     cloudflightTypescriptConfig, cloudflightTypescriptDisableTypeCheckedConfig,
-    cloudflightTypescriptImportConfig
+    cloudflightTypescriptImportConfig,
 } from '@cloudflight/eslint-plugin-typescript';
-import type {TSESLint} from '@typescript-eslint/utils';
 import * as tsParser from '@typescript-eslint/parser';
+import jsxA11y from 'eslint-plugin-jsx-a11y';
+import tseslint from 'typescript-eslint';
 // see https://github.com/jsx-eslint/eslint-plugin-react/issues/3838
 // eslint-disable-next-line import-x/default
 import react from 'eslint-plugin-react';
 import pluginReactHooks from 'eslint-plugin-react-hooks';
-import jsxA11y from 'eslint-plugin-jsx-a11y';
+
 import {reactRules} from './configs/react';
 
 export const cloudflightReactConfig = tseslint.config(
@@ -51,7 +53,7 @@ export const cloudflightReactConfig = tseslint.config(
         rules: {
             ...pluginReactHooks.configs.recommended.rules,
             ...reactRules,
-        }
+        },
     },
     {
         files: ['**/*.{js,jsx,mjs,cjs}'],

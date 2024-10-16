@@ -1,4 +1,5 @@
 import {TSESLint} from '@typescript-eslint/utils';
+
 import {NoMomentJsRule, NoMomentJsRuleName} from './typescript/no-moment-js';
 import {NoOnEventAssign, NoOnEventAssignName} from './typescript/no-on-event-assign';
 
@@ -31,4 +32,4 @@ export const cloudflightTypescriptPlugin: TSESLint.FlatConfig.Plugin = {
         version: 'see package.json file',
     },
     rules,
-}
+};
