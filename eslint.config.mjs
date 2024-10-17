@@ -1,8 +1,8 @@
-import tseslint from 'typescript-eslint';
+import {cloudflightTypescriptConfig} from '@cloudflight/eslint-plugin-typescript';
 import {includeIgnoreFile} from '@eslint/compat';
 import {dirname, resolve} from 'node:path';
 import {fileURLToPath} from 'node:url';
-import { cloudflightTypescriptConfig } from '@cloudflight/eslint-plugin-typescript';
+import tseslint from 'typescript-eslint';
 
 const filename = fileURLToPath(import.meta.url);
 const directory = dirname(filename);
@@ -18,16 +18,15 @@ export default tseslint.config(
             'packages/eslint-plugin-typescript/src/configs/index.ts',
             'packages/eslint-plugin-typescript/src/configs/json.ts',
             'packages/eslint-plugin-typescript/src/configs/package.ts',
-            'packages/eslint-plugin-typescript/src/configs/format.ts',
             'packages/eslint-plugin-typescript/src/configs/rxjs.ts',
             'packages/eslint-plugin-typescript/src/rules/package/*',
             'packages/eslint-plugin-typescript/src/rules/ts-config/*',
             'packages/eslint-plugin-typescript/src/rules/typescript/*.spec.ts',
             'scripts/*',
-            '.eslintrc.format.js',
             'eslint.config.mjs',
+            'eslint.format.mjs',
             'jest.config*.ts',
-        ]
+        ],
     },
     ...cloudflightTypescriptConfig,
     {

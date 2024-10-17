@@ -73,24 +73,26 @@ In your `package.json` add the following:
   }
 ```
 
-Create a new file called `.eslintrc.format.js` and add the following:
+Create a new file called `eslint.format.mjs` and add the following:
 
+```ts
+import tseslint from 'typescript-eslint';
+import {includeIgnoreFile} from '@eslint/compat';
+import {dirname, resolve} from 'node:path';
+import {fileURLToPath} from 'node:url';
+import {cloudflightTypescriptFormatConfig} from '@cloudflight/eslint-plugin-typescript';
+
+const filename = fileURLToPath(import.meta.url);
+const directory = dirname(filename);
+const gitignorePath = resolve(directory, '.gitignore');
+
+export default tseslint.config(
+    includeIgnoreFile(gitignorePath),
+    ...cloudflightTypescriptFormatConfig,
+);
 ```
-require('@rushstack/eslint-patch/modern-module-resolution');
 
-module.exports = {
-    root: true,
-    plugins: ['@cloudflight/typescript'],
-    extends: ['plugin:@cloudflight/typescript/formatting'],
-    ignorePatterns: ['jest.config*.ts'],
-    env: {
-        es6: true,
-        node: true,
-    },
-};
-```
-
-With the command `eslint . --config .eslintrc.format.js` your project can be checked for formatting violations.
+With the command `eslint -c eslint.format.mjs .` your project can be checked for formatting violations.
 
 ### Pre-Commit Hook
 
@@ -102,7 +104,7 @@ To automatically format your code before committing, set up [husky](https://typi
 {
     // ...
     "lint-staged": {
-        "*.ts": "eslint --config .eslintrc.format.cjs --fix"
+        "*.ts": "eslint -c eslint.format.mjs --fix"
     }
 }
 ```

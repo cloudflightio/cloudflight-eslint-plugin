@@ -1,10 +1,11 @@
-import tseslint from 'typescript-eslint';
-import angular from 'angular-eslint';
 import {cloudflightTypescriptConfig} from '@cloudflight/eslint-plugin-typescript';
-import {eslintRules} from './configs/eslint';
-import {typescriptEslintRules} from './configs/typescript-eslint';
+import angular from 'angular-eslint';
+import tseslint from 'typescript-eslint';
+
 import {angularEslintRules} from './configs/angular-eslint';
 import {angularTemplateEslintRules} from './configs/angular-eslint-template';
+import {eslintRules} from './configs/eslint';
+import {typescriptEslintRules} from './configs/typescript-eslint';
 
 export const cloudflightAngularTypescriptConfig = tseslint.config(
     ...cloudflightTypescriptConfig,
@@ -19,7 +20,7 @@ export const cloudflightAngularTypescriptConfig = tseslint.config(
             ...eslintRules,
             ...typescriptEslintRules,
             ...angularEslintRules,
-        }
+        },
     },
 );
 
@@ -35,8 +36,8 @@ export const cloudflightAngularTemplateConfig = tseslint.config(
             ...angularTemplateEslintRules,
             // todo: this should be its own config
             // ...formatAngularTemplateEslintRules,
-        }
-    }
+        },
+    },
 );
 
 export const cloudflightAngularConfig = tseslint.config(

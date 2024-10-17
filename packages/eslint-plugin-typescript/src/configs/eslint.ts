@@ -1,4 +1,4 @@
-import {TSESLint} from '@typescript-eslint/utils';
+import type {TSESLint} from '@typescript-eslint/utils';
 
 export const eslintRules: TSESLint.Linter.RulesRecord = {
     complexity: ['error', {max: 20}],

@@ -1,8 +1,10 @@
-import type { Linter } from 'eslint';
+import type {Linter} from 'eslint';
 
 declare const pluginSecurity: {
     readonly configs: {
-        readonly recommended: { readonly rules: Readonly<Linter.RulesRecord> };
+        readonly recommended: {
+            readonly rules: Readonly<Linter.RulesRecord>;
+        };
     };
 };
 

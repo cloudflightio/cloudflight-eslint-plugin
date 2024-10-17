@@ -1,12 +1,16 @@
 import pluginJs from '@eslint/js';
-import tseslint from 'typescript-eslint';
-import eslintPluginImportX from 'eslint-plugin-import-x';
+import stylistic from '@stylistic/eslint-plugin';
 import * as tsParser from '@typescript-eslint/parser';
-import {eslintRules} from './configs/eslint';
-import {typescriptEslintRules, typescriptEslintRulesDisableTypeChecked} from './configs/typescript-eslint';
+import eslintPluginImportX from 'eslint-plugin-import-x';
+import perfectionist from 'eslint-plugin-perfectionist';
+import tseslint from 'typescript-eslint';
+
 import {customRules} from './configs/custom';
-import {cloudflightTypescriptPlugin} from './rules';
+import {eslintRules} from './configs/eslint';
+import {formatEslintRules} from './configs/format';
 import {importEslintRules} from './configs/import';
+import {typescriptEslintRules, typescriptEslintRulesDisableTypeChecked} from './configs/typescript-eslint';
+import {cloudflightTypescriptPlugin} from './rules';
 
 /**
  * @deprecated Use `cloudflightTypescriptConfig` instead
@@ -74,3 +78,26 @@ export const cloudflightTypescriptConfig = tseslint.config(
     // eslint-disable-next-line @typescript-eslint/no-deprecated
     ...cloudflightTypescriptDisableTypeCheckedConfig,
 );
+
+export const cloudflightTypescriptFormatConfig = tseslint.config({
+    files: ['**/*.{js,mjs,cjs,ts,mts,cts}'],
+    plugins: {
+        '@typescript-eslint': tseslint.plugin,
+        'import-x': eslintPluginImportX,
+        '@cloudflight/typescript': cloudflightTypescriptPlugin,
+        '@stylistic': stylistic,
+        perfectionist,
+    },
+    languageOptions: {
+        parser: tsParser,
+        ecmaVersion: 'latest',
+        sourceType: 'module',
+    },
+    linterOptions: {
+        reportUnusedDisableDirectives: 'off',
+    },
+    name: 'cloudflight/typescript/format-rules',
+    rules: {
+        ...formatEslintRules,
+    },
+});
