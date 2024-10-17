@@ -556,6 +556,7 @@ __metadata:
   dependencies:
     "@eslint/js": "npm:^9.12.0"
     "@stylistic/eslint-plugin": "npm:2.9.0"
+    "@types/eslint-plugin-rxjs": "workspace:*"
     eslint-import-resolver-typescript: "npm:3.6.3"
     eslint-plugin-import-x: "npm:4.3.1"
     eslint-plugin-perfectionist: "npm:3.9.1"
@@ -1264,6 +1265,14 @@ __metadata:
   resolution: "@types/eslint-plugin-react-hooks@workspace:packages/types-eslint-plugin-react-hooks"
   dependencies:
     "@types/eslint": "npm:9.6.1"
+  languageName: unknown
+  linkType: soft
+
+"@types/eslint-plugin-rxjs@workspace:*, @types/eslint-plugin-rxjs@workspace:packages/types-eslint-plugin-rxjs":
+  version: 0.0.0-use.local
+  resolution: "@types/eslint-plugin-rxjs@workspace:packages/types-eslint-plugin-rxjs"
+  dependencies:
+    "@types/eslint": "npm:*"
   languageName: unknown
   linkType: soft
 

@@ -1,6 +1,6 @@
 {
     "name": "@cloudflight/eslint-plugin-typescript",
-    "version": "1.0.0-rc11",
+    "version": "1.0.0-rc12",
     "description": "Cloudflight eslint-plugin & eslint-config for typescript",
     "volta": {
         "extends": "../../package.json"
@@ -38,6 +38,7 @@
         "eslint": ">=9.0.0 < 10.0.0"
     },
     "devDependencies": {
+        "@types/eslint-plugin-rxjs": "workspace:*",
         "typescript": "5.5.4"
     }
 }
