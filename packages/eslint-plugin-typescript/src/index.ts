@@ -1,6 +1,5 @@
 import pluginJs from '@eslint/js';
 import stylistic from '@stylistic/eslint-plugin';
-import * as tsParser from '@typescript-eslint/parser';
 import eslintPluginImportX from 'eslint-plugin-import-x';
 import perfectionist from 'eslint-plugin-perfectionist';
 import tseslint from 'typescript-eslint';
@@ -47,7 +46,7 @@ export const cloudflightTypescriptImportConfig = tseslint.config({
         eslintPluginImportX.flatConfigs.typescript,
     ],
     languageOptions: {
-        parser: tsParser,
+        parser: tseslint.parser,
         ecmaVersion: 'latest',
         sourceType: 'module',
     },
@@ -89,7 +88,7 @@ export const cloudflightTypescriptFormatConfig = tseslint.config({
         perfectionist,
     },
     languageOptions: {
-        parser: tsParser,
+        parser: tseslint.parser,
         ecmaVersion: 'latest',
         sourceType: 'module',
     },

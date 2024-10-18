@@ -1,11 +1,7 @@
 import {TSESLint} from '@typescript-eslint/utils';
-// @ts-expect-error .d.ts file for eslint-plugin-vue has been implemented but not released yet
-// if the following line fails to build after updating the version, simply remove this comment
 import pluginVue from 'eslint-plugin-vue';
 
-// .d.ts file for eslint-plugin-vue has been implemented but not released yet, if the
-// following line fails to build after updating the version, simply remove this comment
-// eslint-disable-next-line @typescript-eslint/no-unsafe-member-access,@typescript-eslint/consistent-type-assertions
+// eslint-disable-next-line ,@typescript-eslint/consistent-type-assertions
 const recommendedConfigArray = pluginVue.configs['flat/recommended'] as TSESLint.FlatConfig.ConfigArray;
 const recommendedRules = recommendedConfigArray
     .reduce<Record<string, TSESLint.Linter.RuleEntry | undefined>>((acc, config) => ({...acc, ...config.rules}), {});
