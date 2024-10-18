@@ -12,7 +12,7 @@
     "main": "",
     "types": "index.d.ts",
     "dependencies": {
-        "@types/eslint": "*"
+        "@types/eslint": "9.6.1"
     },
     "typeScriptVersion": "5.5"
 }

@@ -5,7 +5,6 @@ import {
     cloudflightTypescriptConfig, cloudflightTypescriptDisableTypeCheckedConfig,
     cloudflightTypescriptImportConfig,
 } from '@cloudflight/eslint-plugin-typescript';
-import * as tsParser from '@typescript-eslint/parser';
 import jsxA11y from 'eslint-plugin-jsx-a11y';
 import tseslint from 'typescript-eslint';
 // see https://github.com/jsx-eslint/eslint-plugin-react/issues/3838
@@ -39,7 +38,7 @@ export const cloudflightReactConfig = tseslint.config(
             jsxA11y.flatConfigs.recommended,
         ],
         languageOptions: {
-            parser: tsParser,
+            parser: tseslint.parser,
             ecmaVersion: 'latest',
             sourceType: 'module',
             parserOptions: {
