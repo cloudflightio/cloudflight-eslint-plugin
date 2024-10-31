@@ -2,11 +2,8 @@ import type {TSESLint} from '@typescript-eslint/utils';
 import type {FlatConfig} from '@typescript-eslint/utils/ts-eslint';
 
 import {
-    CloudflightEslintPluginSettings,
-    cloudflightTypescriptBaseConfig,
-    cloudflightTypescriptConfig,
-    cloudflightTypescriptDisableTypeCheckedConfig,
-    cloudflightTypescriptImportConfig,
+    CloudflightEslintPluginSettings, cloudflightTypescriptBaseConfig,
+    cloudflightTypescriptConfig, cloudflightTypescriptImportConfig,
 } from '@cloudflight/eslint-plugin-typescript';
 import jsxA11y from 'eslint-plugin-jsx-a11y';
 import tseslint from 'typescript-eslint';
@@ -29,7 +26,7 @@ export function cloudflightReactConfig(settings: CloudflightEslintPluginSettings
                 // eslint-disable-next-line @typescript-eslint/no-deprecated
                 ...cloudflightTypescriptBaseConfig,
                 // eslint-disable-next-line @typescript-eslint/no-deprecated
-                ...cloudflightTypescriptImportConfig,
+                ...cloudflightTypescriptImportConfig(settings),
                 // type assertion is workaround for incorrect TypeScript types in eslint-plugin-react
                 // see https://github.com/jsx-eslint/eslint-plugin-react/issues/3838
                 // eslint-disable-next-line @typescript-eslint/consistent-type-assertions,@typescript-eslint/no-non-null-assertion
@@ -56,15 +53,6 @@ export function cloudflightReactConfig(settings: CloudflightEslintPluginSettings
                 ...pluginReactHooks.configs.recommended.rules,
                 ...reactRules,
             },
-        },
-        {
-            files: ['**/*.{js,jsx,mjs,cjs}'],
-            extends: [
-                // eslint-disable-next-line @typescript-eslint/no-deprecated
-                ...cloudflightTypescriptDisableTypeCheckedConfig,
-            ],
-        },
-        {
             settings: {
                 react: {
                     version: 'detect',

@@ -1,4 +1,4 @@
-import type {FlatConfig} from '@typescript-eslint/utils/ts-eslint';
+import type {FlatConfig, SharedConfigurationSettings} from '@typescript-eslint/utils/ts-eslint';
 
 import {fixupPluginRules, includeIgnoreFile} from '@eslint/compat';
 import pluginJs from '@eslint/js';
@@ -47,22 +47,25 @@ export const cloudflightTypescriptBaseConfig = tseslint.config(
  * @deprecated Use `cloudflightTypescriptConfig` instead
  * This is only for internal use only
  */
-export const cloudflightTypescriptImportConfig = tseslint.config({
-    files: ['**/*.{js,mjs,cjs,ts,mts,cts}'],
-    extends: [
-        eslintPluginImportX.flatConfigs.recommended,
-        eslintPluginImportX.flatConfigs.typescript,
-    ],
-    languageOptions: {
-        parser: tseslint.parser,
-        ecmaVersion: 'latest',
-        sourceType: 'module',
-    },
-    name: 'cloudflight/typescript/import-rules',
-    rules: {
-        ...importEslintRules,
-    },
-});
+export function cloudflightTypescriptImportConfig(settings: CloudflightEslintPluginSettings): FlatConfig.ConfigArray {
+    return tseslint.config({
+        files: ['**/*.{js,mjs,cjs,ts,mts,cts}'],
+        extends: [
+            eslintPluginImportX.flatConfigs.recommended,
+            eslintPluginImportX.flatConfigs.typescript,
+        ],
+        languageOptions: {
+            parser: tseslint.parser,
+            ecmaVersion: 'latest',
+            sourceType: 'module',
+        },
+        name: 'cloudflight/typescript/import-rules',
+        rules: {
+            ...importEslintRules,
+        },
+        settings: importXSettings(settings),
+    });
+}
 
 /**
  * @deprecated Use `cloudflightTypescriptConfig` instead
@@ -88,12 +91,15 @@ export interface CloudflightEslintPluginSettings {
 }
 
 export function cloudflightTypescriptFormatConfig(
-    {rootDirectory}: CloudflightEslintPluginSettings,
+    settings: CloudflightEslintPluginSettings,
 ): FlatConfig.ConfigArray {
-    const gitignorePath = resolve(rootDirectory, '.gitignore');
+    const gitignorePath = resolve(settings.rootDirectory, '.gitignore');
 
     return tseslint.config(
         includeIgnoreFile(gitignorePath),
+        {
+            ignores: ['.yarn/**'],
+        },
         {
             files: ['**/*.{js,mjs,cjs,ts,mts,cts}'],
             plugins: {
@@ -115,39 +121,43 @@ export function cloudflightTypescriptFormatConfig(
             rules: {
                 ...formatEslintRules,
             },
+            settings: importXSettings(settings),
         },
     );
 }
 
 export function cloudflightTypescriptConfig(
-    {rootDirectory, tsConfigFiles}: CloudflightEslintPluginSettings,
+    settings: CloudflightEslintPluginSettings,
 ): FlatConfig.ConfigArray {
-    const gitignorePath = resolve(rootDirectory, '.gitignore');
+    const gitignorePath = resolve(settings.rootDirectory, '.gitignore');
 
     return tseslint.config(
         includeIgnoreFile(gitignorePath),
         // eslint-disable-next-line @typescript-eslint/no-deprecated
         ...cloudflightTypescriptBaseConfig,
         // eslint-disable-next-line @typescript-eslint/no-deprecated
-        ...cloudflightTypescriptImportConfig,
+        ...cloudflightTypescriptImportConfig(settings),
         // eslint-disable-next-line @typescript-eslint/no-deprecated
         ...cloudflightTypescriptDisableTypeCheckedConfig,
         {
             languageOptions: {
                 parserOptions: {
-                    project: tsConfigFiles ?? ['tsconfig*(.*).json'],
-                    tsconfigRootDir: rootDirectory,
-                },
-            },
-            settings: {
-                'import-x/resolver': {
-                    typescript: {
-                        alwaysTryTypes: true,
-                        project: tsConfigFiles ?? ['tsconfig*(.*).json'],
-                        tsconfigRootDir: rootDirectory,
-                    },
+                    project: settings.tsConfigFiles ?? ['tsconfig*(.*).json'],
+                    tsconfigRootDir: settings.rootDirectory,
                 },
             },
         },
     );
+}
+
+function importXSettings(settings: CloudflightEslintPluginSettings): SharedConfigurationSettings {
+    return {
+        'import-x/resolver': {
+            typescript: {
+                alwaysTryTypes: true,
+                project: settings.tsConfigFiles ?? ['tsconfig*(.*).json'],
+                tsconfigRootDir: settings.rootDirectory,
+            },
+        },
+    };
 }
