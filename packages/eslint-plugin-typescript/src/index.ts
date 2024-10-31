@@ -1,9 +1,12 @@
-import {fixupPluginRules} from '@eslint/compat';
+import type {FlatConfig} from '@typescript-eslint/utils/ts-eslint';
+
+import {fixupPluginRules, includeIgnoreFile} from '@eslint/compat';
 import pluginJs from '@eslint/js';
 import stylistic from '@stylistic/eslint-plugin';
 import eslintPluginImportX from 'eslint-plugin-import-x';
 import perfectionist from 'eslint-plugin-perfectionist';
 import rxjs from 'eslint-plugin-rxjs';
+import {resolve} from 'node:path';
 import tseslint from 'typescript-eslint';
 
 import {customRules} from './configs/custom';
@@ -74,34 +77,77 @@ export const cloudflightTypescriptDisableTypeCheckedConfig = tseslint.config({
     },
 });
 
-export const cloudflightTypescriptConfig = tseslint.config(
-    // eslint-disable-next-line @typescript-eslint/no-deprecated
-    ...cloudflightTypescriptBaseConfig,
-    // eslint-disable-next-line @typescript-eslint/no-deprecated
-    ...cloudflightTypescriptImportConfig,
-    // eslint-disable-next-line @typescript-eslint/no-deprecated
-    ...cloudflightTypescriptDisableTypeCheckedConfig,
-);
+export interface CloudflightEslintPluginSettings {
+    rootDirectory: string;
+    /**
+     * Override the default tsconfig files to use for the project.
+     * Keep this list as short as possible, a large list will negatively impact performance.
+     * Relative to the rootDirectory.
+     */
+    tsConfigFiles?: string[];
+}
 
-export const cloudflightTypescriptFormatConfig = tseslint.config({
-    files: ['**/*.{js,mjs,cjs,ts,mts,cts}'],
-    plugins: {
-        '@typescript-eslint': tseslint.plugin,
-        'import-x': eslintPluginImportX,
-        '@cloudflight/typescript': cloudflightTypescriptPlugin,
-        '@stylistic': stylistic,
-        perfectionist,
-    },
-    languageOptions: {
-        parser: tseslint.parser,
-        ecmaVersion: 'latest',
-        sourceType: 'module',
-    },
-    linterOptions: {
-        reportUnusedDisableDirectives: 'off',
-    },
-    name: 'cloudflight/typescript/format-rules',
-    rules: {
-        ...formatEslintRules,
-    },
-});
+export function cloudflightTypescriptFormatConfig(
+    {rootDirectory}: CloudflightEslintPluginSettings,
+): FlatConfig.ConfigArray {
+    const gitignorePath = resolve(rootDirectory, '.gitignore');
+
+    return tseslint.config(
+        includeIgnoreFile(gitignorePath),
+        {
+            files: ['**/*.{js,mjs,cjs,ts,mts,cts}'],
+            plugins: {
+                '@typescript-eslint': tseslint.plugin,
+                'import-x': eslintPluginImportX,
+                '@cloudflight/typescript': cloudflightTypescriptPlugin,
+                '@stylistic': stylistic,
+                perfectionist,
+            },
+            languageOptions: {
+                parser: tseslint.parser,
+                ecmaVersion: 'latest',
+                sourceType: 'module',
+            },
+            linterOptions: {
+                reportUnusedDisableDirectives: 'off',
+            },
+            name: 'cloudflight/typescript/format-rules',
+            rules: {
+                ...formatEslintRules,
+            },
+        },
+    );
+}
+
+export function cloudflightTypescriptConfig(
+    {rootDirectory, tsConfigFiles}: CloudflightEslintPluginSettings,
+): FlatConfig.ConfigArray {
+    const gitignorePath = resolve(rootDirectory, '.gitignore');
+
+    return tseslint.config(
+        includeIgnoreFile(gitignorePath),
+        // eslint-disable-next-line @typescript-eslint/no-deprecated
+        ...cloudflightTypescriptBaseConfig,
+        // eslint-disable-next-line @typescript-eslint/no-deprecated
+        ...cloudflightTypescriptImportConfig,
+        // eslint-disable-next-line @typescript-eslint/no-deprecated
+        ...cloudflightTypescriptDisableTypeCheckedConfig,
+        {
+            languageOptions: {
+                parserOptions: {
+                    project: tsConfigFiles ?? ['tsconfig*(.*).json'],
+                    tsconfigRootDir: rootDirectory,
+                },
+            },
+            settings: {
+                'import-x/resolver': {
+                    typescript: {
+                        alwaysTryTypes: true,
+                        project: tsConfigFiles ?? ['tsconfig*(.*).json'],
+                        tsconfigRootDir: rootDirectory,
+                    },
+                },
+            },
+        },
+    );
+}

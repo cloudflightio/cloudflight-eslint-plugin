@@ -16,12 +16,12 @@ The following dependencies are required:
 
 In your `package.json` add the following:
 
-```
+```json
 "devDependencies": {
     ...
     "@cloudflight/eslint-plugin-angular": "<version>",
     ...
-  }
+}
 ```
 
 The plugin provides 3 different configurations:
@@ -37,34 +37,12 @@ Now open your `eslint.config.mjs` and add one of the configurations:
 
 ```ts
 import { cloudflightAngularConfig } from '@cloudflight/eslint-plugin-angular';
-import { includeIgnoreFile } from '@eslint/compat';
-import { dirname, normalize, resolve } from 'node:path';
-import { fileURLToPath } from 'node:url';
 
-const directory = dirname(fileURLToPath(import.meta.url));
-const gitignorePath = normalize(resolve(directory, '.gitignore'));
-
-export default [
-    includeIgnoreFile(gitignorePath),
-    ...cloudflightAngularConfig,
-    {
-        languageOptions: {
-            parserOptions: {
-                project: ['tsconfig*(.*).json'],
-                tsconfigRootDir: import.meta.dirname,
-            },
-        },
-        settings: {
-            'import-x/resolver': {
-                typescript: {
-                    alwaysTryTypes: true,
-                    project: ['tsconfig*(.*).json'],
-                },
-            },
-        },
-    },
-];
+export default cloudflightAngularConfig({
+    rootDirectory: import.meta.dirname,
+});
 ```
+See [Custom Configuration](../../CUSTOM_CONFIGURATION.md) for more complicated project setups.
 
 ## Formatting
 
@@ -72,12 +50,12 @@ This package also includes configs for formatting typescript.
 
 In your `package.json` add the following:
 
-```
+```json
 "devDependencies": {
     ...
     "@cloudflight/eslint-plugin-angular": "<version>",
     ...
-  }
+}
 ```
 
 Create a new file called `.eslintrc.format.js` and add the following:

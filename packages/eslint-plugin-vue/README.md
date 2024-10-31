@@ -16,43 +16,22 @@ The following dependencies are required:
 
 In your `package.json` add the following:
 
-```
+```json
 "devDependencies": {
     ...
     "@cloudflight/eslint-plugin-vue": "<version>",
     ...
-  }
+}
 ```
 
 Now open your `eslint.config.mjs` and add one of the configurations:
 
 ```ts
 import { cloudflightVueConfig } from '@cloudflight/eslint-plugin-vue';
-import { includeIgnoreFile } from '@eslint/compat';
-import { dirname, normalize, resolve } from 'node:path';
-import { fileURLToPath } from 'node:url';
 
-const directory = dirname(fileURLToPath(import.meta.url));
-const gitignorePath = normalize(resolve(directory, '.gitignore'));
-
-export default [
-    includeIgnoreFile(gitignorePath),
-    ...cloudflightVueConfig,
-    {
-        languageOptions: {
-            parserOptions: {
-                project: ['tsconfig*(.*).json'],
-                tsconfigRootDir: import.meta.dirname,
-            },
-        },
-        settings: {
-            'import-x/resolver': {
-                typescript: {
-                    alwaysTryTypes: true,
-                    project: ['tsconfig*(.*).json'],
-                },
-            },
-        },
-    },
-];
+export default cloudflightVueConfig({
+    rootDirectory: import.meta.dirname,
+});
 ```
+
+See [Custom Configuration](../../CUSTOM_CONFIGURATION.md) for more complicated project setups.
