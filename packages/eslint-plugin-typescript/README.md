@@ -16,46 +16,24 @@ The following dependencies are required:
 
 In your `package.json` add the following:
 
-```
+```json
 "devDependencies": {
     ...
     "@cloudflight/eslint-plugin-typescript": "<version>",
     ...
-  }
+}
 ```
 
 Now open your `eslint.config.mjs` and add one of the configurations:
 
 ```ts
 import { cloudflightTypescriptConfig } from '@cloudflight/eslint-plugin-typescript';
-import { includeIgnoreFile } from '@eslint/compat';
-import { dirname, normalize, resolve } from 'node:path';
-import { fileURLToPath } from 'node:url';
 
-const directory = dirname(fileURLToPath(import.meta.url));
-const gitignorePath = normalize(resolve(directory, '.gitignore'));
-
-export default [
-    includeIgnoreFile(gitignorePath),
-    ...cloudflightTypescriptConfig,
-    {
-        languageOptions: {
-            parserOptions: {
-                project: ['tsconfig*(.*).json'],
-                tsconfigRootDir: import.meta.dirname,
-            },
-        },
-        settings: {
-            'import-x/resolver': {
-                typescript: {
-                    alwaysTryTypes: true,
-                    project: ['tsconfig*(.*).json'],
-                },
-            },
-        },
-    },
-];
+export default cloudflightTypescriptConfig({
+    rootDirectory: import.meta.dirname,
+});
 ```
+See [Custom Configuration](../../CUSTOM_CONFIGURATION.md) for more complicated project setups.
 
 When executing your next `eslint .` it will now validate your code against the cloudflight-recommended rules.
 
@@ -76,20 +54,11 @@ In your `package.json` add the following:
 Create a new file called `eslint.format.mjs` and add the following:
 
 ```ts
-import tseslint from 'typescript-eslint';
-import {includeIgnoreFile} from '@eslint/compat';
-import {dirname, resolve} from 'node:path';
-import {fileURLToPath} from 'node:url';
 import {cloudflightTypescriptFormatConfig} from '@cloudflight/eslint-plugin-typescript';
 
-const filename = fileURLToPath(import.meta.url);
-const directory = dirname(filename);
-const gitignorePath = resolve(directory, '.gitignore');
-
-export default tseslint.config(
-    includeIgnoreFile(gitignorePath),
-    ...cloudflightTypescriptFormatConfig,
-);
+export default cloudflightTypescriptFormatConfig({
+    rootDirectory: import.meta.dirname,
+});
 ```
 
 With the command `eslint -c eslint.format.mjs .` your project can be checked for formatting violations.
