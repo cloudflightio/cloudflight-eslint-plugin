@@ -1,6 +1,6 @@
 {
     "name": "@cloudflight/eslint-plugin-react",
-    "version": "1.0.0-rc12",
+    "version": "1.0.0-rc13",
     "description": "Cloudflight eslint-plugin & eslint-config for React",
     "volta": {
         "extends": "../../package.json"
