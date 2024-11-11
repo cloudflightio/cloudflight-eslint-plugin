@@ -26,6 +26,12 @@ export function cloudflightNodeConfig(settings: CloudflightEslintPluginSettings)
                 ...securityRules,
                 ...importEslintRules,
             },
+            languageOptions: {
+                parserOptions: {
+                    project: settings.tsConfigFiles ?? ['tsconfig*(.*).json'],
+                    tsconfigRootDir: settings.rootDirectory,
+                },
+            },
         },
     );
 }

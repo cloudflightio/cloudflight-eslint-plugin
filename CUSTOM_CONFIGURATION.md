@@ -9,10 +9,12 @@ By default, only tsconfig files in the root directory are used. You can provide 
 // this applies to all configs, not just typescript
 import { cloudflightTypescriptConfig } from '@cloudflight/eslint-plugin-typescript';
 
-export default cloudflightTypescriptConfig({
-    rootDirectory: import.meta.dirname,
-    tsConfigFiles: ['./packages/*/tsconfig.json', './packages/*/tsconfig.spec.json'],
-});
+export default [
+    ...cloudflightTypescriptConfig({
+        rootDirectory: import.meta.dirname,
+        tsConfigFiles: ['./packages/*/tsconfig.json', './packages/*/tsconfig.spec.json'],
+    }),
+];
 ```
 **Try to keep the list of TSConfig files as short as possible, they have a negative effect on performance**
 

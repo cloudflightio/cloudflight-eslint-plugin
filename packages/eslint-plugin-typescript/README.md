@@ -28,10 +28,19 @@ Now open your `eslint.config.mjs` and add one of the configurations:
 
 ```ts
 import { cloudflightTypescriptConfig } from '@cloudflight/eslint-plugin-typescript';
+import { includeIgnoreFile } from '@eslint/compat';
+import { dirname, normalize, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-export default cloudflightTypescriptConfig({
-    rootDirectory: import.meta.dirname,
-});
+const directory = dirname(fileURLToPath(import.meta.url));
+const gitignorePath = normalize(resolve(directory, '.gitignore'));
+
+export default [
+    includeIgnoreFile(gitignorePath),
+    ...cloudflightTypescriptConfig({
+        rootDirectory: import.meta.dirname,
+    }),
+];
 ```
 See [Custom Configuration](../../CUSTOM_CONFIGURATION.md) for more complicated project setups.
 
@@ -54,11 +63,20 @@ In your `package.json` add the following:
 Create a new file called `eslint.format.mjs` and add the following:
 
 ```ts
-import {cloudflightTypescriptFormatConfig} from '@cloudflight/eslint-plugin-typescript';
+import { cloudflightTypescriptFormatConfig } from '@cloudflight/eslint-plugin-typescript';
+import { includeIgnoreFile } from '@eslint/compat';
+import { dirname, normalize, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-export default cloudflightTypescriptFormatConfig({
-    rootDirectory: import.meta.dirname,
-});
+const directory = dirname(fileURLToPath(import.meta.url));
+const gitignorePath = normalize(resolve(directory, '.gitignore'));
+
+export default [
+    includeIgnoreFile(gitignorePath),
+    ...cloudflightTypescriptFormatConfig({
+        rootDirectory: import.meta.dirname,
+    }),
+];
 ```
 
 With the command `eslint -c eslint.format.mjs .` your project can be checked for formatting violations.

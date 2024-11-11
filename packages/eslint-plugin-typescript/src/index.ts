@@ -1,12 +1,11 @@
 import type {FlatConfig, SharedConfigurationSettings} from '@typescript-eslint/utils/ts-eslint';
 
-import {fixupPluginRules, includeIgnoreFile} from '@eslint/compat';
+import {fixupPluginRules} from '@eslint/compat';
 import pluginJs from '@eslint/js';
 import stylistic from '@stylistic/eslint-plugin';
 import eslintPluginImportX from 'eslint-plugin-import-x';
 import perfectionist from 'eslint-plugin-perfectionist';
 import rxjs from 'eslint-plugin-rxjs';
-import {resolve} from 'node:path';
 import tseslint from 'typescript-eslint';
 
 import {customRules} from './configs/custom';
@@ -90,13 +89,8 @@ export interface CloudflightEslintPluginSettings {
     tsConfigFiles?: string[];
 }
 
-export function cloudflightTypescriptFormatConfig(
-    settings: CloudflightEslintPluginSettings,
-): FlatConfig.ConfigArray {
-    const gitignorePath = resolve(settings.rootDirectory, '.gitignore');
-
+export function cloudflightTypescriptFormatConfig(settings: CloudflightEslintPluginSettings): FlatConfig.ConfigArray {
     return tseslint.config(
-        includeIgnoreFile(gitignorePath),
         {
             ignores: ['.yarn/**'],
         },
@@ -126,13 +120,8 @@ export function cloudflightTypescriptFormatConfig(
     );
 }
 
-export function cloudflightTypescriptConfig(
-    settings: CloudflightEslintPluginSettings,
-): FlatConfig.ConfigArray {
-    const gitignorePath = resolve(settings.rootDirectory, '.gitignore');
-
+export function cloudflightTypescriptConfig(settings: CloudflightEslintPluginSettings): FlatConfig.ConfigArray {
     return tseslint.config(
-        includeIgnoreFile(gitignorePath),
         // eslint-disable-next-line @typescript-eslint/no-deprecated
         ...cloudflightTypescriptBaseConfig,
         // eslint-disable-next-line @typescript-eslint/no-deprecated
