@@ -32,6 +32,12 @@ export function cloudflightVueConfig(settings: CloudflightEslintPluginSettings):
                 ...typescriptRules,
                 ...vueRules,
             },
+            languageOptions: {
+                parserOptions: {
+                    project: settings.tsConfigFiles ?? ['tsconfig*(.*).json'],
+                    tsconfigRootDir: settings.rootDirectory,
+                },
+            },
         },
     );
 }
