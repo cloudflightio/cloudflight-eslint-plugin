@@ -11,23 +11,14 @@ export default tseslint.config(
     includeIgnoreFile(gitignorePath),
     ...cloudflightTypescriptConfig({
         rootDirectory: import.meta.dirname,
-        tsConfigFiles: ['./packages/*/tsconfig.json', './packages/*/tsconfig.spec.json'],
+        tsConfigFiles: ['./packages/*/tsconfig.json', './packages/*/tsconfig.spec.json', './tsconfig.eslint.json'],
     }),
     {
         // these files are temporarily disabled for linting
         // until we are done with migrating everything to v9
         ignores: [
             'packages/eslint-plugin-angular/src/configs/format-template.ts',
-            'packages/eslint-plugin-typescript/src/configs/index.ts',
-            'packages/eslint-plugin-typescript/src/configs/json.ts',
-            'packages/eslint-plugin-typescript/src/configs/package.ts',
-            'packages/eslint-plugin-typescript/src/rules/package/*',
-            'packages/eslint-plugin-typescript/src/rules/ts-config/*',
             'packages/eslint-plugin-typescript/src/rules/typescript/*.spec.ts',
-            'scripts/*',
-            'eslint.config.mjs',
-            'eslint.format.mjs',
-            'jest.config*.ts',
         ],
     },
     {

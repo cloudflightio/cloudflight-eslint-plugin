@@ -1,0 +1,33 @@
+{
+    "include": ["scripts/**/*.mjs", "eslint.config.mjs", "eslint.format.mjs", "jest.config.base.ts"],
+    "compilerOptions": {
+        "target": "ES2015",
+        "useDefineForClassFields": true,
+
+        "module": "NodeNext",
+        "moduleResolution": "NodeNext",
+
+        "declaration": true,
+        "rootDir": ".",
+        "outDir": "./dist/",
+        "importHelpers": true,
+        "importsNotUsedAsValues": "remove",
+        "stripInternal": true,
+
+        "isolatedModules": true,
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
+
+        "strict": true,
+        "exactOptionalPropertyTypes": true,
+        "noImplicitReturns": true,
+        "noFallthroughCasesInSwitch": true,
+        "noUncheckedIndexedAccess": true,
+        "noImplicitOverride": true,
+        "noPropertyAccessFromIndexSignature": true,
+        "allowUnusedLabels": false,
+        "allowUnreachableCode": false,
+        "allowJs": true,
+        "skipLibCheck": true
+    }
+}

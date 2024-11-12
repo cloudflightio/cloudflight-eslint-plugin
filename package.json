@@ -19,7 +19,7 @@
         "lint": "eslint . && eslint -c eslint.format.mjs .",
         "test": "yarn workspaces foreach -pA run test-package",
         "postinstall": "husky",
-        "publish-workspaces": "node ./scripts/prepare.js && yarn workspaces foreach -A --no-private npm publish"
+        "publish-workspaces": "node ./scripts/prepare.mjs && yarn workspaces foreach -A --no-private npm publish"
     },
     "keywords": [
         "eslint",
