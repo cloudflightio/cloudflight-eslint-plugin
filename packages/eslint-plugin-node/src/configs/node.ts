@@ -21,4 +21,6 @@ export const nodeRules: TSESLint.Linter.RulesRecord = {
 
     // we use typescript, so node-builtins are typed and checked via TS
     'n/no-unsupported-features/node-builtins': 'off',
+
+    'n/prefer-node-protocol': 'error',
 };
