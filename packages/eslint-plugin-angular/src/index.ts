@@ -9,23 +9,26 @@ import {angularTemplateEslintRules} from './configs/angular-eslint-template';
 import {eslintRules} from './configs/eslint';
 import {typescriptEslintRules} from './configs/typescript-eslint';
 
-const cloudflightAngularTypescriptConfig = tseslint.config(
-    {
-        files: ['**/*.{ts,mts,cts}'],
-        extends: [
-            ...angular.configs.tsRecommended,
-        ],
-        processor: angular.processInlineTemplates,
-        name: 'cloudflight/angular/typescript/rules',
-        rules: {
-            ...eslintRules,
-            ...typescriptEslintRules,
-            ...angularEslintRules,
+export function cloudflightAngularTypescriptConfig(settings: CloudflightEslintPluginSettings): FlatConfig.ConfigArray {
+    return tseslint.config(
+        ...cloudflightTypescriptConfig(settings),
+        {
+            files: ['**/*.{ts,mts,cts}'],
+            extends: [
+                ...angular.configs.tsRecommended,
+            ],
+            processor: angular.processInlineTemplates,
+            name: 'cloudflight/angular/typescript/rules',
+            rules: {
+                ...eslintRules,
+                ...typescriptEslintRules,
+                ...angularEslintRules,
+            },
         },
-    },
-);
+    );
+}
 
-const cloudflightAngularTemplateConfig = tseslint.config(
+export const cloudflightAngularTemplateConfig = tseslint.config(
     {
         files: ['**/*.html'],
         extends: [
@@ -43,8 +46,7 @@ const cloudflightAngularTemplateConfig = tseslint.config(
 
 export function cloudflightAngularConfig(settings: CloudflightEslintPluginSettings): FlatConfig.ConfigArray {
     return tseslint.config(
-        ...cloudflightTypescriptConfig(settings),
-        ...cloudflightAngularTypescriptConfig,
+        ...cloudflightAngularTypescriptConfig(settings),
         ...cloudflightAngularTemplateConfig,
     );
 }
