@@ -3,7 +3,7 @@ import type {FlatConfig} from '@typescript-eslint/utils/ts-eslint';
 
 import {
     CloudflightEslintPluginSettings, cloudflightTypescriptBaseConfig,
-    cloudflightTypescriptConfig, cloudflightTypescriptImportConfig,
+    cloudflightTypescriptConfig, cloudflightTypescriptFormatConfig, cloudflightTypescriptImportConfig,
 } from '@cloudflight/eslint-plugin-typescript';
 import jsxA11y from 'eslint-plugin-jsx-a11y';
 import tseslint from 'typescript-eslint';
@@ -13,11 +13,13 @@ import pluginReactHooks from 'eslint-plugin-react-hooks';
 
 import {reactRules} from './configs/react';
 
+const relevantFiles = ['**/*.{js,jsx,mjs,cjs,ts,mts,cts,tsx}'];
+
 export function cloudflightReactConfig(settings: CloudflightEslintPluginSettings): FlatConfig.ConfigArray {
     return tseslint.config(
         ...cloudflightTypescriptConfig(settings),
         {
-            files: ['**/*.{js,jsx,mjs,cjs,ts,mts,cts,tsx}'],
+            files: relevantFiles,
             plugins: {
                 // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
                 'react-hooks': pluginReactHooks as TSESLint.FlatConfig.Plugin,
@@ -52,6 +54,42 @@ export function cloudflightReactConfig(settings: CloudflightEslintPluginSettings
             rules: {
                 ...pluginReactHooks.configs.recommended.rules,
                 ...reactRules,
+            },
+            settings: {
+                react: {
+                    version: 'detect',
+                },
+            },
+        },
+    );
+}
+
+export function cloudflightReactFormatConfig(settings: CloudflightEslintPluginSettings): FlatConfig.ConfigArray {
+    const mappedConfigs = cloudflightTypescriptFormatConfig(settings).map((config) => {
+        if (config.files == null) {
+            return config;
+        }
+
+        return {
+            ...config,
+            files: relevantFiles,
+        };
+    });
+
+    return tseslint.config(
+        ...mappedConfigs,
+        {
+            files: relevantFiles,
+            languageOptions: {
+                parser: tseslint.parser,
+                ecmaVersion: 'latest',
+                sourceType: 'module',
+                parserOptions: {
+                    jsxPragma: null,
+                    ecmaFeatures: {
+                        jsx: true,
+                    },
+                },
             },
             settings: {
                 react: {
