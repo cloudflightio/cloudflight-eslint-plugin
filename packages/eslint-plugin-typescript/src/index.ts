@@ -6,7 +6,7 @@ import stylistic from '@stylistic/eslint-plugin';
 import eslintPluginImportX from 'eslint-plugin-import-x';
 import perfectionist from 'eslint-plugin-perfectionist';
 import rxjs from 'eslint-plugin-rxjs';
-import tseslint from 'typescript-eslint';
+import tseslint, {InfiniteDepthConfigWithExtends} from 'typescript-eslint';
 
 import {customRules} from './configs/custom';
 import {eslintRules} from './configs/eslint';
@@ -50,7 +50,11 @@ export function cloudflightTypescriptImportConfig(settings: CloudflightEslintPlu
     return tseslint.config({
         files: ['**/*.{js,mjs,cjs,ts,mts,cts}'],
         extends: [
-            eslintPluginImportX.flatConfigs.recommended,
+            // https://github.com/typescript-eslint/typescript-eslint/issues/10395
+            // typescript-eslint broke backwards compatibility when they added TS 5.7 support.
+            // It is only a type issue here, as the changed value isn't actually used outside the type
+            // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
+            eslintPluginImportX.flatConfigs.recommended as InfiniteDepthConfigWithExtends,
             eslintPluginImportX.flatConfigs.typescript,
         ],
         languageOptions: {

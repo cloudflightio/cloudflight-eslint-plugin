@@ -2,14 +2,17 @@ import type {TSESLint} from '@typescript-eslint/utils';
 import type {FlatConfig} from '@typescript-eslint/utils/ts-eslint';
 
 import {
-    CloudflightEslintPluginSettings, cloudflightTypescriptBaseConfig,
-    cloudflightTypescriptConfig, cloudflightTypescriptFormatConfig, cloudflightTypescriptImportConfig,
+    CloudflightEslintPluginSettings,
+    cloudflightTypescriptBaseConfig,
+    cloudflightTypescriptConfig,
+    cloudflightTypescriptFormatConfig,
+    cloudflightTypescriptImportConfig,
 } from '@cloudflight/eslint-plugin-typescript';
 import jsxA11y from 'eslint-plugin-jsx-a11y';
-import tseslint from 'typescript-eslint';
 // see https://github.com/jsx-eslint/eslint-plugin-react/issues/3838
 import react from 'eslint-plugin-react';
 import pluginReactHooks from 'eslint-plugin-react-hooks';
+import tseslint from 'typescript-eslint';
 
 import {reactRules} from './configs/react';
 
@@ -31,12 +34,12 @@ export function cloudflightReactConfig(settings: CloudflightEslintPluginSettings
                 ...cloudflightTypescriptImportConfig(settings),
                 // type assertion is workaround for incorrect TypeScript types in eslint-plugin-react
                 // see https://github.com/jsx-eslint/eslint-plugin-react/issues/3838
-                // eslint-disable-next-line @typescript-eslint/consistent-type-assertions,@typescript-eslint/no-non-null-assertion
-                react.configs.flat!['recommended'] as TSESLint.FlatConfig.Config,
+                // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                react.configs.flat['recommended']!,
                 // type assertion is workaround for incorrect TypeScript types in eslint-plugin-react
                 // see https://github.com/jsx-eslint/eslint-plugin-react/issues/3838
-                // eslint-disable-next-line @typescript-eslint/consistent-type-assertions,@typescript-eslint/no-non-null-assertion
-                react.configs.flat!['jsx-runtime'] as TSESLint.FlatConfig.Config,
+                // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                react.configs.flat['jsx-runtime']!,
                 jsxA11y.flatConfigs.recommended,
             ],
             languageOptions: {

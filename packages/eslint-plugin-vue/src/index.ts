@@ -25,6 +25,8 @@ export function cloudflightVueConfig(settings: CloudflightEslintPluginSettings):
                 ...cloudflightTypescriptBaseConfig,
                 // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
                 ...pluginVue.configs['flat/recommended'] as TSESLint.FlatConfig.ConfigArray,
+                // since it is already working we will not change to the new config setup for now
+                // eslint-disable-next-line @typescript-eslint/no-deprecated
                 ...vueTsEslintConfig(),
             ],
             name: 'cloudflight/vue/rules',

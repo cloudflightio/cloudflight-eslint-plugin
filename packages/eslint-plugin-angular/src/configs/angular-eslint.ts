@@ -15,7 +15,6 @@ export const angularEslintRules: TSESLint.Linter.RulesRecord = {
     [`${pluginPrefix}/no-attribute-decorator`]: ['error'],
     [`${pluginPrefix}/no-conflicting-lifecycle`]: ['error'],
     [`${pluginPrefix}/no-empty-lifecycle-method`]: ['error'],
-    [`${pluginPrefix}/no-host-metadata-property`]: ['error'],
     [`${pluginPrefix}/no-input-rename`]: ['error'],
     [`${pluginPrefix}/no-inputs-metadata-property`]: ['error'],
     [`${pluginPrefix}/no-output-native`]: ['error'],
@@ -29,4 +28,5 @@ export const angularEslintRules: TSESLint.Linter.RulesRecord = {
     [`${pluginPrefix}/use-lifecycle-interface`]: ['error'],
     [`${pluginPrefix}/use-pipe-transform-interface`]: ['error'],
     [`${pluginPrefix}/prefer-standalone`]: ['error'],
+    [`${pluginPrefix}/prefer-signals`]: ['error'],
 };
