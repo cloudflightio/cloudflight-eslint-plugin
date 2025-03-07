@@ -1,4 +1,3 @@
-import type {TSESLint} from '@typescript-eslint/utils';
 import type {FlatConfig} from '@typescript-eslint/utils/ts-eslint';
 
 import {
@@ -9,9 +8,8 @@ import {
     cloudflightTypescriptImportConfig,
 } from '@cloudflight/eslint-plugin-typescript';
 import jsxA11y from 'eslint-plugin-jsx-a11y';
-// see https://github.com/jsx-eslint/eslint-plugin-react/issues/3838
 import react from 'eslint-plugin-react';
-import pluginReactHooks from 'eslint-plugin-react-hooks';
+import * as reactHooks from 'eslint-plugin-react-hooks';
 import tseslint from 'typescript-eslint';
 
 import {reactRules} from './configs/react';
@@ -23,10 +21,6 @@ export function cloudflightReactConfig(settings: CloudflightEslintPluginSettings
         ...cloudflightTypescriptConfig(settings),
         {
             files: relevantFiles,
-            plugins: {
-                // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
-                'react-hooks': pluginReactHooks as TSESLint.FlatConfig.Plugin,
-            },
             extends: [
                 // eslint-disable-next-line @typescript-eslint/no-deprecated
                 ...cloudflightTypescriptBaseConfig,
@@ -40,6 +34,7 @@ export function cloudflightReactConfig(settings: CloudflightEslintPluginSettings
                 // see https://github.com/jsx-eslint/eslint-plugin-react/issues/3838
                 // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
                 react.configs.flat['jsx-runtime']!,
+                reactHooks.configs['recommended-latest'],
                 jsxA11y.flatConfigs.recommended,
             ],
             languageOptions: {
@@ -55,7 +50,6 @@ export function cloudflightReactConfig(settings: CloudflightEslintPluginSettings
             },
             name: 'cloudflight/react/rules',
             rules: {
-                ...pluginReactHooks.configs.recommended.rules,
                 ...reactRules,
             },
             settings: {

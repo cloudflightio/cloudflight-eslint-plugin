@@ -1,6 +1,6 @@
 {
     "name": "@cloudflight/eslint-plugin-react",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "description": "Cloudflight eslint-plugin & eslint-config for React",
     "volta": {
         "extends": "../../package.json"
@@ -29,14 +29,13 @@
         "@cloudflight/eslint-plugin-typescript": "workspace:*",
         "eslint-plugin-jsx-a11y": "^6.10.2",
         "eslint-plugin-react": "^7.37.4",
-        "eslint-plugin-react-hooks": "^5.1.0"
+        "eslint-plugin-react-hooks": "^5.2.0"
     },
     "peerDependencies": {
         "eslint": ">=9.0.0 < 10.0.0"
     },
     "devDependencies": {
         "@types/eslint-plugin-jsx-a11y": "workspace:*",
-        "@types/eslint-plugin-react-hooks": "workspace:*",
-        "typescript": "5.7.3"
+        "typescript": "5.8.2"
     }
 }
