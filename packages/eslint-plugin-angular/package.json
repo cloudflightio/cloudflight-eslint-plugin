@@ -1,6 +1,6 @@
 {
     "name": "@cloudflight/eslint-plugin-angular",
-    "version": "1.1.1",
+    "version": "1.1.2",
     "description": "Cloudflight eslint-plugin & eslint-config for angular",
     "volta": {
         "extends": "../../package.json"
