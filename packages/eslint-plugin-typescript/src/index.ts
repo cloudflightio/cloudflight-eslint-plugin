@@ -106,6 +106,7 @@ export function cloudflightTypescriptFormatConfig(settings: CloudflightEslintPlu
                 '@cloudflight/typescript': cloudflightTypescriptPlugin,
                 '@stylistic': stylistic,
                 perfectionist,
+                rxjs: fixupPluginRules(rxjs),
             },
             languageOptions: {
                 parser: tseslint.parser,
