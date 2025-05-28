@@ -1,6 +1,6 @@
 {
     "name": "@cloudflight/eslint-plugin-angular",
-    "version": "1.1.2",
+    "version": "1.2.0",
     "description": "Cloudflight eslint-plugin & eslint-config for angular",
     "volta": {
         "extends": "../../package.json"
@@ -27,12 +27,12 @@
     },
     "dependencies": {
         "@cloudflight/eslint-plugin-typescript": "workspace:*",
-        "angular-eslint": "19.2.0"
+        "angular-eslint": "19.6.0"
     },
     "peerDependencies": {
         "eslint": ">=9.0.0 < 10.0.0"
     },
     "devDependencies": {
-        "typescript": "5.8.2"
+        "typescript": "5.8.3"
     }
 }

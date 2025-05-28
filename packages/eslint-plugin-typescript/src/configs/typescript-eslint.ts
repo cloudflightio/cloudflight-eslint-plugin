@@ -22,7 +22,6 @@ export const typescriptEslintRules: TSESLint.Linter.RulesRecord = {
     [`${pluginPrefix}/no-invalid-this`]: ['error'],
     [`${pluginPrefix}/no-invalid-void-type`]: ['error', {allowInGenericTypeArguments: true, allowAsThisParameter: true}],
     'no-restricted-imports': 'off',
-    [`${pluginPrefix}/no-restricted-imports`]: ['error', {name: 'rxjs/Rx', message: "Please import directly from 'rxjs' instead"}],
     'no-shadow': 'off',
     [`${pluginPrefix}/no-shadow`]: ['error'],
     // typescript by default does not add undefined to the type of index-accessed properties
