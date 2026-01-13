@@ -17,6 +17,7 @@ import {reactRules} from './configs/react';
 const relevantFiles = ['**/*.{js,jsx,mjs,cjs,ts,mts,cts,tsx}'];
 
 export function cloudflightReactConfig(settings: CloudflightEslintPluginSettings): FlatConfig.ConfigArray {
+    // eslint-disable-next-line @typescript-eslint/no-deprecated -- tseslint.config is deprecated but defineConfig has type incompatibilities with typescript-eslint
     return tseslint.config(
         ...cloudflightTypescriptConfig(settings),
         {
@@ -73,6 +74,7 @@ export function cloudflightReactFormatConfig(settings: CloudflightEslintPluginSe
         };
     });
 
+    // eslint-disable-next-line @typescript-eslint/no-deprecated -- tseslint.config is deprecated but defineConfig has type incompatibilities with typescript-eslint
     return tseslint.config(
         ...mappedConfigs,
         {

@@ -27,8 +27,8 @@
     },
     "dependencies": {
         "@cloudflight/eslint-plugin-typescript": "workspace:*",
-        "@vue/eslint-config-typescript": "^14.5.0",
-        "eslint-plugin-vue": "^10.1.0"
+        "@vue/eslint-config-typescript": "^14.6.0",
+        "eslint-plugin-vue": "^10.6.2"
     },
     "peerDependencies": {
         "eslint": ">=9.0.0 < 10.0.0"

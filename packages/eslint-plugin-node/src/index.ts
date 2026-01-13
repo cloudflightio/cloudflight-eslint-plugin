@@ -11,6 +11,7 @@ import {nodeRules} from './configs/node';
 import {securityRules} from './configs/security';
 
 export function cloudflightNodeConfig(settings: CloudflightEslintPluginSettings): FlatConfig.ConfigArray {
+    // eslint-disable-next-line @typescript-eslint/no-deprecated -- tseslint.config is deprecated but defineConfig has type incompatibilities with typescript-eslint
     return tseslint.config(
         ...cloudflightTypescriptConfig(settings),
         {
