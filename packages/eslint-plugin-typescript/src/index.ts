@@ -17,6 +17,7 @@ import {cloudflightTypescriptPlugin} from './rules';
  * @deprecated Use `cloudflightTypescriptConfig` instead
  * This is only for internal use only
  */
+// eslint-disable-next-line @typescript-eslint/no-deprecated -- tseslint.config is deprecated but defineConfig has type incompatibilities with typescript-eslint
 export const cloudflightTypescriptBaseConfig = tseslint.config(
     {
         files: ['**/*.{js,mjs,cjs,ts,mts,cts}'],
@@ -42,6 +43,7 @@ export const cloudflightTypescriptBaseConfig = tseslint.config(
  * This is only for internal use only
  */
 export function cloudflightTypescriptImportConfig(settings: CloudflightEslintPluginSettings): FlatConfig.ConfigArray {
+    // eslint-disable-next-line @typescript-eslint/no-deprecated -- tseslint.config is deprecated but defineConfig has type incompatibilities with typescript-eslint
     return tseslint.config({
         files: ['**/*.{js,mjs,cjs,ts,mts,cts}'],
         extends: [
@@ -69,6 +71,7 @@ export function cloudflightTypescriptImportConfig(settings: CloudflightEslintPlu
  * @deprecated Use `cloudflightTypescriptConfig` instead
  * This is only for internal use only
  */
+// eslint-disable-next-line @typescript-eslint/no-deprecated -- tseslint.config is deprecated but defineConfig has type incompatibilities with typescript-eslint
 export const cloudflightTypescriptDisableTypeCheckedConfig = tseslint.config({
     files: ['**/*.{js,mjs,cjs}'],
     extends: [tseslint.configs.disableTypeChecked],
@@ -89,6 +92,7 @@ export interface CloudflightEslintPluginSettings {
 }
 
 export function cloudflightTypescriptFormatConfig(settings: CloudflightEslintPluginSettings): FlatConfig.ConfigArray {
+    // eslint-disable-next-line @typescript-eslint/no-deprecated -- tseslint.config is deprecated but defineConfig has type incompatibilities with typescript-eslint
     return tseslint.config(
         {
             ignores: ['.yarn/**'],
@@ -120,6 +124,7 @@ export function cloudflightTypescriptFormatConfig(settings: CloudflightEslintPlu
 }
 
 export function cloudflightTypescriptConfig(settings: CloudflightEslintPluginSettings): FlatConfig.ConfigArray {
+    // eslint-disable-next-line @typescript-eslint/no-deprecated -- tseslint.config is deprecated but defineConfig has type incompatibilities with typescript-eslint
     return tseslint.config(
         // eslint-disable-next-line @typescript-eslint/no-deprecated
         ...cloudflightTypescriptBaseConfig,

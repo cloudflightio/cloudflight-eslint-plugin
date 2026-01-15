@@ -123,7 +123,6 @@ export const formatEslintRules: TSESLint.Linter.RulesRecord = {
         'error',
         {
             allowAllPropertiesOnSameLine: true,
-            allowMultiplePropertiesPerLine: false,
         },
     ],
     [`${pluginPrefix}/no-mixed-spaces-and-tabs`]: ['error'],
@@ -183,7 +182,7 @@ export const formatEslintRules: TSESLint.Linter.RulesRecord = {
         },
     ],
     [`${pluginPrefix}/function-call-argument-newline`]: ['error', 'consistent'],
-    [`${pluginPrefix}/func-call-spacing`]: ['error', 'never'],
+    [`${pluginPrefix}/function-call-spacing`]: ['error', 'never'],
     [`${pluginPrefix}/function-paren-newline`]: ['error', 'multiline-arguments'],
     [`${pluginPrefix}/comma-dangle`]: [
         'error',
@@ -305,7 +304,7 @@ export const formatEslintRules: TSESLint.Linter.RulesRecord = {
         'single',
         {
             avoidEscape: true,
-            allowTemplateLiterals: true,
+            allowTemplateLiterals: 'always',
         },
     ],
     [`${pluginPrefix}/jsx-quotes`]: ['error', 'prefer-double'],

@@ -10,6 +10,7 @@ import {eslintRules} from './configs/eslint';
 import {typescriptEslintRules} from './configs/typescript-eslint';
 
 export function cloudflightAngularTypescriptConfig(settings: CloudflightEslintPluginSettings): FlatConfig.ConfigArray {
+    // eslint-disable-next-line @typescript-eslint/no-deprecated -- tseslint.config is deprecated but defineConfig has type incompatibilities with typescript-eslint
     return tseslint.config(
         ...cloudflightTypescriptConfig(settings),
         {
@@ -28,6 +29,7 @@ export function cloudflightAngularTypescriptConfig(settings: CloudflightEslintPl
     );
 }
 
+// eslint-disable-next-line @typescript-eslint/no-deprecated -- tseslint.config is deprecated but defineConfig has type incompatibilities with typescript-eslint
 export const cloudflightAngularTemplateConfig = tseslint.config(
     {
         files: ['**/*.html'],
@@ -45,6 +47,7 @@ export const cloudflightAngularTemplateConfig = tseslint.config(
 );
 
 export function cloudflightAngularConfig(settings: CloudflightEslintPluginSettings): FlatConfig.ConfigArray {
+    // eslint-disable-next-line @typescript-eslint/no-deprecated -- tseslint.config is deprecated but defineConfig has type incompatibilities with typescript-eslint
     return tseslint.config(
         ...cloudflightAngularTypescriptConfig(settings),
         ...cloudflightAngularTemplateConfig,
