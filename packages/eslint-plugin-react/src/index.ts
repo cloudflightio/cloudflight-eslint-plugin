@@ -35,7 +35,7 @@ export function cloudflightReactConfig(settings: CloudflightEslintPluginSettings
                 // see https://github.com/jsx-eslint/eslint-plugin-react/issues/3838
                 // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
                 react.configs.flat['jsx-runtime']!,
-                reactHooks.configs['recommended-latest'],
+                reactHooks.configs.flat['recommended-latest'],
                 jsxA11y.flatConfigs.recommended,
             ],
             languageOptions: {
