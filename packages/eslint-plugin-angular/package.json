@@ -13,6 +13,11 @@
     "bugs": {
         "url": "https://github.com/cloudflightio/cloudflight-eslint-plugin/issues"
     },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/cloudflightio/cloudflight-eslint-plugin.git",
+        "directory": "packages/eslint-plugin-angular"
+    },
     "author": "Cloudflight GmbH",
     "license": "Apache-2.0",
     "main": "./dist/index.js",
