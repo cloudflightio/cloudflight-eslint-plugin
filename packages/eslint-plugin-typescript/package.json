@@ -40,4 +40,10 @@
     "devDependencies": {
         "typescript": "5.8.3"
     }
+,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cloudflightio/cloudflight-eslint-plugin.git",
+    "directory": "packages/eslint-plugin-typescript"
+  }
 }
