@@ -1,0 +1,5 @@
+{
+    "extends": "./tsconfig.json",
+    "compilerOptions": {"paths": {"@fixture/valid": ["../valid/typescript.ts"]}},
+    "include": ["*.ts"]
+}

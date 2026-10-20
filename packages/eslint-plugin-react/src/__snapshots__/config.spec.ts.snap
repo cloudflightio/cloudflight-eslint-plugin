@@ -1,0 +1,400 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`cloudflightReactConfig applies the expected rules to each file type 1`] = `
+"@cloudflight/typescript/no-on-event-assign [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+@typescript-eslint/adjacent-overload-signatures [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+@typescript-eslint/array-type [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+@typescript-eslint/await-thenable [ts, mts, cts, tsx]: error
+@typescript-eslint/ban-ts-comment [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"minimumDescriptionLength":10}]
+@typescript-eslint/ban-tslint-comment [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+@typescript-eslint/class-literal-property-style [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+@typescript-eslint/consistent-indexed-object-style [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+@typescript-eslint/consistent-type-assertions [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"assertionStyle":"never"}]
+@typescript-eslint/consistent-type-definitions [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+@typescript-eslint/default-param-last [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+@typescript-eslint/dot-notation [ts, mts, cts, tsx]: error [{"allowIndexSignaturePropertyAccess":false,"allowKeywords":true,"allowPattern":"","allowPrivateClassPropertyAccess":false,"allowProtectedClassPropertyAccess":false}]
+@typescript-eslint/explicit-function-return-type [ts, mts, cts, tsx]: error [{"allowExpressions":true}]
+@typescript-eslint/explicit-member-accessibility [ts, mts, cts, tsx]: error [{"accessibility":"explicit"}]
+@typescript-eslint/member-ordering [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"default":["static-field","field","signature","constructor","static-method","method"]}]
+@typescript-eslint/no-array-constructor [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+@typescript-eslint/no-array-delete [ts, mts, cts, tsx]: error
+@typescript-eslint/no-base-to-string [ts, mts, cts, tsx]: error
+@typescript-eslint/no-confusing-non-null-assertion [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+@typescript-eslint/no-deprecated [ts, mts, cts, tsx]: error
+@typescript-eslint/no-duplicate-enum-values [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+@typescript-eslint/no-duplicate-type-constituents [ts, mts, cts, tsx]: error
+@typescript-eslint/no-dynamic-delete [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+@typescript-eslint/no-empty-function [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"allow":[]}]
+@typescript-eslint/no-empty-object-type [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+@typescript-eslint/no-explicit-any [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+@typescript-eslint/no-extra-non-null-assertion [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+@typescript-eslint/no-extraneous-class [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+@typescript-eslint/no-floating-promises [ts, mts, cts, tsx]: error [{"ignoreVoid":true}]
+@typescript-eslint/no-for-in-array [ts, mts, cts, tsx]: error
+@typescript-eslint/no-generated-empty-object-type [ts, mts, cts, tsx]: error
+@typescript-eslint/no-implied-eval [ts, mts, cts, tsx]: error
+@typescript-eslint/no-inferrable-types [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"ignoreParameters":true}]
+@typescript-eslint/no-invalid-this [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"capIsConstructor":true}]
+@typescript-eslint/no-invalid-void-type [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"allowInGenericTypeArguments":true,"allowAsThisParameter":true}]
+@typescript-eslint/no-meaningless-void-operator [ts, mts, cts, tsx]: error
+@typescript-eslint/no-misused-new [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+@typescript-eslint/no-misused-promises [ts, mts, cts, tsx]: error
+@typescript-eslint/no-misused-spread [ts, mts, cts, tsx]: error
+@typescript-eslint/no-mixed-enums [ts, mts, cts, tsx]: error
+@typescript-eslint/no-namespace [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+@typescript-eslint/no-non-null-asserted-nullish-coalescing [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+@typescript-eslint/no-non-null-asserted-optional-chain [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+@typescript-eslint/no-non-null-assertion [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+@typescript-eslint/no-redundant-type-constituents [ts, mts, cts, tsx]: error
+@typescript-eslint/no-require-imports [cts]: error [{"allowAsImport":true}]
+@typescript-eslint/no-require-imports [ts, mts, tsx, js, mjs, jsx]: error
+@typescript-eslint/no-shadow [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+@typescript-eslint/no-this-alias [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+@typescript-eslint/no-unnecessary-boolean-literal-compare [ts, mts, cts, tsx]: error
+@typescript-eslint/no-unnecessary-template-expression [ts, mts, cts, tsx]: error
+@typescript-eslint/no-unnecessary-type-arguments [ts, mts, cts, tsx]: error
+@typescript-eslint/no-unnecessary-type-assertion [ts, mts, cts, tsx]: error
+@typescript-eslint/no-unnecessary-type-constraint [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+@typescript-eslint/no-unnecessary-type-conversion [ts, mts, cts, tsx]: error
+@typescript-eslint/no-unnecessary-type-parameters [ts, mts, cts, tsx]: error
+@typescript-eslint/no-unsafe-assignment [ts, mts, cts, tsx]: error
+@typescript-eslint/no-unsafe-call [ts, mts, cts, tsx]: error
+@typescript-eslint/no-unsafe-declaration-merging [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+@typescript-eslint/no-unsafe-function-type [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+@typescript-eslint/no-unsafe-member-access [ts, mts, cts, tsx]: error
+@typescript-eslint/no-unsafe-return [ts, mts, cts, tsx]: error
+@typescript-eslint/no-unsafe-unary-minus [ts, mts, cts, tsx]: error
+@typescript-eslint/no-unused-expressions [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"allowShortCircuit":false,"allowTaggedTemplates":false,"allowTernary":false,"enforceForJSX":true}]
+@typescript-eslint/no-unused-vars [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"args":"none","ignoreRestSiblings":true}]
+@typescript-eslint/no-useless-constructor [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+@typescript-eslint/no-useless-default-assignment [ts, mts, cts, tsx]: error
+@typescript-eslint/no-wrapper-object-types [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+@typescript-eslint/only-throw-error [ts, mts, cts, tsx]: error
+@typescript-eslint/prefer-as-const [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+@typescript-eslint/prefer-find [ts, mts, cts, tsx]: error
+@typescript-eslint/prefer-for-of [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+@typescript-eslint/prefer-function-type [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+@typescript-eslint/prefer-includes [ts, mts, cts, tsx]: error
+@typescript-eslint/prefer-literal-enum-member [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+@typescript-eslint/prefer-namespace-keyword [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+@typescript-eslint/prefer-nullish-coalescing [ts, mts, cts, tsx]: error
+@typescript-eslint/prefer-optional-chain [ts, mts, cts, tsx]: error
+@typescript-eslint/prefer-promise-reject-errors [ts, mts, cts, tsx]: error
+@typescript-eslint/prefer-reduce-type-parameter [ts, mts, cts, tsx]: error
+@typescript-eslint/prefer-regexp-exec [ts, mts, cts, tsx]: error
+@typescript-eslint/prefer-return-this-type [ts, mts, cts, tsx]: error
+@typescript-eslint/prefer-string-starts-ends-with [ts, mts, cts, tsx]: error
+@typescript-eslint/promise-function-async [ts, mts, cts, tsx]: error
+@typescript-eslint/related-getter-setter-pairs [ts, mts, cts, tsx]: error
+@typescript-eslint/require-array-sort-compare [ts, mts, cts, tsx]: error
+@typescript-eslint/require-await [ts, mts, cts, tsx]: error
+@typescript-eslint/restrict-plus-operands [ts, mts, cts, tsx]: error [{"allowAny":false,"allowBoolean":false,"allowNullish":false,"allowNumberAndString":false,"allowRegExp":false}]
+@typescript-eslint/restrict-template-expressions [ts, mts, cts, tsx]: error [{"allowAny":false,"allowBoolean":false,"allowNever":false,"allowNullish":false,"allowNumber":false,"allowRegExp":false}]
+@typescript-eslint/return-await [ts, mts, cts, tsx]: error ["error-handling-correctness-only"]
+@typescript-eslint/strict-boolean-expressions [ts, mts, cts, tsx]: error
+@typescript-eslint/switch-exhaustiveness-check [ts, mts, cts, tsx]: error
+@typescript-eslint/triple-slash-reference [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+@typescript-eslint/unbound-method [ts, mts, cts, tsx]: error
+@typescript-eslint/unified-signatures [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+@typescript-eslint/use-unknown-in-catch-callback-variable [ts, mts, cts, tsx]: error
+array-callback-return [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"allowImplicit":true,"checkForEach":false,"allowVoid":false}]
+block-scoped-var [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+camelcase [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"allow":[],"ignoreDestructuring":false,"ignoreGlobals":false,"ignoreImports":false,"properties":"never"}]
+complexity [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"max":20}]
+constructor-super [js, mjs, cjs, jsx]: error
+curly [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error ["all"]
+default-case-last [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+dot-notation [js, mjs, cjs, jsx]: error [{"allowKeywords":true,"allowPattern":""}]
+eqeqeq [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error ["always",{"null":"ignore"}]
+for-direction [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+func-names [ts, mts, cts, tsx, js, mjs, cjs, jsx]: warn ["always",{}]
+func-style [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error ["declaration",{"allowArrowFunctions":false,"allowTypeAnnotation":false,"overrides":{}}]
+getter-return [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"allowImplicit":true}]
+grouped-accessor-pairs [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error ["anyOrder",{"enforceForTSTypes":false}]
+guard-for-in [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+import-x/default [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+import-x/export [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+import-x/first [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+import-x/no-absolute-path [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+import-x/no-cycle [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"ignoreExternal":true,"allowUnsafeDynamicCyclicDependency":false}]
+import-x/no-duplicates [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+import-x/no-mutable-exports [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+import-x/no-named-as-default [ts, mts, cts, tsx, js, mjs, cjs, jsx]: warn
+import-x/no-named-as-default-member [ts, mts, cts, tsx, js, mjs, cjs, jsx]: warn
+import-x/no-self-import [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+import-x/no-unresolved [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+import-x/no-useless-path-segments [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+jsx-a11y/alt-text [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+jsx-a11y/anchor-has-content [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+jsx-a11y/anchor-is-valid [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+jsx-a11y/aria-activedescendant-has-tabindex [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+jsx-a11y/aria-props [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+jsx-a11y/aria-proptypes [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+jsx-a11y/aria-role [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+jsx-a11y/aria-unsupported-elements [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+jsx-a11y/autocomplete-valid [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+jsx-a11y/click-events-have-key-events [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+jsx-a11y/heading-has-content [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+jsx-a11y/html-has-lang [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+jsx-a11y/iframe-has-title [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+jsx-a11y/img-redundant-alt [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+jsx-a11y/interactive-supports-focus [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"tabbable":["button","checkbox","link","searchbox","spinbutton","switch","textbox"]}]
+jsx-a11y/label-has-associated-control [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+jsx-a11y/media-has-caption [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+jsx-a11y/mouse-events-have-key-events [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+jsx-a11y/no-access-key [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+jsx-a11y/no-autofocus [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+jsx-a11y/no-distracting-elements [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+jsx-a11y/no-interactive-element-to-noninteractive-role [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"tr":["none","presentation"],"canvas":["img"]}]
+jsx-a11y/no-noninteractive-element-interactions [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"handlers":["onClick","onError","onLoad","onMouseDown","onMouseUp","onKeyPress","onKeyDown","onKeyUp"],"alert":["onKeyUp","onKeyDown","onKeyPress"],"body":["onError","onLoad"],"dialog":["onKeyUp","onKeyDown","onKeyPress"],"iframe":["onError","onLoad"],"img":["onError","onLoad"]}]
+jsx-a11y/no-noninteractive-element-to-interactive-role [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"ul":["listbox","menu","menubar","radiogroup","tablist","tree","treegrid"],"ol":["listbox","menu","menubar","radiogroup","tablist","tree","treegrid"],"li":["menuitem","menuitemradio","menuitemcheckbox","option","row","tab","treeitem"],"table":["grid"],"td":["gridcell"],"fieldset":["radiogroup","presentation"]}]
+jsx-a11y/no-noninteractive-tabindex [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"tags":[],"roles":["tabpanel"],"allowExpressionValues":true}]
+jsx-a11y/no-redundant-roles [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+jsx-a11y/no-static-element-interactions [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"allowExpressionValues":true,"handlers":["onClick","onMouseDown","onMouseUp","onKeyPress","onKeyDown","onKeyUp"]}]
+jsx-a11y/role-has-required-aria-props [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+jsx-a11y/role-supports-aria-props [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+jsx-a11y/scope [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+jsx-a11y/tabindex-no-positive [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+max-classes-per-file [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [1]
+new-cap [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"capIsNew":false,"capIsNewExceptions":["Immutable.Map","Immutable.Set","Immutable.List"],"newIsCap":true,"newIsCapExceptions":[],"properties":true}]
+no-async-promise-executor [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-bitwise [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"allow":[],"int32Hint":false}]
+no-caller [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-case-declarations [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-class-assign [js, mjs, cjs, jsx]: error
+no-compare-neg-zero [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-cond-assign [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error ["always"]
+no-console [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{}]
+no-const-assign [js, mjs, cjs, jsx]: error
+no-constant-binary-expression [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"checkRelationalComparisons":false}]
+no-constant-condition [ts, mts, cts, tsx, js, mjs, cjs, jsx]: warn [{"checkLoops":"allExceptWhileTrue"}]
+no-constructor-return [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-control-regex [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-debugger [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-delete-var [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-dupe-args [js, mjs, cjs, jsx]: error
+no-dupe-class-members [js, mjs, cjs, jsx]: error
+no-dupe-else-if [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-dupe-keys [js, mjs, cjs, jsx]: error
+no-duplicate-case [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-else-return [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"allowElseIf":true}]
+no-empty [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"allowEmptyCatch":false}]
+no-empty-character-class [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-empty-pattern [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"allowObjectPatternsAsParameters":false}]
+no-empty-static-block [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-eval [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"allowIndirect":false}]
+no-ex-assign [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-extend-native [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"exceptions":[]}]
+no-extra-bind [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-extra-boolean-cast [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{}]
+no-fallthrough [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"allowEmptyCase":false,"reportUnusedFallthroughComment":false}]
+no-func-assign [js, mjs, cjs, jsx]: error
+no-global-assign [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"exceptions":[]}]
+no-implied-eval [js, mjs, cjs, jsx]: error
+no-import-assign [js, mjs, cjs, jsx]: error
+no-inner-declarations [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error ["functions",{"blockScopedFunctions":"allow"}]
+no-invalid-regexp [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{}]
+no-irregular-whitespace [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"skipComments":false,"skipJSXText":false,"skipRegExps":false,"skipStrings":true,"skipTemplates":false}]
+no-iterator [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-label-var [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-labels [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"allowLoop":false,"allowSwitch":false}]
+no-lone-blocks [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-lonely-if [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-loop-func [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-loss-of-precision [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-magic-numbers [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"detectObjects":false,"enforceConst":true,"ignore":[-1,0,1,2,10,1000],"ignoreArrayIndexes":true,"ignoreDefaultValues":true,"ignoreClassFieldInitialValues":false,"ignoreEnums":true,"ignoreNumericLiteralTypes":true,"ignoreReadonlyClassProperties":true,"ignoreTypeIndexes":true}]
+no-misleading-character-class [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"allowEscape":false}]
+no-multi-assign [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"ignoreNonDeclaration":false}]
+no-multi-str [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-nested-ternary [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-new [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-new-func [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-new-native-nonconstructor [js, mjs, cjs, jsx]: error
+no-new-wrappers [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-nonoctal-decimal-escape [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-obj-calls [js, mjs, cjs, jsx]: error
+no-octal [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-octal-escape [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-param-reassign [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-promise-executor-return [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"allowVoid":false}]
+no-proto [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-prototype-builtins [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-redeclare [js, mjs, cjs, jsx]: error [{"builtinGlobals":true}]
+no-regex-spaces [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-restricted-globals [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"name":"isFinite","message":"Use Number.isFinite instead https://github.com/airbnb/javascript#standard-library--isfinite"},{"name":"isNaN","message":"Use Number.isNaN instead https://github.com/airbnb/javascript#standard-library--isnan"},"addEventListener","blur","close","closed","confirm","defaultStatus","defaultstatus","event","external","find","focus","frameElement","frames","history","innerHeight","innerWidth","length","location","locationbar","menubar","moveBy","moveTo","name","onblur","onerror","onfocus","onload","onresize","onunload","open","opener","opera","outerHeight","outerWidth","pageXOffset","pageYOffset","parent","print","removeEventListener","resizeBy","resizeTo","screen","screenLeft","screenTop","screenX","screenY","scroll","scrollbars","scrollBy","scrollTo","scrollX","scrollY","self","status","statusbar","stop","toolbar","top"]
+no-restricted-properties [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"object":"arguments","property":"callee","message":"arguments.callee is deprecated"},{"object":"global","property":"isFinite","message":"Please use Number.isFinite instead"},{"object":"self","property":"isFinite","message":"Please use Number.isFinite instead"},{"object":"window","property":"isFinite","message":"Please use Number.isFinite instead"},{"object":"global","property":"isNaN","message":"Please use Number.isNaN instead"},{"object":"self","property":"isNaN","message":"Please use Number.isNaN instead"},{"object":"window","property":"isNaN","message":"Please use Number.isNaN instead"},{"property":"__defineGetter__","message":"Please use Object.defineProperty instead."},{"property":"__defineSetter__","message":"Please use Object.defineProperty instead."},{"object":"Math","property":"pow","message":"Use the exponentiation operator (**) instead."},{"property":"bypassSecurityTrustHtml","message":"Bypassing the sanitizer allows XSS, let Angular sanitize the value instead."},{"property":"bypassSecurityTrustStyle","message":"Bypassing the sanitizer allows XSS, let Angular sanitize the value instead."},{"property":"bypassSecurityTrustScript","message":"Bypassing the sanitizer allows XSS, let Angular sanitize the value instead."},{"property":"bypassSecurityTrustUrl","message":"Bypassing the sanitizer allows XSS, let Angular sanitize the value instead."},{"property":"bypassSecurityTrustResourceUrl","message":"Bypassing the sanitizer allows XSS, let Angular sanitize the value instead."}]
+no-restricted-syntax [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"selector":"LabeledStatement","message":"Labels are a form of GOTO; using them makes code confusing and hard to maintain and understand."},{"selector":"WithStatement","message":"\`with\` is disallowed in strict mode because it makes code impossible to predict and optimize."}]
+no-return-assign [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error ["always"]
+no-script-url [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-self-assign [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"props":true}]
+no-self-compare [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-sequences [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"allowInParentheses":true}]
+no-setter-return [js, mjs, cjs, jsx]: error
+no-shadow-restricted-names [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"reportGlobalThis":true}]
+no-sparse-arrays [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-template-curly-in-string [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-this-before-super [js, mjs, cjs, jsx]: error
+no-throw-literal [js, mjs, cjs, jsx]: error
+no-unassigned-vars [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-undef [js, mjs, cjs, jsx]: error [{"typeof":false}]
+no-undef-init [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-underscore-dangle [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"allow":[],"allowAfterSuper":false,"allowAfterThis":true,"allowAfterThisConstructor":false,"allowFunctionParams":true,"allowInArrayDestructuring":true,"allowInObjectDestructuring":true,"enforceInClassFields":false,"enforceInMethodNames":false}]
+no-unexpected-multiline [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-unneeded-ternary [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"defaultAssignment":false}]
+no-unreachable [js, mjs, cjs, jsx]: error
+no-unreachable-loop [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"ignore":[]}]
+no-unsafe-finally [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-unsafe-negation [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"enforceForOrderingRelations":false}]
+no-unsafe-optional-chaining [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"disallowArithmeticOperators":true}]
+no-unsanitized/method [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-unsanitized/property [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-unused-labels [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-unused-private-class-members [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-useless-assignment [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-useless-backreference [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-useless-catch [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-useless-computed-key [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"enforceForClassMembers":true}]
+no-useless-concat [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-useless-escape [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"allowRegexCharacters":[]}]
+no-useless-rename [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"ignoreDestructuring":false,"ignoreImport":false,"ignoreExport":false}]
+no-useless-return [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-var [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-with [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+object-shorthand [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error ["always"]
+one-var [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error ["never"]
+one-var-declaration-per-line [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error ["always"]
+prefer-arrow-callback [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"allowNamedFunctions":false,"allowUnboundThis":true}]
+prefer-const [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"destructuring":"any","ignoreReadBeforeAssign":false}]
+prefer-exponentiation-operator [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+prefer-numeric-literals [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+prefer-object-spread [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+prefer-promise-reject-errors [js, mjs, cjs, jsx]: error [{"allowEmptyReject":false}]
+prefer-regex-literals [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"disallowRedundantWrapping":true}]
+prefer-rest-params [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+prefer-spread [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+prefer-template [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+preserve-caught-error [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"requireCatchParameter":false,"errorClassNames":[]}]
+radix [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+react-hooks/config [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+react-hooks/error-boundaries [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+react-hooks/exhaustive-deps [ts, mts, cts, tsx, js, mjs, cjs, jsx]: warn
+react-hooks/gating [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+react-hooks/globals [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+react-hooks/immutability [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+react-hooks/incompatible-library [ts, mts, cts, tsx, js, mjs, cjs, jsx]: warn
+react-hooks/preserve-manual-memoization [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+react-hooks/purity [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+react-hooks/refs [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+react-hooks/rules-of-hooks [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+react-hooks/set-state-in-effect [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+react-hooks/set-state-in-render [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+react-hooks/static-components [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+react-hooks/unsupported-syntax [ts, mts, cts, tsx, js, mjs, cjs, jsx]: warn
+react-hooks/use-memo [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+react/display-name [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+react/jsx-key [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+react/jsx-no-comment-textnodes [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+react/jsx-no-duplicate-props [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+react/jsx-no-target-blank [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+react/jsx-no-undef [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+react/jsx-uses-vars [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+react/no-array-index-key [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+react/no-children-prop [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+react/no-danger [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+react/no-danger-with-children [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+react/no-deprecated [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+react/no-direct-mutation-state [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+react/no-find-dom-node [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+react/no-is-mounted [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+react/no-render-return-value [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+react/no-string-refs [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+react/no-unescaped-entities [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+react/no-unknown-property [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+react/prop-types [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+react/require-render-return [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+react/sort-comp [ts, mts, cts, tsx, js, mjs, cjs, jsx]: warn [{"order":["type-annotations","static-variables","instance-variables","lifecycle","static-methods","instance-methods","everything-else","render"]}]
+react/static-property-placement [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error ["static public field"]
+require-await [js, mjs, cjs, jsx]: error
+require-yield [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+security/detect-bidi-characters [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+security/detect-disable-mustache-escape [ts, mts, cts, tsx, js, mjs, cjs, jsx]: warn
+security/detect-non-literal-regexp [ts, mts, cts, tsx, js, mjs, cjs, jsx]: warn
+security/detect-unsafe-regex [ts, mts, cts, tsx, js, mjs, cjs, jsx]: warn
+strict [ts, mts, cts, tsx, js, mjs, jsx]: error ["never"]
+symbol-description [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+unicode-bom [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error ["never"]
+use-isnan [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"enforceForIndexOf":false,"enforceForSwitchCase":true}]
+valid-typeof [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"requireStringLiterals":false}]
+yoda [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error ["never",{"exceptRange":false,"onlyEquality":false}]"
+`;
+
+exports[`cloudflightReactFormatConfig applies the expected rules to each file type 1`] = `
+"@stylistic/array-bracket-newline [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error ["consistent"]
+@stylistic/array-bracket-spacing [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error ["never"]
+@stylistic/array-element-newline [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"ArrayExpression":"consistent","ArrayPattern":{"minItems":3}}]
+@stylistic/arrow-parens [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error ["always"]
+@stylistic/arrow-spacing [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"before":true,"after":true}]
+@stylistic/block-spacing [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error ["always"]
+@stylistic/brace-style [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error ["stroustrup",{"allowSingleLine":false}]
+@stylistic/comma-dangle [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"arrays":"always-multiline","objects":"always-multiline","imports":"always-multiline","exports":"always-multiline","functions":"always-multiline","enums":"always-multiline"}]
+@stylistic/comma-spacing [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"before":false,"after":true}]
+@stylistic/comma-style [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error ["last",{"exceptions":{"ArrayExpression":false,"ArrayPattern":false,"ArrowFunctionExpression":false,"CallExpression":false,"FunctionDeclaration":false,"FunctionExpression":false,"ImportDeclaration":false,"ObjectExpression":false,"ObjectPattern":false,"VariableDeclaration":false,"NewExpression":false}}]
+@stylistic/computed-property-spacing [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error ["never",{"enforceForClassMembers":true}]
+@stylistic/dot-location [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error ["property"]
+@stylistic/eol-last [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error ["always"]
+@stylistic/function-call-argument-newline [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error ["consistent"]
+@stylistic/function-call-spacing [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error ["never"]
+@stylistic/function-paren-newline [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error ["multiline-arguments"]
+@stylistic/generator-star-spacing [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"before":false,"after":true}]
+@stylistic/implicit-arrow-linebreak [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error ["beside"]
+@stylistic/indent [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [4,{"SwitchCase":1,"flatTernaryExpressions":false,"ignoredNodes":[],"VariableDeclarator":1,"outerIIFEBody":1,"FunctionDeclaration":{"parameters":1,"body":1},"FunctionExpression":{"parameters":1,"body":1},"CallExpression":{"arguments":1},"ArrayExpression":1,"ObjectExpression":1,"ImportDeclaration":1,"ignoreComments":false,"offsetTernaryExpressions":false,"MemberExpression":1}]
+@stylistic/jsx-closing-bracket-location [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error ["tag-aligned"]
+@stylistic/jsx-closing-tag-location [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error ["tag-aligned"]
+@stylistic/jsx-curly-newline [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error ["consistent"]
+@stylistic/jsx-curly-spacing [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"when":"never","allowMultiline":true,"children":true}]
+@stylistic/jsx-equals-spacing [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error ["never"]
+@stylistic/jsx-first-prop-new-line [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error ["multiline-multiprop"]
+@stylistic/jsx-indent-props [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [4]
+@stylistic/jsx-max-props-per-line [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"maximum":1,"when":"multiline"}]
+@stylistic/jsx-quotes [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error ["prefer-double"]
+@stylistic/jsx-tag-spacing [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"closingSlash":"never","beforeSelfClosing":"always","afterOpening":"never","beforeClosing":"never"}]
+@stylistic/jsx-wrap-multilines [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"declaration":"parens-new-line","assignment":"parens-new-line","return":"parens-new-line","arrow":"parens-new-line","condition":"parens-new-line","logical":"parens-new-line","prop":"ignore","propertyValue":"ignore"}]
+@stylistic/key-spacing [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"beforeColon":false,"afterColon":true}]
+@stylistic/keyword-spacing [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"before":true,"after":true,"overrides":{"return":{"after":true},"throw":{"after":true},"case":{"after":true}}}]
+@stylistic/lines-between-class-members [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error ["always",{"exceptAfterOverload":true,"exceptAfterSingleLine":false}]
+@stylistic/max-len [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"code":280,"tabWidth":4,"ignorePattern":"^(import|export) [^,]+ from","ignoreRegExpLiterals":true,"ignoreTemplateLiterals":true,"ignoreComments":true}]
+@stylistic/member-delimiter-style [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"multiline":{"delimiter":"semi","requireLast":true},"singleline":{"delimiter":"semi","requireLast":false},"multilineDetection":"brackets"}]
+@stylistic/newline-per-chained-call [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"ignoreChainWithDepth":4}]
+@stylistic/no-extra-semi [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+@stylistic/no-mixed-spaces-and-tabs [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [false]
+@stylistic/no-multi-spaces [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"exceptions":{"Property":true,"ImportAttribute":true},"ignoreEOLComments":false,"includeTabs":true}]
+@stylistic/no-multiple-empty-lines [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"max":1,"maxBOF":0,"maxEOF":0}]
+@stylistic/no-trailing-spaces [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"skipBlankLines":false,"ignoreComments":false}]
+@stylistic/no-whitespace-before-property [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+@stylistic/object-curly-newline [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"consistent":true}]
+@stylistic/object-curly-spacing [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error ["never"]
+@stylistic/object-property-newline [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"allowAllPropertiesOnSameLine":true}]
+@stylistic/one-var-declaration-per-line [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error ["always"]
+@stylistic/operator-linebreak [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error ["after",{"overrides":{"?":"before",":":"before"}}]
+@stylistic/padded-blocks [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"blocks":"never","classes":"never","switches":"never"},{"allowSingleLineBlocks":true}]
+@stylistic/padding-line-between-statements [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"blankLine":"always","prev":"*","next":"return"},{"blankLine":"always","prev":"const","next":"*"},{"blankLine":"any","prev":"const","next":["const","let","var"]},{"blankLine":"always","prev":"block","next":"*"}]
+@stylistic/quotes [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error ["single",{"allowTemplateLiterals":"always","avoidEscape":true,"ignoreStringLiterals":false}]
+@stylistic/rest-spread-spacing [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error ["never"]
+@stylistic/semi [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error ["always"]
+@stylistic/semi-spacing [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"before":false,"after":true}]
+@stylistic/space-before-blocks [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error ["always"]
+@stylistic/space-before-function-paren [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"anonymous":"always","named":"never","asyncArrow":"always"}]
+@stylistic/space-in-parens [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error ["never"]
+@stylistic/space-infix-ops [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"int32Hint":false,"ignoreTypes":false}]
+@stylistic/space-unary-ops [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"words":true,"nonwords":false,"overrides":{}}]
+@stylistic/spaced-comment [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error ["always",{"line":{"exceptions":["-","+"],"markers":["=","!","/"]},"block":{"exceptions":["-","+"],"markers":["=","!",":","::"],"balanced":true}}]
+@stylistic/switch-colon-spacing [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"before":false,"after":true}]
+@stylistic/template-curly-spacing [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error ["never"]
+@stylistic/template-tag-spacing [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error ["never"]
+@stylistic/type-annotation-spacing [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{}]
+import-x/newline-after-import [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+import-x/order [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"groups":["type",["builtin","external"],"internal",["parent","sibling","index"]],"newlines-between":"always","alphabetize":{"order":"asc","caseInsensitive":true,"orderImportKind":"ignore"},"distinctGroup":true,"sortTypesGroup":false,"named":false,"warnOnUnassignedImports":false}]
+perfectionist/sort-exports [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"type":"natural","order":"asc"}]
+perfectionist/sort-named-exports [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"type":"natural","order":"asc"}]
+perfectionist/sort-named-imports [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"type":"natural","order":"asc"}]"
+`;

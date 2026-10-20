@@ -1,0 +1,914 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`cloudflightVueConfig applies the expected rules to each file type 1`] = `
+"@cloudflight/typescript/no-on-event-assign [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+@typescript-eslint/adjacent-overload-signatures [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+@typescript-eslint/array-type [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+@typescript-eslint/await-thenable [ts, mts, cts, tsx]: error
+@typescript-eslint/ban-ts-comment [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"minimumDescriptionLength":10}]
+@typescript-eslint/ban-tslint-comment [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+@typescript-eslint/class-literal-property-style [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+@typescript-eslint/consistent-indexed-object-style [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+@typescript-eslint/consistent-type-assertions [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"assertionStyle":"never"}]
+@typescript-eslint/consistent-type-definitions [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+@typescript-eslint/default-param-last [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+@typescript-eslint/dot-notation [ts, mts, cts, tsx]: error [{"allowIndexSignaturePropertyAccess":false,"allowKeywords":true,"allowPattern":"","allowPrivateClassPropertyAccess":false,"allowProtectedClassPropertyAccess":false}]
+@typescript-eslint/explicit-function-return-type [ts, mts, cts, tsx]: error [{"allowExpressions":true}]
+@typescript-eslint/explicit-member-accessibility [ts, mts, cts, tsx]: error [{"accessibility":"explicit"}]
+@typescript-eslint/member-ordering [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"default":["static-field","field","signature","constructor","static-method","method"]}]
+@typescript-eslint/no-array-constructor [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+@typescript-eslint/no-array-delete [ts, mts, cts, tsx]: error
+@typescript-eslint/no-base-to-string [ts, mts, cts, tsx]: error
+@typescript-eslint/no-confusing-non-null-assertion [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+@typescript-eslint/no-deprecated [ts, mts, cts, tsx]: error
+@typescript-eslint/no-duplicate-enum-values [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+@typescript-eslint/no-duplicate-type-constituents [ts, mts, cts, tsx]: error
+@typescript-eslint/no-dynamic-delete [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+@typescript-eslint/no-empty-function [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"allow":[]}]
+@typescript-eslint/no-empty-object-type [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+@typescript-eslint/no-explicit-any [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+@typescript-eslint/no-extra-non-null-assertion [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+@typescript-eslint/no-extraneous-class [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+@typescript-eslint/no-floating-promises [ts, mts, cts, tsx]: error [{"ignoreVoid":true}]
+@typescript-eslint/no-for-in-array [ts, mts, cts, tsx]: error
+@typescript-eslint/no-generated-empty-object-type [ts, mts, cts, tsx]: error
+@typescript-eslint/no-implied-eval [ts, mts, cts, tsx]: error
+@typescript-eslint/no-inferrable-types [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"ignoreParameters":true}]
+@typescript-eslint/no-invalid-this [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"capIsConstructor":true}]
+@typescript-eslint/no-invalid-void-type [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"allowInGenericTypeArguments":true,"allowAsThisParameter":true}]
+@typescript-eslint/no-meaningless-void-operator [ts, mts, cts, tsx]: error
+@typescript-eslint/no-misused-new [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+@typescript-eslint/no-misused-promises [ts, mts, cts, tsx]: error
+@typescript-eslint/no-misused-spread [ts, mts, cts, tsx]: error
+@typescript-eslint/no-mixed-enums [ts, mts, cts, tsx]: error
+@typescript-eslint/no-namespace [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+@typescript-eslint/no-non-null-asserted-nullish-coalescing [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+@typescript-eslint/no-non-null-asserted-optional-chain [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+@typescript-eslint/no-non-null-assertion [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+@typescript-eslint/no-redundant-type-constituents [ts, mts, cts, tsx]: error
+@typescript-eslint/no-require-imports [cts]: error [{"allowAsImport":true}]
+@typescript-eslint/no-require-imports [ts, mts, tsx, js, mjs, jsx]: error
+@typescript-eslint/no-shadow [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+@typescript-eslint/no-this-alias [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+@typescript-eslint/no-unnecessary-boolean-literal-compare [ts, mts, cts, tsx]: error
+@typescript-eslint/no-unnecessary-template-expression [ts, mts, cts, tsx]: error
+@typescript-eslint/no-unnecessary-type-arguments [ts, mts, cts, tsx]: error
+@typescript-eslint/no-unnecessary-type-assertion [ts, mts, cts, tsx]: error
+@typescript-eslint/no-unnecessary-type-constraint [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+@typescript-eslint/no-unnecessary-type-conversion [ts, mts, cts, tsx]: error
+@typescript-eslint/no-unnecessary-type-parameters [ts, mts, cts, tsx]: error
+@typescript-eslint/no-unsafe-assignment [ts, mts, cts, tsx]: error
+@typescript-eslint/no-unsafe-call [ts, mts, cts, tsx]: error
+@typescript-eslint/no-unsafe-declaration-merging [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+@typescript-eslint/no-unsafe-function-type [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+@typescript-eslint/no-unsafe-member-access [ts, mts, cts, tsx]: error
+@typescript-eslint/no-unsafe-return [ts, mts, cts, tsx]: error
+@typescript-eslint/no-unsafe-unary-minus [ts, mts, cts, tsx]: error
+@typescript-eslint/no-unused-expressions [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"allowShortCircuit":false,"allowTaggedTemplates":false,"allowTernary":false,"enforceForJSX":true}]
+@typescript-eslint/no-unused-vars [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"args":"none","ignoreRestSiblings":true}]
+@typescript-eslint/no-useless-constructor [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+@typescript-eslint/no-useless-default-assignment [ts, mts, cts, tsx]: error
+@typescript-eslint/no-wrapper-object-types [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+@typescript-eslint/only-throw-error [ts, mts, cts, tsx]: error
+@typescript-eslint/prefer-as-const [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+@typescript-eslint/prefer-find [ts, mts, cts, tsx]: error
+@typescript-eslint/prefer-for-of [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+@typescript-eslint/prefer-function-type [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+@typescript-eslint/prefer-includes [ts, mts, cts, tsx]: error
+@typescript-eslint/prefer-literal-enum-member [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+@typescript-eslint/prefer-namespace-keyword [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+@typescript-eslint/prefer-nullish-coalescing [ts, mts, cts, tsx]: error
+@typescript-eslint/prefer-optional-chain [ts, mts, cts, tsx]: error
+@typescript-eslint/prefer-promise-reject-errors [ts, mts, cts, tsx]: error
+@typescript-eslint/prefer-reduce-type-parameter [ts, mts, cts, tsx]: error
+@typescript-eslint/prefer-regexp-exec [ts, mts, cts, tsx]: error
+@typescript-eslint/prefer-return-this-type [ts, mts, cts, tsx]: error
+@typescript-eslint/prefer-string-starts-ends-with [ts, mts, cts, tsx]: error
+@typescript-eslint/promise-function-async [ts, mts, cts, tsx]: error
+@typescript-eslint/related-getter-setter-pairs [ts, mts, cts, tsx]: error
+@typescript-eslint/require-array-sort-compare [ts, mts, cts, tsx]: error
+@typescript-eslint/require-await [ts, mts, cts, tsx]: error
+@typescript-eslint/restrict-plus-operands [ts, mts, cts, tsx]: error [{"allowAny":false,"allowBoolean":false,"allowNullish":false,"allowNumberAndString":false,"allowRegExp":false}]
+@typescript-eslint/restrict-template-expressions [ts, mts, cts, tsx]: error [{"allowAny":false,"allowBoolean":false,"allowNever":false,"allowNullish":false,"allowNumber":false,"allowRegExp":false}]
+@typescript-eslint/return-await [ts, mts, cts, tsx]: error ["error-handling-correctness-only"]
+@typescript-eslint/strict-boolean-expressions [ts, mts, cts, tsx]: error
+@typescript-eslint/switch-exhaustiveness-check [ts, mts, cts, tsx]: error
+@typescript-eslint/triple-slash-reference [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+@typescript-eslint/unbound-method [ts, mts, cts, tsx]: error
+@typescript-eslint/unified-signatures [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+@typescript-eslint/use-unknown-in-catch-callback-variable [ts, mts, cts, tsx]: error
+array-callback-return [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"allowImplicit":true,"checkForEach":false,"allowVoid":false}]
+block-scoped-var [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+camelcase [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"allow":[],"ignoreDestructuring":false,"ignoreGlobals":false,"ignoreImports":false,"properties":"never"}]
+complexity [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"max":20}]
+constructor-super [js, mjs, cjs, jsx]: error
+curly [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error ["all"]
+default-case-last [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+dot-notation [js, mjs, cjs, jsx]: error [{"allowKeywords":true,"allowPattern":""}]
+eqeqeq [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error ["always",{"null":"ignore"}]
+for-direction [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+func-names [ts, mts, cts, tsx, js, mjs, cjs, jsx]: warn ["always",{}]
+func-style [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error ["declaration",{"allowArrowFunctions":false,"allowTypeAnnotation":false,"overrides":{}}]
+getter-return [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"allowImplicit":true}]
+grouped-accessor-pairs [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error ["anyOrder",{"enforceForTSTypes":false}]
+guard-for-in [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+import-x/default [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+import-x/export [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+import-x/first [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+import-x/no-absolute-path [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+import-x/no-cycle [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"ignoreExternal":true,"allowUnsafeDynamicCyclicDependency":false}]
+import-x/no-duplicates [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+import-x/no-mutable-exports [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+import-x/no-named-as-default [ts, mts, cts, tsx, js, mjs, cjs, jsx]: warn
+import-x/no-named-as-default-member [ts, mts, cts, tsx, js, mjs, cjs, jsx]: warn
+import-x/no-self-import [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+import-x/no-unresolved [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+import-x/no-useless-path-segments [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+max-classes-per-file [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [1]
+new-cap [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"capIsNew":false,"capIsNewExceptions":["Immutable.Map","Immutable.Set","Immutable.List"],"newIsCap":true,"newIsCapExceptions":[],"properties":true}]
+no-async-promise-executor [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-bitwise [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"allow":[],"int32Hint":false}]
+no-caller [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-case-declarations [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-class-assign [js, mjs, cjs, jsx]: error
+no-compare-neg-zero [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-cond-assign [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error ["always"]
+no-console [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{}]
+no-const-assign [js, mjs, cjs, jsx]: error
+no-constant-binary-expression [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"checkRelationalComparisons":false}]
+no-constant-condition [ts, mts, cts, tsx, js, mjs, cjs, jsx]: warn [{"checkLoops":"allExceptWhileTrue"}]
+no-constructor-return [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-control-regex [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-debugger [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-delete-var [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-dupe-args [js, mjs, cjs, jsx]: error
+no-dupe-class-members [js, mjs, cjs, jsx]: error
+no-dupe-else-if [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-dupe-keys [js, mjs, cjs, jsx]: error
+no-duplicate-case [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-else-return [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"allowElseIf":true}]
+no-empty [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"allowEmptyCatch":false}]
+no-empty-character-class [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-empty-pattern [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"allowObjectPatternsAsParameters":false}]
+no-empty-static-block [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-eval [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"allowIndirect":false}]
+no-ex-assign [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-extend-native [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"exceptions":[]}]
+no-extra-bind [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-extra-boolean-cast [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{}]
+no-fallthrough [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"allowEmptyCase":false,"reportUnusedFallthroughComment":false}]
+no-func-assign [js, mjs, cjs, jsx]: error
+no-global-assign [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"exceptions":[]}]
+no-implied-eval [js, mjs, cjs, jsx]: error
+no-import-assign [js, mjs, cjs, jsx]: error
+no-inner-declarations [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error ["functions",{"blockScopedFunctions":"allow"}]
+no-invalid-regexp [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{}]
+no-irregular-whitespace [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"skipComments":false,"skipJSXText":false,"skipRegExps":false,"skipStrings":true,"skipTemplates":false}]
+no-iterator [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-label-var [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-labels [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"allowLoop":false,"allowSwitch":false}]
+no-lone-blocks [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-lonely-if [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-loop-func [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-loss-of-precision [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-magic-numbers [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"detectObjects":false,"enforceConst":true,"ignore":[-1,0,1,2,10,1000],"ignoreArrayIndexes":true,"ignoreDefaultValues":true,"ignoreClassFieldInitialValues":false,"ignoreEnums":true,"ignoreNumericLiteralTypes":true,"ignoreReadonlyClassProperties":true,"ignoreTypeIndexes":true}]
+no-misleading-character-class [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"allowEscape":false}]
+no-multi-assign [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"ignoreNonDeclaration":false}]
+no-multi-str [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-nested-ternary [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-new [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-new-func [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-new-native-nonconstructor [js, mjs, cjs, jsx]: error
+no-new-wrappers [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-nonoctal-decimal-escape [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-obj-calls [js, mjs, cjs, jsx]: error
+no-octal [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-octal-escape [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-param-reassign [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-promise-executor-return [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"allowVoid":false}]
+no-proto [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-prototype-builtins [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-redeclare [js, mjs, cjs, jsx]: error [{"builtinGlobals":true}]
+no-regex-spaces [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-restricted-globals [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"name":"isFinite","message":"Use Number.isFinite instead https://github.com/airbnb/javascript#standard-library--isfinite"},{"name":"isNaN","message":"Use Number.isNaN instead https://github.com/airbnb/javascript#standard-library--isnan"},"addEventListener","blur","close","closed","confirm","defaultStatus","defaultstatus","event","external","find","focus","frameElement","frames","history","innerHeight","innerWidth","length","location","locationbar","menubar","moveBy","moveTo","name","onblur","onerror","onfocus","onload","onresize","onunload","open","opener","opera","outerHeight","outerWidth","pageXOffset","pageYOffset","parent","print","removeEventListener","resizeBy","resizeTo","screen","screenLeft","screenTop","screenX","screenY","scroll","scrollbars","scrollBy","scrollTo","scrollX","scrollY","self","status","statusbar","stop","toolbar","top"]
+no-restricted-properties [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"object":"arguments","property":"callee","message":"arguments.callee is deprecated"},{"object":"global","property":"isFinite","message":"Please use Number.isFinite instead"},{"object":"self","property":"isFinite","message":"Please use Number.isFinite instead"},{"object":"window","property":"isFinite","message":"Please use Number.isFinite instead"},{"object":"global","property":"isNaN","message":"Please use Number.isNaN instead"},{"object":"self","property":"isNaN","message":"Please use Number.isNaN instead"},{"object":"window","property":"isNaN","message":"Please use Number.isNaN instead"},{"property":"__defineGetter__","message":"Please use Object.defineProperty instead."},{"property":"__defineSetter__","message":"Please use Object.defineProperty instead."},{"object":"Math","property":"pow","message":"Use the exponentiation operator (**) instead."},{"property":"bypassSecurityTrustHtml","message":"Bypassing the sanitizer allows XSS, let Angular sanitize the value instead."},{"property":"bypassSecurityTrustStyle","message":"Bypassing the sanitizer allows XSS, let Angular sanitize the value instead."},{"property":"bypassSecurityTrustScript","message":"Bypassing the sanitizer allows XSS, let Angular sanitize the value instead."},{"property":"bypassSecurityTrustUrl","message":"Bypassing the sanitizer allows XSS, let Angular sanitize the value instead."},{"property":"bypassSecurityTrustResourceUrl","message":"Bypassing the sanitizer allows XSS, let Angular sanitize the value instead."}]
+no-restricted-syntax [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"selector":"LabeledStatement","message":"Labels are a form of GOTO; using them makes code confusing and hard to maintain and understand."},{"selector":"WithStatement","message":"\`with\` is disallowed in strict mode because it makes code impossible to predict and optimize."}]
+no-return-assign [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error ["always"]
+no-script-url [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-self-assign [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"props":true}]
+no-self-compare [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-sequences [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"allowInParentheses":true}]
+no-setter-return [js, mjs, cjs, jsx]: error
+no-shadow-restricted-names [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"reportGlobalThis":true}]
+no-sparse-arrays [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-template-curly-in-string [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-this-before-super [js, mjs, cjs, jsx]: error
+no-throw-literal [js, mjs, cjs, jsx]: error
+no-unassigned-vars [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-undef [js, mjs, cjs, jsx]: error [{"typeof":false}]
+no-undef-init [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-underscore-dangle [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"allow":[],"allowAfterSuper":false,"allowAfterThis":true,"allowAfterThisConstructor":false,"allowFunctionParams":true,"allowInArrayDestructuring":true,"allowInObjectDestructuring":true,"enforceInClassFields":false,"enforceInMethodNames":false}]
+no-unexpected-multiline [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-unneeded-ternary [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"defaultAssignment":false}]
+no-unreachable [js, mjs, cjs, jsx]: error
+no-unreachable-loop [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"ignore":[]}]
+no-unsafe-finally [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-unsafe-negation [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"enforceForOrderingRelations":false}]
+no-unsafe-optional-chaining [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"disallowArithmeticOperators":true}]
+no-unsanitized/method [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-unsanitized/property [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-unused-labels [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-unused-private-class-members [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-useless-assignment [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-useless-backreference [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-useless-catch [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-useless-computed-key [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"enforceForClassMembers":true}]
+no-useless-concat [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-useless-escape [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"allowRegexCharacters":[]}]
+no-useless-rename [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"ignoreDestructuring":false,"ignoreImport":false,"ignoreExport":false}]
+no-useless-return [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-var [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+no-with [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+object-shorthand [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error ["always"]
+one-var [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error ["never"]
+one-var-declaration-per-line [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error ["always"]
+prefer-arrow-callback [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"allowNamedFunctions":false,"allowUnboundThis":true}]
+prefer-const [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"destructuring":"any","ignoreReadBeforeAssign":false}]
+prefer-exponentiation-operator [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+prefer-numeric-literals [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+prefer-object-spread [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+prefer-promise-reject-errors [js, mjs, cjs, jsx]: error [{"allowEmptyReject":false}]
+prefer-regex-literals [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"disallowRedundantWrapping":true}]
+prefer-rest-params [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+prefer-spread [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+prefer-template [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+preserve-caught-error [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"requireCatchParameter":false,"errorClassNames":[]}]
+radix [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+require-await [js, mjs, cjs, jsx]: error
+require-yield [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+security/detect-bidi-characters [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+security/detect-disable-mustache-escape [ts, mts, cts, tsx, js, mjs, cjs, jsx]: warn
+security/detect-non-literal-regexp [ts, mts, cts, tsx, js, mjs, cjs, jsx]: warn
+security/detect-unsafe-regex [ts, mts, cts, tsx, js, mjs, cjs, jsx]: warn
+strict [ts, mts, cts, tsx, js, mjs, jsx]: error ["never"]
+symbol-description [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error
+unicode-bom [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error ["never"]
+use-isnan [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"enforceForIndexOf":false,"enforceForSwitchCase":true}]
+valid-typeof [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error [{"requireStringLiterals":false}]
+yoda [ts, mts, cts, tsx, js, mjs, cjs, jsx]: error ["never",{"exceptRange":false,"onlyEquality":false}]"
+`;
+
+
+exports[`cloudflightVueConfig applies the expected rules to valid/ContactForm.vue 1`] = `
+"@cloudflight/typescript/no-on-event-assign [vue]: error
+@typescript-eslint/adjacent-overload-signatures [vue]: error
+@typescript-eslint/array-type [vue]: error
+@typescript-eslint/await-thenable [vue]: error
+@typescript-eslint/ban-ts-comment [vue]: error [{"minimumDescriptionLength":10}]
+@typescript-eslint/ban-tslint-comment [vue]: error
+@typescript-eslint/class-literal-property-style [vue]: error
+@typescript-eslint/consistent-indexed-object-style [vue]: error
+@typescript-eslint/consistent-type-assertions [vue]: error [{"assertionStyle":"never"}]
+@typescript-eslint/consistent-type-definitions [vue]: error
+@typescript-eslint/default-param-last [vue]: error
+@typescript-eslint/dot-notation [vue]: error [{"allowIndexSignaturePropertyAccess":false,"allowKeywords":true,"allowPattern":"","allowPrivateClassPropertyAccess":false,"allowProtectedClassPropertyAccess":false}]
+@typescript-eslint/explicit-function-return-type [vue]: error [{"allowExpressions":true}]
+@typescript-eslint/explicit-member-accessibility [vue]: error [{"accessibility":"explicit"}]
+@typescript-eslint/member-ordering [vue]: error [{"default":["static-field","field","signature","constructor","static-method","method"]}]
+@typescript-eslint/no-array-constructor [vue]: error
+@typescript-eslint/no-array-delete [vue]: error
+@typescript-eslint/no-base-to-string [vue]: error
+@typescript-eslint/no-confusing-non-null-assertion [vue]: error
+@typescript-eslint/no-deprecated [vue]: error
+@typescript-eslint/no-duplicate-enum-values [vue]: error
+@typescript-eslint/no-duplicate-type-constituents [vue]: error
+@typescript-eslint/no-dynamic-delete [vue]: error
+@typescript-eslint/no-empty-function [vue]: error [{"allow":[]}]
+@typescript-eslint/no-empty-object-type [vue]: error
+@typescript-eslint/no-explicit-any [vue]: error
+@typescript-eslint/no-extra-non-null-assertion [vue]: error
+@typescript-eslint/no-extraneous-class [vue]: error
+@typescript-eslint/no-floating-promises [vue]: error [{"ignoreVoid":true}]
+@typescript-eslint/no-for-in-array [vue]: error
+@typescript-eslint/no-generated-empty-object-type [vue]: error
+@typescript-eslint/no-implied-eval [vue]: error
+@typescript-eslint/no-inferrable-types [vue]: error [{"ignoreParameters":true}]
+@typescript-eslint/no-invalid-this [vue]: error [{"capIsConstructor":true}]
+@typescript-eslint/no-invalid-void-type [vue]: error [{"allowInGenericTypeArguments":true,"allowAsThisParameter":true}]
+@typescript-eslint/no-meaningless-void-operator [vue]: error
+@typescript-eslint/no-misused-new [vue]: error
+@typescript-eslint/no-misused-promises [vue]: error
+@typescript-eslint/no-misused-spread [vue]: error
+@typescript-eslint/no-mixed-enums [vue]: error
+@typescript-eslint/no-namespace [vue]: error
+@typescript-eslint/no-non-null-asserted-nullish-coalescing [vue]: error
+@typescript-eslint/no-non-null-asserted-optional-chain [vue]: error
+@typescript-eslint/no-non-null-assertion [vue]: error
+@typescript-eslint/no-redundant-type-constituents [vue]: error
+@typescript-eslint/no-require-imports [vue]: error
+@typescript-eslint/no-shadow [vue]: error
+@typescript-eslint/no-this-alias [vue]: error
+@typescript-eslint/no-unnecessary-boolean-literal-compare [vue]: error
+@typescript-eslint/no-unnecessary-template-expression [vue]: error
+@typescript-eslint/no-unnecessary-type-arguments [vue]: error
+@typescript-eslint/no-unnecessary-type-assertion [vue]: error
+@typescript-eslint/no-unnecessary-type-constraint [vue]: error
+@typescript-eslint/no-unnecessary-type-conversion [vue]: error
+@typescript-eslint/no-unnecessary-type-parameters [vue]: error
+@typescript-eslint/no-unsafe-call [vue]: error
+@typescript-eslint/no-unsafe-declaration-merging [vue]: error
+@typescript-eslint/no-unsafe-function-type [vue]: error
+@typescript-eslint/no-unsafe-member-access [vue]: error
+@typescript-eslint/no-unsafe-return [vue]: error
+@typescript-eslint/no-unsafe-unary-minus [vue]: error
+@typescript-eslint/no-unused-expressions [vue]: error [{"allowShortCircuit":false,"allowTaggedTemplates":false,"allowTernary":false,"enforceForJSX":true}]
+@typescript-eslint/no-unused-vars [vue]: error [{"args":"none","ignoreRestSiblings":true}]
+@typescript-eslint/no-useless-constructor [vue]: error
+@typescript-eslint/no-useless-default-assignment [vue]: error
+@typescript-eslint/no-wrapper-object-types [vue]: error
+@typescript-eslint/only-throw-error [vue]: error
+@typescript-eslint/prefer-as-const [vue]: error
+@typescript-eslint/prefer-find [vue]: error
+@typescript-eslint/prefer-for-of [vue]: error
+@typescript-eslint/prefer-function-type [vue]: error
+@typescript-eslint/prefer-includes [vue]: error
+@typescript-eslint/prefer-literal-enum-member [vue]: error
+@typescript-eslint/prefer-namespace-keyword [vue]: error
+@typescript-eslint/prefer-nullish-coalescing [vue]: error
+@typescript-eslint/prefer-optional-chain [vue]: error
+@typescript-eslint/prefer-promise-reject-errors [vue]: error
+@typescript-eslint/prefer-reduce-type-parameter [vue]: error
+@typescript-eslint/prefer-regexp-exec [vue]: error
+@typescript-eslint/prefer-return-this-type [vue]: error
+@typescript-eslint/prefer-string-starts-ends-with [vue]: error
+@typescript-eslint/promise-function-async [vue]: error
+@typescript-eslint/related-getter-setter-pairs [vue]: error
+@typescript-eslint/require-array-sort-compare [vue]: error
+@typescript-eslint/require-await [vue]: error
+@typescript-eslint/restrict-plus-operands [vue]: error [{"allowAny":false,"allowBoolean":false,"allowNullish":false,"allowNumberAndString":false,"allowRegExp":false}]
+@typescript-eslint/restrict-template-expressions [vue]: error [{"allowAny":false,"allowBoolean":false,"allowNever":false,"allowNullish":false,"allowNumber":false,"allowRegExp":false}]
+@typescript-eslint/return-await [vue]: error ["error-handling-correctness-only"]
+@typescript-eslint/strict-boolean-expressions [vue]: error
+@typescript-eslint/switch-exhaustiveness-check [vue]: error
+@typescript-eslint/triple-slash-reference [vue]: error
+@typescript-eslint/unbound-method [vue]: error
+@typescript-eslint/use-unknown-in-catch-callback-variable [vue]: error
+array-callback-return [vue]: error [{"allowImplicit":true,"checkForEach":false,"allowVoid":false}]
+block-scoped-var [vue]: error
+camelcase [vue]: error [{"allow":[],"ignoreDestructuring":false,"ignoreGlobals":false,"ignoreImports":false,"properties":"never"}]
+complexity [vue]: error [{"max":20}]
+curly [vue]: error ["all"]
+default-case-last [vue]: error
+eqeqeq [vue]: error ["always",{"null":"ignore"}]
+for-direction [vue]: error
+func-names [vue]: warn ["always",{}]
+func-style [vue]: error ["declaration",{"allowArrowFunctions":false,"allowTypeAnnotation":false,"overrides":{}}]
+grouped-accessor-pairs [vue]: error ["anyOrder",{"enforceForTSTypes":false}]
+guard-for-in [vue]: error
+max-classes-per-file [vue]: error [1]
+new-cap [vue]: error [{"capIsNew":false,"capIsNewExceptions":["Immutable.Map","Immutable.Set","Immutable.List"],"newIsCap":true,"newIsCapExceptions":[],"properties":true}]
+no-async-promise-executor [vue]: error
+no-bitwise [vue]: error [{"allow":[],"int32Hint":false}]
+no-caller [vue]: error
+no-case-declarations [vue]: error
+no-compare-neg-zero [vue]: error
+no-cond-assign [vue]: error ["always"]
+no-console [vue]: error [{}]
+no-constant-binary-expression [vue]: error [{"checkRelationalComparisons":false}]
+no-constant-condition [vue]: warn [{"checkLoops":"allExceptWhileTrue"}]
+no-constructor-return [vue]: error
+no-control-regex [vue]: error
+no-debugger [vue]: error
+no-delete-var [vue]: error
+no-dupe-else-if [vue]: error
+no-duplicate-case [vue]: error
+no-duplicate-imports [vue]: error [{"includeExports":false,"allowSeparateTypeImports":false}]
+no-else-return [vue]: error [{"allowElseIf":true}]
+no-empty [vue]: error [{"allowEmptyCatch":false}]
+no-empty-character-class [vue]: error
+no-empty-pattern [vue]: error [{"allowObjectPatternsAsParameters":false}]
+no-empty-static-block [vue]: error
+no-eval [vue]: error [{"allowIndirect":false}]
+no-ex-assign [vue]: error
+no-extend-native [vue]: error [{"exceptions":[]}]
+no-extra-bind [vue]: error
+no-extra-boolean-cast [vue]: error [{}]
+no-fallthrough [vue]: error [{"allowEmptyCase":false,"reportUnusedFallthroughComment":false}]
+no-global-assign [vue]: error [{"exceptions":[]}]
+no-inner-declarations [vue]: error ["functions",{"blockScopedFunctions":"allow"}]
+no-invalid-regexp [vue]: error [{}]
+no-irregular-whitespace [vue]: error [{"skipComments":false,"skipJSXText":false,"skipRegExps":false,"skipStrings":true,"skipTemplates":false}]
+no-iterator [vue]: error
+no-label-var [vue]: error
+no-labels [vue]: error [{"allowLoop":false,"allowSwitch":false}]
+no-lone-blocks [vue]: error
+no-lonely-if [vue]: error
+no-loop-func [vue]: error
+no-loss-of-precision [vue]: error
+no-magic-numbers [vue]: error [{"detectObjects":false,"enforceConst":true,"ignore":[-1,0,1,2,10,1000],"ignoreArrayIndexes":true,"ignoreDefaultValues":true,"ignoreClassFieldInitialValues":false,"ignoreEnums":true,"ignoreNumericLiteralTypes":true,"ignoreReadonlyClassProperties":true,"ignoreTypeIndexes":true}]
+no-misleading-character-class [vue]: error [{"allowEscape":false}]
+no-multi-assign [vue]: error [{"ignoreNonDeclaration":false}]
+no-multi-str [vue]: error
+no-nested-ternary [vue]: error
+no-new [vue]: error
+no-new-func [vue]: error
+no-new-wrappers [vue]: error
+no-nonoctal-decimal-escape [vue]: error
+no-octal [vue]: error
+no-octal-escape [vue]: error
+no-param-reassign [vue]: error
+no-promise-executor-return [vue]: error [{"allowVoid":false}]
+no-proto [vue]: error
+no-prototype-builtins [vue]: error
+no-regex-spaces [vue]: error
+no-restricted-globals [vue]: error [{"name":"isFinite","message":"Use Number.isFinite instead https://github.com/airbnb/javascript#standard-library--isfinite"},{"name":"isNaN","message":"Use Number.isNaN instead https://github.com/airbnb/javascript#standard-library--isnan"},"addEventListener","blur","close","closed","confirm","defaultStatus","defaultstatus","event","external","find","focus","frameElement","frames","history","innerHeight","innerWidth","length","location","locationbar","menubar","moveBy","moveTo","name","onblur","onerror","onfocus","onload","onresize","onunload","open","opener","opera","outerHeight","outerWidth","pageXOffset","pageYOffset","parent","print","removeEventListener","resizeBy","resizeTo","screen","screenLeft","screenTop","screenX","screenY","scroll","scrollbars","scrollBy","scrollTo","scrollX","scrollY","self","status","statusbar","stop","toolbar","top"]
+no-restricted-properties [vue]: error [{"object":"arguments","property":"callee","message":"arguments.callee is deprecated"},{"object":"global","property":"isFinite","message":"Please use Number.isFinite instead"},{"object":"self","property":"isFinite","message":"Please use Number.isFinite instead"},{"object":"window","property":"isFinite","message":"Please use Number.isFinite instead"},{"object":"global","property":"isNaN","message":"Please use Number.isNaN instead"},{"object":"self","property":"isNaN","message":"Please use Number.isNaN instead"},{"object":"window","property":"isNaN","message":"Please use Number.isNaN instead"},{"property":"__defineGetter__","message":"Please use Object.defineProperty instead."},{"property":"__defineSetter__","message":"Please use Object.defineProperty instead."},{"object":"Math","property":"pow","message":"Use the exponentiation operator (**) instead."},{"property":"bypassSecurityTrustHtml","message":"Bypassing the sanitizer allows XSS, let Angular sanitize the value instead."},{"property":"bypassSecurityTrustStyle","message":"Bypassing the sanitizer allows XSS, let Angular sanitize the value instead."},{"property":"bypassSecurityTrustScript","message":"Bypassing the sanitizer allows XSS, let Angular sanitize the value instead."},{"property":"bypassSecurityTrustUrl","message":"Bypassing the sanitizer allows XSS, let Angular sanitize the value instead."},{"property":"bypassSecurityTrustResourceUrl","message":"Bypassing the sanitizer allows XSS, let Angular sanitize the value instead."}]
+no-restricted-syntax [vue]: error [{"selector":"LabeledStatement","message":"Labels are a form of GOTO; using them makes code confusing and hard to maintain and understand."},{"selector":"WithStatement","message":"\`with\` is disallowed in strict mode because it makes code impossible to predict and optimize."}]
+no-return-assign [vue]: error ["always"]
+no-script-url [vue]: error
+no-self-assign [vue]: error [{"props":true}]
+no-self-compare [vue]: error
+no-sequences [vue]: error [{"allowInParentheses":true}]
+no-shadow-restricted-names [vue]: error [{"reportGlobalThis":true}]
+no-sparse-arrays [vue]: error
+no-template-curly-in-string [vue]: error
+no-unassigned-vars [vue]: error
+no-undef-init [vue]: error
+no-underscore-dangle [vue]: error [{"allow":[],"allowAfterSuper":false,"allowAfterThis":true,"allowAfterThisConstructor":false,"allowFunctionParams":true,"allowInArrayDestructuring":true,"allowInObjectDestructuring":true,"enforceInClassFields":false,"enforceInMethodNames":false}]
+no-unexpected-multiline [vue]: error
+no-unneeded-ternary [vue]: error [{"defaultAssignment":false}]
+no-unreachable-loop [vue]: error [{"ignore":[]}]
+no-unsafe-finally [vue]: error
+no-unsafe-optional-chaining [vue]: error [{"disallowArithmeticOperators":true}]
+no-unsanitized/method [vue]: error
+no-unsanitized/property [vue]: error
+no-unused-labels [vue]: error
+no-unused-private-class-members [vue]: error
+no-useless-assignment [vue]: error
+no-useless-backreference [vue]: error
+no-useless-catch [vue]: error
+no-useless-computed-key [vue]: error [{"enforceForClassMembers":true}]
+no-useless-concat [vue]: error
+no-useless-escape [vue]: error [{"allowRegexCharacters":[]}]
+no-useless-rename [vue]: error [{"ignoreDestructuring":false,"ignoreImport":false,"ignoreExport":false}]
+no-useless-return [vue]: error
+no-var [vue]: error
+object-shorthand [vue]: error ["always"]
+one-var [vue]: error ["never"]
+one-var-declaration-per-line [vue]: error ["always"]
+prefer-arrow-callback [vue]: error [{"allowNamedFunctions":false,"allowUnboundThis":true}]
+prefer-const [vue]: error [{"destructuring":"any","ignoreReadBeforeAssign":false}]
+prefer-exponentiation-operator [vue]: error
+prefer-numeric-literals [vue]: error
+prefer-object-spread [vue]: error
+prefer-regex-literals [vue]: error [{"disallowRedundantWrapping":true}]
+prefer-rest-params [vue]: error
+prefer-spread [vue]: error
+prefer-template [vue]: error
+preserve-caught-error [vue]: error [{"requireCatchParameter":false,"errorClassNames":[]}]
+radix [vue]: error
+require-yield [vue]: error
+security/detect-bidi-characters [vue]: error
+security/detect-disable-mustache-escape [vue]: warn
+security/detect-non-literal-regexp [vue]: warn
+security/detect-unsafe-regex [vue]: warn
+strict [vue]: error ["never"]
+symbol-description [vue]: error
+unicode-bom [vue]: error ["never"]
+use-isnan [vue]: error [{"enforceForIndexOf":false,"enforceForSwitchCase":true}]
+valid-typeof [vue]: error [{"requireStringLiterals":false}]
+vue/attribute-hyphenation [vue]: error
+vue/attributes-order [vue]: error
+vue/block-lang [vue]: error [{"script":{"lang":"ts"},"style":{"lang":"scss"}}]
+vue/block-order [vue]: error
+vue/comment-directive [vue]: error
+vue/component-api-style [vue]: error [["script-setup","composition"]]
+vue/component-definition-name-casing [vue]: error
+vue/define-emits-declaration [vue]: error ["type-based"]
+vue/define-macros-order [vue]: error [{"order":["defineProps","defineEmits"]}]
+vue/define-props-declaration [vue]: error ["type-based"]
+vue/first-attribute-linebreak [vue]: error
+vue/html-button-has-type [vue]: error
+vue/html-closing-bracket-spacing [vue]: error
+vue/html-end-tags [vue]: error
+vue/html-quotes [vue]: error
+vue/jsx-uses-vars [vue]: error
+vue/multi-word-component-names [vue]: error
+vue/mustache-interpolation-spacing [vue]: error
+vue/no-arrow-functions-in-watch [vue]: error
+vue/no-async-in-computed-properties [vue]: error
+vue/no-child-content [vue]: error
+vue/no-computed-properties-in-data [vue]: error
+vue/no-deprecated-data-object-declaration [vue]: error
+vue/no-deprecated-delete-set [vue]: error
+vue/no-deprecated-destroyed-lifecycle [vue]: error
+vue/no-deprecated-dollar-listeners-api [vue]: error
+vue/no-deprecated-dollar-scopedslots-api [vue]: error
+vue/no-deprecated-events-api [vue]: error
+vue/no-deprecated-filter [vue]: error
+vue/no-deprecated-functional-template [vue]: error
+vue/no-deprecated-html-element-is [vue]: error
+vue/no-deprecated-inline-template [vue]: error
+vue/no-deprecated-model-definition [vue]: error
+vue/no-deprecated-props-default-this [vue]: error
+vue/no-deprecated-router-link-tag-prop [vue]: error
+vue/no-deprecated-scope-attribute [vue]: error
+vue/no-deprecated-slot-attribute [vue]: error
+vue/no-deprecated-slot-scope-attribute [vue]: error
+vue/no-deprecated-v-bind-sync [vue]: error
+vue/no-deprecated-v-is [vue]: error
+vue/no-deprecated-v-on-native-modifier [vue]: error
+vue/no-deprecated-v-on-number-modifiers [vue]: error
+vue/no-deprecated-vue-config-keycodes [vue]: error
+vue/no-dupe-keys [vue]: error
+vue/no-dupe-v-else-if [vue]: error
+vue/no-duplicate-attributes [vue]: error
+vue/no-export-in-script-setup [vue]: error
+vue/no-expose-after-await [vue]: error
+vue/no-lifecycle-after-await [vue]: error
+vue/no-lone-template [vue]: error
+vue/no-multi-spaces [vue]: error
+vue/no-multiple-slot-args [vue]: error
+vue/no-mutating-props [vue]: error
+vue/no-parsing-error [vue]: error
+vue/no-ref-as-operand [vue]: error
+vue/no-required-prop-with-default [vue]: error
+vue/no-reserved-component-names [vue]: error
+vue/no-reserved-keys [vue]: error
+vue/no-reserved-props [vue]: error
+vue/no-shared-component-data [vue]: error
+vue/no-side-effects-in-computed-properties [vue]: error
+vue/no-spaces-around-equal-signs-in-attribute [vue]: error
+vue/no-template-key [vue]: error
+vue/no-template-shadow [vue]: error
+vue/no-textarea-mustache [vue]: error
+vue/no-undef-properties [vue]: error
+vue/no-unused-components [vue]: error
+vue/no-unused-vars [vue]: error
+vue/no-use-computed-property-like-method [vue]: error
+vue/no-use-v-if-with-v-for [vue]: error
+vue/no-useless-template-attributes [vue]: error
+vue/no-v-for-template-key-on-child [vue]: error
+vue/no-v-html [vue]: error
+vue/no-v-text-v-html-on-component [vue]: error
+vue/no-watch-after-await [vue]: error
+vue/one-component-per-file [vue]: error
+vue/order-in-components [vue]: error
+vue/prefer-import-from-vue [vue]: error
+vue/prop-name-casing [vue]: error
+vue/require-component-is [vue]: error
+vue/require-default-prop [vue]: error
+vue/require-explicit-emits [vue]: error
+vue/require-prop-type-constructor [vue]: error
+vue/require-prop-types [vue]: error
+vue/require-render-return [vue]: error
+vue/require-slots-as-functions [vue]: error
+vue/require-toggle-inside-transition [vue]: error
+vue/require-v-for-key [vue]: error
+vue/require-valid-default-prop [vue]: error
+vue/return-in-computed-property [vue]: error
+vue/return-in-emits-validator [vue]: error
+vue/this-in-template [vue]: error
+vue/use-v-on-exact [vue]: error
+vue/v-bind-style [vue]: error
+vue/v-on-event-hyphenation [vue]: error ["always",{"autofix":true}]
+vue/v-on-style [vue]: error
+vue/v-slot-style [vue]: error
+vue/valid-attribute-name [vue]: error
+vue/valid-define-emits [vue]: error
+vue/valid-define-options [vue]: error
+vue/valid-define-props [vue]: error
+vue/valid-next-tick [vue]: error
+vue/valid-template-root [vue]: error
+vue/valid-v-bind [vue]: error
+vue/valid-v-cloak [vue]: error
+vue/valid-v-else [vue]: error
+vue/valid-v-else-if [vue]: error
+vue/valid-v-for [vue]: error
+vue/valid-v-html [vue]: error
+vue/valid-v-if [vue]: error
+vue/valid-v-is [vue]: error
+vue/valid-v-memo [vue]: error
+vue/valid-v-model [vue]: error
+vue/valid-v-on [vue]: error
+vue/valid-v-once [vue]: error
+vue/valid-v-pre [vue]: error
+vue/valid-v-show [vue]: error
+vue/valid-v-slot [vue]: error
+vue/valid-v-text [vue]: error
+yoda [vue]: error ["never",{"exceptRange":false,"onlyEquality":false}]"
+`;
+
+exports[`cloudflightVueConfig applies the expected rules to valid/OnlyTemplate.vue 1`] = `
+"@cloudflight/typescript/no-on-event-assign [vue]: error
+@typescript-eslint/adjacent-overload-signatures [vue]: error
+@typescript-eslint/array-type [vue]: error
+@typescript-eslint/ban-ts-comment [vue]: error [{"minimumDescriptionLength":10}]
+@typescript-eslint/ban-tslint-comment [vue]: error
+@typescript-eslint/class-literal-property-style [vue]: error
+@typescript-eslint/consistent-indexed-object-style [vue]: error
+@typescript-eslint/consistent-type-assertions [vue]: error [{"assertionStyle":"never"}]
+@typescript-eslint/consistent-type-definitions [vue]: error
+@typescript-eslint/default-param-last [vue]: error
+@typescript-eslint/member-ordering [vue]: error [{"default":["static-field","field","signature","constructor","static-method","method"]}]
+@typescript-eslint/no-array-constructor [vue]: error
+@typescript-eslint/no-confusing-non-null-assertion [vue]: error
+@typescript-eslint/no-duplicate-enum-values [vue]: error
+@typescript-eslint/no-dynamic-delete [vue]: error
+@typescript-eslint/no-empty-function [vue]: error [{"allow":[]}]
+@typescript-eslint/no-empty-object-type [vue]: error
+@typescript-eslint/no-explicit-any [vue]: error
+@typescript-eslint/no-extra-non-null-assertion [vue]: error
+@typescript-eslint/no-extraneous-class [vue]: error
+@typescript-eslint/no-inferrable-types [vue]: error [{"ignoreParameters":true}]
+@typescript-eslint/no-invalid-this [vue]: error [{"capIsConstructor":true}]
+@typescript-eslint/no-invalid-void-type [vue]: error [{"allowInGenericTypeArguments":true,"allowAsThisParameter":true}]
+@typescript-eslint/no-misused-new [vue]: error
+@typescript-eslint/no-namespace [vue]: error
+@typescript-eslint/no-non-null-asserted-nullish-coalescing [vue]: error
+@typescript-eslint/no-non-null-asserted-optional-chain [vue]: error
+@typescript-eslint/no-non-null-assertion [vue]: error
+@typescript-eslint/no-require-imports [vue]: error
+@typescript-eslint/no-shadow [vue]: error
+@typescript-eslint/no-this-alias [vue]: error
+@typescript-eslint/no-unnecessary-type-constraint [vue]: error
+@typescript-eslint/no-unsafe-declaration-merging [vue]: error
+@typescript-eslint/no-unsafe-function-type [vue]: error
+@typescript-eslint/no-unused-expressions [vue]: error [{"allowShortCircuit":false,"allowTaggedTemplates":false,"allowTernary":false,"enforceForJSX":true}]
+@typescript-eslint/no-unused-vars [vue]: error [{"args":"none","ignoreRestSiblings":true}]
+@typescript-eslint/no-useless-constructor [vue]: error
+@typescript-eslint/no-wrapper-object-types [vue]: error
+@typescript-eslint/prefer-as-const [vue]: error
+@typescript-eslint/prefer-for-of [vue]: error
+@typescript-eslint/prefer-function-type [vue]: error
+@typescript-eslint/prefer-literal-enum-member [vue]: error
+@typescript-eslint/prefer-namespace-keyword [vue]: error
+@typescript-eslint/triple-slash-reference [vue]: error
+array-callback-return [vue]: error [{"allowImplicit":true,"checkForEach":false,"allowVoid":false}]
+block-scoped-var [vue]: error
+camelcase [vue]: error [{"allow":[],"ignoreDestructuring":false,"ignoreGlobals":false,"ignoreImports":false,"properties":"never"}]
+complexity [vue]: error [{"max":20}]
+constructor-super [vue]: error
+curly [vue]: error ["all"]
+default-case-last [vue]: error
+dot-notation [vue]: error [{"allowKeywords":true,"allowPattern":""}]
+eqeqeq [vue]: error ["always",{"null":"ignore"}]
+for-direction [vue]: error
+func-names [vue]: warn ["always",{}]
+func-style [vue]: error ["declaration",{"allowArrowFunctions":false,"allowTypeAnnotation":false,"overrides":{}}]
+getter-return [vue]: error [{"allowImplicit":true}]
+grouped-accessor-pairs [vue]: error ["anyOrder",{"enforceForTSTypes":false}]
+guard-for-in [vue]: error
+max-classes-per-file [vue]: error [1]
+new-cap [vue]: error [{"capIsNew":false,"capIsNewExceptions":["Immutable.Map","Immutable.Set","Immutable.List"],"newIsCap":true,"newIsCapExceptions":[],"properties":true}]
+no-async-promise-executor [vue]: error
+no-bitwise [vue]: error [{"allow":[],"int32Hint":false}]
+no-caller [vue]: error
+no-case-declarations [vue]: error
+no-class-assign [vue]: error
+no-compare-neg-zero [vue]: error
+no-cond-assign [vue]: error ["always"]
+no-console [vue]: error [{}]
+no-const-assign [vue]: error
+no-constant-binary-expression [vue]: error [{"checkRelationalComparisons":false}]
+no-constant-condition [vue]: warn [{"checkLoops":"allExceptWhileTrue"}]
+no-constructor-return [vue]: error
+no-control-regex [vue]: error
+no-debugger [vue]: error
+no-delete-var [vue]: error
+no-dupe-args [vue]: error
+no-dupe-class-members [vue]: error
+no-dupe-else-if [vue]: error
+no-dupe-keys [vue]: error
+no-duplicate-case [vue]: error
+no-duplicate-imports [vue]: error [{"includeExports":false,"allowSeparateTypeImports":false}]
+no-else-return [vue]: error [{"allowElseIf":true}]
+no-empty [vue]: error [{"allowEmptyCatch":false}]
+no-empty-character-class [vue]: error
+no-empty-pattern [vue]: error [{"allowObjectPatternsAsParameters":false}]
+no-empty-static-block [vue]: error
+no-eval [vue]: error [{"allowIndirect":false}]
+no-ex-assign [vue]: error
+no-extend-native [vue]: error [{"exceptions":[]}]
+no-extra-bind [vue]: error
+no-extra-boolean-cast [vue]: error [{}]
+no-fallthrough [vue]: error [{"allowEmptyCase":false,"reportUnusedFallthroughComment":false}]
+no-func-assign [vue]: error
+no-global-assign [vue]: error [{"exceptions":[]}]
+no-implied-eval [vue]: error
+no-import-assign [vue]: error
+no-inner-declarations [vue]: error ["functions",{"blockScopedFunctions":"allow"}]
+no-invalid-regexp [vue]: error [{}]
+no-irregular-whitespace [vue]: error [{"skipComments":false,"skipJSXText":false,"skipRegExps":false,"skipStrings":true,"skipTemplates":false}]
+no-iterator [vue]: error
+no-label-var [vue]: error
+no-labels [vue]: error [{"allowLoop":false,"allowSwitch":false}]
+no-lone-blocks [vue]: error
+no-lonely-if [vue]: error
+no-loop-func [vue]: error
+no-loss-of-precision [vue]: error
+no-magic-numbers [vue]: error [{"detectObjects":false,"enforceConst":true,"ignore":[-1,0,1,2,10,1000],"ignoreArrayIndexes":true,"ignoreDefaultValues":true,"ignoreClassFieldInitialValues":false,"ignoreEnums":true,"ignoreNumericLiteralTypes":true,"ignoreReadonlyClassProperties":true,"ignoreTypeIndexes":true}]
+no-misleading-character-class [vue]: error [{"allowEscape":false}]
+no-multi-assign [vue]: error [{"ignoreNonDeclaration":false}]
+no-multi-str [vue]: error
+no-nested-ternary [vue]: error
+no-new [vue]: error
+no-new-func [vue]: error
+no-new-native-nonconstructor [vue]: error
+no-new-wrappers [vue]: error
+no-nonoctal-decimal-escape [vue]: error
+no-obj-calls [vue]: error
+no-octal [vue]: error
+no-octal-escape [vue]: error
+no-param-reassign [vue]: error
+no-promise-executor-return [vue]: error [{"allowVoid":false}]
+no-proto [vue]: error
+no-prototype-builtins [vue]: error
+no-redeclare [vue]: error [{"builtinGlobals":true}]
+no-regex-spaces [vue]: error
+no-restricted-globals [vue]: error [{"name":"isFinite","message":"Use Number.isFinite instead https://github.com/airbnb/javascript#standard-library--isfinite"},{"name":"isNaN","message":"Use Number.isNaN instead https://github.com/airbnb/javascript#standard-library--isnan"},"addEventListener","blur","close","closed","confirm","defaultStatus","defaultstatus","event","external","find","focus","frameElement","frames","history","innerHeight","innerWidth","length","location","locationbar","menubar","moveBy","moveTo","name","onblur","onerror","onfocus","onload","onresize","onunload","open","opener","opera","outerHeight","outerWidth","pageXOffset","pageYOffset","parent","print","removeEventListener","resizeBy","resizeTo","screen","screenLeft","screenTop","screenX","screenY","scroll","scrollbars","scrollBy","scrollTo","scrollX","scrollY","self","status","statusbar","stop","toolbar","top"]
+no-restricted-properties [vue]: error [{"object":"arguments","property":"callee","message":"arguments.callee is deprecated"},{"object":"global","property":"isFinite","message":"Please use Number.isFinite instead"},{"object":"self","property":"isFinite","message":"Please use Number.isFinite instead"},{"object":"window","property":"isFinite","message":"Please use Number.isFinite instead"},{"object":"global","property":"isNaN","message":"Please use Number.isNaN instead"},{"object":"self","property":"isNaN","message":"Please use Number.isNaN instead"},{"object":"window","property":"isNaN","message":"Please use Number.isNaN instead"},{"property":"__defineGetter__","message":"Please use Object.defineProperty instead."},{"property":"__defineSetter__","message":"Please use Object.defineProperty instead."},{"object":"Math","property":"pow","message":"Use the exponentiation operator (**) instead."},{"property":"bypassSecurityTrustHtml","message":"Bypassing the sanitizer allows XSS, let Angular sanitize the value instead."},{"property":"bypassSecurityTrustStyle","message":"Bypassing the sanitizer allows XSS, let Angular sanitize the value instead."},{"property":"bypassSecurityTrustScript","message":"Bypassing the sanitizer allows XSS, let Angular sanitize the value instead."},{"property":"bypassSecurityTrustUrl","message":"Bypassing the sanitizer allows XSS, let Angular sanitize the value instead."},{"property":"bypassSecurityTrustResourceUrl","message":"Bypassing the sanitizer allows XSS, let Angular sanitize the value instead."}]
+no-restricted-syntax [vue]: error [{"selector":"LabeledStatement","message":"Labels are a form of GOTO; using them makes code confusing and hard to maintain and understand."},{"selector":"WithStatement","message":"\`with\` is disallowed in strict mode because it makes code impossible to predict and optimize."}]
+no-return-assign [vue]: error ["always"]
+no-script-url [vue]: error
+no-self-assign [vue]: error [{"props":true}]
+no-self-compare [vue]: error
+no-sequences [vue]: error [{"allowInParentheses":true}]
+no-setter-return [vue]: error
+no-shadow-restricted-names [vue]: error [{"reportGlobalThis":true}]
+no-sparse-arrays [vue]: error
+no-template-curly-in-string [vue]: error
+no-this-before-super [vue]: error
+no-throw-literal [vue]: error
+no-unassigned-vars [vue]: error
+no-undef [vue]: error [{"typeof":false}]
+no-undef-init [vue]: error
+no-underscore-dangle [vue]: error [{"allow":[],"allowAfterSuper":false,"allowAfterThis":true,"allowAfterThisConstructor":false,"allowFunctionParams":true,"allowInArrayDestructuring":true,"allowInObjectDestructuring":true,"enforceInClassFields":false,"enforceInMethodNames":false}]
+no-unexpected-multiline [vue]: error
+no-unneeded-ternary [vue]: error [{"defaultAssignment":false}]
+no-unreachable [vue]: error
+no-unreachable-loop [vue]: error [{"ignore":[]}]
+no-unsafe-finally [vue]: error
+no-unsafe-negation [vue]: error [{"enforceForOrderingRelations":false}]
+no-unsafe-optional-chaining [vue]: error [{"disallowArithmeticOperators":true}]
+no-unsanitized/method [vue]: error
+no-unsanitized/property [vue]: error
+no-unused-labels [vue]: error
+no-unused-private-class-members [vue]: error
+no-useless-assignment [vue]: error
+no-useless-backreference [vue]: error
+no-useless-catch [vue]: error
+no-useless-computed-key [vue]: error [{"enforceForClassMembers":true}]
+no-useless-concat [vue]: error
+no-useless-escape [vue]: error [{"allowRegexCharacters":[]}]
+no-useless-rename [vue]: error [{"ignoreDestructuring":false,"ignoreImport":false,"ignoreExport":false}]
+no-useless-return [vue]: error
+no-var [vue]: error
+no-with [vue]: error
+object-shorthand [vue]: error ["always"]
+one-var [vue]: error ["never"]
+one-var-declaration-per-line [vue]: error ["always"]
+prefer-arrow-callback [vue]: error [{"allowNamedFunctions":false,"allowUnboundThis":true}]
+prefer-const [vue]: error [{"destructuring":"any","ignoreReadBeforeAssign":false}]
+prefer-exponentiation-operator [vue]: error
+prefer-numeric-literals [vue]: error
+prefer-object-spread [vue]: error
+prefer-promise-reject-errors [vue]: error [{"allowEmptyReject":false}]
+prefer-regex-literals [vue]: error [{"disallowRedundantWrapping":true}]
+prefer-rest-params [vue]: error
+prefer-spread [vue]: error
+prefer-template [vue]: error
+preserve-caught-error [vue]: error [{"requireCatchParameter":false,"errorClassNames":[]}]
+radix [vue]: error
+require-await [vue]: error
+require-yield [vue]: error
+security/detect-bidi-characters [vue]: error
+security/detect-disable-mustache-escape [vue]: warn
+security/detect-non-literal-regexp [vue]: warn
+security/detect-unsafe-regex [vue]: warn
+strict [vue]: error ["never"]
+symbol-description [vue]: error
+unicode-bom [vue]: error ["never"]
+use-isnan [vue]: error [{"enforceForIndexOf":false,"enforceForSwitchCase":true}]
+valid-typeof [vue]: error [{"requireStringLiterals":false}]
+vue/attribute-hyphenation [vue]: error
+vue/attributes-order [vue]: error
+vue/block-lang [vue]: error [{"script":{"lang":"ts"},"style":{"lang":"scss"}}]
+vue/block-order [vue]: error
+vue/comment-directive [vue]: error
+vue/component-api-style [vue]: error [["script-setup","composition"]]
+vue/component-definition-name-casing [vue]: error
+vue/define-emits-declaration [vue]: error ["type-based"]
+vue/define-macros-order [vue]: error [{"order":["defineProps","defineEmits"]}]
+vue/define-props-declaration [vue]: error ["type-based"]
+vue/first-attribute-linebreak [vue]: error
+vue/html-button-has-type [vue]: error
+vue/html-closing-bracket-spacing [vue]: error
+vue/html-end-tags [vue]: error
+vue/html-quotes [vue]: error
+vue/jsx-uses-vars [vue]: error
+vue/multi-word-component-names [vue]: error
+vue/mustache-interpolation-spacing [vue]: error
+vue/no-arrow-functions-in-watch [vue]: error
+vue/no-async-in-computed-properties [vue]: error
+vue/no-child-content [vue]: error
+vue/no-computed-properties-in-data [vue]: error
+vue/no-deprecated-data-object-declaration [vue]: error
+vue/no-deprecated-delete-set [vue]: error
+vue/no-deprecated-destroyed-lifecycle [vue]: error
+vue/no-deprecated-dollar-listeners-api [vue]: error
+vue/no-deprecated-dollar-scopedslots-api [vue]: error
+vue/no-deprecated-events-api [vue]: error
+vue/no-deprecated-filter [vue]: error
+vue/no-deprecated-functional-template [vue]: error
+vue/no-deprecated-html-element-is [vue]: error
+vue/no-deprecated-inline-template [vue]: error
+vue/no-deprecated-model-definition [vue]: error
+vue/no-deprecated-props-default-this [vue]: error
+vue/no-deprecated-router-link-tag-prop [vue]: error
+vue/no-deprecated-scope-attribute [vue]: error
+vue/no-deprecated-slot-attribute [vue]: error
+vue/no-deprecated-slot-scope-attribute [vue]: error
+vue/no-deprecated-v-bind-sync [vue]: error
+vue/no-deprecated-v-is [vue]: error
+vue/no-deprecated-v-on-native-modifier [vue]: error
+vue/no-deprecated-v-on-number-modifiers [vue]: error
+vue/no-deprecated-vue-config-keycodes [vue]: error
+vue/no-dupe-keys [vue]: error
+vue/no-dupe-v-else-if [vue]: error
+vue/no-duplicate-attributes [vue]: error
+vue/no-export-in-script-setup [vue]: error
+vue/no-expose-after-await [vue]: error
+vue/no-lifecycle-after-await [vue]: error
+vue/no-lone-template [vue]: error
+vue/no-multi-spaces [vue]: error
+vue/no-multiple-slot-args [vue]: error
+vue/no-mutating-props [vue]: error
+vue/no-parsing-error [vue]: error
+vue/no-ref-as-operand [vue]: error
+vue/no-required-prop-with-default [vue]: error
+vue/no-reserved-component-names [vue]: error
+vue/no-reserved-keys [vue]: error
+vue/no-reserved-props [vue]: error
+vue/no-shared-component-data [vue]: error
+vue/no-side-effects-in-computed-properties [vue]: error
+vue/no-spaces-around-equal-signs-in-attribute [vue]: error
+vue/no-template-key [vue]: error
+vue/no-template-shadow [vue]: error
+vue/no-textarea-mustache [vue]: error
+vue/no-undef-properties [vue]: error
+vue/no-unused-components [vue]: error
+vue/no-unused-vars [vue]: error
+vue/no-use-computed-property-like-method [vue]: error
+vue/no-use-v-if-with-v-for [vue]: error
+vue/no-useless-template-attributes [vue]: error
+vue/no-v-for-template-key-on-child [vue]: error
+vue/no-v-html [vue]: error
+vue/no-v-text-v-html-on-component [vue]: error
+vue/no-watch-after-await [vue]: error
+vue/one-component-per-file [vue]: error
+vue/order-in-components [vue]: error
+vue/prefer-import-from-vue [vue]: error
+vue/prop-name-casing [vue]: error
+vue/require-component-is [vue]: error
+vue/require-default-prop [vue]: error
+vue/require-explicit-emits [vue]: error
+vue/require-prop-type-constructor [vue]: error
+vue/require-prop-types [vue]: error
+vue/require-render-return [vue]: error
+vue/require-slots-as-functions [vue]: error
+vue/require-toggle-inside-transition [vue]: error
+vue/require-v-for-key [vue]: error
+vue/require-valid-default-prop [vue]: error
+vue/return-in-computed-property [vue]: error
+vue/return-in-emits-validator [vue]: error
+vue/this-in-template [vue]: error
+vue/use-v-on-exact [vue]: error
+vue/v-bind-style [vue]: error
+vue/v-on-event-hyphenation [vue]: error ["always",{"autofix":true}]
+vue/v-on-style [vue]: error
+vue/v-slot-style [vue]: error
+vue/valid-attribute-name [vue]: error
+vue/valid-define-emits [vue]: error
+vue/valid-define-options [vue]: error
+vue/valid-define-props [vue]: error
+vue/valid-next-tick [vue]: error
+vue/valid-template-root [vue]: error
+vue/valid-v-bind [vue]: error
+vue/valid-v-cloak [vue]: error
+vue/valid-v-else [vue]: error
+vue/valid-v-else-if [vue]: error
+vue/valid-v-for [vue]: error
+vue/valid-v-html [vue]: error
+vue/valid-v-if [vue]: error
+vue/valid-v-is [vue]: error
+vue/valid-v-memo [vue]: error
+vue/valid-v-model [vue]: error
+vue/valid-v-on [vue]: error
+vue/valid-v-once [vue]: error
+vue/valid-v-pre [vue]: error
+vue/valid-v-show [vue]: error
+vue/valid-v-slot [vue]: error
+vue/valid-v-text [vue]: error
+yoda [vue]: error ["never",{"exceptRange":false,"onlyEquality":false}]"
+`;

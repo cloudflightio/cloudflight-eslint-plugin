@@ -2,16 +2,23 @@ name: publish-to-npm
 on:
     release:
         types: [created]
+permissions:
+    contents: read
 jobs:
     publish:
         runs-on: ubuntu-latest
+        timeout-minutes: 20
         steps:
-            - uses: actions/checkout@v4
-            - uses: volta-cli/action@v4.0.1
+            - uses: actions/checkout@v7
+            - uses: volta-cli/action@v5.0.0
             - name: Install
               run: yarn install --immutable --check-cache
             - name: Build
               run: yarn run build
+            - name: Lint
+              run: yarn run lint
+            - name: Test
+              run: yarn run test
             - name: Publish
               run: yarn run publish-workspaces
               env:

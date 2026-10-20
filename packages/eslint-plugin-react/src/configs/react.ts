@@ -2,7 +2,6 @@ import {TSESLint} from '@typescript-eslint/utils';
 
 export const reactRules: TSESLint.Linter.RulesRecord = {
     'react/static-property-placement': ['error', 'static public field'],
-    'react/jsx-fragments': ['error', 'element'],
     'react/sort-comp': [
         1,
         {
@@ -18,5 +17,7 @@ export const reactRules: TSESLint.Linter.RulesRecord = {
             ],
         },
     ],
-    'react/no-array-index-key': ['error'],
+    'react/no-array-index-key': 'error',
+    // like innerHTML, which no-unsanitized reports
+    'react/no-danger': 'error',
 };

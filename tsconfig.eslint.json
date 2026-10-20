@@ -1,5 +1,5 @@
 {
-    "include": ["scripts/**/*.mjs", "eslint.config.mjs", "eslint.format.mjs", "jest.config.base.ts"],
+    "include": ["scripts/**/*.mjs", "eslint.config.mjs", "eslint.format.mjs", "jest.config.base.ts", "jest.setup.ts", "test/**/*.ts"],
     "compilerOptions": {
         "target": "ES2015",
         "useDefineForClassFields": true,
@@ -11,7 +11,7 @@
         "rootDir": ".",
         "outDir": "./dist/",
         "importHelpers": true,
-        "importsNotUsedAsValues": "remove",
+        "verbatimModuleSyntax": false,
         "stripInternal": true,
 
         "isolatedModules": true,

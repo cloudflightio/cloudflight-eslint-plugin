@@ -1,3 +1,5 @@
+import type {TSESTree} from '@typescript-eslint/utils';
+
 import {createRule} from '../../util/create-rule';
 
 const disallowedEvents = [
@@ -92,24 +94,64 @@ const disallowedEvents = [
     'onwebkitanimationstart',
     'onwebkittransitionend',
     'onwheel',
+    // window, worker and websocket handlers
+    'onafterprint',
+    'onbeforeprint',
+    'onbeforeunload',
+    'onhashchange',
+    'onlanguagechange',
+    'onmessage',
+    'onmessageerror',
+    'onoffline',
+    'ononline',
+    'onopen',
+    'onpagehide',
+    'onpageshow',
+    'onpopstate',
+    'onrejectionhandled',
+    'onstorage',
+    'onunhandledrejection',
+    'onunload',
 ];
+
+// a string literal, or a template literal without expressions
+function constantString(node: TSESTree.Node | undefined): string | undefined {
+    if (node?.type === 'Literal' && typeof node.value === 'string') {
+        return node.value;
+    }
+
+    if (node?.type === 'TemplateLiteral' && node.expressions.length === 0) {
+        return node.quasis[0]?.value.cooked ?? undefined;
+    }
+
+    return undefined;
+}
+
+function assignedPropertyName(member: TSESTree.MemberExpression): string | undefined {
+    if (!member.computed && member.property.type === 'Identifier') {
+        return member.property.name;
+    }
+
+    // dynamic keys cannot be resolved statically, only constant strings are checked
+    return member.computed ? constantString(member.property) : undefined;
+}
 
 export const NoOnEventAssignName = 'no-on-event-assign';
 /**
  * Comment needed to prevent type declaration generation, which is broken.
  * @internal
  */
-export const NoOnEventAssign = createRule<[], 'noAssign'>({
+export const NoOnEventAssign = createRule<[], 'noAssign' | 'noAttribute'>({
     name: NoOnEventAssignName,
     meta: {
         type: 'problem',
-        fixable: 'code',
         docs: {
-            description: 'Enforces that all packages have absolute versions.',
+            description: 'Disallows assigning event handlers to `on*` properties and attributes, use `addEventListener` instead.',
         },
         schema: [],
         messages: {
             noAssign: 'Directly assigning to the `on` events is not recommended. Use `addEventListener` instead.',
+            noAttribute: 'An `on` attribute runs a string as code. Use `addEventListener` instead.',
         },
     },
     defaultOptions: [],
@@ -120,12 +162,24 @@ export const NoOnEventAssign = createRule<[], 'noAssign'>({
                     return;
                 }
 
-                if (node.left.property.type !== 'Identifier') {
+                const name = assignedPropertyName(node.left);
+
+                if (name !== undefined && disallowedEvents.includes(name)) {
+                    context.report({node, messageId: 'noAssign'});
+                }
+            },
+            CallExpression(node) {
+                const callee = node.callee;
+
+                if (callee.type !== 'MemberExpression' || callee.computed || callee.property.type !== 'Identifier') {
                     return;
                 }
 
-                if (disallowedEvents.includes(node.left.property.name)) {
-                    context.report({node, messageId: 'noAssign'});
+                // attribute names are case-insensitive
+                const name = constantString(node.arguments[0])?.toLowerCase();
+
+                if (callee.property.name === 'setAttribute' && name !== undefined && disallowedEvents.includes(name)) {
+                    context.report({node, messageId: 'noAttribute'});
                 }
             },
         };

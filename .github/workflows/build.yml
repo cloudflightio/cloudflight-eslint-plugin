@@ -4,13 +4,24 @@ on:
         branches:
             - 'main'
     pull_request:
+permissions:
+    contents: read
+concurrency:
+    # a new push cancels the running checks of the same branch
+    group: ${{ github.workflow }}-${{ github.ref }}
+    cancel-in-progress: true
 jobs:
     build:
-        name: Build
-        runs-on: ubuntu-latest
+        name: Build (${{ matrix.os }})
+        runs-on: ${{ matrix.os }}
+        timeout-minutes: 20
+        strategy:
+            fail-fast: false
+            matrix:
+                os: [ubuntu-latest, windows-latest, macos-latest]
         steps:
-            - uses: actions/checkout@v4
-            - uses: volta-cli/action@v4.0.1
+            - uses: actions/checkout@v7
+            - uses: volta-cli/action@v5.0.0
             - name: Install
               run: yarn install --immutable --check-cache
             - name: Build

@@ -1,55 +1,98 @@
 import type {FlatConfig} from '@typescript-eslint/utils/ts-eslint';
+import type {Linter} from 'eslint';
 
-import {CloudflightEslintPluginSettings, cloudflightTypescriptConfig} from '@cloudflight/eslint-plugin-typescript';
-import angular from 'angular-eslint';
+import {CloudflightEslintPluginSettings, cloudflightTypescriptConfig, cloudflightTypescriptFormatConfig} from '@cloudflight/eslint-plugin-typescript';
+import angularEslint from 'angular-eslint';
 import tseslint from 'typescript-eslint';
 
-import {angularEslintRules} from './configs/angular-eslint';
-import {angularTemplateEslintRules} from './configs/angular-eslint-template';
+import {angularRules} from './configs/angular';
+import {angularTemplateRules} from './configs/angular-template';
+import {angularTemplateFormatRules} from './configs/angular-template-format';
 import {eslintRules} from './configs/eslint';
-import {typescriptEslintRules} from './configs/typescript-eslint';
+import {typescriptRules} from './configs/typescript';
 
-export function cloudflightAngularTypescriptConfig(settings: CloudflightEslintPluginSettings): FlatConfig.ConfigArray {
+export function cloudflightAngularTypescriptConfig(settings: CloudflightEslintPluginSettings): Linter.Config[] {
     // eslint-disable-next-line @typescript-eslint/no-deprecated -- tseslint.config is deprecated but defineConfig has type incompatibilities with typescript-eslint
-    return tseslint.config(
+    return eslintConfigs(tseslint.config(
         ...cloudflightTypescriptConfig(settings),
         {
             files: ['**/*.{ts,mts,cts}'],
             extends: [
-                ...angular.configs.tsRecommended,
+                ...angularEslint.configs.tsRecommended,
             ],
-            processor: angular.processInlineTemplates,
+            processor: angularEslint.processInlineTemplates,
             name: 'cloudflight/angular/typescript/rules',
             rules: {
                 ...eslintRules,
-                ...typescriptEslintRules,
-                ...angularEslintRules,
+                ...typescriptRules,
+                ...angularRules,
             },
         },
-    );
+    ));
 }
 
 // eslint-disable-next-line @typescript-eslint/no-deprecated -- tseslint.config is deprecated but defineConfig has type incompatibilities with typescript-eslint
-export const cloudflightAngularTemplateConfig = tseslint.config(
+export const cloudflightAngularTemplateConfig: Linter.Config[] = eslintConfigs(tseslint.config(
     {
         files: ['**/*.html'],
         extends: [
-            ...angular.configs.templateRecommended,
-            ...angular.configs.templateAccessibility,
+            ...angularEslint.configs.templateRecommended,
+            ...angularEslint.configs.templateAccessibility,
         ],
         name: 'cloudflight/angular/template/rules',
         rules: {
-            ...angularTemplateEslintRules,
-            // todo: this should be its own config
-            // ...formatAngularTemplateEslintRules,
+            ...angularTemplateRules,
         },
     },
-);
+));
 
-export function cloudflightAngularConfig(settings: CloudflightEslintPluginSettings): FlatConfig.ConfigArray {
+// eslint-disable-next-line @typescript-eslint/no-deprecated -- tseslint.config is deprecated but defineConfig has type incompatibilities with typescript-eslint
+export const cloudflightAngularTemplateFormatConfig: Linter.Config[] = eslintConfigs(tseslint.config(
+    {
+        files: ['**/*.html'],
+        plugins: {
+            '@angular-eslint/template': angularEslint.templatePlugin,
+        },
+        languageOptions: {
+            parser: angularEslint.templateParser,
+        },
+        // the template lint rules do not run here, --fix would remove their disable comments as unused
+        linterOptions: {
+            reportUnusedDisableDirectives: 'off',
+        },
+        name: 'cloudflight/angular/template/format-rules',
+        rules: {
+            ...angularTemplateFormatRules,
+        },
+    },
+));
+
+export function cloudflightAngularConfig(settings: CloudflightEslintPluginSettings): Linter.Config[] {
     // eslint-disable-next-line @typescript-eslint/no-deprecated -- tseslint.config is deprecated but defineConfig has type incompatibilities with typescript-eslint
-    return tseslint.config(
+    return eslintConfigs(tseslint.config(
         ...cloudflightAngularTypescriptConfig(settings),
         ...cloudflightAngularTemplateConfig,
-    );
+    ));
+}
+
+export function cloudflightAngularFormatConfig(settings: CloudflightEslintPluginSettings): Linter.Config[] {
+    // eslint-disable-next-line @typescript-eslint/no-deprecated -- tseslint.config is deprecated but defineConfig has type incompatibilities with typescript-eslint
+    return eslintConfigs(tseslint.config(
+        ...cloudflightTypescriptFormatConfig(settings),
+        {
+            files: ['**/*.{ts,mts,cts}'],
+            // no rules, only so that disable comments for angular rules are known in the format run
+            plugins: {
+                '@angular-eslint': angularEslint.tsPlugin,
+            },
+            name: 'cloudflight/angular/typescript/format-plugins',
+        },
+        ...cloudflightAngularTemplateFormatConfig,
+    ));
+}
+
+// typescript-eslint's config type is not accepted by eslint's defineConfig or a typed eslint.config.ts
+function eslintConfigs(configs: FlatConfig.ConfigArray): Linter.Config[] {
+    // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
+    return configs as Linter.Config[];
 }

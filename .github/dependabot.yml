@@ -9,6 +9,27 @@ updates:
       directory: '/' # Location of package manifests
       schedule:
           interval: 'monthly'
+      # raises the ranges with the lockfile, a new minor of a rule provider comes as an update with new snapshots
+      versioning-strategy: increase
+      groups:
+          # eslint, typescript-eslint and the plugins have peer dependencies on each other, update them together
+          eslint-ecosystem:
+              patterns:
+                  - 'eslint'
+                  - '@eslint/*'
+                  - 'eslint-*'
+                  - '@typescript-eslint/*'
+                  - 'typescript-eslint'
+                  - 'typescript'
+                  - '@stylistic/eslint-plugin'
+                  - 'angular-eslint'
+                  - '@vue/eslint-config-typescript'
+                  - 'vue-eslint-parser'
+              # eslint-plugin-react does not support eslint 10 yet and runs through @eslint/compat, check its releases by hand
+              # see: https://github.com/jsx-eslint/eslint-plugin-react/issues/3977
+              exclude-patterns:
+                  - 'eslint-plugin-react'
+                  - 'eslint-plugin-jsx-a11y'
     - package-ecosystem: 'github-actions'
       directory: '/'
       schedule:

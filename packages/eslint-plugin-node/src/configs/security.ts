@@ -1,28 +1,19 @@
 import {TSESLint} from '@typescript-eslint/utils';
-import pluginSecurity from 'eslint-plugin-security';
 
-const recommendedRules = pluginSecurity.configs.recommended.rules;
-const updatedRules = Object.entries<TSESLint.Linter.RuleEntry>(recommendedRules)
-    .map(([key, value]) => [key, warningEntryToError(value)]);
-
-// yes, we know this works correctly
-// eslint-disable-next-line @typescript-eslint/consistent-type-assertions
-export const securityRules = Object.fromEntries(updatedRules) as TSESLint.Linter.RulesRecord;
-
-function warningEntryToError(value: TSESLint.Linter.RuleEntry): TSESLint.Linter.RuleEntry {
-    const level = Array.isArray(value) ? value[0] : value;
-    const updatedLevel = warningLevelToError(level);
-
-    return Array.isArray(value) ? [updatedLevel, ...value.slice(1)] : updatedLevel;
-}
-
-function warningLevelToError(level: TSESLint.Linter.RuleLevel): TSESLint.Linter.RuleLevel {
-    if (level === 'warn') {
-        return 'error';
-    }
-    else if (level === 1) {
-        return 'error';
-    }
-
-    return level;
-}
+// every rule of eslint-plugin-security is an error in node projects, listed so that a plugin update cannot add one
+export const securityRules: TSESLint.Linter.RulesRecord = {
+    'security/detect-bidi-characters': 'error',
+    'security/detect-buffer-noassert': 'error',
+    'security/detect-child-process': 'error',
+    'security/detect-disable-mustache-escape': 'error',
+    'security/detect-eval-with-expression': 'error',
+    'security/detect-new-buffer': 'error',
+    'security/detect-no-csrf-before-method-override': 'error',
+    'security/detect-non-literal-fs-filename': 'error',
+    'security/detect-non-literal-regexp': 'error',
+    'security/detect-non-literal-require': 'error',
+    'security/detect-object-injection': 'error',
+    'security/detect-possible-timing-attacks': 'error',
+    'security/detect-pseudoRandomBytes': 'error',
+    'security/detect-unsafe-regex': 'error',
+};

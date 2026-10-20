@@ -1,9 +1,7 @@
 import type {TSESLint} from '@typescript-eslint/utils';
 
-const pluginPrefix = '@stylistic';
-
-export const formatEslintRules: TSESLint.Linter.RulesRecord = {
-    [`${pluginPrefix}/max-len`]: [
+export const formatRules: TSESLint.Linter.RulesRecord = {
+    '@stylistic/max-len': [
         'error',
         {
             ignorePattern: '^(import|export) [^,]+ from',
@@ -13,24 +11,24 @@ export const formatEslintRules: TSESLint.Linter.RulesRecord = {
             code: 280,
         },
     ],
-    [`${pluginPrefix}/eol-last`]: ['error', 'always'],
-    [`${pluginPrefix}/no-multi-spaces`]: [
+    '@stylistic/eol-last': ['error', 'always'],
+    '@stylistic/no-multi-spaces': [
         'error',
         {
             ignoreEOLComments: false,
         },
     ],
-    [`${pluginPrefix}/dot-location`]: ['error', 'property'],
-    [`${pluginPrefix}/template-tag-spacing`]: ['error', 'never'],
-    [`${pluginPrefix}/template-curly-spacing`]: ['error', 'never'],
-    [`${pluginPrefix}/switch-colon-spacing`]: [
+    '@stylistic/dot-location': ['error', 'property'],
+    '@stylistic/template-tag-spacing': ['error', 'never'],
+    '@stylistic/template-curly-spacing': ['error', 'never'],
+    '@stylistic/switch-colon-spacing': [
         'error',
         {
             after: true,
             before: false,
         },
     ],
-    [`${pluginPrefix}/spaced-comment`]: [
+    '@stylistic/spaced-comment': [
         'error',
         'always',
         {
@@ -60,8 +58,8 @@ export const formatEslintRules: TSESLint.Linter.RulesRecord = {
             },
         },
     ],
-    [`${pluginPrefix}/space-infix-ops`]: ['error'],
-    [`${pluginPrefix}/space-unary-ops`]: [
+    '@stylistic/space-infix-ops': 'error',
+    '@stylistic/space-unary-ops': [
         'error',
         {
             words: true,
@@ -69,9 +67,9 @@ export const formatEslintRules: TSESLint.Linter.RulesRecord = {
             overrides: {},
         },
     ],
-    [`${pluginPrefix}/space-in-parens`]: ['error', 'never'],
-    [`${pluginPrefix}/space-before-blocks`]: ['error'],
-    [`${pluginPrefix}/space-before-function-paren`]: [
+    '@stylistic/space-in-parens': ['error', 'never'],
+    '@stylistic/space-before-blocks': 'error',
+    '@stylistic/space-before-function-paren': [
         'error',
         {
             anonymous: 'always',
@@ -79,14 +77,14 @@ export const formatEslintRules: TSESLint.Linter.RulesRecord = {
             asyncArrow: 'always',
         },
     ],
-    [`${pluginPrefix}/semi-spacing`]: [
+    '@stylistic/semi-spacing': [
         'error',
         {
             before: false,
             after: true,
         },
     ],
-    [`${pluginPrefix}/padded-blocks`]: [
+    '@stylistic/padded-blocks': [
         'error',
         {
             blocks: 'never',
@@ -97,36 +95,36 @@ export const formatEslintRules: TSESLint.Linter.RulesRecord = {
             allowSingleLineBlocks: true,
         },
     ],
-    [`${pluginPrefix}/padding-line-between-statements`]: [
+    '@stylistic/padding-line-between-statements': [
         'error',
         {blankLine: 'always', prev: '*', next: 'return'},
         {blankLine: 'always', prev: 'const', next: '*'},
         {blankLine: 'any', prev: 'const', next: ['const', 'let', 'var']},
         {blankLine: 'always', prev: 'block', next: '*'},
     ],
-    [`${pluginPrefix}/brace-style`]: [
+    '@stylistic/brace-style': [
         'error',
         'stroustrup',
         {
             allowSingleLine: false,
         },
     ],
-    [`${pluginPrefix}/no-trailing-spaces`]: [
+    '@stylistic/no-trailing-spaces': [
         'error',
         {
             skipBlankLines: false,
             ignoreComments: false,
         },
     ],
-    [`${pluginPrefix}/no-whitespace-before-property`]: ['error'],
-    [`${pluginPrefix}/object-property-newline`]: [
+    '@stylistic/no-whitespace-before-property': 'error',
+    '@stylistic/object-property-newline': [
         'error',
         {
             allowAllPropertiesOnSameLine: true,
         },
     ],
-    [`${pluginPrefix}/no-mixed-spaces-and-tabs`]: ['error'],
-    [`${pluginPrefix}/no-multiple-empty-lines`]: [
+    '@stylistic/no-mixed-spaces-and-tabs': 'error',
+    '@stylistic/no-multiple-empty-lines': [
         'error',
         {
             max: 1,
@@ -134,14 +132,14 @@ export const formatEslintRules: TSESLint.Linter.RulesRecord = {
             maxEOF: 0,
         },
     ],
-    [`${pluginPrefix}/key-spacing`]: [
+    '@stylistic/key-spacing': [
         'error',
         {
             beforeColon: false,
             afterColon: true,
         },
     ],
-    [`${pluginPrefix}/keyword-spacing`]: [
+    '@stylistic/keyword-spacing': [
         'error',
         {
             before: true,
@@ -160,7 +158,7 @@ export const formatEslintRules: TSESLint.Linter.RulesRecord = {
         },
     ],
     // this rule is disabled, but configured in case anyone enables this rule.
-    [`${pluginPrefix}/line-comment-position`]: [
+    '@stylistic/line-comment-position': [
         'off',
         {
             position: 'above',
@@ -168,23 +166,23 @@ export const formatEslintRules: TSESLint.Linter.RulesRecord = {
             applyDefaultPatterns: true,
         },
     ],
-    [`${pluginPrefix}/lines-between-class-members`]: [
+    '@stylistic/lines-between-class-members': [
         'error',
         'always',
         {
             exceptAfterSingleLine: false,
         },
     ],
-    [`${pluginPrefix}/newline-per-chained-call`]: [
+    '@stylistic/newline-per-chained-call': [
         'error',
         {
             ignoreChainWithDepth: 4,
         },
     ],
-    [`${pluginPrefix}/function-call-argument-newline`]: ['error', 'consistent'],
-    [`${pluginPrefix}/function-call-spacing`]: ['error', 'never'],
-    [`${pluginPrefix}/function-paren-newline`]: ['error', 'multiline-arguments'],
-    [`${pluginPrefix}/comma-dangle`]: [
+    '@stylistic/function-call-argument-newline': ['error', 'consistent'],
+    '@stylistic/function-call-spacing': ['error', 'never'],
+    '@stylistic/function-paren-newline': ['error', 'multiline-arguments'],
+    '@stylistic/comma-dangle': [
         'error',
         {
             arrays: 'always-multiline',
@@ -192,9 +190,10 @@ export const formatEslintRules: TSESLint.Linter.RulesRecord = {
             imports: 'always-multiline',
             exports: 'always-multiline',
             functions: 'always-multiline',
+            enums: 'always-multiline',
         },
     ],
-    [`${pluginPrefix}/comma-style`]: [
+    '@stylistic/comma-style': [
         'error',
         'last',
         {
@@ -213,25 +212,25 @@ export const formatEslintRules: TSESLint.Linter.RulesRecord = {
             },
         },
     ],
-    [`${pluginPrefix}/comma-spacing`]: [
+    '@stylistic/comma-spacing': [
         'error',
         {
             before: false,
             after: true,
         },
     ],
-    [`${pluginPrefix}/computed-property-spacing`]: ['error', 'never'],
-    [`${pluginPrefix}/generator-star-spacing`]: [
+    '@stylistic/computed-property-spacing': ['error', 'never'],
+    '@stylistic/generator-star-spacing': [
         'error',
         {
             before: false,
             after: true,
         },
     ],
-    [`${pluginPrefix}/rest-spread-spacing`]: ['error', 'never'],
-    [`${pluginPrefix}/array-bracket-newline`]: ['error', 'consistent'],
-    [`${pluginPrefix}/array-bracket-spacing`]: ['error', 'never'],
-    [`${pluginPrefix}/array-element-newline`]: [
+    '@stylistic/rest-spread-spacing': ['error', 'never'],
+    '@stylistic/array-bracket-newline': ['error', 'consistent'],
+    '@stylistic/array-bracket-spacing': ['error', 'never'],
+    '@stylistic/array-element-newline': [
         'error',
         {
             ArrayExpression: 'consistent',
@@ -240,17 +239,17 @@ export const formatEslintRules: TSESLint.Linter.RulesRecord = {
             },
         },
     ],
-    [`${pluginPrefix}/block-spacing`]: ['error', 'always'],
-    [`${pluginPrefix}/arrow-parens`]: ['error', 'always'],
-    [`${pluginPrefix}/arrow-spacing`]: [
+    '@stylistic/block-spacing': ['error', 'always'],
+    '@stylistic/arrow-parens': ['error', 'always'],
+    '@stylistic/arrow-spacing': [
         'error',
         {
             before: true,
             after: true,
         },
     ],
-    [`${pluginPrefix}/implicit-arrow-linebreak`]: ['error', 'beside'],
-    [`${pluginPrefix}/indent`]: [
+    '@stylistic/implicit-arrow-linebreak': ['error', 'beside'],
+    '@stylistic/indent': [
         'error',
         // eslint-disable-next-line no-magic-numbers
         4,
@@ -273,33 +272,12 @@ export const formatEslintRules: TSESLint.Linter.RulesRecord = {
             ObjectExpression: 1,
             ImportDeclaration: 1,
             flatTernaryExpressions: false,
-            ignoredNodes: [
-                'JSXElement',
-                'JSXElement > *',
-                'JSXAttribute',
-                'JSXIdentifier',
-                'JSXNamespacedName',
-                'JSXMemberExpression',
-                'JSXSpreadAttribute',
-                'JSXExpressionContainer',
-                'JSXOpeningElement',
-                'JSXClosingElement',
-                'JSXFragment',
-                'JSXOpeningFragment',
-                'JSXClosingFragment',
-                'JSXText',
-                'JSXEmptyExpression',
-                'JSXSpreadChild',
-                'FunctionExpression > .params[decorators.length > 0]',
-                'FunctionExpression > .params > :matches(Decorator, :not(:first-child))',
-                'ClassBody.body > PropertyDefinition[decorators.length > 0] > .key',
-            ],
             ignoreComments: false,
             offsetTernaryExpressions: false,
             MemberExpression: 1,
         },
     ],
-    [`${pluginPrefix}/quotes`]: [
+    '@stylistic/quotes': [
         'error',
         'single',
         {
@@ -307,21 +285,24 @@ export const formatEslintRules: TSESLint.Linter.RulesRecord = {
             allowTemplateLiterals: 'always',
         },
     ],
-    [`${pluginPrefix}/jsx-quotes`]: ['error', 'prefer-double'],
-    [`${pluginPrefix}/linebreak-style`]: ['off', 'unix'],
-    [`${pluginPrefix}/object-curly-spacing`]: ['error', 'never'],
-    [`${pluginPrefix}/object-curly-newline`]: [
+    '@stylistic/jsx-quotes': ['error', 'prefer-double'],
+    '@stylistic/linebreak-style': ['off', 'unix'],
+    '@stylistic/object-curly-spacing': ['error', 'never'],
+    '@stylistic/object-curly-newline': [
         'error',
         {
             consistent: true,
         },
     ],
-    [`${pluginPrefix}/operator-linebreak`]: ['error', 'after'],
-    'perfectionist/sort-imports': [
+    // ? and : start the line, in ternaries and in conditional types, like prettier
+    '@stylistic/operator-linebreak': ['error', 'after', {overrides: {'?': 'before', ':': 'before'}}],
+    // a polyfill or stylesheet import keeps its place, an import that would have to move across it is reported
+    'import-x/order': [
         'error',
         {
-            type: 'natural',
-            order: 'asc',
+            'groups': ['type', ['builtin', 'external'], 'internal', ['parent', 'sibling', 'index']],
+            'newlines-between': 'always',
+            'alphabetize': {order: 'asc', caseInsensitive: true},
         },
     ],
     'perfectionist/sort-exports': [
@@ -346,11 +327,12 @@ export const formatEslintRules: TSESLint.Linter.RulesRecord = {
         },
     ],
     'import-x/newline-after-import': 'error',
-    [`${pluginPrefix}/member-delimiter-style`]: [
+    '@stylistic/member-delimiter-style': [
         'error',
         {multiline: {delimiter: 'semi', requireLast: true}, singleline: {delimiter: 'semi', requireLast: false}},
     ],
-    [`${pluginPrefix}/semi`]: ['error'],
-    [`${pluginPrefix}/no-extra-semi`]: ['error'],
-    [`${pluginPrefix}/type-annotation-spacing`]: ['error'],
+    '@stylistic/semi': 'error',
+    '@stylistic/no-extra-semi': 'error',
+    '@stylistic/type-annotation-spacing': 'error',
+    '@stylistic/one-var-declaration-per-line': ['error', 'always'],
 };

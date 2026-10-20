@@ -10,7 +10,7 @@
         "declaration": true,
         "outDir": "./dist/",
         "importHelpers": true,
-        "importsNotUsedAsValues": "remove",
+        "verbatimModuleSyntax": false,
         "stripInternal": true,
 
         "isolatedModules": true,
